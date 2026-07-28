@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Le relazioni causa-effetto – Metodologia sperimentale per le scienze agrarie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./03-StatisticaDescrittiva.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3220129d1b0bfa0f6b9dc9ac11d00f8b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-CausaEffetto.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Metodologia sperimentale per le scienze agrarie</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Premessa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introBiometria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ProgettoRicerca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-StatisticaDescrittiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-CausaEffetto.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#modelli-statistici" id="toc-modelli-statistici" class="nav-link active" data-scroll-target="#modelli-statistici"><span class="header-section-number">4.1</span> Modelli statistici</a></li>
+  <li><a href="#componenti-di-un-modello" id="toc-componenti-di-un-modello" class="nav-link" data-scroll-target="#componenti-di-un-modello"><span class="header-section-number">4.2</span> Componenti di un modello</a></li>
+  <li><a href="#lavorare-con-i-modelli" id="toc-lavorare-con-i-modelli" class="nav-link" data-scroll-target="#lavorare-con-i-modelli"><span class="header-section-number">4.3</span> Lavorare con i modelli</a></li>
+  <li><a href="#fitting-di-un-modello" id="toc-fitting-di-un-modello" class="nav-link" data-scroll-target="#fitting-di-un-modello"><span class="header-section-number">4.4</span> <em>Fitting</em> di un modello</a></li>
+  <li><a href="#esempio-4.1-il-modello-della-media" id="toc-esempio-4.1-il-modello-della-media" class="nav-link" data-scroll-target="#esempio-4.1-il-modello-della-media"><span class="header-section-number">4.5</span> Esempio 4.1: il ‘modello della media’</a></li>
+  <li><a href="#esempio-4.2-un-predittore-quantitativo" id="toc-esempio-4.2-un-predittore-quantitativo" class="nav-link" data-scroll-target="#esempio-4.2-un-predittore-quantitativo"><span class="header-section-number">4.6</span> Esempio 4.2: un predittore quantitativo</a></li>
+  <li><a href="#esempio-4.3-un-predittore-nominale" id="toc-esempio-4.3-un-predittore-nominale" class="nav-link" data-scroll-target="#esempio-4.3-un-predittore-nominale"><span class="header-section-number">4.7</span> Esempio 4.3: un predittore nominale</a></li>
+  <li><a href="#lanalisi-della-varianza-anova" id="toc-lanalisi-della-varianza-anova" class="nav-link" data-scroll-target="#lanalisi-della-varianza-anova"><span class="header-section-number">4.8</span> L’analisi della varianza (ANOVA)</a></li>
+  <li><a href="#example-4.4-due-predittori-nominali" id="toc-example-4.4-due-predittori-nominali" class="nav-link" data-scroll-target="#example-4.4-due-predittori-nominali"><span class="header-section-number">4.9</span> Example 4.4: due predittori nominali</a></li>
+  <li><a href="#example-4.5-due-predittori-nominali-con-interazione" id="toc-example-4.5-due-predittori-nominali-con-interazione" class="nav-link" data-scroll-target="#example-4.5-due-predittori-nominali-con-interazione"><span class="header-section-number">4.10</span> Example 4.5: due predittori nominali con interazione</a></li>
+  <li><a href="#interazione-tra-fattori-sperimentali" id="toc-interazione-tra-fattori-sperimentali" class="nav-link" data-scroll-target="#interazione-tra-fattori-sperimentali"><span class="header-section-number">4.11</span> Interazione tra fattori sperimentali</a></li>
+  <li><a href="#example-4.5-segue" id="toc-example-4.5-segue" class="nav-link" data-scroll-target="#example-4.5-segue"><span class="header-section-number">4.12</span> Example 4.5 (segue)</a></li>
+  <li><a href="#dati-non-bilanciati" id="toc-dati-non-bilanciati" class="nav-link" data-scroll-target="#dati-non-bilanciati"><span class="header-section-number">4.13</span> Dati non bilanciati</a></li>
+  <li><a href="#esempio-4.6-un-crbd-con-un-valore-mancante" id="toc-esempio-4.6-un-crbd-con-un-valore-mancante" class="nav-link" data-scroll-target="#esempio-4.6-un-crbd-con-un-valore-mancante"><span class="header-section-number">4.14</span> Esempio 4.6: un CRBD con un valore mancante</a></li>
+  <li><a href="#conclusioni" id="toc-conclusioni" class="nav-link" data-scroll-target="#conclusioni"><span class="header-section-number">4.15</span> Conclusioni</a></li>
+  <li><a href="#domande-ed-esercizi" id="toc-domande-ed-esercizi" class="nav-link" data-scroll-target="#domande-ed-esercizi"><span class="header-section-number">4.16</span> Domande ed esercizi</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>If there is anything in the world which I do firmly believe in, it is the universal validity of the law of causation (Thomas Huxley)</em></p>
+<p>Nel capitolo precedente abbiamo visto come possiamo utilizzare semplici statistiche per descrivere i tratti principali dei nostri dati sperimentali, come la tendenza centrale e la dispersione e, se abbiamo due o più variabili, abbiamo visto come sia possibile descrivere la loro correlazione, utilizzando il coefficiente <span class="math inline">\(r\)</span> di Pearson.</p>
+<p>Nel lavoro di ricerca, è fondamentale stabilire l’esistenza di nessi <strong>causa-effetto</strong> (relazione di causalità), tra una variabile, solitamente detta “predittore”, in grado di indurre effetti su un’altra variabile, solitamente denominata “risposta”. Ad esempio, è importante stabilire se una variazione del genotipo possa causare un cambiamento nella resa del frumento, oppure se una variazione nella tecnica di lavorazione possa causare un cambiamento nel tempo di emergenza del mais. Secondo John Stuart Mill (1806-1867), ogni relazione causa-effetto, per essere definita tale, dovrebbe soddisfare tre criteri fondamentali <span class="citation" data-cites="shadish_2002">(<a href="references.html#ref-shadish_2002" role="doc-biblioref">Shadish et al. 2002</a>)</span>:</p>
+<ol type="1">
+<li>La causa precede l’effetto;</li>
+<li>La causa e l’effetto hanno evidenti relazioni;</li>
+<li>Non ci sono spiegazioni alternative altrettanto valide per queste relazioni, oltre alla causalità.</li>
+</ol>
+<p>Da questi criteri si deduce come la correlazione, intesa come variazione congiunta, non rappresenti, di per se’, un nesso causa-effetto [<em>correlation does not mean causation</em>; <span class="citation" data-cites="zaniletti_2023">Zaniletti et al. (<a href="references.html#ref-zaniletti_2023" role="doc-biblioref">2023</a>)</span>], perchè valori di <span class="math inline">\(r\)</span> vicini a 1 o -1 possono essera facilmente osservati anche quando, per le due variabili in studio, non possiamo stabilire quale sia la causa e quale l’effetto (ad esempio: altezza e peso delle piante di una specie vegetale, per le quali non vi è <em>causal priority</em>), oppure quando vi sia una variabile esterna di confondimento, che funge da causa comune per le due variabili in studio <span class="citation" data-cites="aldrich_1995">(<a href="references.html#ref-aldrich_1995" role="doc-biblioref">Aldrich 1995</a>)</span>. Al di là delle sottigliezze terminologiche, è evidente che la correlazione ‘non causle’ o addirittura la correlazione spuria sono particolarmente preoccupanti soprattutto per i dati che provengono da esperimenti osservazionali, con livelli di controllo che non sempre possono essere altissimi. Al contrario, gli esperimenti manipolativi controllati, replicati e randomizzati sono particolarmente adatti a stabilire relazioni causa-effetto, grazie alla assunzione <em>ceteris paribus</em>, per la quale si cerca di mantanere tutto costante, a parte il trattamento sperimentale. In questo modo, le discrepanze tra le unità osservate sottoposte a trattamenti diversi possono essere ragionevolmente attribuite all’effetto di tali trattamenti e non ad altre cause sistematiche, ma ignote.</p>
+<section id="modelli-statistici" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="modelli-statistici"><span class="header-section-number">4.1</span> Modelli statistici</h2>
+<p>Per descrivere le relazioni causali, possiamo utilizzare i <strong>modelli matematici</strong>, cioè delle equazioni in cui le osservazioni sperimentali sono prodotte come risultato dell’effetto di uno o più predittori. L’impiego di questi utili strumenti si è sviluppate notevolmente a partire da Galileo, ed ha portato alla creazione di modelli di complessità variabile, dalle semplici equazioni empiriche <span class="citation" data-cites="ratkowky_1990">(<a href="references.html#ref-ratkowky_1990" role="doc-biblioref">Ratkowsky 1990</a>)</span> ai più complessi modelli meccanicistici multiscala <span class="citation" data-cites="gherman_2023">(<a href="references.html#ref-gherman_2023" role="doc-biblioref">Gherman 2023</a>)</span>, che sono anche in grado di descrivere sistemi complessi, come il sistema agrario <span class="citation" data-cites="pasley_2023">Gavasso-Rita et al. (<a href="references.html#ref-gavassorita_2024" role="doc-biblioref">2024</a>)</span>.</p>
+<p>In questo libro trattaremo alcuni semplici modelli empirici, frequentemente utilizzati per descrivere le relazioni causa-effetto negli esperimenti controllati, dove il numero dei predittori è ridotti al minimo livello possibile. I modelli che useremo sono definiti <strong>modelli statistici</strong>, a causa della presenza di una “componente stocastica”, in grado di tenere conto anche di tutti gli effetti stocastici non allocati dallo sperimentatore, ma derivanti da possibili fonti di errore casuale, come quelle descritte nei capitoli 1 e 2.</p>
+</section>
+<section id="componenti-di-un-modello" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="componenti-di-un-modello"><span class="header-section-number">4.2</span> Componenti di un modello</h2>
+<p>In semplice linguaggio algebrico, possiamo scrivere un modello causa-effetto utilizzando un’equazione generale come la seguente:</p>
+<p><span class="math display">\[ Y_E = f(X, \theta)\]</span></p>
+<p>dove <span class="math inline">\(Y_E\)</span> è l’effetto atteso dello stimolo <span class="math inline">\(X\)</span>, secondo la funzione <span class="math inline">\(f\)</span>, basata su una collezioni di parametri <span class="math inline">\(\theta\)</span>.</p>
+<p>Le componenti di questo modello sono la risposta attesa (<span class="math inline">\(Y_E\)</span>) che è l’oggetto del nostro studio e può assumere le forme più disparate: spesso è numerica, ma a volte rappresenta una qualità. In questo libro consideremo solo la situazione in cui <span class="math inline">\(Y_E\)</span> è rappresentato da una sola variabile (analisi univariata), ma esistono casi in cui viene osservata ed analizzata la risposta di soggetti in relazione a molte variabili (analisi multivariata).</p>
+<p>Lo stimolo sperimentale (<span class="math inline">\(X\)</span>) è costituito da una o più variabili continue, discrete o categoriche (predittori), che rappresentano i trattamenti sperimentali. Insieme ad <span class="math inline">\(Y_E\)</span>, <span class="math inline">\(X\)</span> è l’elemento noto di un esperimento, in quanto viene definito <em>a priori</em> in fase di progettazione.</p>
+<p>La ‘funzione’ di risposta (<span class="math inline">\(f\)</span>) è un’equazione, lineare o non-lineare, scelta in base a considerazioni di carattere biologico, o con un approccio puramente empirico, osservando l’andamento della curva di risposta.</p>
+<p>I parametri di una funzione (<span class="math inline">\(\theta\)</span>) sono un insieme di valori numerici che permettono di definire l’equazione di risposta, cioè, ad esempio, di ‘selezionare’ tra le rette del piano rappresentate dall’equazione <span class="math inline">\(Y = aX + b\)</span>, un specifica retta <span class="math inline">\(Y = 0.7 \, X + 3.1\)</span>, che rappresenti i risultati di uno specifico esperimento.</p>
+<p>Il predittore può essere rappresentato da una dose; ad esempio un aumento della dose di una sostanza erbicida provoca una diminuzione della crescita delle erbe infestanti. In questo caso, si tratta di un <em>modello dose-risposta</em>, che può essere considerato la traduzione in termini matematici del famoso aforisma di Paracelso (1493-1541): “<em>Omnia venenum sunt: nec sine veneno quicquam existit. Dosis sola facit, ut venenum non fit.</em>” (<em>Cosa c’è che non sia veleno? Tutte le cose sono veleno e nulla è senza veleno. Soltanto la dose determina cosa sia un veleno</em>).</p>
+<p>In pratica, la realtà è più complessa delle nostre aspettative e, a causa di errori sperimentali e altri effetti di natura puramente casuale, non osserviamo mai il risultato atteso <span class="math inline">\(Y_E\)</span>, ma osserviamo un valore diverso <span class="math inline">\(Y_O \neq Y_E\)</span>. Dobbiamo quindi ampliare il modello aggiungendo la componente stocastica <span class="math inline">\(\varepsilon\)</span>:</p>
+<p><span class="math display">\[ Y_O = f(X, \theta) + \varepsilon\]</span></p>
+<p>cioè il cosiddetto ‘residuo’, la discrepanza tra ciò che prevede il modello e ciò che effettivamente osserviamo:</p>
+<p><span class="math display">\[\varepsilon = Y_O - Y_E \]</span></p>
+<p>In un esperimento con <span class="math inline">\(n\)</span> unità sperimentali, abbiamo <span class="math inline">\(n\)</span> residui, con media pari a 0 e devianza, usualmente denominata RSS (dall’inglese <em>Residual Sum of Squares</em>):</p>
+<p><span class="math display">\[RSS = \sum_{i = 1}^n{\left( Y_{O_i} - Y_{E_i} \right)^2}\]</span></p>
+<p>La deviazione standard dei residui di solito è denominata RMSE (dall’inglese <em>Root Mean Squared Error</em>) ed è ottenuta, in ambito inferenziale, come <span class="math inline">\(RMSE = \sqrt{\textrm{SS}/(n - p)}\)</span>, dove <span class="math inline">\(n\)</span> è il numero delle osservazioni e <span class="math inline">\(p\)</span> è il numero di parametri stimati. Utilizzando is the number of observations and <span class="math inline">\(P\)</span> is the number of estimated parameters. A grandi linee, si può dire che <strong>il valore di RMSE misura quanto “cattivo” è il modello: tanto più è alto, quanto più le previsioni si discostano dalle osservazioni, inficiando la capacità del modello di descrivere una certa relazione causa-effetto</strong>.</p>
+</section>
+<section id="lavorare-con-i-modelli" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="lavorare-con-i-modelli"><span class="header-section-number">4.3</span> Lavorare con i modelli</h2>
+<p>Quando utilizziamo un modello per interpretare i risultati di un esperimento e definire le relazioni causa-effetto in studio, dobbiamo seguire un protocollo di lavoro adeguato, che proviamo a riassumere nel seguente schema:</p>
+<ol type="1">
+<li>definire un modello statistico potenzialmente capace di descrivere adeguatamente le relazioni causa-effetto in studio, traducendo in termini matematici l’ipotesi scientifica di partenza. Questo modello sarà posto nella sua forma generale e sarà basato su una serie di parametri dal valore ignoto (<span class="math inline">\(\theta\)</span> e <span class="math inline">\(\sigma\)</span>).</li>
+<li>Eseguire l’esperimento e raccogliere i dati.</li>
+<li>Utilizzare il set di dati per assegnare valori precisi a tutti i parametri ignoti (<strong>fitting del modello</strong> o, in alcune applicazioni, <strong>calibrazione del modello</strong>).</li>
+<li>Valutare se il modello parametrizzato fornisca una descrizione accurata dei dati sperimentali (<strong>valutazione del modello</strong>).</li>
+<li>Se necessario, in presenza di ipotesi scientifiche alternative tradotte in altrettanti modelli matematici, selezionare il modello migliore quelli proposti (<strong>confronto dei modelli</strong>).</li>
+</ol>
+</section>
+<section id="fitting-di-un-modello" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="fitting-di-un-modello"><span class="header-section-number">4.4</span> <em>Fitting</em> di un modello</h2>
+<p>Il fitting del modello viene solitamente eseguito dall’algoritmo dei “minimi quadrati”, che consiste nel selezionare i valori dei parametri che minimizzano la somma dei residui al quadrato (RSS)</p>
+<p>In generale, la minimizzazione dei quadrati dei residui non viene eseguita mediante calcoli manuali, in quanto è molto più semplice avvalersi delle funzioni di adattamento più adatte in R. In particolare, per i modelli lineari utilizzeremo la funzione <code>lm()</code>, con la seguente sintassi:</p>
+<pre><code>mod &lt;- lm(Y ~ X dati = set di dati)</code></pre>
+<p>Il primo argomento è l’equazione che vogliamo adattare: sul lato sinistro dobbiamo specificare il nome della variabile di risposta, la ‘tilde’ (~) significa ‘è una funzione di’ e sostituisce il segno ‘=’, mentre, sul lato destro, dobbiamo specificare il nome del/i predittore/i. Come secondo argomento, se necessario, forniamo il nome del dataset in cui sono archiviate le variabili. Non dobbiamo specificare l’intercetta e il termine stocastico <span class="math inline">\(\varepsilon\)</span>, che sono inclusi per impostazione predefinita.</p>
+<p>Per evitare errori, è necessario ricordare che un predittore <span class="math inline">\(X\)</span> può essere costituito da una variabile quantitativa oppure da una variabile categorica e i due tipi di variabili identificano tipologie di modelli molto diversi tra di loro. Può capitare di avere a che fare con un predittore qualitativo per cui le classi sono espresse in formato numerico, come ad esempio i blocchi, che potrebbero essere indicati con i valori 1, 2, 3, e 4, senza che questi valori rappresentino veramente una quantità. In tutte queste situazione e, suggerirei in ogni caso, quando intendiamo procedere al fitting di un modello in cui qualcuno dei predittori è una variabile categorica, <strong>dovremmo esplicitamente trasformarla in un vettore di tipo ‘factor’</strong>, per evitare che R la interpreti erroneamente come una quantità, adattando il modello sbagliato. La trasformazione si effettua, nel modo più semplice, con il codice seguente:</p>
+<pre><code>X &lt;- factor(X)</code></pre>
+<p>Un modello completamente specificato può fornire una buona descrizione dei dati sperimentali, <strong>postulando l’esistenza di un meccanismo causa-effetto ben definito</strong>. Con la dovuta prudenza, questo modello può essere utilizzato per fare previsioni; ad esempio, se i dati sperimentali hanno suggerito che l’effetto della concimazione azotata sul frumento può essere rappresentata con una retta con equazione <span class="math inline">\(Y_E = b_0 + b_1 \, X\)</span>, dove <span class="math inline">\(b_0 = 65\)</span> e <span class="math inline">\(b_1 = 0.1\)</span>, allora si potrebbe concludere che una concimazione con 150 kg/ha di azoto dovrebbe, prevedibilmente, dare come risultato un livello di resa <span class="math inline">\(Y_E = 80\)</span> quintali per ettaro.</p>
+</section>
+<section id="esempio-4.1-il-modello-della-media" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="esempio-4.1-il-modello-della-media"><span class="header-section-number">4.5</span> Esempio 4.1: il ‘modello della media’</h2>
+<p>Abbiamo condotto un esperimento misurativo, in cui abbiamo raccolto tre campioni di acqua da un pozzo, per misurare la concentrazione di una sostanza xenobiotica. I risultati sono 116, 119, 125 mg/L e vogliamo calcolare la media e la deviazione standard dei tre campioni.</p>
+<p>Questo problema è piuttosto semplice e potrebbe essere meglio risolto utilizzando semplici statistiche descrittive (vedi Capitolo 3); tuttavia, è interessante vedere come lo stesso problema può essere posto in una logica di ‘model fitting’: non abbiamo alcun predittore e, pertanto, possiamo supporre che le osservazioni siano generate in base al modello della media: <span class="math inline">\(Y_i = \mu + \varepsilon_i\)</span>, dove l’elemento stocastico ha media 0 e una deviazione standard <span class="math inline">\(\sigma\)</span>.</p>
+<p>Assegnare un valore a tutti i parametri sconosciuti è banale, utilizzando i semplici calcoli mostrati nel Capitolo 3 (vale a dire, <span class="math inline">\(\mu = 120\)</span> e <span class="math inline">\(\sigma = 4.58\)</span>). Tuttavia, possiamo ottenere gli stessi risultati utilizzando l’approccio di minimizzazione dei minimi quadrati, come mostrato nel riquadro seguente. Si noti che utilizziamo ‘1’ come lato destro dell’equazione del modello, poiché non abbiamo alcun predittore.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">116</span>, <span class="dv">119</span>, <span class="dv">125</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>La stima di <span class="math inline">\(\mu\)</span> può essere ottenuta con la seguente funzione R:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept) </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">##         120</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Per quanto riguarda la componente stocastica, possiamo ottenere i residui, la loro devianza e la loro deviazione standard con le seguenti funzioni R:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Residui</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">residuals</span>(mod)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  1  2  3 </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">## -4 -1  5</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Devianza dei residui</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">deviance</span>(mod)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 42</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Deviazione standard dei residui</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)<span class="sc">$</span>sigma</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4.582576</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Il modello della media descrive una situazione in cui non abbiamo predittori e, pertanto, non vi sono nessi causa-effetto; di conseguenza, è il peggior modello possibile, il punto di riferimento rispetto al quale valutare ogni altro modello alternativo. Per queste sue caratteristiche, il modello della media è spesso definito come <strong>modello nullo</strong>.</p>
+</section>
+<section id="esempio-4.2-un-predittore-quantitativo" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="esempio-4.2-un-predittore-quantitativo"><span class="header-section-number">4.6</span> Esempio 4.2: un predittore quantitativo</h2>
+<p>L’algoritmo dei minimi quadrati è facile da comprendere se consideriamo un esperimento in cui la resa del mais (la risposta, in t/ha) sia stata determinata in funzione del ricoprimento delle piante infestanti (il predittore, in %), determinato all’inizio del ciclo colturale. In una situazione del genere, potremmo ipotizzare un modello lineare (linea retta) del tipo: <span class="math inline">\(Y_i = b_0 + b_1 \, X_i + \varepsilon_i\)</span>, che è solitamente noto come <strong>modello di regressione lineare semplice</strong>.</p>
+<p>I due parametri <span class="math inline">\(b_0\)</span> e <span class="math inline">\(b_1\)</span> rappresentano, rispettivamente, l’intercetta (livello di resa senza infestanti) e la pendenza (variazione della resa per ogni aumento unitario del ricoprimento). Per stimare questi due valori, possiamo usare la funzione ‘lm()’, che produce i risultati mostrati nella Figura @ref(fig:figName41a).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting a simple linear regression model</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Entering the data</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"WeedCover"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting the model</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> WeedCover, <span class="at">data =</span> dataset)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting the estimates</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)   WeedCover </span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 10.65979798 -0.06033652</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="04-CausaEffetto_files/figure-html/figName41a-1.png" class="img-fluid figure-img" style="width:85.0%"></p>
+<figcaption>Example 2: the least square estimate is represented by the straight line that passes as close as possible to the observed points.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="esempio-4.3-un-predittore-nominale" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="esempio-4.3-un-predittore-nominale"><span class="header-section-number">4.7</span> Esempio 4.3: un predittore nominale</h2>
+<p>Immaginiamo un esperimento sul campo per confrontare la resa di quattro genotipi di avena (denominati A, B, C e D), con un disegno completamente randomizzato con tre repliche. I risultati (in tonnellate per ettaro) sono mostrati nella Tabella <a href="#tbl-tabName4b1" class="quarto-xref"><span>4.1</span></a>.</p>
+<div class="cell">
+<div id="tbl-tabName4b1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tabName4b1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.1: Esempio di una dataset proveniente da una prova varietale a randomizzazione completa con quattro genotipi di avena (A, B, C and D) e tre repliche.
+</figcaption>
+<div aria-describedby="tbl-tabName4b1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Genotype</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">4.50</td>
+<td style="text-align: right;">4.65</td>
+<td style="text-align: right;">4.59</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">3.70</td>
+<td style="text-align: right;">3.38</td>
+<td style="text-align: right;">3.58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">4.17</td>
+<td style="text-align: right;">3.94</td>
+<td style="text-align: right;">4.14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">4.76</td>
+<td style="text-align: right;">4.48</td>
+<td style="text-align: right;">4.55</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>In questo esperimento, abbiamo una risposta quantitativa (la resa) e un fattore nominale (il genotipo) e la relazione causa-effetto tra queste due variabili può essere descritta con il modello seguente:</p>
+<p><span class="math display">\[Y_i = \mu + \alpha_j + \varepsilon_i\]</span></p>
+<p>Questo modello postula che ogni osservazione <span class="math inline">\(Y_i\)</span> derivi dal valore <span class="math inline">\(\mu\)</span> (la cosiddetta intercetta) più le quantità <span class="math inline">\(\alpha_j\)</span>, che dipendono dal genotipo <span class="math inline">\(j\)</span>, più gli effetti stocastici <span class="math inline">\(\varepsilon_i\)</span>, che sono specifici per ogni osservazione ed hanno media 0 e una deviazione standard pari a <span class="math inline">\(\sigma\)</span>.</p>
+<p>Per comprendere il significato biologico di <span class="math inline">\(\mu\)</span> ed <span class="math inline">\(\alpha\)</span> dobbiamo entrare un po’ di più nei dettagli matematici. Consideriamo la prima osservazione <span class="math inline">\(Y_1 = 4.5\)</span>; dobbiamo stimare tre valori (<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\alpha_1\)</span> e <span class="math inline">\(\varepsilon_1\)</span>) che, sommati, restituiscano questa osservazione. Chiaramente il problema è indeterminato, in quanto esistono infinite triplette di valori, che, sommate, restituiscono 4.5; pertanto è necessario imporre dei vincoli su alcuni parametri del modello (<strong>parametrizzazioni del modello</strong>). Un vincolo molto comune è <span class="math inline">\(\alpha_1 = 0\)</span> (<strong>vincolo sul trattamento</strong>):</p>
+<p><span class="math display">\[\left\{ {\begin{array}{l}
+\mu_1 = \mu + \alpha_1 = \mu + 0\\
+\mu_2 = \mu + \alpha_2 \\
+\mu_3 = \mu + \alpha_3 \\
+\mu_4 = \mu + \alpha_4
+\end{array}} \right.\]</span></p>
+<p>Con tale vincolo, <span class="math inline">\(\mu\)</span> è la media del primo genotipo (in R: <strong>primo in ordine alfabetico</strong>), mentre <span class="math inline">\(\alpha_2\)</span>, <span class="math inline">\(\alpha_3\)</span> e <span class="math inline">\(\alpha_4\)</span> sono, rispettivamente, le differenze tra le medie del secondo, terzo e quarto genotipo, rispetto al primo. In generale, con questa parametrizzazione, i parametri del modello sono medie o differenze tra medie.</p>
+<p>Un altro possibile vincolo è <span class="math inline">\(\sum{\alpha_j} = 0\)</span> (vincolo sulla somma). Se prendiamo l’equazione precedente e sommiamo tutti i membri otteniamo:</p>
+<p><span class="math display">\[\mu_1 + \mu_2 + \mu_3 + \mu_4 = 4 \mu + \sum{\alpha_j}\]</span></p>
+<p>Imponendo il vincolo di somma a zero otteniamo:</p>
+<p><span class="math display">\[\mu_1 + \mu_2 + \mu_3 + \mu_4 = 4 \mu\]</span></p>
+<p>e quindi a:</p>
+<p><span class="math display">\[\mu = \frac{\mu_1 + \mu_2 + \mu_3 + \mu_4}{4}\]</span></p>
+<p>Con questa parametrizzazione <span class="math inline">\(\mu\)</span> è la media generale dei dati, mentre i valori <span class="math inline">\(\alpha_j\)</span> rappresentano le differenze tra le medie dei trattamenti e la media generale (<strong>effetti dei trattamenti</strong>): valori <span class="math inline">\(\alpha\)</span> positivi ed elevati identificano i genotipi superiori alla media, mentre valori <span class="math inline">\(\alpha\)</span> elevati, ma negativi identificano i genotipi inferiori alla media. In generale, con questa parametrizzazione, i parametri del modello rappresentano medie ed effetti.</p>
+<p>Un terzo possibile vincolo si ottiene rimuovendo l’intercetta (ovvero, imponendo che <span class="math inline">\(\mu = 0\)</span>). In questo caso, i valori di <span class="math inline">\(\alpha_j\)</span> saranno le medie dei genotipi ed il modello riduce a:</p>
+<p><span class="math display">\[Y_i = \mu_j + \varepsilon_i\]</span></p>
+<p>La selezione dei vincoli spetta all’utente, a seconda degli obiettivi dell’esperimento. <strong>In R, il vincolo del trattamento è utilizzato di default</strong>, sebbene gli altri vincoli possano essere facilmente ottenuti, utilizzando la codifica appropriata.</p>
+<p>La stima dei parametri del modello potrebbe essere facilmente eseguita a mano, ma noi utilizziamo la funzione <code>lm()</code> in R.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype, <span class="at">data =</span> dataset)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>I parametri stimati, i residui, la deviazione residua e la deviazione standard possono essere ottenuti con la solita codifica:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stima dei parametri</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)   GenotypeB   GenotypeC   GenotypeD </span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  4.58000000 -1.02666667 -0.49666667  0.01666667</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Residui</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">residuals</span>(mod)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="do">##           1           2           3           4           5           6 </span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="do">## -0.08000000  0.07000000  0.01000000  0.14666667 -0.17333333  0.02666667 </span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="do">##           7           8           9          10          11          12 </span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  0.08666667 -0.14333333  0.05666667  0.16333333 -0.11666667 -0.04666667</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Devianza dei residui</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">deviance</span>(mod)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.1374</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Deviazione standard del residui (RMSE)</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)<span class="sc">$</span>sigma</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.1310534</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ora che il modello è completamente specificato, abbiamo tutti gli ingredienti per descrivere le 12 osservazioni, sommando <span class="math inline">\(\mu + \alpha_j + \varepsilon_i\)</span>; ad esempio, per la prima osservazione, appartenente al primo genotipo, abbiamo:</p>
+<p><span class="math display">\[y_1 = 4.5 = 4.533 + 0 - 0.033\]</span> mentre, per la quarta osservazione, appartenente al 2° genotipo, abbiamo:</p>
+<p><span class="math display">\[y_4 = 3.9 = 4.533 - 0.7 + 0.067\]</span></p>
+<p>Per completezza, potrebbe essere utile mostrare che, in R, possiamo modificare la parametrizzazione, impostando l’argomento ‘contrasts’ e passando un elenco di fattori associati alla parametrizzazione richiesta. Ad esempio, se utilizziamo <code>Treat = "contr.sum"</code>, otteniamo il vincolo sulla somma; di conseguenza, l’effetto dell’ultimo genotipo non è mostrato, perché è vincolato ad eseere l’opposto della somma degli altri tre effetti.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">contrasts =</span> <span class="fu">list</span>(<span class="at">Genotype =</span> <span class="st">"contr.sum"</span>),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> dataset)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod2)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)   Genotype1   Genotype2   Genotype3 </span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="do">##   4.2033333   0.3766667  -0.6500000  -0.1200000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Un’altra possibile parametrizzazione consiste nel rimuovere l’intercetta, che è possibile utilizzando <code>-1</code> sul lato destro dell’espressione, come mostrato di seguito.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mod3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype <span class="sc">-</span> <span class="dv">1</span>, <span class="at">data =</span> dataset)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod3)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="do">## GenotypeA GenotypeB GenotypeC GenotypeD </span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  4.580000  3.553333  4.083333  4.596667</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Esistono diversi altri metodi per modificare la parametrizzazione, sia globalmente (per l’intera sessione R) sia a livello di fattore; ulteriori informazioni sono disponibili, ad esempio, in <span class="citation" data-cites="faraway_2025">Faraway (<a href="references.html#ref-faraway_2025" role="doc-biblioref">2025</a>)</span>.</p>
+</section>
+<section id="lanalisi-della-varianza-anova" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="lanalisi-della-varianza-anova"><span class="header-section-number">4.8</span> L’analisi della varianza (ANOVA)</h2>
+<p>In questo secondo esempio abbiamo descritto una relazione causa-effetto, tramite un modello contenente un predittore. L’RMSE (<span class="math inline">\(\sigma\)</span>) è uguale a 0.131, ma questa non è una buona metrica per capire se la relazione causa-effetto è rilevante o meno. Una possibilità è quella di dividere l’RMSE per la media dei valori osservati, per ottenere il coefficiente di variabilità (RRMSE: Relative Root Mean Squared Error), che è 0.031 (o 3.1%), il che indica che l’errore residuo è piuttosto piccolo, rispetto al valore medio atteso.</p>
+<p>Un altro indicatore per descrivere la bontà della relazione causa-effetto definita dal modello è il cosiddetto <strong>coefficiente di determinazione (R<sup>2</sup>)</strong>, ottenuto sottraendo da 1 il rapporto tra la devianza dei residui e la devianza totale delle osservazioni (che poi sarebbe la devianza dei residui del modello nullo). Nel nostro caso, il modello nullo è ottenuto trascurando l’effetto del genotipo e la devianza dei residui è quella indicata nel box sottostante:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>modnull <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> dataset)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">deviance</span>(modnull)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.337867</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Il coefficiente di determinazione è quindi:</p>
+<p><span class="math display">\[R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{0.1374}{2.337867} = 0.94123\]</span></p>
+<p>cosa che può essere verificata utilizzando il codice R:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)<span class="sc">$</span>r.squared</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.9412285</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Il coefficiente di determinazione varia da 0 ad 1, più è alto il valore tanto migliore è la bontà del modello.</p>
+<p>Oltre a queste statistiche (RMSE, RRMSE e R<sup>2</sup>), vi è una tecnica famosissima per valutare l’entità dell’evidenza in favore dell’esistenza di una relazione causa effetto ben definita; questa tecnica si chiama <strong>Analisi della Varianza (ANOVA)</strong> ed è stata originariamente ideata da Ronald Fisher durante gli anni ’30 del XX secolo; oggi è ancora molto utilizzata, seppure in una forma leggermente diversa da quella originale.</p>
+<p>Il principio di fondo è che, considerando un modello che contenga almeno un predittore, è sempre possibile associare allo stesso dataset un secondo modello ‘nullo’ (modello della media), ottenuto dal precedente per rimozione del predittore. Ad esempio, con riferimento all’esempio 2, abbiamo già visto che il modello ANOVA è:</p>
+<pre><code>Yield ~ Genotype</code></pre>
+<p>mentre il modello nullo è:</p>
+<pre><code>Yield ~ 1</code></pre>
+<p>Rimuovere l’effetto del genotipo dal modello non può che indurre un incremento dei residui, dato che non si tiene più in considerazione che parte della differenza tra le osservazioni è dovuto al fatto che esse appartengono a genotipi diversi. Infatti, il codice sovrastante e sottostante mostrano che la devianza dei residui nel modello ad uns via è pari a:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>epsilon <span class="ot">&lt;-</span> <span class="fu">residuals</span>(mod)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">sum</span>(epsilon<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>RSS</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.1374</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>mentre la devianza dei residui del modello nullo (uguale alla devianza totale delle osservazioni), è pari a:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual deviance null model</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>RSS.null <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">residuals</span>(modnull)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>RSS.null</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.337867</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Insomma, rimuovendo l’effetto del genotipo, il modello è ‘peggiorato’, con un incremento dei residui quantificabile come differenza:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Contribution of genotype effect</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>SS_g <span class="ot">&lt;-</span> RSS.null <span class="sc">-</span> RSS</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>SS_g</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.200467</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>È evidente che più è grande questa differenza, più è grande l’effetto del genotipo. In altre parole, abbiamo appena scomposto la devianza totale delle osservazioni (<span class="math inline">\(SS_{tot} = 2.337867\)</span>) in due quote, una dovuta all’effetto causale del trattamento sperimentale (<span class="math inline">\(SS_g = 2.200\)</span>) e l’altra dovuta a tutti gli altri effetti ignoti di natura casuale (errore sperimentale: <span class="math inline">\(RSS = 2.337867\)</span>). Questa seconda quota costituisce una specie di ‘rumore di fondo’, contro il quale si può valutare il ‘segnale’, cioè l’intensità dell’effetto del trattamento sperimentale.</p>
+<p>Come abbiamo visto nel Capitolo 3, non possiamo confrontare direttamente <span class="math inline">\(SS_g\)</span> e <span class="math inline">\(RSS\)</span>, poiché queste due devianze hanno un diverso numero di gradi di libertà (DF); il numero di DF per il trattamento è uguale al numero dei suoi livelli meno uno (<span class="math inline">\(DF_g\)</span> = 3), mentre il numero di gradi di libertà per la devianza residua <span class="math inline">\(RSS\)</span> è <span class="math inline">\(p \times (k -1)\)</span>, dove <span class="math inline">\(p\)</span> è il numero di trattamenti e <span class="math inline">\(k\)</span> è il numero di repliche, supponendo che questo sia costante tra i trattamenti. Di conseguenza, <span class="math inline">\(DF_{RSS} = 4 \times (3 - 1) = 8\)</span>. Possiamo quindi calcolare le relative varianze (<em>Mean Squares</em>: MS) come segue:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Varianza del genotipo</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>MS_g <span class="ot">&lt;-</span> SS_g<span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>MS_g</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.7334889</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Varianza del residuo</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>RMS <span class="ot">&lt;-</span> RSS<span class="sc">/</span><span class="dv">8</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>RMS</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.017175</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Queste due varianze (trattamento e residuo) possono essere confrontate direttamente, utilizzando il cosiddetto rapporto F:</p>
+<p><span class="math display">\[F = \frac{MS_g}{RMS} = \frac{0.733}{0.017} = 43.12\]</span></p>
+<p>Il nome ‘rapporto F’ deriva da Fisher, che lo inventò. Mostra che la variabilità imposta dal trattamento sperimentale è più di 10 volte superiore alla variabilità dovuta al rumore di fondo (errore sperimentale), il che supporta l’idea che l’effetto causale del genotipo sulla resa sia molto rilevante. In termini generali, più alto è il rapporto F, più forte è il nesso causa-effetto. Possiamo riassumere questi risultati nella cosiddetta tabella ANOVA, che si ottiene facilmente utilizzando il metodo <code>anova()</code> con R (il rapporto F differisce per il diverso grado di approssimazione).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Yield</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="do">##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype   3 2.2005 0.73349  42.707 2.866e-05 ***</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals  8 0.1374 0.01717                      </span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Rispetto a quanto esposto in precedenza, la tabella ottenuta con R contiene solo un valore che non abbiamo ancora spiegato, il cosidetto P-level, che si trova all’estrema destra (P = 2.866e-05, cioè <span class="math inline">\(2.866 \times 10^{-5}\)</span>). Si tratta di un indicatore inferenziale che sarà illustrato nei Capitoli seguenti anche se possiamo anticipare che più il P-level è basso, più è forte l’evidenza scientifica contro l’ipotesi ‘nulla’ che il trattamento sperimentale (in questo caso il genotipo) non abbia avuto alcun effetto sulla variabile risposta (produzione della coltura). Ancora più in dettaglio, anticipiamo che, se il P-level è inferiore a 0.05 ed è accompagnato da uno o più asterischi, si può concludere che l’effetto del trattamento è <em>statisticamente significativo</em>.</p>
+</section>
+<section id="example-4.4-due-predittori-nominali" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="example-4.4-due-predittori-nominali"><span class="header-section-number">4.9</span> Example 4.4: due predittori nominali</h2>
+<p>Consideriamo lo stesso esperimento dell’esempio precedente ed immaginiamo che sia stato disegnato a blocchi randomizzati (la prima osservazione di ogni genotipo è stata presa nel primo blocco, la seconda nel secondo blocco e così via). In questo caso, il nesso causa-effetto e, di conseguenza, il modello interpretativo sono diversi, perché la resa dipende da due fattori sperimentali, ovvero il genotipo e il blocco. L’equazione è:</p>
+<p><span class="math display">\[ Y_{ij} = \mu + \gamma_i + \alpha_j + \varepsilon_{ij}\]</span></p>
+<p>dove <span class="math inline">\(Y_{ij}\)</span> è la resa parcellare nell’ <span class="math inline">\(i\)</span><sup>esimo</sup> blocco e per il <span class="math inline">\(j\)</span><sup>esimo</sup> genotipo, <span class="math inline">\(\mu\)</span> è l’intercetta, <span class="math inline">\(\gamma_i\)</span> è l’effetto del <span class="math inline">\(i\)</span><sup>esimo</sup> blocco, <span class="math inline">\(\alpha_j\)</span> è l’effetto del <span class="math inline">\(j\)</span><sup>esimo</sup> genotipo e <span class="math inline">\(\varepsilon\)</span> è l’errore residuo di ogni parcella, con deviazione standard pari a <span class="math inline">\(\sigma\)</span>. Come abbiamo fatto per il modello ANOVA ad una via, dobbiamo porre dei vincoli sui valori <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\gamma\)</span>, in modo che i parametri del modello siano stimabili; in particolare, imporremo che <span class="math inline">\(\alpha_1 = \gamma_1 = 0\)</span>, in modo che <span class="math inline">\(\mu\)</span> è la produzione nel primo blocco e col primo genotipo (in R, convenzionalmente il primo in ordine alfabetico). Abbiamo quindi 3 parametri da stimare per l’effetto del genotipo e 2 parametri da stimare per l’effetto del blocco, oltre a <span class="math inline">\(\sigma\)</span>.</p>
+<p>La stima dei parametri del modello può essere eseguita con R, aggiungendo l’effetto blocco all’equazione del modello:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"oat1LRCBD"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>dataset<span class="sc">$</span>Block <span class="ot">&lt;-</span> <span class="fu">factor</span>(dataset<span class="sc">$</span>Block)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dataset)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="do">##   Genotype Block Yield</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 1        A     1  4.50</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2        A     2  4.65</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 3        A     3  4.59</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 4        B     1  3.70</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 5        B     2  3.38</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 6        B     3  3.58</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype <span class="sc">+</span> Block, <span class="at">data =</span> dataset)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Le stime dei parametri sono:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alpha e beta</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)   GenotypeB   GenotypeC   GenotypeD      Block2      Block3 </span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  4.65916667 -1.02666667 -0.49666667  0.01666667 -0.17000000 -0.06750000</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sigma</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)<span class="sc">$</span>sigma</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.1145886</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>I residui e la loro devianza sono:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>epsilon <span class="ot">&lt;-</span> <span class="fu">residuals</span>(mod)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">sum</span>(epsilon<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>RSS</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.07878333</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Come previsto, i residui di questo modello sono più piccoli e quindi hanno una devianza minore di quelli del modello precedente, senza l’effetto del blocco. La rimozione dell’effetto del blocco fa si che la devianza del residuo aumenti di una quota pari a 0.059, che misura appunto l’effetto del blocco (devianza del blocco: SS<sub>b</sub>). Se consideriamo invece un modello ridotto, contenente solo il blocco, ma non il genotipo (quindi rimuoviamo dal modello l’effetto del genotipo), possiamo misurare la devianza del fattore sperimentale rimosso, che, coerentemente con quanto visto in precedenza, ammonta a 2.200.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rimozione dei blocchi</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype, <span class="at">data =</span> dataset) <span class="co"># Stesso modello di prima</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">deviance</span>(mod2)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.1374</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>SS_b <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod2) <span class="sc">-</span> RSS</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>SS_b</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.05861667</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Rimozione dei genotipi</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>mod3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Block, <span class="at">data =</span> dataset)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="fu">deviance</span>(mod3)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.27925</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>SS_g <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod3) <span class="sc">-</span> RSS</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>SS_g</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.200467</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Il numero di gradi di libertà è, rispettivamente, 11 per la devianza totale (<span class="math inline">\(SS_{tot} = n - 1 = 12 - 1 = 11\)</span>), 3 per i genotipi (numero dei genotipi meno 1) e 2 per i blocchi (numero dei blocchi meno 1); per sottrazione, arriviamo a 6 DF per la devianza del residuo. A questo punto possiamo calcolare le varianze dei blocchi, dei genotipi e del residuo, che è attribuibile a tutte le sorgenti di variabilità casuali non controllate (errore sperimentale o rumore di fondo). Pssiamo quindi calcolare due rapporti F, uno per l’effetto del blocco e uno per l’effetto del genotipo; per comodità, possiamo saltare tutti i calcoli manuali e arrivare direttamente alla tabella ANOVA finale usando il metodo ‘anova()’ in R.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Yield</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="do">##           Df  Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype   3 2.20047 0.73349 55.8612 8.916e-05 ***</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Block      2 0.05862 0.02931  2.2321    0.1885    </span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals  6 0.07878 0.01313                      </span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>I rapporti F suggeriscono che l’effetto causale del genotipo è elevato e significativo (presenza di asterischi), mentre l’effetto blocco non è significativo, perché il P-level è maggiore di 0.05.</p>
+</section>
+<section id="example-4.5-due-predittori-nominali-con-interazione" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="example-4.5-due-predittori-nominali-con-interazione"><span class="header-section-number">4.10</span> Example 4.5: due predittori nominali con interazione</h2>
+<p>Immaginiamo che l’esperimento presentato nell’Esempio 1 sia stato ripetuto in un’altra località, utilizzando sempre un disegno completamente randomizzato. I dati osservati sono riportati nella Tabella <a href="#tbl-tabName4b4" class="quarto-xref">Table&nbsp;<span>4.2</span></a>.</p>
+<div class="cell">
+<div id="tbl-tabName4b4" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tabName4b4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.2: Risultati di un esperimento di campo a randomizzazione completa per il confronto di quattro genotipi di avena (A, B, C and D), ripetuto in due località.
+</figcaption>
+<div aria-describedby="tbl-tabName4b4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Genotype</th>
+<th style="text-align: right;">Yield</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">4.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">4.65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">4.59</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">3.70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">3.38</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">3.58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">4.17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">3.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">4.14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">4.76</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">4.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC1</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">4.55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">5.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">5.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">4.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">5.80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">7.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">5.80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">4.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">4.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">4.80</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">5.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">6.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LOC2</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">5.60</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>In questo esperimento abbiamo due fattori incrociati, ma, a differenza dell’esempio precedente, abbiamo tre repliche per ciascuna delle otto combinazioni tra i livelli di genotipo e località. In questo modo, oltre agli effetti di genotipo e località, possiamo anche valutare la cosiddetta <strong>interazione</strong> tra i due fattori sperimentali, che è un’informazione molto importante.</p>
+</section>
+<section id="interazione-tra-fattori-sperimentali" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="interazione-tra-fattori-sperimentali"><span class="header-section-number">4.11</span> Interazione tra fattori sperimentali</h2>
+<p>Per comprendere meglio il concetto di interazione, osserviamo la Figura <a href="#fig-figName4b5" class="quarto-xref"><span>4.1</span></a>, dove sono mostrate le medie di quattro trattamenti, ottenuti dalla combinazione fattoriale di un trattamento A con due livelli (A1 e A2) e di un trattamento B con altrettanti livelli (B1 e B2). Nel grafico, ogni combinazione è rappresentata da un simbolo.</p>
+<p>Concentriamoci un attimo sul grafico di sinistra e consideriamo la prima combinazione in ordine alfabetico (A1B1): per questa, la media è pari a 10. Se passiamo da A1 ad A2, fermo restando B1, l’incremento è + 4. Se invece passiamo da B1 a B2, fermo restando A1, l’incremento è + 5. Si deduce che, se gli effetti fossero puramente additivi, la media di A2B2 dovrebbe essere pari a 10 + 4 + 5 = 19, in quanto vengono modificati entrambi i livelli, da A1 ad A2 e da B1 a B2. Vediamo che l’osservazione conferma questa aspettativa di additività degli effetti e di mancanza di interazione.</p>
+<p>Al contrario, nel grafico centrale vediamo che il risultato osservato di A2B2 non può essere ottenuto per semplice somma di effetti, perché, a fronte di un risultato atteso pari a 19 otteniamo invece 16. Evidentemente, vi è qualcosa in questa combinazione che altera l’effetto congiunto di A e B. Questo qualcosa può essere quantificato con il valore -3, così che la media A2B2 è pari a 10 + 4 + 5 - 3 = 16. Il valore -3 rappresenta la mancanza di additività o interazione; in questo caso si tratta di <strong>interazione semplice</strong>, in quanto la graduatoria dei trattamenti non cambia: A2 è sempre meglio di A1 e B2 è sempre meglio di B1, anche se gli effetti non sono quelli previsti.</p>
+<p>Nel grafico di sinistra la situazione è analoga, ma più estrema: l’effetto dell’interazione è -10 e comporta un’inversione della graduatoria, per cui parliamo di <strong>interazione cross-over</strong>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName4b5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName4b5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04-CausaEffetto_files/figure-html/fig-figName4b5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName4b5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Esempi di interazione tra fattori sperimentali
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Perchè siamo così interessati all’interazione e, in particolare, all’interazione cross-over? Esaminiamo più da vicino i valori nel grafico a destra in Figura <a href="#fig-figName4b5" class="quarto-xref"><span>4.1</span></a>, riportandoli nella tabella <a href="#tbl-tabName4b6" class="quarto-xref">Table&nbsp;<span>4.3</span></a>, insieme alle medie dei quattro livelli A1, A2, B1 e B2. Le medie delle combinazioni sono dette <strong>medie di cella</strong>, mentre le medie dei livelli principali sono dette <strong>medie marginali</strong>, perché si trovano al margine della tabella.</p>
+<div id="tbl-tabName4b6" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tabName4b6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.3: Interazione cross-over tra fattori sperimentali
+</figcaption>
+<div aria-describedby="tbl-tabName4b6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">B1</th>
+<th style="text-align: right;">B2</th>
+<th style="text-align: right;">Media</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A1</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">12.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A2</td>
+<td style="text-align: right;">14.0</td>
+<td style="text-align: right;">9.0</td>
+<td style="text-align: right;">12.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Media</td>
+<td style="text-align: right;">12.5</td>
+<td style="text-align: right;">11.5</td>
+<td style="text-align: right;">12.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Se guardassimo solo le medie marginali, avremmo l’impressione sbagliata che il fattore A, da solo, non ha alcun effetto (le medie A1 e A2 sono uguali) e che il fattore B ha solo un piccolissimo effetto. La realtà è invece che entrambi i fattori hanno un grande effetto, ma la presenza dell’interazione lo nasconde completamente, impedendoci di raggiungere conclusioni attendibili guardando ai due fattori, uno separatamente dall’altro.</p>
+</section>
+<section id="example-4.5-segue" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="example-4.5-segue"><span class="header-section-number">4.12</span> Example 4.5 (segue)</h2>
+<p>Tornando al nostro esempio, è chiaro che le produzioni osservate sono determinate dall’effetto di:</p>
+<ol type="1">
+<li>genotipo</li>
+<li>località</li>
+<li>interazione ‘genotipo <span class="math inline">\(\times\)</span> località’</li>
+</ol>
+<p>Il modello lineare può essere così definito:</p>
+<p><span class="math display">\[Y_{ij} = \mu + \alpha_i + \beta_j + \alpha\beta_{ij} + \varepsilon_{ij}\]</span></p>
+<p>dove <span class="math inline">\(\mu\)</span> è l’intercetta (produzione del primo genotipo nella prima località, sotto il vincolo che <span class="math inline">\(\alpha_1 = \beta_1 = 0\)</span>), <span class="math inline">\(\alpha_i\)</span> è la differenza tra il genotipo <span class="math inline">\(i\)</span><sup>esimo</sup> ed il primo in ordine alfabetico, <span class="math inline">\(\beta_j\)</span> è la differenza tra la località <span class="math inline">\(j\)</span><sup>esima</sup> e la prima in ordine alfabetico e <span class="math inline">\(\alpha\beta_{ij}\)</span> è l’interazione tra il genotipo <span class="math inline">\(i\)</span><sup>esimo</sup> e la località <span class="math inline">\(j\)</span><sup>esima</sup> (sotto i vincoli che <span class="math inline">\(\alpha\beta_{1.} = \alpha\beta_{.1} = 0\)</span>). I residui sono quantificati dai valori <span class="math inline">\(\varepsilon_{ij}\)</span>, con media uguale a 0 e deviazione standard uguale a <span class="math inline">\(\sigma\)</span>.</p>
+<p>Per stimare i parametri del modello, possiamo utilizzare R, considerando che il termine di interazione viene codificato con l’operatore ‘:’, ad esempio:</p>
+<pre><code>Y ~ A + B + A:B</code></pre>
+<p>che può essere abbreviato come:</p>
+<pre><code>Y ~ A * B</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype <span class="sc">*</span> Location, <span class="at">data =</span> dataset)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Stima dei parametri</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="do">##            (Intercept)              GenotypeB              GenotypeC </span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="do">##            4.580000000           -1.026666667           -0.496666667 </span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="do">##              GenotypeD           LocationLOC2 GenotypeB:LocationLOC2 </span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="do">##            0.016666667            0.420000000            2.260000000 </span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="do">## GenotypeC:LocationLOC2 GenotypeD:LocationLOC2 </span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="do">##           -0.003333333            0.583333333</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Sigma</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)<span class="sc">$</span>sigma</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.4598958</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>L’analisi della varianza viene eseguita rimuovendo dal modello i tre termini uno alla volta, ma rispettando un criterio di marginalità, che tenga conto del fatto che l’interazione viene dopo che sono stati inseriti gli effetti principali che la costituiscono e, quindi, dovrebbe essere omessa per prima e non dovrebbe essere lasciata nel modello, quando uno degli effetti principali coinvolti viene rimosso. Lo schema è illustrato nel box seguente.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># rimozione dell'interazione</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>modred <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype <span class="sc">+</span> Location, <span class="at">data =</span> dataset)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>SSint <span class="ot">&lt;-</span> <span class="fu">deviance</span>(modred) <span class="sc">-</span> RSS</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>SSint</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5.147233</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># rimozione del genotipo E dell'interazione</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>modred <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Location, <span class="at">data =</span> dataset)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>SSloc <span class="ot">&lt;-</span> <span class="fu">deviance</span>(modred) <span class="sc">-</span> RSS <span class="sc">-</span> SSint</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>SSloc</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.113233</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># rimozione della località E dell'interazione</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>modred <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype, <span class="at">data =</span> dataset)</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>SSgen <span class="ot">&lt;-</span> <span class="fu">deviance</span>(modred) <span class="sc">-</span> RSS <span class="sc">-</span> SSint</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>SSgen</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7.6614</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Anche in questo esempio, abbiamo suddiviso la variabilità totale dei dati in quattro termini, tre dei quali sono correlati all’effetto causale, mentre il quarto è correlato a tutti gli altri effetti casuali. In pratica, i calcoli manuali non sono necessari, perchè possiamo utilizzare la funzione ‘anova()’ in R. Nella tabella sottostante, l’unico elemento di cui non abbiamo parlato finora è il numero di gradi di libertà per l’interazione, che è <strong>uguale al prodotto del numero di DF per gli effetti principali</strong>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Yield</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="do">##                   Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype           3 2.1132  0.7044  3.3305  0.046228 *  </span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Location           1 7.6614  7.6614 36.2234 1.788e-05 ***</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype:Location  3 5.1472  1.7157  8.1121  0.001646 ** </span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals         16 3.3841  0.2115                      </span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Vediamo che tutti gli effetti in gioco (genotipo, località ed interazione) sono significativi ed hanno quindi un nesso causa-effetto rilevante sulla produzione della coltura. La presnza di un’interazione significativa mostra che, probabilmente, la valutazione dei genotipi performanti non è comune alle due località anche se questa affermazione richiede analisi successive che vedremo in seguito.</p>
+</section>
+<section id="dati-non-bilanciati" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="dati-non-bilanciati"><span class="header-section-number">4.13</span> Dati non bilanciati</h2>
+<p>Prima di concludere questo capitolo, è necessario sottolineare che esistono diversi metodi per calcolare la somma dei quadrati per gli effetti del modello, che non portano, necessariamente, agli stessi risultati. In particolare, questo aspetto va attentamente considerato quando i dati non sono ‘bilanciati’, ovvero quando il numero di repliche è diverso per diversi trattamenti. Il metodo di calcolo che abbiamo proposto in questo Capitolo è basato sulle seguenti operazioni:</p>
+<ol type="1">
+<li>fitting del modello completo;</li>
+<li>rimozione dell’effetto in studio e fitting del modello ridotto;</li>
+<li>calcolo della devianza dell’effetto rimosso per differenza tra le devianza del residuo del modello ridotto e quella del modello completo.</li>
+</ol>
+<p>Questo metodo di calcolo produce le cosiddette <em>somme dei quadrati marginali</em> e non è uguale al metodo utilizzato nella funzione <code>anova()</code> in R, che produce invece le <em>somma dei quadrati sequenziali</em>. Non ci siamo accorti della differenza perché i due metodi danno gli stessi risultati quando i dati sono ‘bilanciati’, ma quando i dati non lo sono, i due metodi divergono<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Quando i dati sono sbilanciati, le devianze prodotte con il metodo sequenziale diventano dipendenti dall’ordine con cui abbiamo inserito gli effetti nel modello, il che non è accettabile. Per questo, le <em>somme dei quadrati marginali</em> sono preferibili e possono essere ottenute con la funzione <code>Anova()</code> (si noti la lettera maiuscola all’inizio) nel pacchetto <code>car</code>, come mostrato nel seguente esempio.</p>
+</section>
+<section id="esempio-4.6-un-crbd-con-un-valore-mancante" class="level2" data-number="4.14">
+<h2 data-number="4.14" class="anchored" data-anchor-id="esempio-4.6-un-crbd-con-un-valore-mancante"><span class="header-section-number">4.14</span> Esempio 4.6: un CRBD con un valore mancante</h2>
+<p>Consideriamo un esperimento per valutare la selettività di un erbicida post-emergenza per il controllo delle infestanti nel mais, in funzione del momento dell’intervento (stadio di 2, 4, 6 e 8 foglie, più un controllo non trattato e diserbato manualmente). Il disegno sperimentale era a blocchi randomizzati, con un dato mancante rappresentato come ‘NA’; i dati sono riportati nel dataset <code>Timings_77490</code> nel package <code>statforbiology</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"Timings_77490"</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>dataset<span class="sc">$</span>Block <span class="ot">&lt;-</span> <span class="fu">factor</span>(dataset<span class="sc">$</span>Block)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dataset)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="do">##   Plot   Timing Block Height_30 Weight_30 FinalYield</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    3 2-Leaves     1    192.50     81.70   96.38328</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    7 2-Leaves     2    200.00        NA  135.29526</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 3   15 2-Leaves     3    202.50     89.94  141.77501</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 4   18 2-Leaves     4    213.75     81.81  132.06582</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    2 4-Leaves     1    183.75     65.78  129.86594</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 6   10 4-Leaves     2    197.25     72.36  140.52353</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Se si parametrizza un modello ANOVA e si produce una tabella riassuntiva utilizzando la funzione <code>anova()</code>, i risultati cambiano a seconda dell’ordine in cui i due effetti (‘Timing’ e ‘Block’) sono stati inseriti nel modello. Poiché non abbiamo una logica oggettiva per decidere quale effetto debba essere inserito per primo, le conclusioni ottenute con la funzione <code>anova()</code> debbono essere considerate puramente arbitrarie, cosa che non può essere considerata accettabile.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adattamento di due modelli con diverso ordinamento degli effetti</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight_30 <span class="sc">~</span> Timing <span class="sc">+</span> Block, <span class="at">data =</span> dataset)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight_30 <span class="sc">~</span> Block <span class="sc">+</span> Timing, <span class="at">data =</span> dataset)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Partizionamento della varianza</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod1)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Weight_30</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="do">##           Df Sum Sq Mean Sq F value   Pr(&gt;F)   </span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Timing     4 1790.7  447.67  9.3601 0.001511 **</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Block      3  230.5   76.83  1.6065 0.244040   </span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals 11  526.1   47.83                    </span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod2)</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Weight_30</span></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="do">##           Df  Sum Sq Mean Sq F value   Pr(&gt;F)   </span></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Block      3  169.46   56.49  1.1811 0.361390   </span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Timing     4 1851.72  462.93  9.6792 0.001318 **</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals 11  526.10   47.83                    </span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Se invece utilizziamo il metodo ‘manuale’, basato sulla rimozione dei due predittori, uno alla volta, notiamo che le somme dei quadrati degli effetti sono le stesse, indipendentemente dall’ordine con cui i due effetti sono stati rimossi dal modello completo. Questi risultati possono essere riprodotti utilizzando la funzione <code>Anova()</code> nel pacchetto <code>car</code> e impostando l’argomento <code>type = 2</code>. Ulteriori informazioni sui diversi tipi di somme di quadrati possono essere trovate in <span class="citation" data-cites="langsrud_2003">Langsrud (<a href="references.html#ref-langsrud_2003" role="doc-biblioref">2003</a>)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rimozione dei predittori uno alla volta (modello 1)</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod1)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>mod1.red <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight_30 <span class="sc">~</span> Block,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> dataset) <span class="co"># Rimozione del blocco</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>SS_g <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod1.red) <span class="sc">-</span> RSS</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>SS_g</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1851.715</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>mod1.red2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight_30 <span class="sc">~</span> Timing,</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> dataset) <span class="co"># Rimozione del genotipo</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>SS_b <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod1.red2) <span class="sc">-</span> RSS</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>SS_b</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 230.5048</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Rimozione dei predittori uno alla volta (modello 2)</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod2)</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>mod2.red <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight_30 <span class="sc">~</span> Block,</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> dataset) <span class="co"># Rimozione del genotipo</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>SS_g <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod2.red) <span class="sc">-</span> RSS</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>SS_g</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1851.715</span></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>mod2.red2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight_30 <span class="sc">~</span> Timing,</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> dataset) <span class="co"># Rimozione del blocco</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>SS_b <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod2.red2) <span class="sc">-</span> RSS</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>SS_b</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 230.5048</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilizzo del metodo Anova() nel pacchetto 'car'</span></span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a><span class="fu">Anova</span>(mod1, <span class="at">type =</span> <span class="dv">2</span>)</span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Anova Table (Type II tests)</span></span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Weight_30</span></span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a><span class="do">##           Sum Sq Df F value   Pr(&gt;F)   </span></span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a><span class="do">## Timing    1851.7  4  9.6792 0.001318 **</span></span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Block      230.5  3  1.6065 0.244040   </span></span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals  526.1 11                    </span></span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a><span class="fu">Anova</span>(mod2, <span class="at">type =</span> <span class="dv">2</span>)</span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Anova Table (Type II tests)</span></span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Weight_30</span></span>
+<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a><span class="do">##           Sum Sq Df F value   Pr(&gt;F)   </span></span>
+<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a><span class="do">## Block      230.5  3  1.6065 0.244040   </span></span>
+<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a><span class="do">## Timing    1851.7  4  9.6792 0.001318 **</span></span>
+<span id="cb32-46"><a href="#cb32-46" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals  526.1 11                    </span></span>
+<span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb32-48"><a href="#cb32-48" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="conclusioni" class="level2" data-number="4.15">
+<h2 data-number="4.15" class="anchored" data-anchor-id="conclusioni"><span class="header-section-number">4.15</span> Conclusioni</h2>
+<p>In questo capitolo abbiamo presentato un metodo per valutare se un certo set di dati ottenuto da un esperimento controllato può ragionevolmente supportare l’esistenza di relazioni causa-effetto tra le variabili in esame.</p>
+<p>Questo metodo consiste in:</p>
+<ol type="1">
+<li>adattamento di un modello causa-effetto ragionevole;</li>
+<li>impiego dell’analisi della varianza (ANOVA) per ottenere le varianze di tutti gli effetti causali in esame e la varianza del residuo;</li>
+<li>calcolo del/dei rapporto/i tra la/e varianza/e di ogni effetto causale con la varianza del residuo (rapporto F). Più alto è il rapporto F, più forte è la relazione causa-effetto.</li>
+</ol>
+<p>Per l’analisi della varianza con R, sono disponibili due funzioni: <code>anova()</code> ed <code>Anova()</code> e quest’ultima si trova nel package <code>car</code>. Queste due funzioni forniscono gli stessi risultati con dati bilanciati, ma la seconda è decisamente consigliabile quando i dati non sono bilanciati.</p>
+</section>
+<section id="domande-ed-esercizi" class="level2" data-number="4.16">
+<h2 data-number="4.16" class="anchored" data-anchor-id="domande-ed-esercizi"><span class="header-section-number">4.16</span> Domande ed esercizi</h2>
+<ol type="1">
+<li>Qual è la differenza tra variazione congiunta e causalità?</li>
+<li>In valore, cosa intendiamo quando diciamo “effetto del trattamento”?</li>
+<li>Descrivi in poche frasi cos’è l’ANOVA e perché viene utilizzata.</li>
+<li>Qual è la definizione di “interazione tra due fattori sperimentali”? Spiega brevemente.</li>
+<li>Considera il file Excel “rimsulfuron.csv” da <a href="https://www.casaonofri.it/_datasets/rimsulfuron.csv" class="uri">https://www.casaonofri.it/_datasets/rimsulfuron.csv</a> (puoi scaricarlo o leggerlo direttamente dal repository web). Questo è un set di dati relativo a un esperimento sul campo per confrontare 14 erbicidi e due controlli non trattati, con 4 repliche per trattamento. L’esperimento è stato progettato in blocchi randomizzati. Esegui l’ANOVA con R e valuta la rilevanza dell’effetto erbicida.</li>
+<li>Hai eseguito un esperimento con un layout completamente randomizzato con due repliche, per confrontare due genotipi di mais (G1 e G2) con due diverse strategie di fertilizzazione (F1 e F2). Calcola i quadrati medi e i rapporti F per il genotipo, gli effetti della fertilizzazione e per la loro interazione. Gli effetti causali sono rilevanti? Il set di dati è mostrato di seguito.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Genotype</th>
+<th style="text-align: left;">Fertiliser</th>
+<th style="text-align: right;">Yield</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">G1</td>
+<td style="text-align: left;">F1</td>
+<td style="text-align: right;">11.292934</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G1</td>
+<td style="text-align: left;">F1</td>
+<td style="text-align: right;">12.777429</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G1</td>
+<td style="text-align: left;">F2</td>
+<td style="text-align: right;">12.584441</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G1</td>
+<td style="text-align: left;">F2</td>
+<td style="text-align: right;">9.154302</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G2</td>
+<td style="text-align: left;">F1</td>
+<td style="text-align: right;">14.929125</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G2</td>
+<td style="text-align: left;">F1</td>
+<td style="text-align: right;">15.006056</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G2</td>
+<td style="text-align: left;">F2</td>
+<td style="text-align: right;">12.925260</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G2</td>
+<td style="text-align: left;">F2</td>
+<td style="text-align: right;">12.953368</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-aldrich_1995" class="csl-entry" role="listitem">
+<span class="smallcaps">Aldrich, J</span> (1995) Correlations genuine and spuruous in <span>Pearson</span> and <span>Yule</span>. <em>Statistical Science</em> <strong>10</strong>, 364–376
+</div>
+<div id="ref-faraway_2025" class="csl-entry" role="listitem">
+<span class="smallcaps">Faraway, JJ</span> (2025) <em>Linear <span>Models</span> with <span>R</span></em>3rd Edition. CRC Press Inc., USA
+</div>
+<div id="ref-gavassorita_2024" class="csl-entry" role="listitem">
+<span class="smallcaps">Gavasso-Rita, YL, SM Papalexiou, Y Li, A Elshorbagy, Z Li, C Schuster‐Wallace</span> (2024) <a href="https://doi.org/10.1002/fes3.503">Crop models and their use in assessing crop production and food security: <span>A</span> review</a>. <em>Food and Energy Security</em> <strong>13</strong>, e503
+</div>
+<div id="ref-gherman_2023" class="csl-entry" role="listitem">
+<span class="smallcaps">Gherman, ZSAP, Ioana M. AND Abdallah</span> (2023) <a href="https://doi.org/10.1371/journal.pcbi.1010988">Bridging the gap between mechanistic biological models and machine learning surrogates</a>. <em>PLOS Computational Biology</em> <strong>19</strong>, 1–16
+</div>
+<div id="ref-langsrud_2003" class="csl-entry" role="listitem">
+<span class="smallcaps">Langsrud, O</span> (2003) <span>ANOVA</span> for unbalanced data: <span>Use</span> <span>Type</span> <span>II</span> instead of <span>Type</span> <span>III</span> sums of squares. <em>Statistics and Computing</em> <strong>13</strong>, 163–167
+</div>
+<div id="ref-pasley_2023" class="csl-entry" role="listitem">
+<span class="smallcaps">Pasley, H, H Brown, D Holzworth, J Whish, L Bell, N Huth</span> (2023) <a href="https://doi.org/10.1007/s13593-022-00854-9">How to build a crop model. <span>A</span> review</a>. <em>Agronomy for Sustainable Development</em> <strong>43</strong>, 2
+</div>
+<div id="ref-ratkowky_1990" class="csl-entry" role="listitem">
+<span class="smallcaps">Ratkowsky, DA</span> (1990) <em>Handbook of nonlinear regression models</em>. <span>Marcel Dekker Inc.</span>, USA
+</div>
+<div id="ref-shadish_2002" class="csl-entry" role="listitem">
+<span class="smallcaps">Shadish, WR, TD Cook, DT Campbell</span> (2002) <em>Experimental and quasi-experimental designs for generalized causal inference</em>. 2nd ed. Cengage Learning
+</div>
+<div id="ref-zaniletti_2023" class="csl-entry" role="listitem">
+<span class="smallcaps">Zaniletti, I, DR Larson, DG Lewallen, DJ Berry, H Maradit Kremers</span> (2023) <a href="https://doi.org/10.1016/j.arth.2022.11.019">How to <span>Distinguish</span> <span>Correlation</span> <span>From</span> <span>Causation</span> in <span>Orthopaedic</span> <span>Research</span></a>. <em>The Journal of Arthroplasty</em> <strong>38</strong>, 634–637
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Le somme dei quadrati sequenziali consistono nel (1) partire dal modello nullo e determinare la devianza del residuo, (2) inserire gli effetti sequenzialmente nel modello, (3) per ogni effetto inserito, valutare il decremento della devianza del residuo, rispetto al modello immediatamente precedente nella sequenza<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-StatisticaDescrittiva.html" class="pagination-link" aria-label="Descrivere le osservazioni sperimentali">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

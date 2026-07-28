@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Scienza, dati ed esperimenti – Metodologia sperimentale per le scienze agrarie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-ProgettoRicerca.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3220129d1b0bfa0f6b9dc9ac11d00f8b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-introBiometria.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Metodologia sperimentale per le scienze agrarie</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Premessa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introBiometria.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ProgettoRicerca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-StatisticaDescrittiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-CausaEffetto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#dati-errori-e-verità" id="toc-dati-errori-e-verità" class="nav-link active" data-scroll-target="#dati-errori-e-verità"><span class="header-section-number">1.1</span> Dati, errori e verità</a></li>
+  <li><a href="#il-disegno-degli-esperimenti" id="toc-il-disegno-degli-esperimenti" class="nav-link" data-scroll-target="#il-disegno-degli-esperimenti"><span class="header-section-number">1.2</span> Il disegno degli esperimenti</a>
+  <ul class="collapse">
+  <li><a href="#l-ipotesi-scientifica" id="toc-l-ipotesi-scientifica" class="nav-link" data-scroll-target="#l-ipotesi-scientifica"><span class="header-section-number">1.2.1</span> L’ ipotesi scientifica</a></li>
+  <li><a href="#i-trattamenti-sperimentali" id="toc-i-trattamenti-sperimentali" class="nav-link" data-scroll-target="#i-trattamenti-sperimentali"><span class="header-section-number">1.2.2</span> I trattamenti sperimentali</a></li>
+  <li><a href="#le-unità-sperimentali" id="toc-le-unità-sperimentali" class="nav-link" data-scroll-target="#le-unità-sperimentali"><span class="header-section-number">1.2.3</span> Le unità sperimentali</a></li>
+  <li><a href="#lallocazione-dei-trattamenti" id="toc-lallocazione-dei-trattamenti" class="nav-link" data-scroll-target="#lallocazione-dei-trattamenti"><span class="header-section-number">1.2.4</span> L’allocazione dei trattamenti</a></li>
+  <li><a href="#le-variabili-sperimentali" id="toc-le-variabili-sperimentali" class="nav-link" data-scroll-target="#le-variabili-sperimentali"><span class="header-section-number">1.2.5</span> Le variabili sperimentali</a></li>
+  </ul></li>
+  <li><a href="#esperimenti-validi-ed-invalidi" id="toc-esperimenti-validi-ed-invalidi" class="nav-link" data-scroll-target="#esperimenti-validi-ed-invalidi"><span class="header-section-number">1.3</span> Esperimenti validi ed invalidi</a>
+  <ul class="collapse">
+  <li><a href="#controllo-degli-errori" id="toc-controllo-degli-errori" class="nav-link" data-scroll-target="#controllo-degli-errori"><span class="header-section-number">1.3.1</span> Controllo degli errori</a></li>
+  <li><a href="#replicazione" id="toc-replicazione" class="nav-link" data-scroll-target="#replicazione"><span class="header-section-number">1.3.2</span> Replicazione</a></li>
+  <li><a href="#randomizzazione" id="toc-randomizzazione" class="nav-link" data-scroll-target="#randomizzazione"><span class="header-section-number">1.3.3</span> Randomizzazione</a></li>
+  <li><a href="#esperimenti-confermativi" id="toc-esperimenti-confermativi" class="nav-link" data-scroll-target="#esperimenti-confermativi"><span class="header-section-number">1.3.4</span> Esperimenti confermativi</a></li>
+  <li><a href="#esperimenti-invalidi" id="toc-esperimenti-invalidi" class="nav-link" data-scroll-target="#esperimenti-invalidi"><span class="header-section-number">1.3.5</span> Esperimenti invalidi</a></li>
+  </ul></li>
+  <li><a href="#esercizi-e-domande" id="toc-esercizi-e-domande" class="nav-link" data-scroll-target="#esercizi-e-domande"><span class="header-section-number">1.4</span> Esercizi e domande</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>A witty saying proves nothing (Voltaire)</em></p>
+<p>In una società caratterizzata dal sovraccarico cognitivo, è chiedersi (e chiedere) che cosa sia la scienza, cioè cosa distingua le informazioni scientifiche da tutto quello che invece non è altro che pura opinione, magari autorevole, ma senza il sigillo dell’oggettività.</p>
+<p>Per quanto affascinante possa sembrare l’idea del ricercatore che con un’improvviso colpo di genio elabora una stupefacente teoria, dovrebbe essere chiaro che l’intuizione, per quanto geniale ed innovativa, è solo un possibile punto di partenza, che non necessariamente prelude al progresso scientifico. In generale, almeno in ambito biologico, nessuna teoria acquisisce automaticamente valenza scientifica, ma rimane solo nell’ambito delle opinioni, indipendentemente dal fatto che nasca da un colpo di genio, oppure da un paziente e meticoloso lavoro di analisi intellettuale, che magari si concretizza in un modello matematico altamente elegante e complesso.</p>
+<p>Che cosa è che permette ad una prova scientifica di uscire dall’ambito delle opinioni legate a divergenze di cultura, percezione e/o credenze individuali, per divenire, al contrario, oggettiva e universalmente valida? Che cosa è che distingue la verità scientifica da altre verità di natura metafisica, religiosa o pseudoscientifica?</p>
+<p>Il metodo attraverso il quale vengono prodotte prove scientifiche (metodo scientifico, appunto) viene comunemente fatto risalire a Galileo Galilei (1564-1642) e può essere riassunto in una sequenza di ‘azioni’ (Fig. <a href="#fig-figName11" class="quarto-xref"><span>1.1</span></a>).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="_images/MSAMap_ita.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Il metodo scientifico Galileiano
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Due sono gli aspetti da notare:</p>
+<ol type="1">
+<li>il ruolo fondamentale dell’esperimento scientifico, che produce dati a supporto di ipotesi pre-esistenti;</li>
+<li>lo sviluppo di teorie basate sui dati, che rimangono valide fino a che non si raccolgono altri dati che le confutano, facendo nascere nuove ipotesi che possono portare allo sviluppo di nuove teorie, più affidabili o più semplici.</li>
+</ol>
+<section id="dati-errori-e-verità" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="dati-errori-e-verità"><span class="header-section-number">1.1</span> Dati, errori e verità</h2>
+<p>Il fatto che non possa esistere prova scientifica senza dati dovrebbe essere già chiaro a tutti; un famoso aforisma recita: “In God we trust, all the others bring data”, ed è attribuito all’ingegnere e statistico americano W. Edwards Deming (1900-1993), anche se pare che egli, in realtà, non l’abbia mai pronunciato <span class="citation" data-cites="hastie_2009">Hastie et al. (<a href="references.html#ref-hastie_2009" role="doc-biblioref">2009</a>)</span>. Quello che viene, talvolt, dimenticato è che non basta avere dati, bisogna anche che i dati siano ‘buoni’, cioè che siano in grado di cogliere gli effetti che vogliamo studiare, senza introdurre distorsioni di sorta.</p>
+<p>Purtroppo i dati possono essere di cattiva qualità; ad esempio, potrebbero indicare che una pianta è alta 1,85 m quando in realtà non lo è, oppure potrebbero suggerire che un seme è dormiente quando in realtà è morto. La produzione di dati sbagliati può essere dovuta, ad esempio, alle metodiche impiegate per misurare, contare o registrare i fenomeni, che non sono adeguate agli scopi del lavoro, il che è costituisce un problema relativamente frequente nelle scienze sociali, dove può impattare in modo anche ‘drammatico’ sulle decisioni politiche o economiche <span class="citation" data-cites="sturge_2022">Sturge (<a href="references.html#ref-sturge_2022" role="doc-biblioref">2022</a>)</span>. Furtunatamente, la ricerca agraria o, in genere, biologica, il più delle volte (ma non sempre…) impiega metodi d’indagine rigorosi e ben definiti da appositi protocolli, sui quali vi è stato largo consenso nella comunità scientifica. Sfortunatamente, però, i ricercatori devono comunque gestire il cosiddetto <strong>errore sperimentale</strong>, una componente intrinseca ed inevitabile di ogni esperimento sul campo. La parola “errore”, non deve trarre in inganno: non significa necessariamente che qualcuno stia facendo o abbia fatto qualcosa di sbagliato; al contrario, l’errore sperimentale si genera nonostante l’applicazione di un protocollo di ricerca rigoroso e corretto, senza alcuna negligenza da parte di chichessia.</p>
+<p>Ci sono tre fondamentali fonti di errore sperimentale:</p>
+<ol type="1">
+<li>Errori di misura</li>
+<li>Errori di campionamento</li>
+</ol>
+<p>Gli errori di misura sono legati allo strumento e dipendono dall’errata taratura, dall’impiego di un protocollo sbagliato, da inesattezze strumentali, da errori nella trascrizione dei risultati oppure dall’irregolarità dell’oggetto da misurare. Ad esempio, pensate alla misurazione dell’altezza di una pianta di mais: è facile riscontrare difficoltà legate, ad esempio, all’individuazione del punto esatto in cui inizia il culmo e del punto esatto dove termina l’infiorescenza apicale.</p>
+<p>Oltre agli errori di misurazione a livello del singolo “oggetto”, esistono altre fonti di incertezza, meno evidenti, legate al fatto che, il più delle volte, non studiamo un singolo oggetto (ad esempio, una pianta) ma un gruppo di oggetti (ad esempio, una coltura) e, pertanto, dobbiamo effettuare misurazioni multiple.</p>
+<p>A parte gli errori di misura a livello di singolo ‘oggetto’, ci sono anche altre sorgenti di errore meno evidenti e legate al fatto che, nel lavoro sperimentale, non studiamo un singolo soggetto, ma un gruppo più o meno numeroso. Ad esempio, se dobbiamo misurare l’effetto di un erbicida, non possiamo farlo trattando una sola pianta, ma dobbiamo ripetere le misure su un gruppo di piante; anche se riuscissimo ad evitare tutti gli errori per ogni singola misurazione (il che è pressoché impossibile), dovremmo comunque fare i conti con un certo grado di variabilità inter-individuale e, di conseguenza, dovremmo utilizzare una statistica, come la media, per riassumere i risultati. Quando il gruppo in esame è troppo numeroso per misurare tutti gli individui, siamo obbligati a considerare un piccolo campione rappresentativo, e non possiamo mai essere certi che tale campione corrisponda pienamente alle caratteristiche dell’intera popolazione (ad esempio, la media del campione non coincide con la media della popolazione in esame). Cosa sarebbe successo se avessimo selezionato un campione diverso? Il fatto che partendo dalla stessa popolazione si ottengano campioni diversi e, quindi, risultati diversi costituisce l’ìerrore di campionamento, che è inevitabile e rappresenta una componente intrinseca della maggior parte dei dati di ricerca in agricoltura e biologia.</p>
+<p>Gli errori sperimentali influiscono sulla qualità dei dati, in particolare sulla loro <strong>precisione</strong> e <strong>accuratezza</strong> (Fig. <a href="#fig-figName12" class="quarto-xref"><span>1.2</span></a>). I dati sono precisi quando presentano lievi variazioni tra misurazioni ripetute. Allo stesso tempo, sono accurati quando sono vicini al valore “vero”. Da queste definizioni, ne consegue che la precisione è importante, ma l’accuratezza è fondamentale: dati imprecisi (dati distorti) possono portare a conclusioni errate.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="_images/PrecisioneAccuratezza.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Differenza tra accuratezza e precisione
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Per comprendere in che misura gli errori sperimentali possano influire sulla precisione e sull’accuratezza, è utile distinguere tra errori <strong>sistematici</strong> ed <strong>accidentali (casuali)</strong>. L’errore sistematico è provocato da difetti intrinseci dello strumento o incapacità peculiari dell’operatore e tende a ripetersi costantemente e con lo stesso segno in misure successive. Un esempio tipico è quello di una bilancia non tarata, che tende ad aggiungere 20 grammi ad ogni misura che effettuiamo. Oltre agli strumenti non tarati, altre tipiche sorgenti di errori sistematici possono includere protocolli di misura sbagliati, metodi di campionamento inconsistenti o, comunque, ogni elemento esterno che agisca ripetutamente e costantemente in ogni processo di misura. D’altra parte, l’errore accidentale, essendo di natura casuale, tende a ripresentarsi con valori e segni diversi. Di conseguenza, è ragionevole pensare che le repliche, nel lungo periodo, producano sovrastime e sottostime con uguale probabilità, in modo che la media tende a coincidere con il valore vero. Di conseguenza, mentre l’errore sistematico impatta anche sull’accuratezza, l’errore casuale impatta prevalentemente sulla precisione.</p>
+<p>Torniamo quindi alla nostra domanda iniziale: come facciamo ad essere sicuri che i dati siano validi ed affidabili? La risposta è semplice: non possiamo mai essere sicuri, in quanto alcuni tipi di errore (ad esempio, gli errori di campionamento) sono inevitabili e possono persino verificarsi senza essere rilevati. Di conseguenza, il progresso scientifico richiede l’adozione dei <strong>metodi più rigorosi ed affidabili possibile, così da minimizzare la possibilità di ottenere errori sistematici</strong>. Inoltre, è anche necessario <strong>adottare un processo iterativo di rivalutazione e conferma</strong>, attraverso il quale le buone teorie possano affermarsi, mentre quelle errate vengano, più o meno rapidamente, abbandonate.</p>
+<p>In altre parole, dati ‘buoni’ sono conseguenza di metodi ‘buoni’ e, pertanto <strong>una prova scientifica è tale non perché siamo certi che corrisponda alla realtà, ma perché siamo ragionevolmente certi che sia stata ottenuta con metodi validi!</strong>.</p>
+</section>
+<section id="il-disegno-degli-esperimenti" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="il-disegno-degli-esperimenti"><span class="header-section-number">1.2</span> Il disegno degli esperimenti</h2>
+<p>I dati vengono raccolti attraverso un esperimento scientifico (Fig. <a href="#fig-figName11" class="quarto-xref"><span>1.1</span></a>), in cui si osservano le risposte di vari “soggetti” (ad esempio, piante, appezzamenti, campi) ad una serie di ‘stimoli’ sperimentali. Gli elementi che concorrono a definire se un esperimento è valido sono:</p>
+<ol type="1">
+<li>l’ipotesi,</li>
+<li>i trattamenti sperimentali,</li>
+<li>le unità sperimentali,</li>
+<li>il processo di allocazione dei trattamenti alle unità sperimentali, e</li>
+<li>la/le variabile/i di risposta.</li>
+</ol>
+<section id="l-ipotesi-scientifica" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="l-ipotesi-scientifica"><span class="header-section-number">1.2.1</span> L’ ipotesi scientifica</h3>
+<p>Trascurando la ricerca bibliografica, che è pur fondamentale, nel metodo scientifico galileiano, il punto di partenza di un esperimento è l’<strong>ipotesi scientifica</strong>, dalla quale discende tutto il lavoro successivo. Questa ipotesi deve essere rilevante, chiaramente definita e specifica; insomma, dobbiamo aver individuato con chiarezza una connessione tra eventi che potrebbe essere spiegata da una relazione causa-effetto. Un ipotesi, solitamente si pone in forma dubitativa: “<em>la germinazione di un lotto di semi potrebbe dipendere dall’adozione di un certo metodo di priming</em>”; oppure: “<em>la produttività di una coltura potrebbe migliorare con l’adozione di una maggiore fittezza d’impianto</em>”.</p>
+<p>Dall’ipotesi, in modo consequenziale scaturiscono gli obiettivi della ricerca, cioè le domande alle quali la ricerca intende dare risposta. Questi obiettivi dovranno essere raggiungibili/realistici e temporalmente organizzati; inoltre, dovrà essere possibile capire se e quando siano stati raggiunti attraverso un qualche indicatore misurabile.</p>
+<p>Il rischio che si corre con obiettivi mal posti è quello di eseguire una ricerca dispersiva, con raccolta di dati non necessari e/o mancanza di dati fondamentali, con costi più elevati del necessario e un uso poco efficiente delle risorse. In genere, prima si definisce un obiettivo generale, poi si definiscono uno o più obiettivi specifici, proiettati su un più breve spazio temporale, anche per marcare le fasi necessarie per raggiungere l’obiettivo generale.</p>
+<p>Non è un caso se, in un lavoro scientifico, gli obiettivi della ricerca sono posti in fondo all’introduzione, appena prima dell’esposizione dei materiali e metodi.</p>
+<p>La definizione di un’ipotesi di ricerca, viene molto spesso influenzata dal <strong>principio di falsificazione</strong> di Karl Popper (1902-1994), che sosteneva che non fosse mai possibile dimostrare che una teoria è vera, in quanto non è possibile escludere la raccolta futura di dati che la smentiscano. Un famoso esempio cita come sia impossibile dimostrare un semplice assunto, quale: “tutti i cigni sono bianchi”, poiché sarebbe necessario osservare tutti i cigni, il che è, appunto, impossibile. Al contrario, è invece possibile dimostrare la falsità dell’affermazione precedente, semplicemente osservando un cigno che non sia bianco.</p>
+<p>Ancor prima di Popper, Ronald Fisher aveva sottolineato come la ricerca scientifica potesse solo potare a confutare una teoria, e, pertanto, aveva suggerito di porre le ipotesi di ricerca in una forma che potesse essere confutata. Ad esempio, volendo dimostrare che i due genotipi A e B sono diversamente produttivi, è più conveniente porre l’ipotesi di ricerca nella forma ‘i due genotipi A e B sono uguali’ (‘ipotesi nulla’ come la chiamò Fisher), in modo da poterla confutare con un singolo esperimento i cui risultati siano ad essa contrari. Su questa linea di pensiero, Fisher fornì una regola euristica per decidere quando l’ipotesi nulla può essere rifiutata ed una statistica per misurare la forza dell’evidenza contro l’ipotesi nulla (vedi Capitolo 7); pochi anni dopo, Jerzy Neyman (1894-1981) ed Egon Pearson (1895-1980) proposero l’adozione di un’ipotesi alternativa, da assumere come vera, ogni qual volta che l’ipotesi nulla sia rigettata. Nel nostro esempio, l’ipotesi alternativa sarebbe appunto che le rese di A e B sono diverse e, se l’esperimento fornisce evidenza che l’ipotesi nulla è falsa, essa viene adottata e considerata vera finché un altro esperimento non la falsifichi.</p>
+<p>Sebbene alcuni dei concetti sopra esposti siano stati oggetto di un acceso dibattito <span class="citation" data-cites="quinn_2002">(vedi, ad esempio <a href="references.html#ref-quinn_2002" role="doc-biblioref">Quinn and Keough 2002</a>)</span>, l’idea che il ruolo degli esperimenti sia quello di rifiutare le ipotesi è fondamentale e costituisce la base teorica del test d’ipotesi classico (vedi il Capitolo 7).</p>
+</section>
+<section id="i-trattamenti-sperimentali" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="i-trattamenti-sperimentali"><span class="header-section-number">1.2.2</span> I trattamenti sperimentali</h3>
+<p>Dopo aver definito l’obiettivo di un esperimento, pertanto, è necessario chiarire esattamente quali saranno gli stimoli ai quali sottoporremo le unità sperimentali. Uno ‘stimolo’ sperimentale prende il nome di <strong>fattore sperimentale</strong>, che può avere più <strong>livelli</strong>, detti <strong>trattamenti (o tesi) sperimentali</strong>. Ad esempio, se l’obiettivo è quello di valutare l’effetto della temperatura sulla germinazione dei semi di quinoa, il fattore sperimentale sarà la temperatura, con tre livelli, 10, 15 e 25°C, ai quali verranno sottoposte le capsule Petri incluse in prova. Nel caso in cui abbiamo un esperimento con un fattore sperimentale ed un solo livello, parliamo di <em>esperimento misurativo</em>, mentre, se i livelli sono più di uno, allora parliamo di <em>esperimento comparativo</em>, che costituisce la situazione più comune nella ricerca agraria.</p>
+<p>Talvolta gli obiettivi dell’esperimento comportano lo studio di più di un fattore sperimentale; ad esempio, oltre che alla temperatura, potremmo anche essere interessati a studiare l’effetto dell’umidità sulla germinazione dei semi. In questo caso potremmo pianificare due esperimenti separati oppure un unico esperimento, in cui prendiamo in considerazione entrambi i fattori sperimentali. Un esperimento con più fattori sperimentali si dice <strong>fattoriale</strong>, o meglio, <strong>multi-fattoriale</strong> ed i fattori possono essere <strong>incrociati (crossed)</strong> oppure <strong>innestati (nested)</strong>. Nel primo caso includeremo in prova tutte le possibili combinazioni tra i livelli di ogni fattore. Ad esempio, se volessimo studiare il comportamento di tre varietà di girasole (A, B e C) con due tipi di concimi (pollino e urea), potremmo disegnare un esperimento con 6 trattamenti, rappresentati da tutte le possibili combinazioni di varietà e concimi, cioè A-pollina, A-urea, B-pollina, B-urea, C-pollina e C-urea.</p>
+<p>In un disegno a fattori innestati, invece, i livelli di un fattore cambiano al cambiare dei livelli dell’altro. Ad esempio, se volessimo confrontare l’adattabilità di frumento ed orzo in un sistema biologico e volessimo esprimere un giudizio generalee non ristretto ad una singola varietà per specie, dovremmo includere in prova, per ogni specie, molte varietà. In questo caso, il fattore sperimentale ‘varietà’ avrebbe livelli diversi per ogni specie ed il disegno sperimentale sarebbe, pertanto, innestato e non incrociato.</p>
+<p>In alcuni casi è necessario inserire in prova un trattamento che funga da riferimento per tutti gli altri; questo trattamento è comunemente detto <strong>testimone</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Possiamo avere:</p>
+<ol type="1">
+<li>testimone non trattato</li>
+<li>testimone trattato con placebo</li>
+<li>testimone trattato secondo le modalità usuali</li>
+</ol>
+<p>Ad esempio, in un esperimento di confronto varietale, viene usualmente incluso un genotipo di riferimento, ampiamente coltivato in tutte le aziende agricole della zona di studio. Per gli esperimenti con erbicidi, includiamo invece testimone non trattato, utilizzato per valutare la composizione della flora infestante e quantificare l’efficacia di tutti gli erbicidi in prova. Inoltre, possiamo anche includere un testimone ‘weed-free’ (di solito scerbato manualmente) come riferimento per valutare i possibili sintomi di fitotossicità degli erbicidi sulla coltura. In tossicologia, il testimone non trattato può essere sostituito da un testimone trattato con un placebo, ovvero un composto contenente gli stessi componenti del trattamento sperimentale ad eccezione del principio attivo. Il placebo è solitamente necessario quando:</p>
+<ol type="1">
+<li>il soggetto, di solito un soggetto umano, è cosciente e può mostrare una reazione conseguente alla sua aspettativa sull’effetto del trattamento;</li>
+<li>la formulazione contiene, oltre al principio attivo, altre sostanze come ’surfattanti, co-adiuvanti, che siano caratterizzati da efficiacia biologica verso l’organismo in studio.</li>
+</ol>
+</section>
+<section id="le-unità-sperimentali" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="le-unità-sperimentali"><span class="header-section-number">1.2.3</span> Le unità sperimentali</h3>
+<p>L’unità sperimentale è l’entità fisica che riceve il trattamento sperimentale; può essere una pianta, un animale, un vaso, una capsula Petri o ogni altra entità di rilievo per lo studio in atto. Le unità sperimentali non vanno confuse con le <strong>unità osservazionali</strong>, perché le due entità non sempre coincidono. Ad esempio, noi potremmo allocare il trattamento erbicida ad un vaso e poi misurare l’altezza delle singole piante trattate; in questo caso il vaso è l’unità sperimentale (perché ha subito il trattamento), mentre la pianta è l’unità osservazionale. Avere chiara questa differenza è fondamentale per evitare problemi di pseudo-replicazione, come abbiamo dettagliato nel capitolo precedente.</p>
+<p>Le unità sperimentali sono sempre selezionate da una popolazione più grande, detta <strong>cornice di campionamento</strong>; ad esempio, noi selezioniamo le parcelle da un campo, gli animali da una mandria e le piante da una coltura. Comunque sia, il campione selezionato deve essere omogeneo e rappresentativo, anche se i due concetti sono spesso discordanti. Infatti, se selezioniamo soggetti molto omogenei, potremmo ottenere un campione che non rappresenta più tutte le caratteristiche della cornice di campionamento. Ad esempio, se selezioniamo solo individui maschi in buona salute, il campione non necessariamente rappresenta l’intera popolazione, se composta anche da femmine e da soggetti con patologie in atto.</p>
+<p>Campionare una popolazione d’interesse non è un procedimento banale, specie nelle scienze sociali, laddove è stato necessario definire diversi protocolli di campionamento (casuale, sistematico, stratificato, a quota …), per i quali si rimanda ai testi specializzati (ad esempio, <span class="citation" data-cites="daniel_2011">Daniel (<a href="references.html#ref-daniel_2011" role="doc-biblioref">2011</a>)</span>). In questo libro noi facciamo riferimento soprattutto alle prove di pieno campo e di laboratorio. Per le prime, la selezione delle unità sperimentali corrisponde fondamentalmente con la selezione dell’appezzamento di prova e l’identificazione delle parcelle, di cui parleremo tra poco.</p>
+<p>Per le prove di laboratorio, invece, la situazione può essere abbastanza diversa, in quanto le unità sperimentali sono specificatamente create per un certo esperimento (vasetti, capsule Petri ad altri preparati). Di conseguenza, non vi è un vero e proprio processo di selezione, il che, tuttavia, non significa che non ci sia campionamento. Infatti, anche le unità sperimentali preparate in laboratorio debbono comunque essere considerate come campionate da un universo più grande, costituito da tutte le altre unità sperimentali che avremmo potuto preparare.</p>
+</section>
+<section id="lallocazione-dei-trattamenti" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="lallocazione-dei-trattamenti"><span class="header-section-number">1.2.4</span> L’allocazione dei trattamenti</h3>
+<p>L’allocazione dei trattamenti alle unità sperimentali viene in genere effettuata tramite un processo di manipolazione, come la semina di genotipi diversi, la distribuzione di erbicidi o l’utilizzo di diverse densità di semina in parcelle diverse (<strong>esperimenti manipolativi</strong>). Talvolta può essere opportuno nascondere dettagli specifici del processo di allocazione dei trattamenti, ad esempio quando ciò potrebbe indurre effetti inconsci, nelle unità sperimentali che li ricevono, o nei ricercatori che debbono valutarne l’effetto. In questo caso, parliamo di esperimento <strong>cieco</strong>, quando i soggetti non sono coscienti del trattamento che ricevono o <strong>doppio cieco</strong>, quando neanche i ricercatori lo sono. Non conoscere i dettagli del trattamento può anche essere necessario nelle scienze agrarie, quando debbono essere effettuati, ad esempio, dei rilievi visivi o sensoriali, in genere.</p>
+<p>In alcuni casi, la manipolazione dei soggetti per l’allocazione del trattamento potrebbe risultare, scomoda, impossibile, oppure contraria all’etica scientifica; in questi casi, sarà necessario utilizzare unità sperimentali già ‘naturalmente’ trattate (<strong>studio osservazionale</strong>, vedi <span class="citation" data-cites="mann_2003">Mann (<a href="references.html#ref-mann_2003" role="doc-biblioref">2003</a>)</span>). Ad esempio, se vogliamo valutare l’efficacia delle cinture di sicurezza, sarebbe illegale progettare un esperimento in cui le persone vengono mandate in giro con o senza cinture allacciate; ciò che possiamo fare, in questo caso, è registrare retrospettivamente l’esito di incidenti già avvenuti in precedenza. In questo libro parleremo esclusivamente di esperimenti parcellari, che sono, per loro natura, manipolativi, senza per questo negare l’importanza degli esperimenti osservazionali in parecchie discipline scientifiche, come le scienze sociali e la medicina. Tuttavia, è bene segnalare che, nonostante la loro importanza, si ritiene che, per la maggior difficoltà nel controllo degli errori, gli esperimenti osservazionali forniscano evidenze scientifiche di più bassa qualità, rispetto agli esperimenti manipolativi <span class="citation" data-cites="burns_2011">(<a href="references.html#ref-burns_2011" role="doc-biblioref">Burns et al. 2011</a>)</span>.</p>
+</section>
+<section id="le-variabili-sperimentali" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="le-variabili-sperimentali"><span class="header-section-number">1.2.5</span> Le variabili sperimentali</h3>
+<p>Per ogni singolo carattere, l’insieme delle modalità/valori che ognuno dei soggetti presenta prende il nome di <strong>variabile</strong> (proprio perché varia, cioè assume diversi valori, a seconda del soggetto). In questo senso è necessario precisare che non è corretto utilizzare il termine parametri, in quanto in statistica i parametri sono entità che rimangono costanti all’interno di una popolazione di soggetti. Ne parleremo meglio nei prossimi capitoli.</p>
+<p>Fondamentalmente, esistono tre grandi gruppi di variabili: quelle che definiscono lo ‘stimolo’ sperimentale, quelle che misurano la risposta dei soggetti trattati e le eventuali variabili accessorie. Le variabili che definiscono uno ‘stimolo’ sperimentale sono anche dette variabili ‘indipendenti’ in quanto non dipendono da nessun altro elemento interno all’esperimento, a parte la volontà dello sperimentatore. Di queste variabili abbiamo già parlato, in quanto esse sono definite all’inizio dell’esperimento e rappresentano i livelli del/dei trattamento/i sperimentali, ad esempio, le modalità di lavorazione del suolo (aratura, minima lavorazione, semina su sodo) o il valore di azoto apportato (0, 50, 100, 150 kg N ha<sup>-1</sup>).</p>
+<p>Durante e al termine dell’esperimento vengono invece rilevate le variabili ‘risposta’ che esprimono l’effetto dei trattamenti sperimentali, come, ad esempio, la produzione della coltura, il peso delle piante trattate con un diserbante, la quantità di azoto lisciviato dopo la fertilizzazione. Queste variabili vengono normalmente definite ‘dipendenti’, in quanto i valori assunti da ogni unità sperimentale dipendono, normalmente’ dallo stimolo che hanno ricevuto.</p>
+<p>Le variabili accessorie (o covariate) sono rilevate per misurare potenziali effetti confondenti; ad esempio, supponiamo di voler studiare la resa di alcuni alberi in base al metodo di fertilizzazione utilizzato. In tal caso, l’età dell’albero può agire come fattore confondente e, pertanto, potremmo decidere di registrarla, come variabile accessoria da utilizzare come covariata durante l’analisi dei dati.</p>
+<p>Sia le variabili indipendenti che quelle dipendenti possono essere di quattro tipi:</p>
+<ol type="1">
+<li>nominali (categoriche);</li>
+<li>ordinali;</li>
+<li>quantitative discrete;</li>
+<li>quantitative continue.</li>
+</ol>
+<p>Le <strong>variabili nominali</strong> esprimono, per ciascun soggetto, l’appartenenza ad una determinata categoria o raggruppamento ed il valore che assumono lo definiamo modalità. L’unica caratteristica delle modalità è l’esclusività, cioè un soggetto che ha una certa modalità non può averne nessun altra. Le variabili nominali sono, ad esempio, il sesso, la varietà, il tipo di diserbante impiegato, la lavorazione e così via. Le variabili categoriche permettono di raggruppare i soggetti, ma non possono essere utilizzate per fare calcoli, se non per definire le frequenze dei soggetti in ciascun gruppo.</p>
+<p>Anche le <strong>variabili ordinali</strong> esprimono, per ciascun soggetto, l’appartenenza ad una determinata categoria o raggruppamento. Tuttavia, le diverse categorie sono caratterizzate, oltre che dall’esclusività, anche da una relazione di ordine, nel senso che è possibile stabilire una naturale graduatoria tra esse. Ad esempio, la risposta degli agricoltori a domande relative alla loro percezione sull’utilità di una pratica agronomica può essere espressa utilizzando una scala con sei categorie (0, 1, 2, 3, 4 e 5), in ordine crescente da 0 a 5 (scala Likert). Di conseguenza possiamo confrontare categorie diverse ed esprimere un giudizio di ordine (2 è maggiore di 1, 3 è minore di 5), ma non possiamo eseguire operazioni matematiche, tipo sottrarre dalla categoria 3 la categoria 2 e così via, dato che la distanza tra le categorie non è specificata e, soprattutto, non è necessariamente la stessa.</p>
+<p>Le variabili nominali e ordinali sono spesso indicate (ad esempio, nel software R) rispettivamente come “factors” e “ordered factors”. Sebbene esistano metodi di analisi specifici per queste variabili (vedi <span class="citation" data-cites="agresti_2002">Agresti (<a href="references.html#ref-agresti_2002" role="doc-biblioref">2002</a>)</span>), molto spesso esse vengono espresse in forma aggregata, contando il numero di individui in ciascuna classe ed, eventualmente, trasformando questi conteggi in proporzioni o percentuali. Ad esempio, i dati sull’incidenza delle malattie si ottengono classificando diverse piante per appezzamento come malate o sane ed esprimendo il risultato come conta delle piante malate o, più frequentemente, come percentuale/proporzione di piante malate per parcella.</p>
+<p>Il processo di conteggio precedentemente accennato, porta alla definizione di <strong>variabili discrete</strong>, in quanto possono assumere solo alcuni valori specifici, più o meno distanziati tra di loro. Oltre che col processo indicato in precedenza, le variabili discrete si originano anche quando le unità osservazionali sono caratterizzate da qualche proprietà che si presta ad essere contata, come il numero di piante infestanti per unità di superficie, il numero di germogli di accestimento o il numero di frutti per pianta. Le variabili discrete sono caratterizzate dal fatto che possiedono, oltre alle proprietà dell’esclusività e dell’ordine, anche quella dell’equidistanza tra gli attributi (es., in una scala a 5 punti, la distanza – o la differenza – fra 1 e 3 è uguale a quella fra 2 e 4 e doppia di quella tra 1 e 2). Le variabili discrete consentono la gran parte delle operazioni matematiche e permettono di calcolare molte importanti statistiche come la media, la mediana, la varianza e la deviazione standard.</p>
+<p>Le <strong>variabili quantitative continue</strong> possiedono tutte le proprietà precedentemente esposte (esclusività delle categorie, ordine, distanza) oltre alla continuità, almeno in un certo intervallo. Tipiche variabili continue sono l’altezza, la produzione, il tempo e la fittezza. Delle variabili continue fanno parte anche rapporti o percentuali, quando esprimono concentrazioni o, in genere, contenuti, come nel caso della percentuale di umidità nel terreno. Dato che gli strumenti di misura, nella realtà, sono caratterizzati da una risoluzione non infinita, si potrebbe arguire che le variabili continue, in pratica, non esistano. Tuttavia questo argomento è più teorico che pratico e, nella ricerca biologica, consideriamo continue tutte le variabili misurate con strumenti caratterizzati da un risoluzione sufficientemente buona rispetto alla grandezza da misurare. Insomma, se dobbiamo misurare l’altezza del mais ed utilizziamo un metro da sarto, possiamo ottenere una variabile che può essere considerata continua.</p>
+<p>Talvolta, per esigenze di rappresentazione, le variabili continue possono essere espresse su una scale qualitativa, adottando un’opportuna operazione di classamento. Il contrario, cioè trasformare in quantitativa una variabile qualitativa, non è invece possibile.</p>
+<p>In alcuni casi, le variabili sperimentali non possono essere facilmente incluse in uno dei gruppi sopra descritti, come spesso accade con i dati derivanti da valutazioni sensoriali. Un esempio tipico è la valutazione visiva dell’efficacia e della selettività degli erbicidi, su una scala, ad esempio, da 0 a 100%. La variabile risultante può sembrare ordinale (si assegna una categoria a un insieme di categorie ordinate), sebbene la scala sottostante sia più o meno continua. Oltre al controllo delle infestanti e, in generale, alla protezione delle piante, le valutazioni sensoriali sono relativamente comuni in diverse discipline, perché sono economiche e rapide, anche se gli operatori richiedono una formazione e un’esperienza specifiche.</p>
+</section>
+</section>
+<section id="esperimenti-validi-ed-invalidi" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="esperimenti-validi-ed-invalidi"><span class="header-section-number">1.3</span> Esperimenti validi ed invalidi</h2>
+<p>Dopo aver definito quelle che sono le principali componenti di un esperimento, possiamo provare a definire come dovrebbe essere un esperimento valido, capace di produrre prove scientifiche attendibili. A questo proposito, è fondamentale il contributo dello scienziato inglese Ronald A. Fisher (1890-1962), nel suo famoso testo “The Design of Experiments” <span class="citation" data-cites="fisher_1937">(<a href="references.html#ref-fisher_1937" role="doc-biblioref">Fisher 1937</a>)</span>, dove egli menzionò tre caratteristiche fondamentali, cioè: (i) controllo, (ii) replicazione e (iii) randomizzazione.</p>
+<section id="controllo-degli-errori" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="controllo-degli-errori"><span class="header-section-number">1.3.1</span> Controllo degli errori</h3>
+<p>Il termine “controllo” viene spesso citato nel libro di Fisher e la definizione più convincente è fornita all’inizio del Capitolo 6: “<em>`Control’ consists of establishing controlled conditions in which all factors except one can be held constant</em>” (‘Il controllo consiste nello stabilire condizioni controllate in cui tutti i fattori, tranne uno, possono essere mantenuti costanti’). Ampliando leggermente la definizione, potremmo dire non dovrebbero sussistere differenze tra le unità sperimentali, a parte i fattori oggetto di studio (una condizione detta: <em>ceteris paribus</em>).</p>
+<p>Ad esempio, immaginiamo di aver scoperto un fertilizzante innovativo e di volerlo confrontare con uno tradizionale: un esperimento controllato dovrebbe impiegare parcelle contigue, trattate e non trattate, caratterizzate dalle stesse condizioni ambientali, dallo stesso terreno, dallo stesso genotipo; insomma, tutto uguale tranne il fertilizzante oggetto di studio. E’chiaro che, operando in questo modo, le differenze osservate tra parcelle trattate in modo diverso possono essere ragionevolmente attribuita al fertilizzante e non ad altri effetti non controllati.</p>
+<p>Oltre a isolare l’effetto in studio, un buon controllo si esercita anche prestando la massima attenzione ad evitare tutte le potenziali fonti di errore sperimentale (massima precisione). Ad esempio, se vogliamo sapere la cinetica di degradazione di un erbicida a 20 °C dovremo realizzare una prova esattamente a quella temperatura, con un erbicida uniformemente distribuito nel terreno, dentro una camera climatica capace di un controllo perfetto della temperatura, impiegando strumenti ben tarati ed attenendosi scrupolosamente a metodi validati e largamente condivisi. Ovviamente, sarà necessario anche evitare inutili eccessi di precisione, in considerazione degli obiettivi della ricerca, del tempo e delle risorse disponibili.</p>
+<p>Oltre al rigore metodologico, è bene anche ricordare come un esperimento ben fatto richieda l’accurata selezione dei soggetti sperimentali, che debbono essere omogenei, ma rappresentativi della popolazione alla quale intendiamo riferire i risultati ottenuti. Ad esempio, se si vuole ottenere un risultato riferito alla collina umbra, bisognerà scegliere parcelle di terreno omogenee, ma che rappresentano bene la variabilità pedo-climatica di quell’ambiente, né più, né meno.</p>
+<p>Per concludere, menzioniamo le cosiddette ‘intrusioni’, cioè quegli eventi che accadono in modo inaspettato e condizionano negativamente la riuscita di un esperimento in corso, come un’alluvione, l’attacco di insetti o patogeni, la carenza idrica. Per quanto possibile, controllare gli errori significa anche essere capaci di prevedere le eventuali intrusioni e quindi evitarle. In un suo famoso lavoro scientifico, lo scienziato americano Stuart Hurlbert <span class="citation" data-cites="hurlbert_1984">(<a href="references.html#ref-hurlbert_1984" role="doc-biblioref">1984</a>)</span> usa il termine ‘intrusione demoniaca’ (<em>demonic intrusion</em>) per le intrusioni casuali che hanno prodotto danni, ma che avrebbero potuto essere previste con un disegno più accurato, sottolineando in questo caso la responsabilità dello sperimentatore.</p>
+</section>
+<section id="replicazione" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="replicazione"><span class="header-section-number">1.3.2</span> Replicazione</h3>
+<p>Dopo aver posto le basi di un esperimento comparativo, è evidente che nessuno si sognerebbe di testare la risposta ad un trattamento confrontando solo due parcelle contigue, una trattata e l’altro non trattata (Fisher e Wishart, 1930; citato in Hurlbert, 1984). In ogni esperimento valido, i trattamenti dovrebbe essere replicati su due o più unità sperimentali. Ciò permette di:</p>
+<ol type="1">
+<li>dimostrare che i risultati sono replicabili nelle stesse condizioni sperimentali;</li>
+<li>calcolare la media delle repliche, che costituisce una stima affidabile del valore vero da misurare, in assenza di errori sistematici;</li>
+<li>valutare la precisione dell’esperimento, attraverso la deviazione standard tra repliche.</li>
+</ol>
+<p>Per poter essere utili, le repliche debbono essere indipendenti, cioè debbono <strong>aver subito tutte le manipolazioni necessarie per l’allocazione del trattamento in modo totalmente indipendente l’una dall’altra</strong>. Le manipolazioni comprendono tutte le pratiche necessarie, come ad esempio la preparazione delle soluzioni, la diluizione dei prodotti, ecc.. La manipolazione indipendente è fondamentale, perché in ogni parte del processo di trattamento possono nascondersi errori più o meno grandi, che possono essere riconosciuti solo se colpiscono in modo casuale le unità sperimentali. Se la manipolazione è, anche solo in parte, comune, questi errori colpiscono tutte le repliche allo stesso modo, diventano sistematici e quindi non più riconoscibili. Di conseguenza, si inficia l’accuratezza dell’esperimento. Quando le repliche non sono indipendenti perchè hanno condiviso anche una piccola parte del processo di manipolazione per l’allocazione del trattamento, si parla di <strong>pseudorepliche</strong>, che debbone rimanere ben distinte dalle <strong>repliche vere</strong>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName2b" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName2b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="_images/PseudoReplication_ita.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName2b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: Esempio schematico di un esperimento invalido, in quanto è stato commesso un errore di pseudoreplicazione. I due quadrati rappresentano due parcelle soottoposte a due trattamenti diversi. I tre sub-campioni prelevati da ogni parcella non sono repliche vere, perché non sono stati trattati indipendentemente l’uno dall’altro.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Alcuni esempi tipici di pseudo-replicazione sono:</p>
+<ol type="1">
+<li>Spruzzare un vaso con cinque piante e misurare separatamente il peso di ciascuna pianta;</li>
+<li>Trattare un campione di terreno con un erbicida ed effettuare quattro misurazioni della concentrazione su quattro sub-campioni dello stesso terreno;</li>
+<li>Prelevare un campione di terreno da una parcella di campo e ripetere quattro volte la stessa analisi chimica.</li>
+</ol>
+<p>In tutti i casi sopra citati, ogni trattamento viene applicato a una sola unità sperimentale (vaso o campione di terreno) e non ci sono repliche vere, indipendentemente da quante sub-campioni sono stati considerati. Chiaramente, se si commette un errore casuale durante il processo di manipolazione, questo si propaga a tutte le pseudo-repliche diventando un pericoloso errore sistematico.</p>
+<p>A parte alcune circostanze specifiche, la regola generale è che gli esperimenti validi richiedono repliche vere, mentre le pseudo-repliche possono essere solo aggiuntive alle repliche vere. Ad esempio, è corretto spruzzare indipendentemente quattro vasi con cinque piante e misurare separatamente il peso di tali piante, ottenendo un esperimento con quattro repliche vere e cinque pseudo-repliche (anche dette, in questo caso, sub-repliche) per replica. In questo caso, tuttavia, le repliche vere e le pseudo-repliche contengono informazioni diverse e non dovrebbero mai essere confuse tra di loro nella fase di analisi dei dati; in altre parole, non dovremmo mai considerare un esperimento del genere come se avesse 20 repliche vere <span class="citation" data-cites="morrison_2000">Morrison and Morris (<a href="references.html#ref-morrison_2000" role="doc-biblioref">2000</a>)</span>. Imparerete dall’esperienza che potrebbero esserci delle eccezioni a queste regole, ma, in questo momento, è meglio essere piuttosto prescrittivi: la mancanza di repliche vere è uno degli elementi che producce il rigetto di un lavoro scientifico sottomesso per la pubblicazione ad una rivista di buon <em>ranking</em>.</p>
+</section>
+<section id="randomizzazione" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="randomizzazione"><span class="header-section-number">1.3.3</span> Randomizzazione</h3>
+<p>Il conrollo degli errori e la manipolazione indipendente delle repliche, da soli, non garantiscono la validità di un esperimento. Infatti potrebbe accadere che le caratteristiche innate dei soggetti, o una qualche ‘intrusione’ influenzino in modo sistematico tutte le unità sperimentali trattate nello stesso modo, così da confondersi con l’effetto del trattamento (ingenere, ci si riferisce a questa situazione con il termine di <strong>confounding</strong>). Ad esempio, immaginiamo di avere un campo con otto parcelle, lungo un gradiente positivo di fertilità, come mostrato nella Figura <a href="#fig-figName2c" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>; se trattiamo le parcelle da 1 a 4 con il fertilizzante A e le parcelle da 5 a 8 con il fertilizzante B, la differenza intrinseca tra le parcelle potrebbe essere confusa con l’effetto del trattamento.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName2c" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName2c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="_images/LackRandomisation_ita.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:105.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName2c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: Esempio di mancanza di randomizzazione: i due colori identificano due diversi trattamenti sperimentali. In una situazione del genere, esiste un alto rischio di confondere la differenza intrinseca di fertilità del terreno con l’effetto del trattamento sperimentale
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La randomizzazione è l’unico sistema per evitare, o almeno rendere molto improbabile, la confusione dell’effetto del trattamento con fattori casuali e/o comunque diversi dal trattamento stesso. Nel caso di esperimenti di campo, la randomizzazione si realizza attraverso la ‘dispersione’ casuale nel tempo e nello spazio delle unità sperimentali (<em>interspersion</em>), alle quali viene allocato il trattamento scegliendole in modo del tutto casuale. Nel caso degli esperimenti osservazionali,dove l’allocazione del trattamento non è praticata, la randomizzazione si ottiene con la scelta casuale degli individui ‘naturalmente’ trattati.</p>
+<p>L’assegnazione casuale del trattamento, o la selezione casuale dei soggetti trattati, fanno si che tutti i soggetti abbiano la stessa probabilità di ricevere qualunque trattamento oppure qualunque intrusione casuale. In questo modo, la probabilità che tutte le repliche di uno stesso trattamento abbiano qualche caratteristica innata o qualche intrusione comune che li penalizzi/avvantaggi viene minimizzata. Di conseguenza, confondere l’effetto del trattamento con variabilità casuale, anche se teoricamente possibile, diviene altamente improbabile.</p>
+</section>
+<section id="esperimenti-confermativi" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="esperimenti-confermativi"><span class="header-section-number">1.3.4</span> Esperimenti confermativi</h3>
+<p>Anche se siamo assolutamente certi che un esperimento sia perfettamente valido, non potremo mai escludere che un qualche errore sistematico imprevisto si sia insinuato nel nostro impianto sperimentale, distorcendone i risultati. Per questo motivo, si è soliti ritenere che i risultati di un singolo esperimento sianodel tutto insufficienti e debbano essere corroborati con appositi esperimenti confermativi.</p>
+<p>Nella ricerca di campo, gli esperimenti confermativi debbono essere esguiti in anni o siti diversi e, di conseguenza, in diverse condizioni ambientali. Pertanto, il fatto che i risultati di un esperimento vengano poi smentiti da un altro esperimento analogo confermativo non necessariamente viene valutato come una prova dell’invalidità dei risultati del primo esperimento, ma viene invece considerato come un indicazione del fatto che una certa teoria possa non aver valore generale, ma solo specifico alle condizioni ambientali nelle quali è stata dimostrata, motivando quindi ulteriori ricerche per la definizione di una teoria più generale.</p>
+<p>Il fatto che le ipotesi precedenti possano essere falsificate e, di conseguenza, abbandonate a favore di nuove ipotesi conferisce al processo di apprendimento una natura fondamentalmente iterativa. Si pone quindi la necessità di dotarsi di un metodo per decidere cosa fare quando due ipotesi si rivelano ugualmente valide; in questo caso, si può utilizzare il cosiddetto <strong>rasoio di Occam</strong>, ovvero un principio di parsimonia ideato dal frate e filosofo inglese Guglielmo di Occam (1287-1347). Viene solitamente introdotto con l’aforisma latino: <em>Entia non sunt multiplicanda praeter necessitatem</em> (Le entità non devono essere moltiplicate oltre il necessario) e può essere interpretato come segue: se un esperimento supporta l’idea che due ipotesi concorrenti siano ugualmente valide, dobbiamo scegliere la più semplice. Questo principio è noto come il ‘rasoio’, in quanto porta a respingere con nettezza (tagliare con il rasoio) le spiegazioni troppo complesse, incoraggiandoci a concentrarci sugli aspetti essenziali di un problema biologico, che siano pienamente supportati dai dati, senza inutili complicazioni. In questo libro, ci avvarremo di questo principio per selezionarne un modello da un elenco di possibili alternative.</p>
+</section>
+<section id="esperimenti-invalidi" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="esperimenti-invalidi"><span class="header-section-number">1.3.5</span> Esperimenti invalidi</h3>
+<p>A questo punto, dovrebbe essere chiaro che un esperimento valido deve essere controllato, replicato e randomizzato: la mancanza anche di uno solo di questi elementi pone dubbi ragionevoli sull’affidabilità dei risultati. In particolare, gli esperimenti ‘invalidi’ sono caratterizzati da:</p>
+<ol type="1">
+<li>Cattivo controllo degli errori</li>
+<li>Fondati sospetti di confounding</li>
+<li>Mancanza di repliche vere</li>
+<li>Confusione tra repliche vere e pseudo-repliche</li>
+<li>Mancanza di randomizzazione</li>
+<li>Presenza di vincoli alla randomizzazione, trascurati in fase di analisi (vedi il Capitolo seguente).</li>
+</ol>
+<p>Le conseguenze di queste problematiche sono abbastanza diverse; ad esempio, un cattivo controllo degli errori può essere leggermente meno preoccupante delle altre violazioni, in quanto produce dati poco precisi e una bassa potenza statistica, cosicché l’esperimento finisce per risultare inconclusivo (cioè non permette di rigettare le ipotesi in studio) e si ‘autoelimina’. Al contrario, la mancanza di replicazione e una randomizzazione approssimativa possono essere molto pericolose, perché l’effetto degli errori sistematici può essere erroneamente confuso con l’effetto dei trattamenti sperimentali (Fig. @ref(fig:figName2c)), portando a conclusioni completamente errate. Altre deviazioni sono meno importanti, come, ad esempio, includere repliche vere e pseudo-repliche, ma confonderle in fase di analisi dei dati, oppure introdurre vincoli alla randomizzazione completa in fase di progettazione e non tenerne cono in fase di analisi dei dati; infatti, queste problematiche possono essere facilmente risolte con ripetendo le analisi statistiche, senza esserecostretti a scartare completamente l’esperimento.</p>
+</section>
+</section>
+<section id="esercizi-e-domande" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="esercizi-e-domande"><span class="header-section-number">1.4</span> Esercizi e domande</h2>
+<ol type="1">
+<li>Quali sono le caratteristiche fondamentali di un esperimento valido? Elencarle e discuterle brevemente.</li>
+<li>Descrivere brevemente il metodo scientifico Galileiano.</li>
+<li>Discutere le differenze tra errori casuali ed errori sistematici. Quale dei due è più preoccupante per uno sperimentatore? Fornire esempi.</li>
+<li>Qual è la principale differenza tra repliche vere e pseudo-repliche? Fornire esempi.</li>
+<li>Cosa intendiamo con il termine <em>confounding</em>? Qual è il risultato del <em>confounding</em> in un esperimento scientifico? Fornire un esempio.</li>
+<li>Qual è la differenza tra precisione e accuratezza? Fornire esempi.</li>
+<li>Cosa intendiamo con il termine “replicazione”? Descriverla e discuterla. Quante repliche utilizziamo normalmente nella ricerca?</li>
+<li>Cosa intendiamo con il termine “randomizzazione”? Descriverla e discuterla.</li>
+<li>Cosa intendiamo con il termine “controllo”, ovvero una delle caratteristiche fondamentali degli esperimenti validi? Discutere le principali misure per esercitare un buon controllo negli esperimenti di campo.</li>
+<li>Cos’è il ‘testimone’ e perché potremmo volerlo aggiungere tra gli altri trattamenti sperimentali?</li>
+<li>Quali sono le differenze tra esperimenti misurativi, osservazionali e manipolativi? Fornire esempi.</li>
+<li>Quali sono i principali tipi di variabili che possiamo incontrare negli studi di ricerca? Elencarli e descriverli brevemente fornendo anche alcuni esempi.</li>
+<li>Qual è la differenza tra esperimenti fattoriali incrociati e innestati? Fornire alcuni esempi.</li>
+</ol>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-agresti_2002" class="csl-entry" role="listitem">
+<span class="smallcaps">Agresti, A</span> (2002) <em>Categorical data analysis</em>2nd ed. Wiley-Interscience, New York
+</div>
+<div id="ref-burns_2011" class="csl-entry" role="listitem">
+<span class="smallcaps">Burns, PB, RJ Rohrich, KC Chung</span> (2011) <a href="https://doi.org/10.1097/PRS.0b013e318219c171">The <span>Levels</span> of <span>Evidence</span> and <span>Their</span> <span>Role</span> in <span>Evidence</span>-<span>Based</span> <span>Medicine</span>:</a> <em>Plastic and Reconstructive Surgery</em> <strong>128</strong>, 305–310
+</div>
+<div id="ref-daniel_2011" class="csl-entry" role="listitem">
+<span class="smallcaps">Daniel, J</span> (2011) <em>Sampling essentials: Practical guidelines for making sampling choices</em>. SAGE, USA
+</div>
+<div id="ref-fisher_1937" class="csl-entry" role="listitem">
+<span class="smallcaps">Fisher, RA</span> (1937) <em>The design of experiments</em>. 2nd ed. Oliver; Boyd, Edinburgh, UK
+</div>
+<div id="ref-hastie_2009" class="csl-entry" role="listitem">
+<span class="smallcaps">Hastie, T, R Tibshirani, J Friedman</span> (2009) <em>The elements of statistical learning</em>. Springer Science + Business Media, California, USA
+</div>
+<div id="ref-hurlbert_1984" class="csl-entry" role="listitem">
+<span class="smallcaps">Hurlbert, SH</span> (1984) Pseudoreplication and the design of ecological experiments. <em>Ecological Monographs</em> <strong>54</strong>, 187–211
+</div>
+<div id="ref-mann_2003" class="csl-entry" role="listitem">
+<span class="smallcaps">Mann, CJ</span> (2003) <a href="https://doi.org/10.1136/emj.20.1.54">Observational research methods. <span>Research</span> design <span>II</span>: Cohort, cross sectional, and case-control studies</a>. <em>Emergency Medicine Journal</em> <strong>20</strong>, 54–60
+</div>
+<div id="ref-morrison_2000" class="csl-entry" role="listitem">
+<span class="smallcaps">Morrison, DA, EC Morris</span> (2000) Pseudoreplication in experimental designs for the manipulation of seed germination treatments. <em>Austral Ecology</em> <strong>25</strong>, 292–296
+</div>
+<div id="ref-quinn_2002" class="csl-entry" role="listitem">
+<span class="smallcaps">Quinn, GP, MJ Keough</span> (2002) <em>Experimental design and data analysis for biologists</em>. Cambridge University Press
+</div>
+<div id="ref-sturge_2022" class="csl-entry" role="listitem">
+<span class="smallcaps">Sturge, G</span> (2022) <em><a href="https://books.google.it/books?id=BxDQzgEACAAJ">Bad <span>Data</span>: <span>How</span> <span>Governments</span>, <span>Politicians</span> and the <span>Rest</span> of <span>Us</span> <span>Get</span> <span>Misled</span> by <span>Numbers</span></a></em>. Bridge Street Press, UK
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Il “testimone” viene spesso chiamato “controllo”, ma in questo libro cercheremo di evitare l’uso di questo termine, per evitare ogni possibile confusione con il “controllo degli errori”, che è un concetto diverso e sarà discusso nella sezione 1.4.1.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Premessa">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Premessa</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02-ProgettoRicerca.html" class="pagination-link" aria-label="Il disegno degli esperimenti di campo">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

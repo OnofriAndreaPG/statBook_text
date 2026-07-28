@@ -1,0 +1,41 @@
+project:
+  type: book
+
+book:
+  title: "Metodologia sperimentale per le scienze agrarie"
+  subtitle: "Introduzione con R (A.A. 2025-2026)"
+  author: "Andrea Onofri"
+  date: "2026/05/14"
+  cover-image: cover.png
+  chapters:
+    - index.qmd
+    - 01-introBiometria.qmd
+    - 02-ProgettoRicerca.qmd
+    - 03-StatisticaDescrittiva.qmd
+    - 04-CausaEffetto.qmd
+    - 05-ModelliStocastici.qmd
+    - references.qmd
+
+bibliography: statBook.bib
+csl: _weed-research.csl 
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    code-block-bg: "#F4F4F4" # Or true for default light grey
+    code-block-border-left: "#31BAE9" # Optional colored border  
+  pdf:
+    documentclass: scrreprt
+    code-block-bg: "#F4F4F4" # Or true for default light grey
+    code-block-border-left: "#31BAE9" # Optional colored border
+
+editor: source
+knitr:
+  opts_chunk: 
+    collapse: true
+execute:
+  warning: false
+  message: false
+  echo: true

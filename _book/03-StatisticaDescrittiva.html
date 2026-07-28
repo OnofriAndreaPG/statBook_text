@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Descrivere le osservazioni sperimentali – Metodologia sperimentale per le scienze agrarie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-CausaEffetto.html" rel="next">
+<link href="./02-ProgettoRicerca.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3220129d1b0bfa0f6b9dc9ac11d00f8b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-StatisticaDescrittiva.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Metodologia sperimentale per le scienze agrarie</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Premessa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introBiometria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ProgettoRicerca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-StatisticaDescrittiva.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-CausaEffetto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ModelliStocastici.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelli stocastici</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#indicatori-di-tendenza-centrale" id="toc-indicatori-di-tendenza-centrale" class="nav-link active" data-scroll-target="#indicatori-di-tendenza-centrale"><span class="header-section-number">3.1</span> Indicatori di tendenza centrale</a></li>
+  <li><a href="#indicatori-di-dispersione" id="toc-indicatori-di-dispersione" class="nav-link" data-scroll-target="#indicatori-di-dispersione"><span class="header-section-number">3.2</span> Indicatori di dispersione</a>
+  <ul class="collapse">
+  <li><a href="#esempio-3.1" id="toc-esempio-3.1" class="nav-link" data-scroll-target="#esempio-3.1"><span class="header-section-number">3.2.1</span> Esempio 3.1</a></li>
+  </ul></li>
+  <li><a href="#incertezza-delle-misure-derivate" id="toc-incertezza-delle-misure-derivate" class="nav-link" data-scroll-target="#incertezza-delle-misure-derivate"><span class="header-section-number">3.3</span> Incertezza delle misure derivate</a>
+  <ul class="collapse">
+  <li><a href="#esempio-3.2" id="toc-esempio-3.2" class="nav-link" data-scroll-target="#esempio-3.2"><span class="header-section-number">3.3.1</span> Esempio 3.2</a></li>
+  <li><a href="#esempio-3.3" id="toc-esempio-3.3" class="nav-link" data-scroll-target="#esempio-3.3"><span class="header-section-number">3.3.2</span> Esempio 3.3</a></li>
+  </ul></li>
+  <li><a href="#relazioni-tra-variabili-quantitative-correlazione" id="toc-relazioni-tra-variabili-quantitative-correlazione" class="nav-link" data-scroll-target="#relazioni-tra-variabili-quantitative-correlazione"><span class="header-section-number">3.4</span> Relazioni tra variabili quantitative: correlazione</a>
+  <ul class="collapse">
+  <li><a href="#esempio-3.4" id="toc-esempio-3.4" class="nav-link" data-scroll-target="#esempio-3.4"><span class="header-section-number">3.4.1</span> Esempio 3.4</a></li>
+  </ul></li>
+  <li><a href="#statistiche-descrittive-con-r" id="toc-statistiche-descrittive-con-r" class="nav-link" data-scroll-target="#statistiche-descrittive-con-r"><span class="header-section-number">3.5</span> Statistiche descrittive con R</a>
+  <ul class="collapse">
+  <li><a href="#esercizio-3.5" id="toc-esercizio-3.5" class="nav-link" data-scroll-target="#esercizio-3.5"><span class="header-section-number">3.5.1</span> Esercizio 3.5</a></li>
+  </ul></li>
+  <li><a href="#descrizione-dei-sottogruppi" id="toc-descrizione-dei-sottogruppi" class="nav-link" data-scroll-target="#descrizione-dei-sottogruppi"><span class="header-section-number">3.6</span> Descrizione dei sottogruppi</a>
+  <ul class="collapse">
+  <li><a href="#esempio-3.5-segue" id="toc-esempio-3.5-segue" class="nav-link" data-scroll-target="#esempio-3.5-segue"><span class="header-section-number">3.6.1</span> Esempio 3.5 (segue)</a></li>
+  </ul></li>
+  <li><a href="#rappresentazioni-grafiche" id="toc-rappresentazioni-grafiche" class="nav-link" data-scroll-target="#rappresentazioni-grafiche"><span class="header-section-number">3.7</span> Rappresentazioni grafiche</a>
+  <ul class="collapse">
+  <li><a href="#esempio-3.5-continua" id="toc-esempio-3.5-continua" class="nav-link" data-scroll-target="#esempio-3.5-continua"><span class="header-section-number">3.7.1</span> Esempio 3.5 (continua)</a></li>
+  <li><a href="#esempio-3.6" id="toc-esempio-3.6" class="nav-link" data-scroll-target="#esempio-3.6"><span class="header-section-number">3.7.2</span> Esempio 3.6</a></li>
+  <li><a href="#esempio-3.7" id="toc-esempio-3.7" class="nav-link" data-scroll-target="#esempio-3.7"><span class="header-section-number">3.7.3</span> Esempio 3.7</a></li>
+  <li><a href="#esempio-3.5-segue-1" id="toc-esempio-3.5-segue-1" class="nav-link" data-scroll-target="#esempio-3.5-segue-1"><span class="header-section-number">3.7.4</span> Esempio 3.5 (segue)</a></li>
+  </ul></li>
+  <li><a href="#domande-ed-esercizi" id="toc-domande-ed-esercizi" class="nav-link" data-scroll-target="#domande-ed-esercizi"><span class="header-section-number">3.8</span> Domande ed esercizi</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Statistics is the grammar of science</em> (K. Pearson)</p>
+<p>Il risultato finale di ogni esperimento manipolativo/comparativo è un <strong>dataset</strong>, costituito da un insieme di misurazioni/osservazioni effettuate su diversi soggetti sperimentali, in relazione a una o più proprietà (ad esempio, altezza, peso, concentrazione, sesso, colore). Come accennato nel Capitolo 1, l’elenco dei valori per una di queste proprietà è chiamato ‘variabile’ e il primo compito dell’analisi dei dati è quello di descriverla, utilizzando le statistiche più appropriate. Questo Capitolo rappresenta una breve introduzione alla statistica descrittiva e prende in considerazione dati quantitativi, conteggi e proporzioni, presupponendo che i dati nominali e ordinali vengano convertiti in conteggi o proporzioni prima delle analisi (ad esempio, il conteggio/la proporzione di piante malate per parcella), che è la pratica più comune nella ricerca di pieno campo. Informazioni più dettagliate sulla statistica descrittiva possono essere trovate, ad esempio, in <span class="citation" data-cites="holcomb_2017">Holcomb (<a href="references.html#ref-holcomb_2017" role="doc-biblioref">2017</a>)</span>.</p>
+<p>Per variabili quantitative, sia continue che discrete, dobbiamo descrivere alcune caratteristiche fondamentali:</p>
+<ol type="1">
+<li>tendenza centrale</li>
+<li>dispersione</li>
+<li>forma</li>
+</ol>
+<p>La tendenza centrale è un valore che rappresenta il ‘centro’, attorno al quale si collocano tutte le osservazioni; al contrario, la dispersione misura la distanza delle osservazioni tra di loro, cioè, in altre parole, la loro variabilità. Le statistiche di ‘forma’ riguardano aspetti come, ad esempio, la simmetria (cioè se i dati siano simmetricamente disposti intorno ad un indicatore di tendenza centrale) e la presenza più o meno rilevante di valori molto distanti dalla media/mediana; dato il loro impiego marginale nella ricerca agraria, verranno trascurate (solo per motivi di spazio, non perchè non siano importanti), rimandando alla lettura di testi più approfonditi, come quello citato in precedenza.</p>
+<section id="indicatori-di-tendenza-centrale" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="indicatori-di-tendenza-centrale"><span class="header-section-number">3.1</span> Indicatori di tendenza centrale</h2>
+<p>L’indicatore di tendenza centrale più diffuso è la <em>media</em> aritmetica, che non necessita di particolari spiegazioni: si tratta della somma dei dati (<span class="math inline">\(x\)</span>) divisa per il loro numero (<span class="math inline">\(n\)</span>):</p>
+<p><span class="math display">\[\mu = \frac{\sum\limits_{i = 1}^n x}{n}\]</span></p>
+<p>La media è il valore centrale in termini di distanze euclidee, nel senso che, per definizione, la somma delle distanze tra ciascun valore e la media del gruppo è sempre zero. In altre parole, i valori superiori alla media e quelli inferiori alla media, globalmente, sono equidistanti dalla media stessa. Tuttavia, se ordiniamo i valori in ordine crescente/decrescente, la media non si trova necessariamente in posizione centrale, nel senso che il numero di valori superiori alla media potrebbe non essere uguale al numero di valori inferiori alla media. Ad esempio, se consideriamo un elenco ordinato di valori composto da 1, 4, 7, 9 e 10, la media è 6.2 e il numero di valori inferiori alla media è due, mentre il numero di quelli inferiori è tre. Se modifichiamo il valore più alto da 10 a 100, la nuova media si sposta verso l’alto e diviene pari a 24.2, risultando superiore a tutti i valori del gruppo tranne uno.</p>
+<p>Un’altra importante statistica di posizione che, per definizione, rappresenta il “valore centrale” in ogni variabile ordinata, è la cosiddetta <strong>mediana</strong>. Si calcola facilmente ordinando i valori in ordine crescente e, se il numero di valori è dispari, prendendo il valore nella posizione <span class="math inline">\((n + 1)/2\)</span> (dove <span class="math inline">\(n\)</span> è il numero di valori), mentre, se il numero di valori è pari, prendendo i due valori nelle posizioni <span class="math inline">\(n/2\)</span> e <span class="math inline">\(n/2 + 1\)</span> e calcolandone la media. Ad esempio, se consideriamo gli stessi valori di prima (1, 4, 7, 9 e 10), la mediana è 7 e non cambia se modifichiamo il valore più alto in 100. In pratica, la mediana è totalmente indipendente dai valori più alti o più bassi di una variabile e, per questo motivo, si dice che è più <strong>robusta</strong> della media rispetto ai cosiddetti <strong>outliers</strong> (valori ‘anomali’).</p>
+</section>
+<section id="indicatori-di-dispersione" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="indicatori-di-dispersione"><span class="header-section-number">3.2</span> Indicatori di dispersione</h2>
+<p>Conoscere la tendenza centrale di un collettivo è importante, ma non è sufficiente. Infatti, una media pari a 100 può essere ottenuta con tre individui che misurano 99, 100 e 101, rispettivamente, o con tre individui che misurano 1, 100 e 199. E’ evidente che i due gruppi hanno la stessa tendenza centrale, ma sono molto diversi in termini di dispersione (o variabilità) rispetto alla media. Per descrivere la dispersione dei dati possiamo utilizzare il <em>campo di variazione</em>, che è la differenza tra la misura più bassa e la misura più alta. In realtà, questo indicatore è poco diffuso, perché considera solo i valori estremi del collettivo e non necessariamente cresce al crescere della variabilità. Altri indicatori sono più diffusi ed affidabili, come la devianza, la varianza, la deviazione standard ed il coefficiente di variabilità, tutti legati da relazioni algebriche ben definite.</p>
+<p>La <em>devianza</em>, generalmente nota come somma dei quadrati (abbreviata SS, da <em>sum of squares</em>) è data da:</p>
+<p><span class="math display">\[SS = \sum\limits_{i = 1}^n {(x_i  - \mu)^2 }\]</span></p>
+<p>La devianza è un indicatore di dispersione molto utilizzato, soprattutto perché ha un suo preciso significato geometrico, in quanto somma delle distanze euclidee al quadrato, rispetto alla media. Tuttavia, ha due aspetti che vanno tenuti in considerazione: in primo luogo, proprio perché è una somma, il valore finale dipende dal numero di addendi e quindi non la si può utilizzare per confrontare la variabilità di collettivi con diversa numerosità. Inoltre, l’unità di misura della devianza è pari al quadrato dell’unità di misura originale dei dati; ad esempio se le osservazioni sono espresse in centimetri (come nel nostro esempio), la devianza è espressa in centimetri quadrati, il che rende più difficoltosa l’interpretazione dei risultati.</p>
+<p>Oltre dalla devianza, un indicatore molto utilizzato è la <em>varianza campionaria</em> (o semplicemente <em>varianza</em>), che è data dalla devianza divisa per il numero di dati meno uno:</p>
+<p><span class="math display">\[\sigma^2  = \frac{SS}{n - 1}\]</span></p>
+<p>La varianza è anche detta scarto quadratico medio (<em>mean square</em>, in inglese) e ci si potrebbe chiedere perché non si divida la devianza (somma dei quadrati) per il numero di osservazioni, senza sottrarre un’unità. In effetti, entrambe le espressioni sono possibili, per ottenere, rispettivamente, la cosiddetta ‘varianza della popolazione’ (<span class="math inline">\({SS}/{n}\)</span>) e la ‘varianza campionaria’ (<span class="math inline">\({SS}/({n-1})\)</span>); la prima è una semplice statistica descrittiva, che esprime la variabilità dei dati, senza alcun riferimento ad altri entità non incluse nei dati stessi. La seconda, invece, è utilizzabile quando i dati rappresentano un campione estratto da una popolazione e si voglia caratterizzare (stimare) la varianza della popolazione e non solo quella del campione in nostro possesso. In molti testi di statistica viene dimostrato come, estraendo un campione da una popolazione con varianza nota e calcolando la varianza del campione con la formula che impiega <span class="math inline">\(n\)</span> al posto di <span class="math inline">\(n - 1\)</span> al denominatore, otteniamo una sottostima della varianza della popolazione <span class="citation" data-cites="sokal1981_Biometry">(<a href="references.html#ref-sokal1981_Biometry" role="doc-biblioref">Sokal and Rohlf 1981</a>)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Dato che è divisa per la numerosità del colletivo o per una grandezza da essa derivata, la varianza può essere utilizzata per confrontare la variabilità di gruppi diversamente numerosi, anche se permane il problema dell’unità di misura, che è sempre il quadrato di quella delle singole osservazioni.</p>
+<p>Per eliminare questo problema si ricorre alla radice quadrata della varianza, cioè la <em>deviazione standard</em>, che si indica con <span class="math inline">\(\sigma\)</span>. La deviazione standard è espressa nella stessa unità di misura dei dati originali ed è quindi molto utilizzata per descrivere l’<em>incertezza assoluta</em> di misure ripetute più volte.</p>
+<p>Media e deviazione standard sono spesso riportate contemporaneamente, utilizzando un intervallo <span class="math inline">\(l\)</span> definito come:</p>
+<p><span class="math display">\[l = \mu \pm \sigma\]</span></p>
+<p>Un problema della deviazione standard è che essa, in assenza della media, non riesce a dare informazioni facilmente comprensibili; infatti, se dicessimo semplicemente che un gruppo di individui ha una deviazione standard pari a <span class="math inline">\(12.36\)</span>, cosa potremmo concludere in relazione alla variabilità di questo collettivo? È alta o bassa? È evidente che, senza sapere la media, non riusciamo a rispondere a questa domanda: la variabilità potrebbe essere considerata molto alta se la media fosse bassa (ad esempio 16), oppure molto bassa, se la media fosse alta (esempio 1600). Per questo, se dovessimo descrivere la variabilità dei dati indipendentemente dalla media, dovremmo utilizzare il <em>coefficiente di variabilità</em> (CV):</p>
+<p><span class="math display">\[CV = \frac{\sigma }{\mu } \times 100\]</span></p>
+<p>Il CV è un numero puro e non dipende dall’unità di misura e dall’ampiezza del collettivo, sicché è molto adatto ad esprimere, ad esempio, l’errore degli strumenti di misura e delle apparecchiature di analisi (<strong>incertezza relativa</strong>).</p>
+<p>Come la media, anche la devianza, la varianza e la deviazione standard sono sensibili agli <em>outliers</em>. Pertanto, in presenza di osservazioni aberranti, preferiamo descrivere la variabilità del collettivo utilizzando i cosiddetti <em>percentili</em>, che, estendendo il concetto di mediana, bipartiscono il collettivo in modo da lasciare una certa percentuale di individui alla loro sinistra. Ad esempio, il primo percentile bipartisce il collettivo in modo che l’1% dei soggetti sono più bassi e il 99% sono più alti. Allo stesso modo, l’ottantesimo percentile bipartisce il collettivo in modo che l’80% dei soggetti sono più bassi e il 20% sono più alti. Ovviamente, la mediana rappresenta il 50-esimo percentile.</p>
+<p>I percentili più utilizzati per descrivere la dispersione di un collettivo sono il 25-esimo e il 75-esimo, che individuano un intervallo all’interno del quale è compreso il 50% dei soggetti (<strong>scarto interquartile</strong>): se questo intervallo è piccolo, significa che la variabilità è bassa. Calcolare i percentili a mano non è banale e, di conseguenza, lo faremo nei paragrafi successivi, utilizzando R.</p>
+<section id="esempio-3.1" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="esempio-3.1"><span class="header-section-number">3.2.1</span> Esempio 3.1</h3>
+<p>Per esempio, consideriamo il seguente dataset, che elenca le altezze di quattro piante di mais <span class="math inline">\(d = [178, 175, 158, 153]\)</span></p>
+<p>Il calcolo della media è banale:</p>
+<p><span class="math display">\[\mu = \frac{178 + 175 + 158 + 153}{4} = 166\]</span> Nell’esempio precedente, i dati sono in numero pari, quindi la mediana è: <span class="math inline">\((158 + 175)/2 = 166.5\)</span>.</p>
+<p>Di seguito calcoliamo le tre statistiche fondamentali di dispersione:</p>
+<p><span class="math display">\[SS = \left(178 - 166 \right)^2 + \left(175 - 166 \right)^2 + \left(158 - 166 \right)^2  + \left(153 - 166 \right)^2 = 458\]</span></p>
+<p><span class="math display">\[\sigma^2  = \frac{458}{3} = 152.67\]</span></p>
+<p><span class="math display">\[\sigma  = \sqrt{152.67} = 12.36\]</span></p>
+<p>L’ultimo valore attesta che, ‘mediamente’, la distanza euclidea tra ogni valore e <span class="math inline">\(\mu\)</span> è pari <span class="math inline">\(12.36\)</span> centimetri.</p>
+<p>Il coefficiente di variabilità è invece:</p>
+<p><span class="math display">\[CV = \frac{12.36}{166} \times 100 = 7.45 \%\]</span></p>
+</section>
+</section>
+<section id="incertezza-delle-misure-derivate" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="incertezza-delle-misure-derivate"><span class="header-section-number">3.3</span> Incertezza delle misure derivate</h2>
+<p>Immaginiamo di avere due misure ‘incerte’, quantificate come <span class="math inline">\(A \pm \sigma_A\)</span> e <span class="math inline">\(B \pm \sigma_B\)</span>, dove <span class="math inline">\(\sigma_A\)</span> e <span class="math inline">\(\sigma_B\)</span> rappresentano le incertezze assolute, espresse come deviazioni standard. Se volessimo calcolare una quantità derivata, come <span class="math inline">\(C = pA + qB\)</span>, dove <span class="math inline">\(p\)</span> e <span class="math inline">\(q\)</span> sono due costanti qualunque, quale potrebbe essere l’incertezza assoluta della misura derivata? In questo caso si parla di <strong>propagazione degli errori</strong>, la cui legge dice che, se A e B sono indipendenti, la deviazione standard della combinazione è pari a:</p>
+<p><span class="math display">\[\sigma_C = \sqrt{p^2 \sigma^2_A + q^2 \sigma^2_B}\]</span></p>
+<p>Per chi fosse interessato, informazioni dettagliate sulla legge di propagazione degli errori sono disponibili sul blog associato a questo libro (<a href="https://www.statforbiology.com/2024/stat_general_errorpropagation/">https://www.statforbiology.com/2024/stat_general_errorpropagation/</a>).</p>
+<section id="esempio-3.2" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="esempio-3.2"><span class="header-section-number">3.3.1</span> Esempio 3.2</h3>
+<p>Abbiamo determinato indipendentemente il contenuto di saccarosio e fruttosio in un determinato substrato di crescita, che risultano rispettivamente pari a: <span class="math inline">\(22 \pm 2\)</span> mg/g e <span class="math inline">\(14 \pm 3\)</span> mg/g. Qual è il contenuto totale di zuccheri e la sua deviazione standard? La soluzione si può facilmente ricavare sommando i due contenuti (22 + 14 = 36 mg/g) e calcolando la deviazione standard come <span class="math inline">\(\sqrt{2^2 + 3^2} = 3.6\)</span>.</p>
+</section>
+<section id="esempio-3.3" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="esempio-3.3"><span class="header-section-number">3.3.2</span> Esempio 3.3</h3>
+<p>Nel caso dell’esempio 3.2, qual è la concentrazione media dei due zuccheri, con la relativa deviazione standard? Anche in questo caso, possiamo facilmente calcolare che la concentrazione media è pari a:</p>
+<p><span class="math display">\[Av = \frac{22 + 14}{2} = \frac{1}{2} \times 22 + \frac{1}{2} \times 14 = 18\]</span>,</p>
+<p>mentre la deviazione standard è pari a:</p>
+<p><span class="math display">\[\sigma_{Av} = \sqrt{\left( \frac{1}{2} \right)^2 2^2 + \left( \frac{1}{2} \right)^2 3^2} = 1.803\]</span>,</p>
+</section>
+</section>
+<section id="relazioni-tra-variabili-quantitative-correlazione" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="relazioni-tra-variabili-quantitative-correlazione"><span class="header-section-number">3.4</span> Relazioni tra variabili quantitative: correlazione</h2>
+<p>Se su ogni soggetto abbiamo rilevato due caratteri quantitativi (ad esempio il peso e l’altezza, oppure la produzione e il contenuto di proteina della granella), è possibile verificare se esista una relazione tra la coppia di variabili ottenute, cioè se al variare di una cambi anche il valore dell’altra, in modo congiunto (variazione congiunta).</p>
+<p>Per questo fine, si utilizza il <em>coefficiente di correlazione di Pearson</em> (<span class="math inline">\(r\)</span>)costituito dal rapporto tra la codevianza (o somma dei prodotti) delle due variabili e la radice quadrata del prodotto delle loro devianze:</p>
+<p><span class="math display">\[r = \frac{ \sum_{i=1}^{n}(x_i - \mu_x)(y_i-\mu_y) }{\sqrt{\sum_{i=1}^{n}(x_i-\mu_x)^2}}\]</span></p>
+<p>La codevianza (al numeratore nell’equazione precedente) è costituita dalla somma, per tutti gli individui, dei prodotti tra i residui delle due variabili. È positiva quando, per la maggior parte degli individui, i due residui hanno lo stesso segno, il che significa che valori maggiori di una variabile corrispondono a valori maggiori dell’altra (variazione congiunta ‘positiva’), mentre la codevianza è negativa quando, per la maggior parte degli individui, i due residui hanno segni opposti (variazione congiunta ‘negativa’). Una codevianza prossima a 0 significa che i segni dei due residui sono per lo più indipendenti (nessuna variazione congiunta).</p>
+<p>La codevianza non ha un plateau predefinito e viene normalizzata dividendola per il prodotto delle due devianze, in modo che il coefficiente <span class="math inline">\(r\)</span> vari da <span class="math inline">\(+1\)</span> a <span class="math inline">\(-1\)</span>: se è pari ad 1, abbiamo una situazione ideale di concordanza perfetta (quando aumenta una variabile, aumenta anche l’altra in modo esattamente proporzionale), mentre quando è pari a <span class="math inline">\(-1\)</span>, abbiamo una situazione ideale di discordanza perfetta (quando aumenta una variabile, diminuisce l’altra in modo inversamente proporzionale). Un valore pari a <span class="math inline">\(0\)</span> è altrettanto ideale ed indica assenza di qualunque grado di variazione congiunta (assenza di correlazione). Nell’intervallo tra <span class="math inline">\(-1\)</span> ed <span class="math inline">\(1\)</span>, il coefficiente indica una correlazione imperfetta, ma tanto migliore quanto più ci allontaniamo dallo zero e ci avviciniamo a <span class="math inline">\(-1\)</span> o <span class="math inline">\(1\)</span>. Due esempi di ottima correlazione sono mostrati in Figura <a href="#fig-figName311" class="quarto-xref"><span>3.1</span></a>; si evidenzia un elevato grado di correlazione, che, tuttavia, non è perfetta, in quanto i punti non sono esattamente allineati.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName311" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName311-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="_images/CorrelationExample.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName311-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Esempio di correlazione positiva (destra) e negativa (sinistra)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="esempio-3.4" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="esempio-3.4"><span class="header-section-number">3.4.1</span> Esempio 3.4</h3>
+<p>Proviamo a considerare il contenuto di olio di 9 lotti di acheni di girasole, misurato con due metodi analitici diversi e riportato più sotto.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">47</span>, <span class="dv">49</span>, <span class="dv">51</span>, <span class="dv">44</span>, <span class="dv">37</span>, <span class="dv">48</span>, <span class="dv">44</span>, <span class="dv">53</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">44</span>, <span class="dv">49</span>, <span class="dv">53</span>, <span class="dv">48</span>, <span class="dv">34</span>, <span class="dv">47</span>, <span class="dv">46</span>, <span class="dv">51</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Per valutare la entità della correlazione tra i risultati dei due metodi di analisi, dobbiamo eseguire alcune operazioni preliminari, cioè:</p>
+<ol type="1">
+<li>calcolare i residui per A (<span class="math inline">\(z_A\)</span>)</li>
+<li>calcolare i residui per B (<span class="math inline">\(z_B\)</span>)</li>
+<li>calcolare devianze e codevianze</li>
+</ol>
+<p>In primo luogo, calcoliamo le due medie, che sono, rispettivamente, 46.44 e 46.22. Successivamente, possiamo calcolare i residui, come differenze tra ogni dato e la sua media, i loro quadrati ed i loro prodotti, come indicato in Tabella <a href="#tbl-tabName3" class="quarto-xref"><span>3.1</span></a>.</p>
+<div class="cell">
+<div id="tbl-tabName3" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tabName3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.1: Calcolo manuale del coefficiente di correlazione
+</figcaption>
+<div aria-describedby="tbl-tabName3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;"><span class="math inline">\(z_A\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(z_B\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(z_A \times z_B\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(z_A^2\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(z_B^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">-1.444</td>
+<td style="text-align: right;">-2.222</td>
+<td style="text-align: right;">3.210</td>
+<td style="text-align: right;">2.086</td>
+<td style="text-align: right;">4.938</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">0.556</td>
+<td style="text-align: right;">-2.222</td>
+<td style="text-align: right;">-1.235</td>
+<td style="text-align: right;">0.309</td>
+<td style="text-align: right;">4.938</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">2.556</td>
+<td style="text-align: right;">2.778</td>
+<td style="text-align: right;">7.099</td>
+<td style="text-align: right;">6.531</td>
+<td style="text-align: right;">7.716</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">4.556</td>
+<td style="text-align: right;">6.778</td>
+<td style="text-align: right;">30.877</td>
+<td style="text-align: right;">20.753</td>
+<td style="text-align: right;">45.938</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">-2.444</td>
+<td style="text-align: right;">1.778</td>
+<td style="text-align: right;">-4.346</td>
+<td style="text-align: right;">5.975</td>
+<td style="text-align: right;">3.160</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">-9.444</td>
+<td style="text-align: right;">-12.222</td>
+<td style="text-align: right;">115.432</td>
+<td style="text-align: right;">89.198</td>
+<td style="text-align: right;">149.383</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">1.556</td>
+<td style="text-align: right;">0.778</td>
+<td style="text-align: right;">1.210</td>
+<td style="text-align: right;">2.420</td>
+<td style="text-align: right;">0.605</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">-2.444</td>
+<td style="text-align: right;">-0.222</td>
+<td style="text-align: right;">0.543</td>
+<td style="text-align: right;">5.975</td>
+<td style="text-align: right;">0.049</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">6.556</td>
+<td style="text-align: right;">4.778</td>
+<td style="text-align: right;">31.321</td>
+<td style="text-align: right;">42.975</td>
+<td style="text-align: right;">22.827</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>La somma dei quadrati dei residui ci permette di calcolare le devianze di <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> (rispettivamente 176.22 e 239.56), mentre la somme dei prodotti degli residui ci permette di calcolare la codevianza (pari a 184.11).</p>
+<p>Il coefficiente di correlazione è quindi:</p>
+<p><span class="math display">\[r = \frac{184.11}{\sqrt{176.22 \times 239.56}} = 0.896\]</span></p>
+<p>Vediamo che il coefficiente di correlazione è abbastanza vicino ad 1 e quindi possiamo concludere che i due metodi di analisi danno risultati ben concordanti.</p>
+</section>
+</section>
+<section id="statistiche-descrittive-con-r" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="statistiche-descrittive-con-r"><span class="header-section-number">3.5</span> Statistiche descrittive con R</h2>
+<p>Prima di leggere questa parte, assicuratevi di avere già una conoscenza di base dell’ambiente R, oppure consultate l’Appendice 1. Un altro prerequisito importante è comprendere che, in generale, ogni dataset contenente le osservazioni sperimentali dovrebbe essere preparato in un formato detto “tidy” (dall’inglese, traducibile come ‘ordinato’, nel senso di ‘giusta posizione degli oggetti’), <strong>con una riga per ogni osservazione e una colonna per ogni variabile, mentre la prima riga dovrebbe sempre contenere i nomi delle variabili</strong>. Sebbene altri formati di dati possano essere più adatti alla visualizzazione, il formato “tidy” è la base di ogni analisi statistica con la maggior parte dei software e può essere facilmente trasformato in altri formati, se necessario (Wickham, 2014).</p>
+<p>In R, le statistiche descrittive vengono calcolate tramite le rispettive funzioni: <code>mean()</code>, <code>median()</code>, <code>var()</code> e <code>sd()</code>, passando il vettore dei dati come primo argomento. I percentili vengono calcolati con la funzione <code>quantile()</code>, passando il vettore dei dati e le probabilità selezionate come frazioni in un vettore, tramite l’argomento <code>probs</code>. La funzione di devianza non è immediatamente disponibile in R (ma si veda il capitolo successivo) e può essere calcolata con la somma dei quadrati degli scarti, come indicato più sopra. Anche il coefficiente di correlazione è facile da ottenere, tramite la funzione <code>cor()</code> e passando i due vettori come argomenti.</p>
+<section id="esercizio-3.5" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="esercizio-3.5"><span class="header-section-number">3.5.1</span> Esercizio 3.5</h3>
+<p>Utilizziamo il dataset ‘heights.csv’, che è disponibile nel pacchetto ‘statforbiology’ e contiene, nella colonne ‘height’, le altezze di venti piante di mais, appartenenti a quattro varietà diverse. Le analisi statistiche sono mostrate nel box sottostante.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"heights"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>dataset<span class="sc">$</span>height</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 172 154 150 188 162 145 157 178 175 158 153 191 174 141 165 163 148 152 169</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [20] 185</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistiche di tendenza centrale</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dataset<span class="sc">$</span>height)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 164</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dataset<span class="sc">$</span>height)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 162.5</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistiche di dispersione</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( (dataset<span class="sc">$</span>height <span class="sc">-</span> <span class="fu">mean</span>(dataset<span class="sc">$</span>height))<span class="sc">^</span><span class="dv">2</span> ) <span class="co"># devianza</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4050</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(dataset<span class="sc">$</span>height) <span class="co"># varianza</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 213.1579</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dataset<span class="sc">$</span>height) <span class="co"># deviazione standard</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 14.59993</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dataset<span class="sc">$</span>height)<span class="sc">/</span><span class="fu">mean</span>(dataset<span class="sc">$</span>height) <span class="sc">*</span> <span class="dv">100</span> <span class="co"># CV</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 8.902395</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Percentili</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(dataset<span class="sc">$</span>height, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="do">##    25%    75% </span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="do">## 152.75 174.25</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>La correlazione per i dati dell’esercizio 3.4 si calcola invece con la funzione <code>cor()</code>, come indicato più sotto.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(A, B)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.8960795</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="descrizione-dei-sottogruppi" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="descrizione-dei-sottogruppi"><span class="header-section-number">3.6</span> Descrizione dei sottogruppi</h2>
+<p>In biometria è molto comune che il gruppo di soggetti sia divisibile in più sottogruppi, corrispondenti, ad esempio, ai diversi trattamenti sperimentali. In questa comune situazione siamo soliti calcolare, per ogni gruppo, le statistiche descrittive già viste in precedenza, utilizzando la funzione <code>tapply()</code> in R, che richiede tre argomenti, ovvero il vettore delle osservazioni, il vettore che identifica il gruppo a cui appartiene ogni osservazione, e la funzione da calcolare per ciascun gruppo. È necessario sottolineare che le statistiche per gruppo possono essere calcolate in modo efficiente (forse più efficiente) anche utilizzando il pacchetto <code>dplyr()</code> (Wickham, 2023).</p>
+<section id="esempio-3.5-segue" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="esempio-3.5-segue"><span class="header-section-number">3.6.1</span> Esempio 3.5 (segue)</h3>
+<p>Nel box sottostante, sempre in relazione al dataset ‘heights’, calcoliamo le altezze medie per ogni varietà, assieme alle deviazioni standard, che salviamo in un nuovo dataframe, da utilizzare di seguito per la grafica.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">tapply</span>(dataset<span class="sc">$</span>height, dataset<span class="sc">$</span>var, mean)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">tapply</span>(dataset<span class="sc">$</span>height, dataset<span class="sc">$</span>var, sd)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>descript <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Media =</span> m, <span class="at">SD =</span> s)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>descript</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    Media       SD</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">## C 165.00 14.36431</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## N 164.00 16.19877</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">## S 160.00 12.16553</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## V 165.25 19.51709</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="rappresentazioni-grafiche" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="rappresentazioni-grafiche"><span class="header-section-number">3.7</span> Rappresentazioni grafiche</h2>
+<p>Le statistiche descrittive possono essere presentate in tabella, oppure, ancora meglio, in un grafico. La visualizzazione dei dati è un argomento vastissimo, sul quale potrete trovare ampie in formazioni in <span class="citation" data-cites="wickham_2016">Wickham (<a href="references.html#ref-wickham_2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="soage_2023">Soage (<a href="references.html#ref-soage_2023" role="doc-biblioref">2024</a>)</span> e <span class="citation" data-cites="holtz_2024">Holtz (<a href="references.html#ref-holtz_2024" role="doc-biblioref">2024</a>)</span> e in numerosi altri libri e siti web<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Questo paragrafo introduce brevemente i quattro tipi di grafico più importanti e come realizzarli in R, utilizzando il package <code>ggplot2</code>:</p>
+<ol type="1">
+<li>Grafici a barre</li>
+<li>Boxplot</li>
+<li>Istogrammi</li>
+<li>Grafici a dispersione</li>
+</ol>
+<p>Un <strong>grafico a barre</strong> viene utilizzato per visualizzare la relazione tra una variabile numerica e una variabile nominale: ogni classe della variabile nominale corrisponde a una barra e l’altezza di tale barra è proporzionale al valore della variabile numerica per quella classe.</p>
+<p>Quando il numero di repliche è elevato (ad esempio, maggiore di 15), la relazione tra una variabile nominale e una variabile quantitativa può essere rappresentata anche da un <strong>box plot</strong> (diagramma a scatola e baffi), in cui ogni gruppo è rappresentato da una scatola, con il 75° percentile come lato superiore e il 25° percentile come lato inferiore, mentre una linea indica la mediana (50° percentile). Due barre verticali (baffi) partono dal 25° e dal 75° percentile e si estendono, rispettivamente, fino ai valori massimo e minimo. In R, i dati che superano 1,5 volte l’intervallo interquartile sono considerati outlier e vengono rappresentati singolarmente, mentre la lunghezza dei baffi è limitata a 1,5 volte l’intervallo interquartile.</p>
+<p>Un altro tipo di grafico è l’<strong>istogramma</strong>, simile a un grafico a barre, ma utilizzato per rappresentare la densità di probabilità in una serie di intervalli (bin). La densità è data dalla frequenza relativa dei soggetti in ciascun intervallo divisa per l’ampiezza dell’intervallo, in modo che l’area di ciascuna barra rappresenti la massa di probabilità in ciascun intervallo. L’uso degli istogrammi non è molto frequente nella ricerca sul campo, ma li incontreremo diverse volte in questo libro.</p>
+<p>Infine, ma non meno importante, uno dei grafici più utilizzati è il <strong>diagramma a dispersione</strong>, che rappresenta la relazione tra due variabili numeriche, fornendo le coordinate per i simboli.</p>
+<section id="esempio-3.5-continua" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="esempio-3.5-continua"><span class="header-section-number">3.7.1</span> Esempio 3.5 (continua)</h3>
+<p>I dati del dataframe ‘descript’ che abbiamo creato poco sopra possono essere rappresentati facilmente con un grafico a barre; con <code>ggplot2</code>, dobbiamo creare prima un’istanza del grafico (funzione <code>ggplot()</code>), poi aggiungere dei <em>layer</em> (<code>geom_col</code> e <code>geom_errorbar</code>), che devono essere ‘mappati’ alle colonne del dataset che forniscono le informazioni per la creazione del grafico stesso.</p>
+<p>Il primo layer (<code>geom_col</code>) genera le barre ed è mappato al vettore <code>mu</code> in <code>descStat</code> per generare le altezze delle barre per ogni livello della variabile <code>group</code>. Il secondo layer (<code>geom_errorbar</code>) arricchisce il grafico a barre con barre di errore, per rappresentare le deviazioni standard (<span class="math inline">\(\mu \pm \sigma\)</span>). Il codice è mostrato nel riquadro di codice 3.4 ed è autoesplicativo; Alla fine, ho utilizzato il tema <code>theme_bw()</code>, ma ognuno di voi può cercarsi nel web il tema estetico che più gli piace. Il grafico finale è mostrato in Figura <a href="#fig-figName242" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Un grafico a barre con ggplot2</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> descript) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> Media, <span class="at">x =</span> <span class="fu">row.names</span>(descript)), <span class="at">width =</span> <span class="fl">0.75</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"lightgrey"</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">ymin =</span> Media <span class="sc">-</span> SD, <span class="at">ymax =</span> Media <span class="sc">+</span> SD,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                              <span class="at">x =</span> <span class="fu">row.names</span>(descript)),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">200</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">"Altezza (cm)"</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">"Genotipo"</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName242" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName242-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03-StatisticaDescrittiva_files/figure-html/fig-figName242-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName242-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Esempio di un semplice grafico a barre in R.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="esempio-3.6" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="esempio-3.6"><span class="header-section-number">3.7.2</span> Esempio 3.6</h3>
+<p>Consideriamo il dataset ‘WeedCounts’, relativo al conteggio di piante di tre specie di infestanti in 20 griglie disposte casualmente in un campo dell’Italia centrale. Poiché il numero di conteggi per ciascuna specie è piuttosto elevato, questo dataset può essere rappresentato con un boxplot, utilizzando il codice nel riquadro seguente Nel caso di <em>Chenopodium album</em> (CHEAL), il valore massimo è 16, considerato un valore anomalo e rappresentato da un cerchio nero pieno (Fig. <a href="#fig-figName241" class="quarto-xref"><span>3.3</span></a>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Box di codice 3.5</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot con ggplot2</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"WeedCounts"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dataset) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">mapping =</span><span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Count)) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Conteggio per metro quadro"</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName241" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName241-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03-StatisticaDescrittiva_files/figure-html/fig-figName241-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName241-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: Un semplice boxplot con R; i tre gruppi rappresentano tre specie di infestanti (CHEAL: Chenopodium album, CHEHY: C. hybridum e CHEPO: C. polyspermum), contate in 20 griglie disposte casualmente in un campo dell’Italia centrale.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="esempio-3.7" class="level3" data-number="3.7.3">
+<h3 data-number="3.7.3" class="anchored" data-anchor-id="esempio-3.7"><span class="header-section-number">3.7.3</span> Esempio 3.7</h3>
+<p>Il dataset ‘Rainfall22’ riporta i livelli di precipitazione giornaliera (mm) nell’Italia centrale nel 2022. Questa variabile è composta da un numero molto elevato di osservazioni e il calcolo di semplici statistiche descrittive, come la media e la deviazione standard, è utile, ma non è sufficiente per cogliere le caratteristiche essenziali delle precipitazioni in quel sito e in quell’anno. Pertanto, è interessante costruire una distribuzione di frequenze, considerando sei classi di pioggia (0,1-2,4 mm: pioggia molto leggera, 2,5-7,5 mm: pioggia leggera, 7,6-35,5 mm: pioggia moderata, 35,6-64,4 mm: pioggia piuttosto forte, 64,5-124,4 mm: pioggia forte e &gt; 124,5 mm: pioggia molto forte) e assegnando ogni pioggia alla classe appropriata (questa operazione è solitamente chiamata <strong>binning</strong> o <strong>bucketing</strong>).</p>
+<p>In R, questo si ottiene utilizzando la funzione <code>cut()</code> e passando come parametri il vettore delle piogge e un vettore contenente i margini degli intervalli, che, per impostazione predefinita, sono aperti a sinistra e chiusi a destra (riquadro di codice 3.6). Successivamente, possiamo utilizzare la funzione <code>table()</code> per contare il numero di piogge in ogni bin (<strong>frequenza assoluta</strong>) e dividere questo numero per il numero totale di eventi piovosi (<strong>frequenza relativa</strong>). Secondo la definizione frequentista di probabilità (ovvero: il numero di eventi favorevoli diviso per il numero totale di eventi), questa frequenza relativa corrisponde alla probabilità di ciascuna classe di pioggia nel 2022, nella zona limitrofa alla capannina meteorologica che ha rilevato il dato.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Box 3.6</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Leggi i dati e imposta i margini</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"Rainfall22"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> dataset[dataset<span class="sc">$</span>PRP <span class="sc">&gt;</span> <span class="dv">0</span>, ] <span class="co"># Rimuovi i giorni senza pioggia</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>margins <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">2.4</span>, <span class="fl">7.5</span>, <span class="fl">35.5</span>, <span class="fl">64.4</span>, <span class="fl">124.4</span>, <span class="cn">Inf</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>binned <span class="ot">&lt;-</span> <span class="fu">cut</span>(dataset<span class="sc">$</span>PRP, <span class="at">breaks =</span> margins)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>frequencies <span class="ot">&lt;-</span> <span class="fu">table</span>(binned)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>frequencies</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="do">## binned</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="do">##     (0,2.4]   (2.4,7.5]  (7.5,35.5] (35.5,64.4]  (64.4,124]   (124,Inf] </span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="do">##          52          21          31           2           0           0</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilità di ciascuna classe</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>probab <span class="ot">&lt;-</span> frequencies<span class="sc">/</span><span class="fu">length</span>(binned)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>probab</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="do">## binned</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="do">##     (0,2.4]   (2.4,7.5]  (7.5,35.5] (35.5,64.4]  (64.4,124]   (124,Inf] </span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  0.49056604  0.19811321  0.29245283  0.01886792  0.00000000  0.00000000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Rappresentare queste probabilità con un grafico a barre potrebbe essere fuorviante perché le diverse ampiezze degli intervalli verrebbero trascurate. Possiamo notare, ad esempio, che la probabilità nel secondo intervallo (0.198) è inferiore alla probabilità nel terzo intervallo (0.292), ma è “concentrata” in un intervallo molto piccolo. In altre parole, ci sono molti eventi nel terzo intervallo proprio perché tale intervallo è molto ampio, ma ci si potrebbe aspettare che la probabilità di una pioggia intorno ai 20 mm (ad esempio, da 19.5 a 20.5, cioè nel terzo intervallo) sia inferiore alla probabilità di una pioggia intorno ai 5 mm (ad esempio, da 4.5 a 5.5, cioè nel secondo intervallo). In termini tecnici, diciamo che la massa di probabilità è più densa nel secondo intervallo rispetto al terzo. Pertanto, possiamo calcolare la densità dividendo la probabilità in ciascun intervallo per l’ampiezza dell’intervallo stesso.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcoli di densità</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>larghezze <span class="ot">&lt;-</span> <span class="fu">diff</span>(margins)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>densita <span class="ot">&lt;-</span> probab<span class="sc">/</span>larghezze</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>densita</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## binned</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="do">##      (0,2.4]    (2.4,7.5]   (7.5,35.5]  (35.5,64.4]   (64.4,124]    (124,Inf] </span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.2044025157 0.0388457270 0.0104447439 0.0006528694 0.0000000000 0.0000000000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Possiamo utilizzare queste densità per disegnare un istogramma, che sarà composto da un insieme di rettangoli, con altezze pari alla densità in ciascun intervallo e larghezze pari all’ampiezza dell’intervallo, in modo che l’area rappresenti la massa di probabilità in ciascun intervallo. Questi calcoli vengono eseguiti automaticamente in R, passando i margini degli intervalli (bin) vengono assegnati al layer <code>geom_histogram()</code>, come mostrato nel riquadro di codice sottostante. L’istogramma risultante è illustrato in Figura <a href="#fig-figName242b" class="quarto-xref">Figure&nbsp;<span>3.4</span></a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 3.8</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dataset) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> PRP, <span class="at">y =</span> <span class="fu">after_stat</span>(density)),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">breaks =</span> margins, <span class="at">fill =</span> <span class="st">"white"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Rainfall class"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">200</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName242b" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName242b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="03-StatisticaDescrittiva_files/figure-html/fig-figName242b-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName242b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.4: Impiego di un istogramma per rappresentare la densità di probabilità di eventi piovosi classificatio in base alla quantità di pioggia, osservati in Italia centrale, nel 2022.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="esempio-3.5-segue-1" class="level3" data-number="3.7.4">
+<h3 data-number="3.7.4" class="anchored" data-anchor-id="esempio-3.5-segue-1"><span class="header-section-number">3.7.4</span> Esempio 3.5 (segue)</h3>
+<p>È possibile produrre un grafico a dispersione utilizzando il layer <code>geom_point()</code> in <code>ggplot</code>; come esempio del suo utilizzo, possiamo tracciare la relazione tra altezza e resa nei dati <code>heights</code> (Riquadro sottostante; Fig. @ref(fig:figName244)).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Box di codice 3.9</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"heights"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dataset) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> height, <span class="at">y =</span> yield),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">cex =</span> <span class="fl">2.5</span>, <span class="at">col =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Altezza (cm)"</span>) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Resa (t/ha)"</span>) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-StatisticaDescrittiva_files/figure-html/figName244-1.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Grafico a dispersione che mostra la relazione tra due variabili numeriche</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="domande-ed-esercizi" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="domande-ed-esercizi"><span class="header-section-number">3.8</span> Domande ed esercizi</h2>
+<ol type="1">
+<li>Illustrare e discutere i principali indici di tendenza centrale per le variabili quantitative</li>
+<li>Illustrare e discutere i principali indici di variabilità per le variabili quantitative</li>
+<li>Illustrare e discutere il coefficiente di correlazione di Pearson</li>
+<li>Un’analisi chimica è stata eseguita in triplicato e i risultati sono stati i seguenti: 125, 169 and 142 ng/g. Calcolate la media e tutti gli indicatori di variabilità che conoscete. In che modo può essere espressa l’incertezza assoluta della misura?</li>
+<li>Un ricercatore ha misurato l’altezza di quattro alberi ed il loro diametro (entrambi in metri). I risultati ottenuti sono i seguenti: <code>Altezza &lt;- c(2.3, 2.7, 3.1, 3.5)</code> e <code>Diametro &lt;- c(0.46, 0.51, 0.59, 0.64)</code>. Calcolare il coefficiente di correlazione di Pearson e valutare l’entità della correlazione in base ai valori massimi e minimi ammissibili per questa statistica.</li>
+<li>Considerate il file EXCEL ‘rimsulfuron.csv’, che potete trovare in questo percorso: <a href="https://www.casaonofri.it/_datasets/rimsulfuron.csv" class="uri">https://www.casaonofri.it/_datasets/rimsulfuron.csv</a>. In questo file sono riportati i risultati di un esperimento con 16 trattamenti e 4 repliche, nel quale sono stati posti a confronti diversi erbicidi e/o dosi per il diserbo nel mais. Calcolare le medie produttive ottenute con le diverse tesi sperimentali e riportarle su un grafico, includendo anche un’indicazione di variabilità. Verificare se la produzione è correlata con il ricoprimento (WeedCover) delle piante infestanti.</li>
+</ol>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-holcomb_2017" class="csl-entry" role="listitem">
+<span class="smallcaps">Holcomb, Z</span> (2017) <em>Fundamentals of descriptive statistics</em>. Routledge (Taylor; Francis Group)
+</div>
+<div id="ref-holtz_2024" class="csl-entry" role="listitem">
+<span class="smallcaps">Holtz, Y</span> (2024) <em><a href="https://r-graph-gallery.com/index.html">The r graph gallery</a></em>
+</div>
+<div id="ref-soage_2023" class="csl-entry" role="listitem">
+<span class="smallcaps">Soage, JC</span> (2024) <em><a href="https://r-charts.com">R charts</a></em>
+</div>
+<div id="ref-sokal1981_Biometry" class="csl-entry" role="listitem">
+<span class="smallcaps">Sokal, RR, FJ Rohlf</span> (1981) <em>Biometry</em>. W.H. Freeman; Company, USA
+</div>
+<div id="ref-wickham_2016" class="csl-entry" role="listitem">
+<span class="smallcaps">Wickham, H</span> (2016) <em><a href="https://doi.org/10.1007/978-3-319-24277-4">Ggplot2. <span>Elegant</span> graphics for data analysis</a></em>. Springer International Publishing, Cham
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>ulteriori informazioni nel blog allegato a questo libro, a questo link <a href="https://www.statforbiology.com/2018/stat_general_variancesamplepop/">https://www.statforbiology.com/2018/stat_general_variancesamplepop/</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>ad esempio il sito web R Charts, all’indirizzo <a href="https://r-charts.com">r-charts.com</a> e la galleria di grafici R all’indirizzo <a href="https://r-graph-gallery.com/index.html">r-graph-gallery.com</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-ProgettoRicerca.html" class="pagination-link" aria-label="Il disegno degli esperimenti di campo">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-CausaEffetto.html" class="pagination-link" aria-label="Le relazioni causa-effetto">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

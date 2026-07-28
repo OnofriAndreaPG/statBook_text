@@ -1,0 +1,262 @@
+# Il disegno degli esperimenti di campo
+
+*Nature will best respond to a logical and carefully thought out questionnaire (Ronald Fisher)*
+
+Nel capitolo precedente abbiamo visto che ogni esperimento, per essere valido, deve conformarsi a tre principi di base, cioè controllo, replicazione e randomizzazione; a questo punto dobbiamo chederci come sia possibile tradurre questi principi in scelte progettuali adeguate a produrre esperimenti validi in campo. L'insieme dei metodi per condurre esperimenti corretti è detto 'Disegno sperimentale'; ovviamente non esiste un protocollo unico per tutte le discipline scientifiche nel settore agrario, è possibile dare alcune indicazioni generali, applicabili per tutti gli esperimenti di campo. Preliminarmente, è utile distinguere tra:
+
+1.  prove parcellari
+2.  prove dimostrative aziendali
+
+Le prove parcellari sono eseguite in campo, su unità sperimentali (parcelle) sufficientemente piccole da consentire un elevato grado di precisione e di controllo, con l'impiego di attrezzature parcellari in grado di riprodurre l'operatività delle attrezzature aziendali, ma su scala ridotta e adeguata all'impiego su piccole superfici. Grazie all'elevato livello di controllo, i risultati degli esperimenti parcellari sono generalmente molto precisi e realistici, sebbene le condizioni di crescita possano essere estremamente favorevoli alla coltura, consentendo livelli di resa fino al 10-30% in più, rispetto a quelli ottenibili in un'azienda agraria.
+
+Le prove dimostrative in azienda rappresentano, invece, la fase finale della ricerca e vengono solitamente condotte per validare o dimostrare l'efficacia di nuove pratiche e tecnologie a livello aziendale, in condizioni di gestione realistiche, utilizzando le attrezzature e le risorse normalmente a disposizione delle aziende agrarie del circondario.
+
+## Trattamenti e repliche
+
+Partiamo dal presupposto che un'accurata ricerca bibliografica preliminare abbia suggerito ipotesi e obiettivi di ricerca ragionevoli ed abbia quindi portato alla definizione di un certo numero di trattamenti sperimentali da includere in prova. Per gli esperimenti parcellari, quel numero va da 2 a 20, sebbene alcuni progetti di ricerca, come i programmi di miglioramento genetico nelle loro fasi iniziali, possano richiedere un numero di trattamenti (accessione) molto più elevato. Il numero di repliche è generalmente compreso tra 3 e 5; un numero inferiore non è consigliabile, perché l'esperimento diventa molto inefficiente, mentre un numero superiore è altrettanto inadeguato, perché aumentano i tempi e i costi della ricerca, mentre la precisione tende a diminuire, poiché l'esperimento diventa molto grande.
+
+Per le prove dimostrative, il numero di trattamenti è, di solito, basso e, il più delle volte, è pari a due: una pratica agronomica innovativa (in relazione, ad esempio, a gestione delle colture, semina, protezione, fertilizzazione...) contro un testimone di riferimento. Tale coppia (la nuova pratica di gestione e il testimone) viene replicata per un un minimo di tre volte (ma quattro è sicuramente meglio), per misurare la variabilità di risposta all'interno del campo.
+
+Sia per le prove parcellari che per quelle dimostrative, il numero di unità sperimentali (parcelle) necessarie si ottiene semplicemente moltiplicando il numero di trattamenti per il numero di repliche.
+
+## Scegliere il campo
+
+Una volta definita la tipologia di esperimento che si intende condurre, la scelta di un campo adeguato risulta essere un ingrediente fondamentale per un esperimento di successo. Un campo sperimentale dovrebbe essere:
+
+1.  sufficientemente vicino a strade, laboratori e altre infrastrutture, in modo da consentire un'esecuzione tempestiva dei campionamenti e delle misurazioni;
+2.  il più omogeneo possibile in termini di tipologia di suolo, drenaggio, pendenza, colture precedenti e altre caratteristiche (vedi anche Capitolo 1);
+3.  caratterizzato da una storia agronomica nota ed adeguata agli scopi della ricerca.
+
+La storia del terreno è di fondamentale importanza, poiché determina, ad esempio, il livello di fertilità e la presenza/assenza di parassiti, patogeni e specie infestanti. Ad esempio, se dobbiamo condurre un esperimento di fertilizzazione azotata, è preferibile evitare un campo che nella stagione precedente abbia ospitato erba medica o altre leguminose, a causa di un possibile eccesso di azoto residuo nel terreno. Allo stesso modo, se dobbiamo condurre un esperimento con erbicidi, è preferibile evitare un campo che nella stagione precedente abbia ospitato un altro esperimento di diserbo, poiché la dispersione dei semi nei testimoni non trattati e nelle parcelle trattate con erbicidi di bassa efficacia potrebbe aver creato livelli di infestazione non uniformi.
+
+Oltre a scegliere correttamente l'appezzamento, è importante anche porre in atto alcune operazioni preliminari che consentano di migliorare l'omogeneità del campo o della coltura. Ad esempio, talvolta si usa far precedere la prova da una coltura come l'avena, che è molto avida di azoto e lascia nel terreno poca fertilità residua. Oppure, si può impiantare un prato di erba medica, che, grazie agli sfalci periodici, lascia il terreno libero da piante infestanti. Un'altra tecnica molto usata è quella di seminare a densità più alte del normale e poi diradare, per assicurare una migliore uniformità d'impianto.
+
+## Dimensione e forma delle parcelle
+
+Abbiamo già accennato nel capitolo precedente che l'unità sperimentale per un esperimento in campo è la cosiddetta parcella. Nel caso di esperimenti dimostrativi, essa è solitamente molto lunga e rettangolare, a forma di **striscia**, sufficientemente grande da consentire il passaggio delle comuni macchine agricole (aratro, seminatrici, irroratrici, mietitrebbia e così via) in uno o più passaggi. Talvolta, la parcella può anche coincidere con un campo, cosicché l'esperimento consiste di diversi campi, uno accanto all'altro. Ad esempio, la Figura @fig-figName30a mostra un esperimento dimostrativo con quattro campi, due strisce per campo e l'assegnazione casuale dei due trattamenti alle due strisce all'interno di ciascun campo.
+
+```{r fig-figName30a, echo=FALSE, out.width = "90%", fig.cap = "Possibile schema di una prova dimostrativa aziendale, con quattro campi, due strisce per campo e un trattamento diverso per striscia (New: trattamento innovativo; Chk: testimone)", fig.align='center'}
+# Needs brew install poppler in terminal
+fignamnoe <- "OnFarmTrial"
+fignam <- paste(fignamnoe, ".pdf", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+sysString <- paste("pdftocairo -svg _images/", fignam, " _images/", fignamnoe, ".svg", sep = "")
+system(sysString)
+knitr::include_graphics(paste("_images/", fignamnoe, ".svg", sep = ""))
+```
+
+Nel caso delle prove parcellari, le parcelle hanno, di solito, forma rettangolare, con una larghezza pari a un multiplo della larghezza delle macchine seminatrici/irroratrici/raccoglitrici (Fig. @fig-figName30b) ed una lunghezza appositamente scelta per ottenere una superficie tale da ospitare un numero di piante sufficientemente elevato, ad esempio almeno 20-40 m^2^ per colture a bassa fittezza (es. mais) e 10-20 m^2^ per colture ad alta fittezza (es. grano o erba medica). Parcelle più piccole potrebbero non produrre risultati rappresentativi, ma, a meno che non si tratti di un esperimento dimostrativo, anche parcelle più grandi possono essere svantaggiose, poiché aumenta la variabilità tra le parcelle. Se si dispone di un campo di grandi dimensioni, si potrebbe preferire aumentare il numero di repliche, anziché aumentare la dimensione delle parcelle.
+
+```{r fig-figName30b, echo=FALSE, out.width = "90%", fig.cap = "A small plot experiment in the field (Ph. D. Alberati)", fig.align='center'}
+fignamnoe <- "SorgoProveVarietali"
+fignam <- paste(fignamnoe, ".jpg", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".jpg", sep = ""))
+```
+
+Nello stabilire la dimensione delle parcelle, dovremo tener conto del fatto che la parte più delicata è il bordo, in quanto le piante che si trovano lungo di esso risentono di condizioni diverse dalle altre piante situate al centro della parcella (**effetto bordo**). Questa variabilità dovrebbe essere minimizzata, utilizzando, per i rilievi e la raccolta, solo la parte centrale di ogni parcella, creando così un netta distinzione tra la superficie totale e la **superficie utile**, che può essere anche molto minore di quella totale.
+
+## La mappa di campo
+
+nce the number and characteristics of the plots have been determined, the next step is to draw the so-called \emph{field map}. Dopo avere definito il numero e le caratteristiche delle parcelle, il passo successivo è la redazione della mappa dell'esperimento. Un esempio è riportato in Figura [-@fig-figName31], dove vediamo un esperimento collocato in un appezzamento largo 30 metri e lungo 400 metri e consistente in una griglia di parcelle con otto colonne e quattro righe. Ogni parcella ha dimensioni di otto metri di larghezza per otto metri di lunghezza ed intorno all'esperimento è stato aggiunta una 'cornice' di parcelle aggiuntive, finalizzate a ridurre l'effetto 'bordo'. Vediamo in figura che la mappa riporta tutte le informazioni che consentono di collocare correttamente l'esperimento nello spazio ed, inoltre, che le parcelle sono tutte chiaramente identificate con un codice numerico.
+
+```{r fig-figName31, echo=FALSE, out.width = "90%", fig.cap = "Esempio di mappa di campo per un esperimento con 32 parcelle. Una 'cornice' di parcelle aggiuntive è stata aggiunta attorno alla griglia per minimizzare gli effetti di bordo. Si presume che la coltura sia seminata a file in direzione ovest-est e che la larghezza delle parcelle corrisponda alla larghezza dei macchinari per la semina/raccolta/irrorazione.", fig.align='center'}
+fignamnoe <- "Mappa1"
+fignam <- paste(fignamnoe, ".png", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".png", sep = ""))
+```
+
+## Il *layout* sperimentale
+
+Come accennato in precedenza, gli esperimenti di campo sono 'manipolativa', e prevedono l'allocazione dei trattamenti, che deve avvenire utilizzando criteri di randomizzazione ben definiti. Sulla base di questi criteri distinguiamo diverse tipologie di *layout* sperimentali, che saranno presentate nelle sezioni seguenti.
+
+### Disegni completamente randomizzati (CRD)
+
+Per queste prove, le più semplici, la scelta dei soggetti da trattare è totalmente casuale, senza vincoli di sorta. Il vantaggio principale è la semplicità; lo svantaggio sta nel fatto che le eventuali fonti sistematiche di variabilità vengono ignorate e possono essere confuse con l'effetto del trattamento. Ad esempio, mostriamo la griglia di Figura [-@fig-figName31], utilizzata per l'allocazione casuale di 8 trattamenti (identificati con le lettere da A ad H) con quattro repliche. Il disegno è totalmente corretto, ma se, per qualche motivo di cui non ci rendiamo conto, le prime tre colonne di parcelle nella Figura [-@fig-figName33] (parcelle 1, 2, 3, 9, 10, 11, 17, 18, 19, 25, 26 e 27) fossero in una condizione di minor fertilità *sensu latu*, o per la presenza di un gradiente intrinseco nel suolo, o per intrusioni sistematiche, come attacchi parassitari o di altre avversità, il trattamento G sarebbe penalizzato, perché tre delle quattro repliche si troverebbero nella parte meno fertile, mentre il trattamento H sarebbe favorito, perché solo una replica si troverebbe nella parte meno fertile.
+
+Per questo motivo, i disegni sperimentali a blocchi randomizzati completi (CRD) sono molto comuni negli esperimenti di laboratorio o in serra, o ovunque le condizioni ambientali siano altamente uniformi, mentre sono relativamente rari negli esperimenti in campo.
+
+```{r fig-figName33, echo=FALSE, out.width = "90%", fig.cap = "Esempio di uno schema sperimentale a randomizzazione completa, per una prova con otto trattamenti (identificati con le lettere da A ad H e quattro repliche", fig.align='center'}
+fignamnoe <- "Mappa1CRD"
+fignam <- paste(fignamnoe, ".png", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".png", sep = ""))
+```
+
+### Disegni a blocchi randomizzati (CRBD)
+
+Nei disegni sperimentali a blocchi randomizzati completi (RCBD), le unità sperimentali sono suddivise in gruppi omogenei, ognuno dei quali contiene un numero di soggetti pari al numero dei trattamenti. Per gli esperimenti in campo, le parcelle vengono raggruppate in base a possibili gradienti di fertilità; ad esempio, se ci aspettassimo un gradiente di fertilità dal basso verso l'alto per le parcelle nella Figura @fig-figName31, potremmo dividere l'esperimento in quattro blocchi con una riga ciascuno (8 parcelle per blocco e il blocco 1 conterrebbe, ad esempio, le parcelle da 1 a 9). Successivamente, potremmo assegnare casualmente gli otto trattamenti alle parcelle in ciascun blocco, in modo che ci sia una replica per blocco e, quindi, nessun trattamento venga penalizzato o favorito (Fig. @fig-figName34).
+
+```{r fig-figName34, echo=FALSE, out.width = "97%", fig.cap = "Esempio di un disegno sperimentale a blocchi randomizzati completi, con quattro blocchi (di colori diversi) in grado di tener conto di un possibile gradiente di fertilità dal basso verso l'alto", fig.align='center'}
+fignamnoe <- "Mappa1CRBD"
+fignam <- paste(fignamnoe, ".png", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".png", sep = ""))
+```
+
+I blocchi sono normalmente disposti lungo il gradiente di fertilità principale, in modo che le parcelle di ciascun blocco si trovino nella stessa posizione del gradiente. Ad esempio, se abbiamo un gradiente di fertilità da sinistra a destra e dobbiamo progettare un esperimento in una griglia 4 × 8, come mostrato nella Figura @fig-figName31, potremmo prendere quattro blocchi verticali con due colonne ciascuno (il blocco 1 conterrebbe, ad esempio, le parcelle 1, 2, 9, 10, 17, 18, 25, 26; Fig. @fig-figName34b, a sinistra). Tuttavia, con questa disposizione, le parcelle all'interno di ciascun blocco non sarebbero tutte nella stessa posizione del gradiente, il che aumenterebbe il livello di variabilità non spiegata all'interno di ciascun blocco. Un'alternativa per gestire meglio un eventuale gradiente di fertilità da sinistra a destra sarebbe quella di impostare l'esperimento su una griglia 8 × 4, con quattro blocchi verticali di una colonna ciascuno (Fig. [-@fig-figName34b], a destra), sebbene con tale disposizione l'esperimento divenga molto lungo (64 m), aumentando il rischio di includere parti di campo non omogenee.
+
+```{r fig-figName34b, echo=FALSE, out.width = "97%", fig.cap = "Due possibili layout per tener conto di un potenziale gradiente di fertilità da sinistra a destra (vedi testo per maggiori dettagli)", fig.align='center'}
+fignamnoe <- "Mappa1CRBD2"
+fignam <- paste(fignamnoe, ".png", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".png", sep = ""))
+```
+
+Il disegno sperimentale a blocchi randomizzati completi (RCBD) è il disegno più comune per gli esperimenti sul campo, ma può essere utilizzato anche per altri tipi di esperimenti, dovunque le unità sperimentali possano essere raggruppate in base a qualche proprietà intrinseca, come età, sesso o prossimità spaziale. Si tratta di un *layout* sperimentale molto comune ed anche piuttosto efficiente, preferibile al CRD ogni qualvolta vi siano differenze rilevanti tra gruppi di soggetti sperimentali, in base ad un criterio di classificazione.
+
+### Disegni a quadrato latino (LS)
+
+I disegni a blocchi randomizzati permettono di tener conto di un eventale criterio di raggruppamento tra le unità sperimentali, ad esempio un gradiente di fertilità del suolo. Se le unità sperimentali presentano disomogeneità in relazione a due criteri, o se vi sono due 'gradienti' di fertilità, è possibile utilizzare un *layout* a quadrato latino. La Figura [-@fig-figName35] mostra un esempio con quattro trattamenti e altrettante repliche, nel quale ogni trattamento si trova in tutte le righe e tutte le colonne, in modo da poter considerare eventuali gradienti di fertilità da destra verso sinistra e dall'alto verso il basso. La figura mostra anche perché si parli di quadrato latino: in effetti il numero di righe è uguale al numero di colonne, secondo una griglia quadrata. Qualcuno di voi riconoscerà in questo schema i principi di fondo del Sudoku.
+
+```{r fig-figName35, echo=FALSE, out.width = "40%", fig.cap = "Esempio di un disegno sperimentale a quadrato latino, con quattro trattamenti (A, B, C e D) ed altrettante repliche. I colori aiutano ad identificare i quattro trattamenti e la posizione delle rispettive parcelle", fig.align='center'}
+fignamnoe <- "Mappa2LS"
+fignam <- paste(fignamnoe, ".png", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".png", sep = ""))
+```
+
+I disegni a quadrato latino non sono solo utili per gli esperimenti di pieno campo, ma possono essere utilizzati anche in altri ambiti di ricerca; lo svantaggio principale sta nel fatto che, dovendo avere tante repliche quanti sono i trattamenti, è utilizzabile solo per esperimenti abbastanza piccoli, con meno di 4-5 trattamenti, per evitare che il numero di repliche diventi inaccettabilmente alto.
+
+### Disegni a split-plot e strip-plot
+
+Gli esperimenti fattoriali possono essere disegnati con uno schema a randomizzazione completa o a blocchi randomizzati, allocando alle unità sperimentali tutte le combinazioni dei fattori in studio. Per esempio, consideriamo un esperimento per confrontare tre tipi di lavorazioni del terreno (minimum tillage = MIN; aratura superficiale = SP; aratura profonda = DP) e due tipi di controllo chimico delle piante infestanti (a pieno campo = TOT; lungo la fila = PART). Se vogliamo fare quattro repliche, i sei trattamenti sperimentali (MIN-TOT, SP-TOT, DP-TOT, MIN-PART, SP-PART and DP-PART) possono essere allocati alle 24 parcelle secondo uno schema a blocchi randomizzati, come indicato in Figura @fig-figName37. In questo caso è necessario lasciare un ampio spazio tra le parcelle, in modo da permettere la circolazione delle macchine operatrici per la lavorazione ed, inoltre, le parcelle debbono essere grandi, per consentire una buona esecuzione dell'aratura.
+
+```{r fig-figName37, echo=FALSE, out.width = "75%", fig.cap = "Schema di campo per un esperimento fattoriale con due fattori, ovvero la lavorazione del terreno con tre livelli (lavorazione minima = MIN; aratura superficiale = SP; aratura profonda = DP) e il controllo delle infestanti, con due livelli (a pieno campo = TOT; lungo la fila = PART). L'esperimento è disegnato a blocchi randomizzati completi (RCBD) e la lavorazione del terreno richiede parcelle di grandi dimensioni e ampio spazio tra di esse", fig.align='center'}
+fignamnoe <- "Mappa3FATT"
+fignam <- paste(fignamnoe, ".png", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".png", sep = ""))
+```
+
+Dato che il trattamento di diserbo non richiede parcelle altrettanto grosse, potremmo pensare di suddividere ogni parcella in due sub-parcelle, sulle quali allocare il trattamento di diserbo (disegno a **parcella suddivisa** o **split-plot**). Un esempio è riportato in Figura [-@fig-figName38], dove possiamo osservare che le lavorazioni sono allocate su 12 parcelle principali (*main-plots*), secondo uno schema a blocchi randomizzati, mentre i trattamenti di diserbo sono allocati in modo randomizzato sulle due *sub-plots* in ogni *main-plot*. Tecnicamente, diciamo che la lavorazione è il fattore di primo ordine, mentre il diserbo chimico è il fattore di secondo ordine; l'esperimento assume così dimensioni inferiori ed è quindi più preciso.
+
+```{r fig-figName38, echo=FALSE, out.width = "75%", fig.align='center', fig.cap="La mappa si riferisce allo stesso esperimento della figura precedente (tre metodi di lavorazione del terreno e due metodi di controllo delle infestanti) ma disegnato a *split-plot*, utilizzando diversi colori per identificare i due trattamenti allocati alle *sub-plots*"}
+fignamnoe <- "Mappa3Split"
+fignam <- paste(fignamnoe, ".png", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".png", sep = ""))
+```
+
+In generale, un disegno a split-plot può rendersi necessario per i seguenti motivi:
+
+1.  un fattore sperimentale richiede parcelle più grandi dell'altro. Di conseguenza si disegna l'esperimento per il fattore che richiede parcelle più grandi, che vengono poi suddivise per accomodare l'altro fattore sperimentale.
+2.  Uno dei due fattori sperimentali è più 'difficile' da assegnare rispetto all'altro e quindi è preferibile manipolare congiuntamente tutto il gruppo di unità sperimentali che deve riceverlo. Ad esempio, se vogliamo misurare la resistenza alla corrosione di barre d'acciaio con diversi rivestimenti e forgiate a diverse temperature, è evidente che la gestione della temperatura nella fornace è piuttosto complessa, perché richiede tempi lunghi per essere cambiata e raggiungere un nuovo equilibrio. Invece che preparare una fornace per ogni rivestimento (manipolazione indipendente delle unità sperimentali), si mettono nella stessa fornace tutte le unità sperimentali con i diversi rivestimenti. Una situazione analoga si può avere se vogliamo provare diverse miscele per torte (con vari ingredienti), e diversi tempi di cottura; dato che non è agevole preparare una miscela diversa per ogni tempo di cottura, potremmo preparare una miscela tutta insieme, per poi suddividerla tra i diversi tempi di cottura.
+3.  La disponibilità di unità sperimentali è limitata, come accade con gli armadi climatici, che vengono impostati a diversa temperatura e all'interno delle quali vengono randomizzate le tesi sperimentali di secondo ordine.
+
+Un'importante conseguenza dei disegni a split-plot è che ogni mainplot funge da replica per il fattore sperimentale di secondo ordine. In effetti, se guardiamo alla Figura @fig-figName38, possiamo osservare che ci sono quattro repliche per ogni lavorazione, ma 12 repliche (12 *sub-plots*) per ogni tipo di diserbo chimico. Di conseguenza, l'effetto del fattore sperimentale di secondo ordine è stimato con maggior precisione.
+
+Un'utile variante dello *split-plot* può trovare applicazione in alcune circostanze, soprattutto nelle prove di diserbo chimico e prevede di allocare i trattamenti in 'striscie' composte da più parcelle (**strip-plot**). Un esempio è riportato nella Figura [-@fig-figName253], dove quattro colture sono state seminate 40 giorni dopo due trattamenti erbicidi, per determinare i possibili effetti fitotossici dovuti alla presenza di residui nel terreno (esperimento di *recropping*). Ogni blocco è organizzato in tre righe e quattro colonne; le quattro colture sono state allocate casualmente ad una colonna ciascuna, mentre le tesi erbicide (incluso il controllo non trattato) sono state allocate casualmente ad una riga ciascuna. Le combinazioni dei due fattori sperimentali risultano, di conseguenza, assegnate alle sub-parcelle. In questo disegno sperimentale, abbiamo tre tipi di parcelle: le righe, le colonne e le sub-parcelle, con il vantaggio che le operazioni di trattamento in campo possono essere effettuate in modo rapido ed efficace.
+
+```{r fig-figName253, echo=FALSE, out.width = "70%", fig.cap = "Mappa di un esperimento di *recropping*, in cui quattro colture (girasole, colza, soia e mais) sono state seminate su terreno non trattato o su terreno precedentemente trattato con due erbicidi. L'esperimento è disegnato come *strip-plot*, con due blocchi", fig.align='center'}
+fignamnoe <- "MappaStrip"
+fignam <- paste(fignamnoe, ".png", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".png", sep = ""))
+```
+
+### Disegni con *sub-sampling*
+
+Sebbene le pseudo-repliche non possano sostituire le repliche vere, esse possono essere associate a quest'ultime nei disegni sperimentali con *sub-sampling* che sono veramente molto comuni. Ad esempio, se vogliamo determinare l'abbondanza delle piante infestanti, è possibile utilizzare, in ogni parcella, diversi 'quadrati', all'interno dei quali effettuare i conteggi o le determinazioni della biomassa @colbach_2000, come mostrato in Figura [-@fig-figName39sub]. Come accennato nel Capitolo 1, prelevare sub-campioni da un esperimento valido con repliche vere è una buona pratica, perchè permette di ottenere una maggiore precisione, ma è necessario non confondere repliche vere e sub-repliche in fase di analisi dei dati, poiché le due variabilità (quella tra repliche vere e tra sub-repliche) possono essere diverse e fornire informazioni diverse. Ad esempio, negli esperimenti che prevedono determinazioni chimiche, è consuetudine prelevare diversi sottocampioni, ad esempio, dalla granella raccolta in ciascuna parcella, e sottoporli a diverse misurazioni; in questo caso, la variabilità tra repliche vere rappresenta una stima affidabile dell'intero errore sperimentale, mentre la variabilità dei sottocampioni è solitamente inferiore e fornisce solo una stima affidabile degli errori commessi durante la fase di analisi chimica.
+
+```{r fig-figName39sub, echo=FALSE, out.width = "50%", fig.align='center', fig.cap="Esempio di un 'quadrato' per il campionamento delle infestanti (Foto: Euro Pannacci); in genere se ne utilizzano almeno un paio per parcella, ed ognuno di essi costituisce un *sub-campione*"}
+fignamnoe <- "QuadratWeeds"
+fignam <- paste(fignamnoe, ".jpg", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+knitr::include_graphics(paste("_images/", fignamnoe, ".jpg", sep = ""))
+```
+
+### Misure ripetute
+
+Uno schema sperimentale a misure ripetute è simile a uno *split-plot* in quanto prevede (almeno) due gruppi di fattori: quello/quelli che viene/vengono assegnato/i alle parcelle, più il fattore ripetuto, che consiste nell'effettuare misurazioni multiple in ciascuna parcella, in momenti diversi (ad esempio, fasi fenologiche, stagioni, anni...) o in posizioni diverse (ad esempio, profondità, organi della pianta, posizioni della chioma...). Il fattore ripetuto è analogo al *sub-plot factor* di un disegno a *split-plot*, con l'importante differenza che i suoi livelli non sono e non possono essere randomizzato, ma sono allocati in ordine sistematico (ad esempio, in base alla scala temporale o spaziale). Quando il fattore ripetuto è il tempo, un disegno a misure ripetute viene spesso definito **split-plot in time** (Fig. [-@fig-figName39ter]).
+
+```{r fig-figName39ter, echo=FALSE, out.width = "65%", fig.align='center', fig.cap="Esperimento di confronto varietale su erba medica (con i genotipi A, B, C e D) impostato come un disegno sperimentale a blocchi randomizzati completi (RCBD), con misurazioni ripetute nell'arco di quattro anni. Per evidenziare la somiglianza tra questo disegno sperimentale e un disegno a parcelle suddivise, si immagina che le parcelle si estendano nello spazio, sebbene in realtà si estendano nel tempo (*split-plot in time*). È importante notare che il fattore ripetuto (anno) non è randomizzato nelle sottoparcelle, poiché i suoi livelli possono essere solo in ordine sistematico (dal 2001 al 2004)"}
+fignamnoe <- "MappaRepeated_ita"
+fignam <- paste(fignamnoe, ".pdf", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+sysString <- paste("pdftocairo -svg _images/", fignam, " _images/", fignamnoe, ".svg", sep = "")
+system(sysString)
+knitr::include_graphics(paste("_images/", fignamnoe, ".svg", sep = ""))
+```
+
+## Disegni sperimentali dubbi o errati
+
+I disegni sperimentali presentati nella sezione precedente sono formalmente corretti e sono comunemente utilizzati nella ricerca di campo in agricoltura e biologia. Tuttavia, per soddisfare i requisiti dettati dalla disponibilità di manodopera, tempo e denaro, si adotta spesso un certo grado di flessibilità nella randomizzazione. A questo proposito, una raccomandazione ragionevole è sempre quella di progettare esperimenti formalmente corretti, a meno che l'esperienza e il buon senso non suggeriscano che alcune lievi semplificazioni possano permettere di aumentare la fattibilità e ridurre i costi, senza compromettere la precisione e l'accuratezza, il che, bisogna dire, avviene piuttosto di rado.
+
+### Esempio 2.1
+
+Per misurare la concentrazione residua di due erbicidi nel terreno 20 giorni dopo il trattamento, è necessario pianificare un esperimento con repliche vere, trattate in modo indipendente e casuale con i due erbicidi, come mostrato in M1 (CRD) o M2 (RCBD) in Figura @fig-figName23. Il disegno sperimentale può essere ulteriormente migliorato prelevando più sub-campioni in ciascuna parcella e/o sottoponendo ciascun campione o sub-campione a più determinazioni chimiche (disegno con *sub-sampling*). Talvolta, un esperimento di questo tipo viene semplificato, ad esempio, (i) trattando due sole parcelle (una per erbicida), raccogliendo un campione di terreno per parcella ed effettuando, per ciascun campione, tre determinazioni chimiche; (ii) trattando due sole parcelle (una per erbicida), raccogliendo quattro campioni di terreno per parcella ed effettuando, per ciascun campione, un'unica determinazione chimica; (iii) trattando due sole parcelle (una per erbicida), raccolgiendo quattro campioni di terreno per parcella ed effettuando, per ogni campione, tre determinazioni chimiche. In teoria, nessuna di queste semplificazioni è valida per mancanza di repliche vere; nel caso (i) la situazione è quella mostrata in M3 (Fig. [-@fig-figName23]): non ci sono repliche e le tre determinazioni chimiche possono solo fornire una stima dei possibili errori commessi durante la fase di analisi chimica, mentre tutte le altre potenziali fonti di errore casuale sono trascurate (nel linguaggio comune, queste pseudo-repliche sono spesso chiamate repliche "tecniche", in contrapposizione alle repliche "biologiche"). Nei casi (ii) e (iii), la situazione è simile a quella mostrata in M4 (Fig. [-@fig-figName23]): abbiamo repliche biologiche (i tre sottocampioni di suolo), ma i trattamenti non sono assegnati in modo indipendente ad esse, e non importa quante determinazioni chimiche vengono eseguite in ogni campione.
+
+```{r fig-figName23, echo=FALSE, out.width = "75%", fig.align='center', fig.cap="Due trattamenti sperimentali (A e B) vengono confrontati con diversi tipi di *layout* non necessariamente corretti (da Hurlbert, 1984; modificato). M1: CRD con quattro repliche vere per trattamento; M2: RCBD con quattro blocchi completi, identificati da doppie linee; M3: A e B vengono confrontati in due parcelle adiacenti (senza repliche); M4: A e B vengono confrontati in due parcelle adiacenti e da ciascuna parcella vengono prelevati diversi sottocampioni (pseudo-replicazione); M5: RCBD con assegnazione sistematica dei trattamenti all'interno di ciascun blocco (A è sempre a sinistra di B); M6: misurazioni appaiate, in cui A e B vengono osservati nella stessa unità in momenti diversi (ad esempio, prima e dopo il trattamento); M7 rappresenta un esperimento in cui i due trattamenti non sono randomizzati, ma sono raggruppati in due posizioni diverse (segregazione). Per maggiori dettagli, si vedano gli esempi nel testo"}
+fignamnoe <- "Hurlbert_modificato"
+fignam <- paste(fignamnoe, ".pdf", sep = "")
+url <- paste("https://www.casaonofri.it/_Figures/", fignam, sep = "")
+dest <- paste("_images/", fignam, sep = "")
+download.file(url, dest, mode = "wb")
+sysString <- paste("pdftocairo -svg _images/", fignam, " _images/", fignamnoe, ".svg", sep = "")
+system(sysString)
+knitr::include_graphics(paste("_images/", fignamnoe, ".svg", sep = ""))
+```
+
+### Esempio 2.2
+
+Per confrontare la crescita iniziale di sedici genotipi, è stato progettato un esperimento in vaso in cella climatica, utilizzando diversi ripiani come blocchi, per tenere conto delle possibili differenze tra un ripiano e l'altro. All'interno di ciascun ripiano, i sedici genotipi sono stati disposti in ordine casuale (RCBD). Questo disegno sperimentale, formalmente corretto, viene spesso semplificato posizionando i genotipi su ciascun ripiano in ordine sistematico, seguendo la stessa sequenza da sinistra a destra, il che è spesso motivato da una valutazione visiva più efficace delle differenze tra i genotipi. Una disposizione sistematica di questo tipo è simile a quella illustrata in M5 (Fig. [-@fig-figName23]), ed è sconsigliata, sia per esperimenti condotti in condizioni controllate sia, soprattutto, per gli esperimenti di campo, poiché qualsiasi possibile gradiente ambientale da sinistra a destra potrebbe essere facilmente confuso con l'effetto del trattamento.
+
+### Esempio 2.3
+
+Se intendessimo studiare l'influenza della posizione dei rami sulla fotosintesi di una specie arborea, potremmo pianificare un esperimento completamente randomizzato, con otto alberi; su quattro di questi, scelti a caso, potremmo misurare la fotosintesi nei rami bassi, mentre sui rimanenti quattro alberi potremmo fare le stesse misure, ma considerando i rami alti (come in M1, Fig. [-@fig-figName23]). Questo disegno sperimentale può essere semplificato considerando quattro alberi invece di otto, misurando, per ciascuno di essi, la fotosintesi sia nei rami bassi che in quelli alti, secondo un tipico disegno a misure ripetute (vedi M6 in Fig. [-@fig-figName23]), il che potrebbe essere vantaggioso per un miglior controllo degli errori sperimentali.
+
+### Esempio 2.4
+
+Intendiamo confrontare due sistemi di irrigazione (a pioggia e localizzata) utilizzando quattro campi in ognuna di due aziende agricole vicine tra loro. Un modo corretto per impostare un esperimento di questo tipo è utilizzare, in ciascuna azienda, un disegno sperimentale a blocchi randomizzati completi (RCBD) con due blocchi di due campi ciascuno (RCBD ripetuto in due località). Una notevole semplificazione potrebbe essere ottenuta utilizzando i quattro campi della prima azienda per allocare il trattamento di irrigazione a pioggia e i quattro campi dell'altra azienda per allocare il trattamento di irrigazione localizzata, come mostrato in M7 (Fig. [-@fig-figName23]). Tuttavia, questa semplificazione produrrebbe un disegno sperimentale invalido, perché i due trattamenti non sarebbero interspersi, ma segregati, in modo che l'effetto dell'irrigazione sarebbe completamente confuso con l'effetto dell'azienda (effetto 'località'). In altre parole, qualsiasi differenza tra le due aziende agricole, preesistente (ad esempio, storia agronomica, tipo di suolo o ambiente) o prodotta da qualsiasi tipo di intrusione (ad esempio, un attacco di parassiti in una delle due località), potrebbe essere erroneamente attribuita all'effetto dell'irrigazione.
+
+In generale, la mancanza di interspersione (segregazione) è uno dei principali casi di randomizzazione errata e si verifica quando vi sia una separazione spaziale o temporale tra i livelli dei trattamenti sperimentali. Un disegno di questo tipo può essere considerato valido solo per saggiare l'effetto località, non quello del trattamento. Ad esempio, se vogliamo valutare la differenza di produzione di un genotipo in due località, coltivare questo genotipo in quattro campi di una località e in quattro campi dell'altra sarebbe considerato del tutto corretto.
+
+### Esempio 2.5
+
+Intendiamo confrontare due sistemi di irrigazione (a pioggia e localizzata) utilizzando otto filari di un frutteto e, a questo fine, decidiamo di allocare in modo casuale i due sistemi di irrigazione agli otto filari (quattro filari per sistema). Questo disegno pienamente corretto potrebbe essere semplificato allocando il primo sistema d'irrigazione ai primi quattro filari contigui, ed il secondo sistema d'irrigazione ai restanti quattro filari contigui, introducendo così una forma di segregazione spaziale tra i due livelli del trattamento, come già osservato nell'Esempio 2.4. In linea di principio, tale semplificazione sarebbe errata (mancanza di interspersione) e l'esperimento dovrebbe essere considerato invalido. In pratica, le conseguenze di tale segregazione dovrebbero essere molto meno gravi rispetto all'esempio precedente, poiché i due blocchi di quattro file sono molto vicini tra loro e l'insorgenza di effetti di confusione legati alla posizione dei filari può essere considerata alquanto improbabile. Sebbene questo tipo di segregazione sia considerato accettabile in alcune discipline, è consigliabile, per quanto possibile, evitarla, poiché l'interspersione dei trattamenti è una salvaguardia fondamentale contro risultati errati.
+
+## Ulteriori sviluppi
+
+I *layout* sperimentali presentati in questo capitolo sono i più comuni negli esperimenti in campo, sebbene esistano diverse altre possibilità per soddisfare le esigenze specifiche di ogni disciplina e, in particolare, per ridurre la dimensione dei blocchi e la variabilità intra-blocco, nel caso di esperimenti con un numero molto elevato di trattamenti. A questo proposito, i disegni a blocchi incompleti bilanciati o altri tipi di disegni a blocchi incompleti (ad esempio, disegni a righe e colonne, parzialmente bilanciati e a reticolo) possono rivelarsi utili in alcuni casi. Essi sono descritti, ad esempio, in @kuehl_2000, @leclerg_1962 e @cochran_1950. Soprattutto per questi disegni complessi, l'ausilio di un sistema informatico, come il *package* R `agricolae`, può essere vantaggioso per eseguire le randomizzazioni in modo semplice ed appropriato @demendiburu_2023.
+
+È inoltre necessario menzionare alcuni approcci relativamente recenti per tenere conto della variabilità del suolo negli esperimenti su piccole parcelle, come i "disegni spaziali" [@richter_2014] e il metodo *nearest neighbor* [@mohanty_2001], che sono troppo avanzati per le finalità di questo testo.
+
+Infine, è importante ricordare che i risultati degli esperimenti in campo devono sempre essere confermati in altri anni o località. Per questi progetti multi-ambiente, il disegno sperimentale (trattamenti e repliche) è solitamente lo stesso, ma la randomizzazione deve essere sempre eseguita in modo indipendente negli anni, nelle località o nelle prove successive.
+
+## Domande ed esercizi
+
+1.  Elenca e discuti le principali caratteristiche delle parcelle sperimentali (forma, dimensione, numero, ecc.).
+2.  Cos'è l'effetto bordo e come viene solitamente minimizzato?
+3.  Discuti le differenze tra i disegni CRD, RCBD e a quadrato latino in relazione al loro ruolo nella ricerca agraria.
+4.  Cos'è un esperimento a *split-plot* e come viene impostato?
+5.  Cos'è un esperimento a *strip-plot* e come viene impostato?
+6.  Discuti i possibili metodi per progettare un esperimento con due fattori sperimentali.
+7.  Vi è stato richiesto di progettare un esperimento di miglioramento genetico con 16 genotipi di grano, codificati con le lettere dell'alfabeto romano. L'obiettivo è determinare quale genotipo sia il migliore in un dato ambiente. Scrivete il protocollo sperimentale, specificando tutti gli elementi principali del progetto (soggetti, variabili, repliche, disegno sperimentale) e disegnate la planimetria del campo. Considerate un campo di 400 m di lunghezza, 20 m di larghezza e con il lato più lungo orientato nord-sud. La semina viene effettuata longitudinalmente, lungo l'asse nord-sud, con una seminatrice larga 2.5 m. Il campo è uniforme lungo il suo asse longitudinale, sebbene vi sia un significativo gradiente di fertilità trasversale.
+8.  Descrivete il protocollo di un esperimento per determinare l'effetto della data di semina (autunno e primavera) su sette genotipi di favino. Includete tutti i possibili elementi per valutare la validità dell'esperimento, descrivete il tipo di disegno sperimentale e includete la planimetria del campo, mostrando tutte le informazioni rilevanti (incluse le dimensioni delle parcelle e l'orientamento nello spazio). Si consideri lo stesso campo e la stessa seminatrice descritti nell'Esercizio 7, ma si supponga ora che lo spazio disponibile sia lungo 100 m e largo 30 m. Motivate tutte le scelte.
+9.  Descrivere il protocollo di un esperimento per determinare l'effetto della dose di azoto (quattro livelli) su due genotipi di grano. Includere tutti i possibili elementi per valutare la validità dell'esperimento, descrivere il tipo di disegno sperimentale e includere la planimetria del campo, mostrando tutte le informazioni rilevanti (incluse le dimensioni delle parcelle e l'orientamento nello spazio). Si consideri un campo lungo 50 m e largo 30 m, con il lato più lungo orientato est-ovest. La semina viene effettuata longitudinalmente, lungo l'asse est-ovest, con una seminatrice larga 2 m. È presente un gradiente di fertilità longitudinale (non trasversale) rilevante. Motivare tutte le scelte.

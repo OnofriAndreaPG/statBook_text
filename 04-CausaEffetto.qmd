@@ -1,0 +1,668 @@
+# Le relazioni causa-effetto
+
+*If there is anything in the world which I do firmly believe in, it is the universal validity of the law of causation (Thomas Huxley)*
+
+Nel capitolo precedente abbiamo visto come possiamo utilizzare semplici statistiche per descrivere i tratti principali dei nostri dati sperimentali, come la tendenza centrale e la dispersione e, se abbiamo due o più variabili, abbiamo visto come sia possibile descrivere la loro correlazione, utilizzando il coefficiente $r$ di Pearson.
+
+Nel lavoro di ricerca, è fondamentale stabilire l'esistenza di nessi **causa-effetto** (relazione di causalità), tra una variabile, solitamente detta "predittore", in grado di indurre effetti su un'altra variabile, solitamente denominata "risposta". Ad esempio, è importante stabilire se una variazione del genotipo possa causare un cambiamento nella resa del frumento, oppure se una variazione nella tecnica di lavorazione possa causare un cambiamento nel tempo di emergenza del mais. Secondo John Stuart Mill (1806-1867), ogni relazione causa-effetto, per essere definita tale, dovrebbe soddisfare tre criteri fondamentali [@shadish_2002]:
+
+1.  La causa precede l'effetto;
+2.  La causa e l'effetto hanno evidenti relazioni;
+3.  Non ci sono spiegazioni alternative altrettanto valide per queste relazioni, oltre alla causalità.
+
+Da questi criteri si deduce come la correlazione, intesa come variazione congiunta, non rappresenti, di per se', un nesso causa-effetto [*correlation does not mean causation*; @zaniletti_2023], perchè valori di $r$ vicini a 1 o -1 possono essera facilmente osservati anche quando, per le due variabili in studio, non possiamo stabilire quale sia la causa e quale l'effetto (ad esempio: altezza e peso delle piante di una specie vegetale, per le quali non vi è *causal priority*), oppure quando vi sia una variabile esterna di confondimento, che funge da causa comune per le due variabili in studio [@aldrich_1995]. Al di là delle sottigliezze terminologiche, è evidente che la correlazione 'non causle' o addirittura la correlazione spuria sono particolarmente preoccupanti soprattutto per i dati che provengono da esperimenti osservazionali, con livelli di controllo che non sempre possono essere altissimi. Al contrario, gli esperimenti manipolativi controllati, replicati e randomizzati sono particolarmente adatti a stabilire relazioni causa-effetto, grazie alla assunzione *ceteris paribus*, per la quale si cerca di mantanere tutto costante, a parte il trattamento sperimentale. In questo modo, le discrepanze tra le unità osservate sottoposte a trattamenti diversi possono essere ragionevolmente attribuite all'effetto di tali trattamenti e non ad altre cause sistematiche, ma ignote.
+
+## Modelli statistici
+
+Per descrivere le relazioni causali, possiamo utilizzare i **modelli matematici**, cioè delle equazioni in cui le osservazioni sperimentali sono prodotte come risultato dell'effetto di uno o più predittori. L'impiego di questi utili strumenti si è sviluppate notevolmente a partire da Galileo, ed ha portato alla creazione di modelli di complessità variabile, dalle semplici equazioni empiriche [@ratkowky_1990] ai più complessi modelli meccanicistici multiscala [@gherman_2023], che sono anche in grado di descrivere sistemi complessi, come il sistema agrario [vedi @pasley_2023 o @gavassorita_2024].
+
+In questo libro trattaremo alcuni semplici modelli empirici, frequentemente utilizzati per descrivere le relazioni causa-effetto negli esperimenti controllati, dove il numero dei predittori è ridotti al minimo livello possibile. I modelli che useremo sono definiti **modelli statistici**, a causa della presenza di una "componente stocastica", in grado di tenere conto anche di tutti gli effetti stocastici non allocati dallo sperimentatore, ma derivanti da possibili fonti di errore casuale, come quelle descritte nei capitoli 1 e 2.
+
+## Componenti di un modello
+
+In semplice linguaggio algebrico, possiamo scrivere un modello causa-effetto utilizzando un'equazione generale come la seguente:
+
+$$ Y_E = f(X, \theta)$$
+
+dove $Y_E$ è l'effetto atteso dello stimolo $X$, secondo la funzione $f$, basata su una collezioni di parametri $\theta$.
+
+Le componenti di questo modello sono la risposta attesa ($Y_E$) che è l'oggetto del nostro studio e può assumere le forme più disparate: spesso è numerica, ma a volte rappresenta una qualità. In questo libro consideremo solo la situazione in cui $Y_E$ è rappresentato da una sola variabile (analisi univariata), ma esistono casi in cui viene osservata ed analizzata la risposta di soggetti in relazione a molte variabili (analisi multivariata).
+
+Lo stimolo sperimentale ($X$) è costituito da una o più variabili continue, discrete o categoriche (predittori), che rappresentano i trattamenti sperimentali. Insieme ad $Y_E$, $X$ è l'elemento noto di un esperimento, in quanto viene definito *a priori* in fase di progettazione.
+
+La 'funzione' di risposta ($f$) è un'equazione, lineare o non-lineare, scelta in base a considerazioni di carattere biologico, o con un approccio puramente empirico, osservando l’andamento della curva di risposta.
+
+I parametri di una funzione ($\theta$) sono un insieme di valori numerici che permettono di definire l’equazione di risposta, cioè, ad esempio, di 'selezionare' tra le rette del piano rappresentate dall'equazione $Y = aX + b$, un specifica retta $Y = 0.7 \, X + 3.1$, che rappresenti i risultati di uno specifico esperimento.
+
+Il predittore può essere rappresentato da una dose; ad esempio un aumento della dose di una sostanza erbicida provoca una diminuzione della crescita delle erbe infestanti. In questo caso, si tratta di un *modello dose-risposta*, che può essere considerato la traduzione in termini matematici del famoso aforisma di Paracelso (1493-1541): "*Omnia venenum sunt: nec sine veneno quicquam existit. Dosis sola facit, ut venenum non fit.*" (*Cosa c'è che non sia veleno? Tutte le cose sono veleno e nulla è senza veleno. Soltanto la dose determina cosa sia un veleno*).
+
+In pratica, la realtà è più complessa delle nostre aspettative e, a causa di errori sperimentali e altri effetti di natura puramente casuale, non osserviamo mai il risultato atteso $Y_E$, ma osserviamo un valore diverso $Y_O \neq Y_E$. Dobbiamo quindi ampliare il modello aggiungendo la componente stocastica $\varepsilon$:
+
+$$ Y_O = f(X, \theta) + \varepsilon$$
+
+cioè il cosiddetto 'residuo', la discrepanza tra ciò che prevede il modello e ciò che effettivamente osserviamo:
+
+$$\varepsilon = Y_O - Y_E $$
+
+In un esperimento con $n$ unità sperimentali, abbiamo $n$ residui, con media pari a 0 e devianza, usualmente denominata RSS (dall'inglese *Residual Sum of Squares*):
+
+$$RSS = \sum_{i = 1}^n{\left( Y_{O_i} - Y_{E_i} \right)^2}$$
+
+La deviazione standard dei residui di solito è denominata RMSE (dall'inglese *Root Mean Squared Error*) ed è ottenuta, in ambito inferenziale, come $RMSE = \sqrt{\textrm{SS}/(n - p)}$, dove $n$ è il numero delle osservazioni e $p$ è il numero di parametri stimati. Utilizzando is the number of observations and $P$ is the number of estimated parameters. A grandi linee, si può dire che **il valore di RMSE misura quanto "cattivo" è il modello: tanto più è alto, quanto più le previsioni si discostano dalle osservazioni, inficiando la capacità del modello di descrivere una certa relazione causa-effetto**.
+
+## Lavorare con i modelli
+
+Quando utilizziamo un modello per interpretare i risultati di un esperimento e definire le relazioni causa-effetto in studio, dobbiamo seguire un protocollo di lavoro adeguato, che proviamo a riassumere nel seguente schema:
+
+1.  definire un modello statistico potenzialmente capace di descrivere adeguatamente le relazioni causa-effetto in studio, traducendo in termini matematici l'ipotesi scientifica di partenza. Questo modello sarà posto nella sua forma generale e sarà basato su una serie di parametri dal valore ignoto ($\theta$ e $\sigma$).
+2.  Eseguire l'esperimento e raccogliere i dati.
+3.  Utilizzare il set di dati per assegnare valori precisi a tutti i parametri ignoti (**fitting del modello** o, in alcune applicazioni, **calibrazione del modello**).
+4.  Valutare se il modello parametrizzato fornisca una descrizione accurata dei dati sperimentali (**valutazione del modello**).
+5.  Se necessario, in presenza di ipotesi scientifiche alternative tradotte in altrettanti modelli matematici, selezionare il modello migliore quelli proposti (**confronto dei modelli**).
+
+## *Fitting* di un modello
+
+Il fitting del modello viene solitamente eseguito dall'algoritmo dei "minimi quadrati", che consiste nel selezionare i valori dei parametri che minimizzano la somma dei residui al quadrato (RSS)
+
+In generale, la minimizzazione dei quadrati dei residui non viene eseguita mediante calcoli manuali, in quanto è molto più semplice avvalersi delle funzioni di adattamento più adatte in R. In particolare, per i modelli lineari utilizzeremo la funzione `lm()`, con la seguente sintassi:
+
+```         
+mod <- lm(Y ~ X dati = set di dati)
+```
+
+Il primo argomento è l'equazione che vogliamo adattare: sul lato sinistro dobbiamo specificare il nome della variabile di risposta, la 'tilde' (\~) significa 'è una funzione di' e sostituisce il segno '=', mentre, sul lato destro, dobbiamo specificare il nome del/i predittore/i. Come secondo argomento, se necessario, forniamo il nome del dataset in cui sono archiviate le variabili. Non dobbiamo specificare l'intercetta e il termine stocastico $\varepsilon$, che sono inclusi per impostazione predefinita.
+
+Per evitare errori, è necessario ricordare che un predittore $X$ può essere costituito da una variabile quantitativa oppure da una variabile categorica e i due tipi di variabili identificano tipologie di modelli molto diversi tra di loro. Può capitare di avere a che fare con un predittore qualitativo per cui le classi sono espresse in formato numerico, come ad esempio i blocchi, che potrebbero essere indicati con i valori 1, 2, 3, e 4, senza che questi valori rappresentino veramente una quantità. In tutte queste situazione e, suggerirei in ogni caso, quando intendiamo procedere al fitting di un modello in cui qualcuno dei predittori è una variabile categorica, **dovremmo esplicitamente trasformarla in un vettore di tipo 'factor'**, per evitare che R la interpreti erroneamente come una quantità, adattando il modello sbagliato. La trasformazione si effettua, nel modo più semplice, con il codice seguente:
+
+```         
+X <- factor(X)
+```
+
+Un modello completamente specificato può fornire una buona descrizione dei dati sperimentali, **postulando l'esistenza di un meccanismo causa-effetto ben definito**. Con la dovuta prudenza, questo modello può essere utilizzato per fare previsioni; ad esempio, se i dati sperimentali hanno suggerito che l'effetto della concimazione azotata sul frumento può essere rappresentata con una retta con equazione $Y_E = b_0 + b_1 \, X$, dove $b_0 = 65$ e $b_1 = 0.1$, allora si potrebbe concludere che una concimazione con 150 kg/ha di azoto dovrebbe, prevedibilmente, dare come risultato un livello di resa $Y_E = 80$ quintali per ettaro.
+
+## Esempio 4.1: il 'modello della media'
+
+Abbiamo condotto un esperimento misurativo, in cui abbiamo raccolto tre campioni di acqua da un pozzo, per misurare la concentrazione di una sostanza xenobiotica. I risultati sono 116, 119, 125 mg/L e vogliamo calcolare la media e la deviazione standard dei tre campioni.
+
+Questo problema è piuttosto semplice e potrebbe essere meglio risolto utilizzando semplici statistiche descrittive (vedi Capitolo 3); tuttavia, è interessante vedere come lo stesso problema può essere posto in una logica di 'model fitting': non abbiamo alcun predittore e, pertanto, possiamo supporre che le osservazioni siano generate in base al modello della media: $Y_i = \mu + \varepsilon_i$, dove l'elemento stocastico ha media 0 e una deviazione standard $\sigma$.
+
+Assegnare un valore a tutti i parametri sconosciuti è banale, utilizzando i semplici calcoli mostrati nel Capitolo 3 (vale a dire, $\mu = 120$ e $\sigma = 4.58$). Tuttavia, possiamo ottenere gli stessi risultati utilizzando l'approccio di minimizzazione dei minimi quadrati, come mostrato nel riquadro seguente. Si noti che utilizziamo '1' come lato destro dell'equazione del modello, poiché non abbiamo alcun predittore.
+
+\vspace{12pt}
+
+```{r}
+Y <- c(116, 119, 125)
+mod <- lm(Y ~ 1)
+```
+
+La stima di $\mu$ può essere ottenuta con la seguente funzione R:
+
+\vspace{12pt}
+
+```{r}
+coef(mod)
+```
+
+Per quanto riguarda la componente stocastica, possiamo ottenere i residui, la loro devianza e la loro deviazione standard con le seguenti funzioni R:
+
+\vspace{12pt}
+
+```{r}
+# Residui
+residuals(mod)
+#
+# Devianza dei residui
+deviance(mod)
+#
+# Deviazione standard dei residui
+summary(mod)$sigma
+```
+
+Il modello della media descrive una situazione in cui non abbiamo predittori e, pertanto, non vi sono nessi causa-effetto; di conseguenza, è il peggior modello possibile, il punto di riferimento rispetto al quale valutare ogni altro modello alternativo. Per queste sue caratteristiche, il modello della media è spesso definito come **modello nullo**.
+
+## Esempio 4.2: un predittore quantitativo
+
+L'algoritmo dei minimi quadrati è facile da comprendere se consideriamo un esperimento in cui la resa del mais (la risposta, in t/ha) sia stata determinata in funzione del ricoprimento delle piante infestanti (il predittore, in %), determinato all'inizio del ciclo colturale. In una situazione del genere, potremmo ipotizzare un modello lineare (linea retta) del tipo: $Y_i = b_0 + b_1 \, X_i + \varepsilon_i$, che è solitamente noto come **modello di regressione lineare semplice**.
+
+I due parametri $b_0$ e $b_1$ rappresentano, rispettivamente, l'intercetta (livello di resa senza infestanti) e la pendenza (variazione della resa per ogni aumento unitario del ricoprimento). Per stimare questi due valori, possiamo usare la funzione 'lm()', che produce i risultati mostrati nella Figura \@ref(fig:figName41a).
+
+```{r}
+# Fitting a simple linear regression model
+
+# Entering the data
+library(statforbiology)
+dataset <- getAgroData("WeedCover")
+
+# Fitting the model
+mod <- lm(Yield ~ WeedCover, data = dataset)
+
+# Inspecting the estimates
+coef(mod)
+```
+
+```{r figName41a, echo=FALSE, message=FALSE, warning=FALSE, out.width = "85%", fig.cap = "Example 2: the least square estimate is represented by the straight line that passes as close as possible to the observed points.", fig.dim = c(4,4)}
+library(ggplot2)
+dframe <- data.frame(x = dataset$WeedCover, y = dataset$Yield,
+                     yf = fitted(mod))
+ggplot(dframe) +
+  geom_point(mapping = aes(x = x, y = y), size = 2.5,
+             col = "blue") + 
+  geom_abline(intercept = coef(mod)[1], slope = coef(mod)[2],
+              col = "black") +
+  geom_segment(aes(x = x, y = y, xend = x,
+             yend = yf), lty = 2, col = "red",
+             arrow = arrow(length = unit(0.25, "cm"), type = "closed")) +
+  geom_text(data.frame(x = 100, y = 8),
+            mapping = aes(x=x, y = y, label = "Y = 10.66 - 0.060 X")) +
+  scale_x_continuous(name = "Weed Cover (%)") +
+  scale_y_continuous(name = "Yield (q/ha)") +
+  theme_bw()
+
+# abline(mod)
+# rss <- deviance(mod)
+# yf <- fitted(mod)
+# arrows(weedCover, yield, weedCover, yf, 
+#        lty = 6, length = 0.08, col = "red")
+# text(6, 2, label = "RSS = 4.32", pos = 4)
+```
+
+## Esempio 4.3: un predittore nominale
+
+Immaginiamo un esperimento sul campo per confrontare la resa di quattro genotipi di avena (denominati A, B, C e D), con un disegno completamente randomizzato con tre repliche. I risultati (in tonnellate per ettaro) sono mostrati nella Tabella [-@tbl-tabName4b1].
+
+```{r tbl-tabName4b1, echo=FALSE}
+dataset <- getAgroData("oat1L")
+tab <- dataset |>
+  dplyr::mutate(Rep = rep(1:3, 4)) |>
+  tidyr::pivot_wider(names_from = Rep, values_from = Yield)
+knitr::kable(tab, caption = "Esempio di una dataset proveniente da una prova varietale a randomizzazione completa con quattro genotipi di avena (A, B, C and D) e tre repliche.", format = "simple")
+```
+
+In questo esperimento, abbiamo una risposta quantitativa (la resa) e un fattore nominale (il genotipo) e la relazione causa-effetto tra queste due variabili può essere descritta con il modello seguente:
+
+$$Y_i = \mu + \alpha_j + \varepsilon_i$$
+
+Questo modello postula che ogni osservazione $Y_i$ derivi dal valore $\mu$ (la cosiddetta intercetta) più le quantità $\alpha_j$, che dipendono dal genotipo $j$, più gli effetti stocastici $\varepsilon_i$, che sono specifici per ogni osservazione ed hanno media 0 e una deviazione standard pari a $\sigma$.
+
+Per comprendere il significato biologico di $\mu$ ed $\alpha$ dobbiamo entrare un po' di più nei dettagli matematici. Consideriamo la prima osservazione $Y_1 = 4.5$; dobbiamo stimare tre valori ($\mu$, $\alpha_1$ e $\varepsilon_1$) che, sommati, restituiscano questa osservazione. Chiaramente il problema è indeterminato, in quanto esistono infinite triplette di valori, che, sommate, restituiscono 4.5; pertanto è necessario imporre dei vincoli su alcuni parametri del modello (**parametrizzazioni del modello**). Un vincolo molto comune è $\alpha_1 = 0$ (**vincolo sul trattamento**):
+
+$$\left\{ {\begin{array}{l}
+\mu_1 = \mu + \alpha_1 = \mu + 0\\
+\mu_2 = \mu + \alpha_2 \\
+\mu_3 = \mu + \alpha_3 \\
+\mu_4 = \mu + \alpha_4
+\end{array}} \right.$$
+
+Con tale vincolo, $\mu$ è la media del primo genotipo (in R: **primo in ordine alfabetico**), mentre $\alpha_2$, $\alpha_3$ e $\alpha_4$ sono, rispettivamente, le differenze tra le medie del secondo, terzo e quarto genotipo, rispetto al primo. In generale, con questa parametrizzazione, i parametri del modello sono medie o differenze tra medie.
+
+Un altro possibile vincolo è $\sum{\alpha_j} = 0$ (vincolo sulla somma). Se prendiamo l'equazione precedente e sommiamo tutti i membri otteniamo:
+
+$$\mu_1 + \mu_2 + \mu_3 + \mu_4 = 4 \mu + \sum{\alpha_j}$$
+
+Imponendo il vincolo di somma a zero otteniamo:
+
+$$\mu_1 + \mu_2 + \mu_3 + \mu_4 = 4 \mu$$
+
+e quindi a:
+
+$$\mu = \frac{\mu_1 + \mu_2 + \mu_3 + \mu_4}{4}$$
+
+Con questa parametrizzazione $\mu$ è la media generale dei dati, mentre i valori $\alpha_j$ rappresentano le differenze tra le medie dei trattamenti e la media generale (**effetti dei trattamenti**): valori $\alpha$ positivi ed elevati identificano i genotipi superiori alla media, mentre valori $\alpha$ elevati, ma negativi identificano i genotipi inferiori alla media. In generale, con questa parametrizzazione, i parametri del modello rappresentano medie ed effetti.
+
+Un terzo possibile vincolo si ottiene rimuovendo l'intercetta (ovvero, imponendo che $\mu = 0$). In questo caso, i valori di $\alpha_j$ saranno le medie dei genotipi ed il modello riduce a:
+
+$$Y_i = \mu_j + \varepsilon_i$$
+
+La selezione dei vincoli spetta all'utente, a seconda degli obiettivi dell'esperimento. **In R, il vincolo del trattamento è utilizzato di default**, sebbene gli altri vincoli possano essere facilmente ottenuti, utilizzando la codifica appropriata.
+
+La stima dei parametri del modello potrebbe essere facilmente eseguita a mano, ma noi utilizziamo la funzione `lm()` in R.
+
+\vspace{12pt}
+
+```{r}
+mod <- lm(Yield ~ Genotype, data = dataset)
+```
+
+I parametri stimati, i residui, la deviazione residua e la deviazione standard possono essere ottenuti con la solita codifica:
+
+\vspace{12pt}
+
+```{r}
+# Stima dei parametri
+coef(mod)
+#
+# Residui
+residuals(mod)
+#
+# Devianza dei residui
+deviance(mod)
+#
+# Deviazione standard del residui (RMSE)
+summary(mod)$sigma
+```
+
+Ora che il modello è completamente specificato, abbiamo tutti gli ingredienti per descrivere le 12 osservazioni, sommando $\mu + \alpha_j + \varepsilon_i$; ad esempio, per la prima osservazione, appartenente al primo genotipo, abbiamo:
+
+$$y_1 = 4.5 = 4.533 + 0 - 0.033$$ mentre, per la quarta osservazione, appartenente al 2° genotipo, abbiamo:
+
+$$y_4 = 3.9 = 4.533 - 0.7 + 0.067$$
+
+Per completezza, potrebbe essere utile mostrare che, in R, possiamo modificare la parametrizzazione, impostando l'argomento 'contrasts' e passando un elenco di fattori associati alla parametrizzazione richiesta. Ad esempio, se utilizziamo `Treat = "contr.sum"`, otteniamo il vincolo sulla somma; di conseguenza, l'effetto dell'ultimo genotipo non è mostrato, perché è vincolato ad eseere l'opposto della somma degli altri tre effetti.
+
+\vspace{12pt}
+
+```{r}
+mod2 <- lm(Yield ~ Genotype,
+           contrasts = list(Genotype = "contr.sum"),
+           data = dataset)
+coef(mod2)
+```
+
+Un'altra possibile parametrizzazione consiste nel rimuovere l'intercetta, che è possibile utilizzando `-1` sul lato destro dell'espressione, come mostrato di seguito.
+
+\vspace{12pt}
+
+```{r}
+mod3 <- lm(Yield ~ Genotype - 1, data = dataset)
+coef(mod3)
+```
+
+Esistono diversi altri metodi per modificare la parametrizzazione, sia globalmente (per l'intera sessione R) sia a livello di fattore; ulteriori informazioni sono disponibili, ad esempio, in @faraway_2025.
+
+## L'analisi della varianza (ANOVA)
+
+In questo secondo esempio abbiamo descritto una relazione causa-effetto, tramite un modello contenente un predittore. L'RMSE ($\sigma$) è uguale a 0.131, ma questa non è una buona metrica per capire se la relazione causa-effetto è rilevante o meno. Una possibilità è quella di dividere l'RMSE per la media dei valori osservati, per ottenere il coefficiente di variabilità (RRMSE: Relative Root Mean Squared Error), che è 0.031 (o 3.1%), il che indica che l'errore residuo è piuttosto piccolo, rispetto al valore medio atteso.
+
+```{r eval=FALSE, include=FALSE}
+summary(mod)$sigma/mean(dataset$Yield)
+```
+
+Un altro indicatore per descrivere la bontà della relazione causa-effetto definita dal modello è il cosiddetto **coefficiente di determinazione (R^2^)**, ottenuto sottraendo da 1 il rapporto tra la devianza dei residui e la devianza totale delle osservazioni (che poi sarebbe la devianza dei residui del modello nullo). Nel nostro caso, il modello nullo è ottenuto trascurando l'effetto del genotipo e la devianza dei residui è quella indicata nel box sottostante:
+
+```{r}
+modnull <- lm(Yield ~ 1, data = dataset)
+deviance(modnull)
+```
+
+Il coefficiente di determinazione è quindi:
+
+$$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{0.1374}{2.337867} = 0.94123$$
+
+cosa che può essere verificata utilizzando il codice R:
+
+```{r}
+summary(mod)$r.squared
+```
+
+Il coefficiente di determinazione varia da 0 ad 1, più è alto il valore tanto migliore è la bontà del modello.
+
+Oltre a queste statistiche (RMSE, RRMSE e R^2^), vi è una tecnica famosissima per valutare l'entità dell'evidenza in favore dell'esistenza di una relazione causa effetto ben definita; questa tecnica si chiama **Analisi della Varianza (ANOVA)** ed è stata originariamente ideata da Ronald Fisher durante gli anni '30 del XX secolo; oggi è ancora molto utilizzata, seppure in una forma leggermente diversa da quella originale.
+
+```{r eval=FALSE, include=FALSE}
+# Codice per la figura
+y <- c(7.5, 6.5, 4, 2)
+x <- rep(LETTERS[1:2], each = 2)
+mod <- lm(y ~ x)
+anova(mod)
+mod <- lm(y ~ 1)
+anova(mod)
+```
+
+Il principio di fondo è che, considerando un modello che contenga almeno un predittore, è sempre possibile associare allo stesso dataset un secondo modello 'nullo' (modello della media), ottenuto dal precedente per rimozione del predittore. Ad esempio, con riferimento all'esempio 2, abbiamo già visto che il modello ANOVA è:
+
+```         
+Yield ~ Genotype
+```
+
+mentre il modello nullo è:
+
+```         
+Yield ~ 1
+```
+
+Rimuovere l'effetto del genotipo dal modello non può che indurre un incremento dei residui, dato che non si tiene più in considerazione che parte della differenza tra le osservazioni è dovuto al fatto che esse appartengono a genotipi diversi. Infatti, il codice sovrastante e sottostante mostrano che la devianza dei residui nel modello ad uns via è pari a:
+
+```{r}
+epsilon <- residuals(mod)
+RSS <- sum(epsilon^2)
+RSS
+```
+
+mentre la devianza dei residui del modello nullo (uguale alla devianza totale delle osservazioni), è pari a:
+
+```{r}
+# Residual deviance null model
+RSS.null <- sum(residuals(modnull)^2)
+RSS.null
+```
+
+Insomma, rimuovendo l'effetto del genotipo, il modello è 'peggiorato', con un incremento dei residui quantificabile come differenza:
+
+```{r}
+# Contribution of genotype effect
+SS_g <- RSS.null - RSS
+SS_g
+```
+
+È evidente che più è grande questa differenza, più è grande l'effetto del genotipo. In altre parole, abbiamo appena scomposto la devianza totale delle osservazioni ($SS_{tot} = 2.337867$) in due quote, una dovuta all'effetto causale del trattamento sperimentale ($SS_g = 2.200$) e l'altra dovuta a tutti gli altri effetti ignoti di natura casuale (errore sperimentale: $RSS = 2.337867$). Questa seconda quota costituisce una specie di 'rumore di fondo', contro il quale si può valutare il 'segnale', cioè l'intensità dell'effetto del trattamento sperimentale.
+
+Come abbiamo visto nel Capitolo 3, non possiamo confrontare direttamente $SS_g$ e $RSS$, poiché queste due devianze hanno un diverso numero di gradi di libertà (DF); il numero di DF per il trattamento è uguale al numero dei suoi livelli meno uno ($DF_g$ = 3), mentre il numero di gradi di libertà per la devianza residua $RSS$ è $p \times (k -1)$, dove $p$ è il numero di trattamenti e $k$ è il numero di repliche, supponendo che questo sia costante tra i trattamenti. Di conseguenza, $DF_{RSS} = 4 \times (3 - 1) = 8$. Possiamo quindi calcolare le relative varianze (*Mean Squares*: MS) come segue:
+
+\vspace{12pt}
+
+```{r}
+# Varianza del genotipo
+MS_g <- SS_g/3
+MS_g
+#
+# Varianza del residuo
+RMS <- RSS/8
+RMS
+```
+
+Queste due varianze (trattamento e residuo) possono essere confrontate direttamente, utilizzando il cosiddetto rapporto F:
+
+$$F = \frac{MS_g}{RMS} = \frac{0.733}{0.017} = 43.12$$
+
+Il nome 'rapporto F' deriva da Fisher, che lo inventò. Mostra che la variabilità imposta dal trattamento sperimentale è più di 10 volte superiore alla variabilità dovuta al rumore di fondo (errore sperimentale), il che supporta l'idea che l'effetto causale del genotipo sulla resa sia molto rilevante. In termini generali, più alto è il rapporto F, più forte è il nesso causa-effetto. Possiamo riassumere questi risultati nella cosiddetta tabella ANOVA, che si ottiene facilmente utilizzando il metodo `anova()` con R (il rapporto F differisce per il diverso grado di approssimazione).
+
+\vspace{12pt}
+
+```{r}
+anova(mod)
+```
+
+Rispetto a quanto esposto in precedenza, la tabella ottenuta con R contiene solo un valore che non abbiamo ancora spiegato, il cosidetto P-level, che si trova all'estrema destra (P = 2.866e-05, cioè $2.866 \times 10^{-5}$). Si tratta di un indicatore inferenziale che sarà illustrato nei Capitoli seguenti anche se possiamo anticipare che più il P-level è basso, più è forte l'evidenza scientifica contro l'ipotesi 'nulla' che il trattamento sperimentale (in questo caso il genotipo) non abbia avuto alcun effetto sulla variabile risposta (produzione della coltura). Ancora più in dettaglio, anticipiamo che, se il P-level è inferiore a 0.05 ed è accompagnato da uno o più asterischi, si può concludere che l'effetto del trattamento è *statisticamente significativo*.
+
+## Example 4.4: due predittori nominali
+
+Consideriamo lo stesso esperimento dell'esempio precedente ed immaginiamo che sia stato disegnato a blocchi randomizzati (la prima osservazione di ogni genotipo è stata presa nel primo blocco, la seconda nel secondo blocco e così via). In questo caso, il nesso causa-effetto e, di conseguenza, il modello interpretativo sono diversi, perché la resa dipende da due fattori sperimentali, ovvero il genotipo e il blocco. L'equazione è:
+
+$$ Y_{ij} = \mu + \gamma_i + \alpha_j + \varepsilon_{ij}$$
+
+dove $Y_{ij}$ è la resa parcellare nell' $i$^esimo^ blocco e per il $j$^esimo^ genotipo, $\mu$ è l'intercetta, $\gamma_i$ è l'effetto del $i$^esimo^ blocco, $\alpha_j$ è l'effetto del $j$^esimo^ genotipo e $\varepsilon$ è l'errore residuo di ogni parcella, con deviazione standard pari a $\sigma$. Come abbiamo fatto per il modello ANOVA ad una via, dobbiamo porre dei vincoli sui valori $\alpha$ e $\gamma$, in modo che i parametri del modello siano stimabili; in particolare, imporremo che $\alpha_1 = \gamma_1 = 0$, in modo che $\mu$ è la produzione nel primo blocco e col primo genotipo (in R, convenzionalmente il primo in ordine alfabetico). Abbiamo quindi 3 parametri da stimare per l'effetto del genotipo e 2 parametri da stimare per l'effetto del blocco, oltre a $\sigma$.
+
+La stima dei parametri del modello può essere eseguita con R, aggiungendo l'effetto blocco all'equazione del modello:
+
+```{r}
+dataset <- getAgroData("oat1LRCBD")
+dataset$Block <- factor(dataset$Block)
+head(dataset)
+mod <- lm(Yield ~ Genotype + Block, data = dataset)
+```
+
+Le stime dei parametri sono:
+
+```{r}
+# Alpha e beta
+coef(mod)
+#
+# Sigma
+summary(mod)$sigma
+```
+
+I residui e la loro devianza sono:
+
+```{r}
+epsilon <- residuals(mod)
+RSS <- sum(epsilon^2)
+RSS
+```
+
+Come previsto, i residui di questo modello sono più piccoli e quindi hanno una devianza minore di quelli del modello precedente, senza l'effetto del blocco. La rimozione dell'effetto del blocco fa si che la devianza del residuo aumenti di una quota pari a 0.059, che misura appunto l'effetto del blocco (devianza del blocco: SS~b~). Se consideriamo invece un modello ridotto, contenente solo il blocco, ma non il genotipo (quindi rimuoviamo dal modello l'effetto del genotipo), possiamo misurare la devianza del fattore sperimentale rimosso, che, coerentemente con quanto visto in precedenza, ammonta a 2.200.
+
+```{r}
+# Rimozione dei blocchi
+mod2 <- lm(Yield ~ Genotype, data = dataset) # Stesso modello di prima
+deviance(mod2)
+SS_b <- deviance(mod2) - RSS
+SS_b
+
+# Rimozione dei genotipi
+mod3 <- lm(Yield ~ Block, data = dataset)
+deviance(mod3)
+SS_g <- deviance(mod3) - RSS
+SS_g
+```
+
+Il numero di gradi di libertà è, rispettivamente, 11 per la devianza totale ($SS_{tot} = n - 1 = 12 - 1 = 11$), 3 per i genotipi (numero dei genotipi meno 1) e 2 per i blocchi (numero dei blocchi meno 1); per sottrazione, arriviamo a 6 DF per la devianza del residuo. A questo punto possiamo calcolare le varianze dei blocchi, dei genotipi e del residuo, che è attribuibile a tutte le sorgenti di variabilità casuali non controllate (errore sperimentale o rumore di fondo). Pssiamo quindi calcolare due rapporti F, uno per l'effetto del blocco e uno per l'effetto del genotipo; per comodità, possiamo saltare tutti i calcoli manuali e arrivare direttamente alla tabella ANOVA finale usando il metodo 'anova()' in R.
+
+```{r}
+anova(mod)
+```
+
+I rapporti F suggeriscono che l'effetto causale del genotipo è elevato e significativo (presenza di asterischi), mentre l'effetto blocco non è significativo, perché il P-level è maggiore di 0.05.
+
+## Example 4.5: due predittori nominali con interazione
+
+Immaginiamo che l'esperimento presentato nell'Esempio 1 sia stato ripetuto in un'altra località, utilizzando sempre un disegno completamente randomizzato. I dati osservati sono riportati nella Tabella @tbl-tabName4b4.
+
+```{r tbl-tabName4b4, echo=FALSE}
+dataset <- getAgroData("oat2L")
+dataset$Location <- factor(dataset$Location)
+dataset$Genotype <- factor(dataset$Genotype)
+
+knitr::kable(dataset, caption = "Risultati di un esperimento di campo a randomizzazione completa per il confronto di quattro genotipi di avena (A, B, C and D), ripetuto in due località.", format = "simple")
+```
+
+In questo esperimento abbiamo due fattori incrociati, ma, a differenza dell'esempio precedente, abbiamo tre repliche per ciascuna delle otto combinazioni tra i livelli di genotipo e località. In questo modo, oltre agli effetti di genotipo e località, possiamo anche valutare la cosiddetta **interazione** tra i due fattori sperimentali, che è un'informazione molto importante.
+
+## Interazione tra fattori sperimentali
+
+Per comprendere meglio il concetto di interazione, osserviamo la Figura [-@fig-figName4b5], dove sono mostrate le medie di quattro trattamenti, ottenuti dalla combinazione fattoriale di un trattamento A con due livelli (A1 e A2) e di un trattamento B con altrettanti livelli (B1 e B2). Nel grafico, ogni combinazione è rappresentata da un simbolo.
+
+Concentriamoci un attimo sul grafico di sinistra e consideriamo la prima combinazione in ordine alfabetico (A1B1): per questa, la media è pari a 10. Se passiamo da A1 ad A2, fermo restando B1, l'incremento è + 4. Se invece passiamo da B1 a B2, fermo restando A1, l'incremento è + 5. Si deduce che, se gli effetti fossero puramente additivi, la media di A2B2 dovrebbe essere pari a 10 + 4 + 5 = 19, in quanto vengono modificati entrambi i livelli, da A1 ad A2 e da B1 a B2. Vediamo che l'osservazione conferma questa aspettativa di additività degli effetti e di mancanza di interazione.
+
+Al contrario, nel grafico centrale vediamo che il risultato osservato di A2B2 non può essere ottenuto per semplice somma di effetti, perché, a fronte di un risultato atteso pari a 19 otteniamo invece 16. Evidentemente, vi è qualcosa in questa combinazione che altera l'effetto congiunto di A e B. Questo qualcosa può essere quantificato con il valore -3, così che la media A2B2 è pari a 10 + 4 + 5 - 3 = 16. Il valore -3 rappresenta la mancanza di additività o interazione; in questo caso si tratta di **interazione semplice**, in quanto la graduatoria dei trattamenti non cambia: A2 è sempre meglio di A1 e B2 è sempre meglio di B1, anche se gli effetti non sono quelli previsti.
+
+Nel grafico di sinistra la situazione è analoga, ma più estrema: l'effetto dell'interazione è -10 e comporta un'inversione della graduatoria, per cui parliamo di **interazione cross-over**.
+
+```{r fig-figName4b5, echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='90%', paged.print=FALSE, fig.cap = "Esempi di interazione tra fattori sperimentali"}
+par(mfrow=c(1,3))
+y1 <- c(10, 14)
+y2 <- c(15, 19)
+x <- c(5, 10)
+plot(y1 ~ x, type="b", xlim = c(4,11), ylim = c(8,20),
+     main = "No interaction", axes = F, xlab="", ylab="")
+points(y2 ~ x, type="b",xlim = c(4,11), ylim = c(8,20), col = "red")
+text(7.5, c(13.0, 18), labels=c("B1", "B2"), col=c("black", "red"), cex=2)
+box(which="plot")
+axis(1, at = c(5, 10), labels = c("A1", "A2"))
+axis(2, at = seq(8, 20, 2), labels = seq(8, 20, 2))
+
+y1 <- c(10, 14)
+y2 <- c(15, 16)
+x <- c(5, 10)
+plot(y1 ~ x, type="b", xlim = c(4,11), ylim = c(8,20),
+     main = "Simple interaction", axes = F, xlab="", ylab="")
+points(y2 ~ x, type="b",xlim = c(4,11), ylim = c(8,20), col = "red")
+text(7.5, c(12.9, 16.3), labels=c("B1", "B2"), col=c("black", "red"), cex=2)
+box(which="plot")
+axis(1, at = c(5, 10), labels = c("A1", "A2"))
+axis(2, at = seq(8, 20, 2), labels = seq(8, 20, 2))
+
+y1 <- c(10, 14)
+y2 <- c(15, 9)
+plot(y1 ~ x, type="b", xlim = c(4,11), ylim = c(8,20),
+     main = "Cross-over interaction", axes = F, xlab="", ylab="")
+points(y2 ~ x, type="b",xlim = c(4,11), ylim = c(8,20), col = "red")
+text(c(6.0, 9.0), c(12, 12), labels=c("B1", "B2"), col=c("black", "red"), cex=2)
+box(which="plot")
+axis(1, at = c(5, 10), labels = c("A1", "A2"))
+axis(2, at = seq(8, 20, 2), labels = seq(8, 20, 2))
+```
+
+Perchè siamo così interessati all'interazione e, in particolare, all'interazione cross-over? Esaminiamo più da vicino i valori nel grafico a destra in Figura [-@fig-figName4b5], riportandoli nella tabella @tbl-tabName4b6, insieme alle medie dei quattro livelli A1, A2, B1 e B2. Le medie delle combinazioni sono dette **medie di cella**, mentre le medie dei livelli principali sono dette **medie marginali**, perché si trovano al margine della tabella.
+
+```{r tbl-tabName4b6, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results = "asis"}
+B1 <- c(10.0, 14.0, 12.5)
+B2 <- c(15.0, 9.0, 11.5)
+Media <- c(12.0, 12.0, 12.0)
+tab <- data.frame(B1, B2, Media = Media)
+row.names(tab) <- c("A1", "A2", "Media")
+library(knitr)
+kable(format(tab, nsmall = 1), caption = "Interazione cross-over tra fattori sperimentali", booktabs = T, digits = 2, align = c("r", "r", "r"))
+```
+
+Se guardassimo solo le medie marginali, avremmo l'impressione sbagliata che il fattore A, da solo, non ha alcun effetto (le medie A1 e A2 sono uguali) e che il fattore B ha solo un piccolissimo effetto. La realtà è invece che entrambi i fattori hanno un grande effetto, ma la presenza dell'interazione lo nasconde completamente, impedendoci di raggiungere conclusioni attendibili guardando ai due fattori, uno separatamente dall'altro.
+
+## Example 4.5 (segue)
+
+Tornando al nostro esempio, è chiaro che le produzioni osservate sono determinate dall'effetto di:
+
+1.  genotipo
+2.  località
+3.  interazione 'genotipo $\times$ località'
+
+Il modello lineare può essere così definito:
+
+$$Y_{ij} = \mu + \alpha_i + \beta_j + \alpha\beta_{ij} + \varepsilon_{ij}$$
+
+dove $\mu$ è l'intercetta (produzione del primo genotipo nella prima località, sotto il vincolo che $\alpha_1 = \beta_1 = 0$), $\alpha_i$ è la differenza tra il genotipo $i$^esimo^ ed il primo in ordine alfabetico, $\beta_j$ è la differenza tra la località $j$^esima^ e la prima in ordine alfabetico e $\alpha\beta_{ij}$ è l'interazione tra il genotipo $i$^esimo^ e la località $j$^esima^ (sotto i vincoli che $\alpha\beta_{1.} = \alpha\beta_{.1} = 0$). I residui sono quantificati dai valori $\varepsilon_{ij}$, con media uguale a 0 e deviazione standard uguale a $\sigma$.
+
+Per stimare i parametri del modello, possiamo utilizzare R, considerando che il termine di interazione viene codificato con l'operatore ':', ad esempio:
+
+```         
+Y ~ A + B + A:B
+```
+
+che può essere abbreviato come:
+
+```         
+Y ~ A * B
+```
+
+```{r}
+mod <- lm(Yield ~ Genotype * Location, data = dataset)
+
+# Stima dei parametri
+coef(mod)
+#
+# Sigma
+summary(mod)$sigma
+```
+
+L'analisi della varianza viene eseguita rimuovendo dal modello i tre termini uno alla volta, ma rispettando un criterio di marginalità, che tenga conto del fatto che l'interazione viene dopo che sono stati inseriti gli effetti principali che la costituiscono e, quindi, dovrebbe essere omessa per prima e non dovrebbe essere lasciata nel modello, quando uno degli effetti principali coinvolti viene rimosso. Lo schema è illustrato nel box seguente.
+
+```{r}
+RSS <- deviance(mod)
+#
+# rimozione dell'interazione
+modred <- lm(Yield ~ Genotype + Location, data = dataset)
+SSint <- deviance(modred) - RSS
+SSint
+#
+# rimozione del genotipo E dell'interazione
+modred <- lm(Yield ~ Location, data = dataset)
+SSloc <- deviance(modred) - RSS - SSint
+SSloc
+#
+# rimozione della località E dell'interazione
+modred <- lm(Yield ~ Genotype, data = dataset)
+SSgen <- deviance(modred) - RSS - SSint
+SSgen
+```
+
+Anche in questo esempio, abbiamo suddiviso la variabilità totale dei dati in quattro termini, tre dei quali sono correlati all'effetto causale, mentre il quarto è correlato a tutti gli altri effetti casuali. In pratica, i calcoli manuali non sono necessari, perchè possiamo utilizzare la funzione 'anova()' in R. Nella tabella sottostante, l'unico elemento di cui non abbiamo parlato finora è il numero di gradi di libertà per l'interazione, che è **uguale al prodotto del numero di DF per gli effetti principali**.
+
+```{r}
+anova(mod)
+```
+
+Vediamo che tutti gli effetti in gioco (genotipo, località ed interazione) sono significativi ed hanno quindi un nesso causa-effetto rilevante sulla produzione della coltura. La presnza di un'interazione significativa mostra che, probabilmente, la valutazione dei genotipi performanti non è comune alle due località anche se questa affermazione richiede analisi successive che vedremo in seguito.
+
+## Dati non bilanciati
+
+Prima di concludere questo capitolo, è necessario sottolineare che esistono diversi metodi per calcolare la somma dei quadrati per gli effetti del modello, che non portano, necessariamente, agli stessi risultati. In particolare, questo aspetto va attentamente considerato quando i dati non sono 'bilanciati', ovvero quando il numero di repliche è diverso per diversi trattamenti. Il metodo di calcolo che abbiamo proposto in questo Capitolo è basato sulle seguenti operazioni:
+
+1.  fitting del modello completo;
+2.  rimozione dell'effetto in studio e fitting del modello ridotto;
+3.  calcolo della devianza dell'effetto rimosso per differenza tra le devianza del residuo del modello ridotto e quella del modello completo.
+
+Questo metodo di calcolo produce le cosiddette *somme dei quadrati marginali* e non è uguale al metodo utilizzato nella funzione `anova()` in R, che produce invece le *somma dei quadrati sequenziali*. Non ci siamo accorti della differenza perché i due metodi danno gli stessi risultati quando i dati sono 'bilanciati', ma quando i dati non lo sono, i due metodi divergono^[Le somme dei quadrati sequenziali consistono nel (1) partire dal modello nullo e determinare la devianza del residuo, (2) inserire gli effetti sequenzialmente nel modello, (3) per ogni effetto inserito, valutare il decremento della devianza del residuo, rispetto al modello immediatamente precedente nella sequenza]. Quando i dati sono sbilanciati, le devianze prodotte con il metodo sequenziale diventano dipendenti dall'ordine con cui abbiamo inserito gli effetti nel modello, il che non è accettabile. Per questo, le *somme dei quadrati marginali* sono preferibili e possono essere ottenute con la funzione `Anova()` (si noti la lettera maiuscola all'inizio) nel pacchetto `car`, come mostrato nel seguente esempio.
+
+## Esempio 4.6: un CRBD con un valore mancante
+
+Consideriamo un esperimento per valutare la selettività di un erbicida post-emergenza per il controllo delle infestanti nel mais, in funzione del momento dell'intervento (stadio di 2, 4, 6 e 8 foglie, più un controllo non trattato e diserbato manualmente). Il disegno sperimentale era a blocchi randomizzati, con un dato mancante rappresentato come 'NA'; i dati sono riportati nel dataset `Timings_77490` nel package `statforbiology`.
+
+```{r}
+dataset <- getAgroData("Timings_77490")
+dataset$Block <- factor(dataset$Block)
+head(dataset)
+```
+
+Se si parametrizza un modello ANOVA e si produce una tabella riassuntiva utilizzando la funzione `anova()`, i risultati cambiano a seconda dell'ordine in cui i due effetti ('Timing' e 'Block') sono stati inseriti nel modello. Poiché non abbiamo una logica oggettiva per decidere quale effetto debba essere inserito per primo, le conclusioni ottenute con la funzione `anova()` debbono essere considerate puramente arbitrarie, cosa che non può essere considerata accettabile.
+
+```{r}
+# Adattamento di due modelli con diverso ordinamento degli effetti
+mod1 <- lm(Weight_30 ~ Timing + Block, data = dataset)
+mod2 <- lm(Weight_30 ~ Block + Timing, data = dataset)
+
+# Partizionamento della varianza
+anova(mod1)
+anova(mod2)
+```
+
+Se invece utilizziamo il metodo 'manuale', basato sulla rimozione dei due predittori, uno alla volta, notiamo che le somme dei quadrati degli effetti sono le stesse, indipendentemente dall'ordine con cui i due effetti sono stati rimossi dal modello completo. Questi risultati possono essere riprodotti utilizzando la funzione `Anova()` nel pacchetto `car` e impostando l'argomento `type = 2`. Ulteriori informazioni sui diversi tipi di somme di quadrati possono essere trovate in @langsrud_2003.
+
+```{r}
+# Rimozione dei predittori uno alla volta (modello 1)
+RSS <- deviance(mod1)
+mod1.red <- lm(Weight_30 ~ Block,
+               data = dataset) # Rimozione del blocco
+SS_g <- deviance(mod1.red) - RSS
+SS_g
+mod1.red2 <- lm(Weight_30 ~ Timing,
+                data = dataset) # Rimozione del genotipo
+SS_b <- deviance(mod1.red2) - RSS
+SS_b
+
+# Rimozione dei predittori uno alla volta (modello 2)
+RSS <- deviance(mod2)
+mod2.red <- lm(Weight_30 ~ Block,
+               data = dataset) # Rimozione del genotipo
+SS_g <- deviance(mod2.red) - RSS
+SS_g
+mod2.red2 <- lm(Weight_30 ~ Timing,
+                data = dataset) # Rimozione del blocco
+SS_b <- deviance(mod2.red2) - RSS
+SS_b
+
+# Utilizzo del metodo Anova() nel pacchetto 'car'
+library(car)
+Anova(mod1, type = 2)
+Anova(mod2, type = 2)
+```
+
+## Conclusioni
+
+In questo capitolo abbiamo presentato un metodo per valutare se un certo set di dati ottenuto da un esperimento controllato può ragionevolmente supportare l'esistenza di relazioni causa-effetto tra le variabili in esame.
+
+Questo metodo consiste in:
+
+1.  adattamento di un modello causa-effetto ragionevole;
+2.  impiego dell'analisi della varianza (ANOVA) per ottenere le varianze di tutti gli effetti causali in esame e la varianza del residuo;
+3.  calcolo del/dei rapporto/i tra la/e varianza/e di ogni effetto causale con la varianza del residuo (rapporto F). Più alto è il rapporto F, più forte è la relazione causa-effetto.
+
+Per l'analisi della varianza con R, sono disponibili due funzioni: `anova()` ed `Anova()` e quest'ultima si trova nel package `car`. Queste due funzioni forniscono gli stessi risultati con dati bilanciati, ma la seconda è decisamente consigliabile quando i dati non sono bilanciati.
+
+## Domande ed esercizi
+
+1.  Qual è la differenza tra variazione congiunta e causalità?
+2.  In valore, cosa intendiamo quando diciamo "effetto del trattamento"?
+3.  Descrivi in poche frasi cos'è l'ANOVA e perché viene utilizzata.
+4.  Qual è la definizione di "interazione tra due fattori sperimentali"? Spiega brevemente.
+5.  Considera il file Excel "rimsulfuron.csv" da <https://www.casaonofri.it/_datasets/rimsulfuron.csv> (puoi scaricarlo o leggerlo direttamente dal repository web). Questo è un set di dati relativo a un esperimento sul campo per confrontare 14 erbicidi e due controlli non trattati, con 4 repliche per trattamento. L'esperimento è stato progettato in blocchi randomizzati. Esegui l'ANOVA con R e valuta la rilevanza dell'effetto erbicida.
+6.  Hai eseguito un esperimento con un layout completamente randomizzato con due repliche, per confrontare due genotipi di mais (G1 e G2) con due diverse strategie di fertilizzazione (F1 e F2). Calcola i quadrati medi e i rapporti F per il genotipo, gli effetti della fertilizzazione e per la loro interazione. Gli effetti causali sono rilevanti? Il set di dati è mostrato di seguito.
+
+```{r echo=FALSE}
+mu <- rep(c(12, 14), each = 4)
+alpha <- rep(rep(c(0.5, -0.5), each = 2), times = 2)
+set.seed(1234)
+epsilon <- rnorm(8, 0, 1)
+Yield <- mu + alpha + epsilon
+Genotype <- rep(c("G1", "G2"), each = 4)
+Fertiliser <- rep(rep(c("F1", "F2"), each = 2), times = 2)
+dfr <- data.frame(Genotype, Fertiliser, Yield)
+knitr::kable(dfr, format = "simple")
+```
