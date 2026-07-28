@@ -181,13 +181,17 @@ Prima di leggere questa parte, assicuratevi di avere già una conoscenza di base
 
 In R, le statistiche descrittive vengono calcolate tramite le rispettive funzioni: `mean()`, `median()`, `var()` e `sd()`, passando il vettore dei dati come primo argomento. I percentili vengono calcolati con la funzione `quantile()`, passando il vettore dei dati e le probabilità selezionate come frazioni in un vettore, tramite l'argomento `probs`. La funzione di devianza non è immediatamente disponibile in R (ma si veda il capitolo successivo) e può essere calcolata con la somma dei quadrati degli scarti, come indicato più sopra. Anche il coefficiente di correlazione è facile da ottenere, tramite la funzione `cor()` e passando i due vettori come argomenti.
 
-### Esercizio 3.5
+### Esercizio 3.5: descrivere un set di dati con R
 
 Utilizziamo il dataset 'heights.csv', che è disponibile nel pacchetto 'statforbiology' e contiene, nella colonne 'height', le altezze di venti piante di mais, appartenenti a quattro varietà diverse. Le analisi statistiche sono mostrate nel box sottostante.
 
 ```{r}
 #| message: false
 #| warning: false
+
+# Riquadro 3.1
+#
+# Calcolo di statistiche descrittive con R
 library(statforbiology)
 dataset <- getAgroData("heights")
 dataset$height
@@ -209,18 +213,22 @@ quantile(dataset$height, probs = c(0.25, 0.75))
 La correlazione per i dati dell'esercizio 3.4 si calcola invece con la funzione `cor()`, come indicato più sotto.
 
 ```{r}
+# Riquadro 3.2
+
+# Esempio 3.5 [segue]
 cor(A, B)
 ```
 
 ## Descrizione dei sottogruppi
 
-In biometria è molto comune che il gruppo di soggetti sia divisibile in più sottogruppi, corrispondenti, ad esempio, ai diversi trattamenti sperimentali. In questa comune situazione siamo soliti calcolare, per ogni gruppo, le statistiche descrittive già viste in precedenza, utilizzando la funzione `tapply()` in R, che richiede tre argomenti, ovvero il vettore delle osservazioni, il vettore che identifica il gruppo a cui appartiene ogni osservazione, e la funzione da calcolare per ciascun gruppo. È necessario sottolineare che le statistiche per gruppo possono essere calcolate in modo efficiente (forse più efficiente) anche utilizzando il pacchetto `dplyr()` (Wickham, 2023).
-
-### Esempio 3.5 (segue)
+In biometria è molto comune che il gruppo di soggetti sia divisibile in più sottogruppi, corrispondenti, ad esempio, ai diversi trattamenti sperimentali. In questa comune situazione siamo soliti calcolare, per ogni gruppo, le statistiche descrittive già viste in precedenza, utilizzando la funzione `tapply()` in R, che richiede tre argomenti, ovvero il vettore delle osservazioni, il vettore che identifica il gruppo a cui appartiene ogni osservazione, e la funzione da calcolare per ciascun gruppo. È necessario sottolineare che le statistiche per gruppo possono essere calcolate in modo efficiente (forse più efficiente) anche utilizzando il pacchetto `dplyr()` [@wickham_2023].
 
 Nel box sottostante, sempre in relazione al dataset 'heights', calcoliamo le altezze medie per ogni varietà, assieme alle deviazioni standard, che salviamo in un nuovo dataframe, da utilizzare di seguito per la grafica.
 
 ```{r}
+# Riquadro 3.3
+
+# Esempio 3.5 [segue]
 m <- tapply(dataset$height, dataset$var, mean)
 s <- tapply(dataset$height, dataset$var, sd)
 descript <- data.frame(Media = m, SD = s)
@@ -248,7 +256,7 @@ Un altro tipo di grafico è l'**istogramma**, simile a un grafico a barre, ma ut
 
 Infine, ma non meno importante, uno dei grafici più utilizzati è il **diagramma a dispersione**, che rappresenta la relazione tra due variabili numeriche, fornendo le coordinate per i simboli.
 
-### Esempio 3.5 (continua)
+### Esempio 3.6: un grafico a barre con R
 
 I dati del dataframe 'descript' che abbiamo creato poco sopra possono essere rappresentati facilmente con un grafico a barre; con `ggplot2`, dobbiamo creare prima un'istanza del grafico (funzione `ggplot()`), poi aggiungere dei *layer* (`geom_col` e `geom_errorbar`), che devono essere 'mappati' alle colonne del dataset che forniscono le informazioni per la creazione del grafico stesso.
 
@@ -258,7 +266,12 @@ Il primo layer (`geom_col`) genera le barre ed è mappato al vettore `mu` in `de
 \vspace{12pt}
 
 ```{r eval=FALSE, include=TRUE}
+# Riquadro 3.4
+
+# Esempio 3.6
 # Un grafico a barre con ggplot2
+# il dataframe 'descript' è stato ottenuto nel Riquadro 3.3
+
 library(ggplot2)
 ggplot(data = descript) +
   geom_col(mapping = aes(y = Media, x = row.names(descript)), width = 0.75,
@@ -274,9 +287,9 @@ ggplot(data = descript) +
 
 \normalsize
 
-```{r fig-figName242, echo = F, out.width='90%', fig.align ='center', fig.cap= "Esempio di un semplice grafico a barre in R."}
+```{r fig-figName242, echo = F, out.width='90%', fig.align ='center', fig.cap= "Esempio di un semplice grafico a barre in R (Riquadro 3.4)."}
 # Il codice non viene visualizzato, solo la figura
-# Il riquadro di codice 3.3 viene mostrato, ma non eseguito
+# Il riquadro di codice 3.4 viene mostrato, ma non eseguito
 library(ggplot2)
 ggplot(data = descript) +
   geom_col(mapping = aes(y = Media, x = row.names(descript)), width = 0.75,
@@ -290,7 +303,7 @@ ggplot(data = descript) +
   theme_bw()
 ```
 
-### Esempio 3.6
+### Esempio 3.7: un boxplot con R
 
 Consideriamo il dataset 'WeedCounts', relativo al conteggio di piante di tre specie di infestanti in 20 griglie disposte casualmente in un campo dell'Italia centrale. Poiché il numero di conteggi per ciascuna specie è piuttosto elevato, questo dataset può essere rappresentato con un boxplot, utilizzando il codice nel riquadro seguente Nel caso di *Chenopodium album* (CHEAL), il valore massimo è 16, considerato un valore anomalo e rappresentato da un cerchio nero pieno (Fig. -@fig-figName241).
 
@@ -298,7 +311,7 @@ Consideriamo il dataset 'WeedCounts', relativo al conteggio di piante di tre spe
 \vspace{12pt}
 
 ```{r eval=FALSE, include=TRUE}
-# Box di codice 3.5
+# Riquadro 3.5
 #
 # boxplot con ggplot2
 dataset <- getAgroData("WeedCounts")
@@ -311,7 +324,7 @@ theme_bw()
 
 \normalsize
 
-```{r echo=F, fig-figName241, out.width='90%', fig.align ='center', fig.cap="Un semplice boxplot con R; i tre gruppi rappresentano tre specie di infestanti (CHEAL: Chenopodium album, CHEHY: C. hybridum e CHEPO: C. polyspermum), contate in 20 griglie disposte casualmente in un campo dell'Italia centrale."}
+```{r echo=F, fig-figName241, out.width='90%', fig.align ='center', fig.cap="Un semplice boxplot con R; i tre gruppi rappresentano tre specie di infestanti (CHEAL: Chenopodium album, CHEHY: C. hybridum e CHEPO: C. polyspermum), contate in 20 griglie disposte casualmente in un campo dell'Italia centrale (Riquadro 3.5)."}
 # rm(list = ls())
 # A <- c(2, 31, 12, 12, 17, 13, 0, 5, 13, 10,
 # 14, 11, 6, 18, 6, 17, 6, 5, 4, 5)
@@ -332,7 +345,7 @@ ggplot(data = dataset) +
 theme_bw()
 ```
 
-### Esempio 3.7
+### Esempio 3.8: un istogramma con R
 
 Il dataset 'Rainfall22' riporta i livelli di precipitazione giornaliera (mm) nell'Italia centrale nel 2022. Questa variabile è composta da un numero molto elevato di osservazioni e il calcolo di semplici statistiche descrittive, come la media e la deviazione standard, è utile, ma non è sufficiente per cogliere le caratteristiche essenziali delle precipitazioni in quel sito e in quell'anno. Pertanto, è interessante costruire una distribuzione di frequenze, considerando sei classi di pioggia (0,1-2,4 mm: pioggia molto leggera, 2,5-7,5 mm: pioggia leggera, 7,6-35,5 mm: pioggia moderata, 35,6-64,4 mm: pioggia piuttosto forte, 64,5-124,4 mm: pioggia forte e \> 124,5 mm: pioggia molto forte) e assegnando ogni pioggia alla classe appropriata (questa operazione è solitamente chiamata **binning** o **bucketing**).
 
@@ -341,7 +354,7 @@ In R, questo si ottiene utilizzando la funzione `cut()` e passando come parametr
 \vspace{12pt}
 
 ```{r echo=TRUE}
-# Box 3.6
+# Riquadro 3.6
 #
 # Leggi i dati e imposta i margini
 dataset <- getAgroData("Rainfall22")
@@ -359,6 +372,10 @@ probab
 Rappresentare queste probabilità con un grafico a barre potrebbe essere fuorviante perché le diverse ampiezze degli intervalli verrebbero trascurate. Possiamo notare, ad esempio, che la probabilità nel secondo intervallo (0.198) è inferiore alla probabilità nel terzo intervallo (0.292), ma è "concentrata" in un intervallo molto piccolo. In altre parole, ci sono molti eventi nel terzo intervallo proprio perché tale intervallo è molto ampio, ma ci si potrebbe aspettare che la probabilità di una pioggia intorno ai 20 mm (ad esempio, da 19.5 a 20.5, cioè nel terzo intervallo) sia inferiore alla probabilità di una pioggia intorno ai 5 mm (ad esempio, da 4.5 a 5.5, cioè nel secondo intervallo). In termini tecnici, diciamo che la massa di probabilità è più densa nel secondo intervallo rispetto al terzo. Pertanto, possiamo calcolare la densità dividendo la probabilità in ciascun intervallo per l'ampiezza dell'intervallo stesso.
 
 ```{r}
+# Riquadro 3.7
+
+# Esempio 3.8 [segue]
+#
 # Calcoli di densità
 larghezze <- diff(margins)
 densita <- probab/larghezze
@@ -368,7 +385,7 @@ densita
 Possiamo utilizzare queste densità per disegnare un istogramma, che sarà composto da un insieme di rettangoli, con altezze pari alla densità in ciascun intervallo e larghezze pari all'ampiezza dell'intervallo, in modo che l'area rappresenti la massa di probabilità in ciascun intervallo. Questi calcoli vengono eseguiti automaticamente in R, passando i margini degli intervalli (bin) vengono assegnati al layer `geom_histogram()`, come mostrato nel riquadro di codice sottostante. L'istogramma risultante è illustrato in Figura @fig-figName242b.
 
 ```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
-# Code box 3.8
+# Riquadro 3.8
 #
 # Histogram
 ggplot(data = dataset) +
@@ -398,14 +415,15 @@ ggplot(data = dataset) +
   theme_bw()
 ```
 
-### Esempio 3.5 (segue)
+### Esempio 3.9: un grafico a dispersione con R
 
 È possibile produrre un grafico a dispersione utilizzando il layer `geom_point()` in `ggplot`; come esempio del suo utilizzo, possiamo tracciare la relazione tra altezza e resa nei dati `heights` (Riquadro sottostante; Fig. \@ref(fig:figName244)).
 
 \vspace{12pt}
 
 ```{r eval=FALSE, include=TRUE}
-# Box di codice 3.9
+# Riquadro 3.9
+#
 dataset <- getAgroData("heights")
 ggplot(data = dataset) +
   geom_point(mapping = aes(x = height, y = yield),
@@ -427,7 +445,6 @@ ggplot(data = dataset) +
 ```
 
 
-
 ## Domande ed esercizi
 
 1.  Illustrare e discutere i principali indici di tendenza centrale per le variabili quantitative
@@ -435,4 +452,5 @@ ggplot(data = dataset) +
 3.  Illustrare e discutere il coefficiente di correlazione di Pearson
 4.  Un'analisi chimica è stata eseguita in triplicato e i risultati sono stati i seguenti: 125, 169 and 142 ng/g. Calcolate la media e tutti gli indicatori di variabilità che conoscete. In che modo può essere espressa l'incertezza assoluta della misura?
 5.  Un ricercatore ha misurato l'altezza di quattro alberi ed il loro diametro (entrambi in metri). I risultati ottenuti sono i seguenti: `Altezza <- c(2.3, 2.7, 3.1, 3.5)` e `Diametro <- c(0.46, 0.51, 0.59, 0.64)`. Calcolare il coefficiente di correlazione di Pearson e valutare l'entità della correlazione in base ai valori massimi e minimi ammissibili per questa statistica.
-6.  Considerate il file EXCEL 'rimsulfuron.csv', che potete trovare in questo percorso: <https://www.casaonofri.it/_datasets/rimsulfuron.csv>. In questo file sono riportati i risultati di un esperimento con 16 trattamenti e 4 repliche, nel quale sono stati posti a confronti diversi erbicidi e/o dosi per il diserbo nel mais. Calcolare le medie produttive ottenute con le diverse tesi sperimentali e riportarle su un grafico, includendo anche un'indicazione di variabilità. Verificare se la produzione è correlata con il ricoprimento (WeedCover) delle piante infestanti.
+6.  Considerate il dataset 'rimsulfuron' contenuto nel package 'statforbiology'. In questo file sono riportati i risultati di un esperimento con 16 trattamenti e 4 repliche, nel quale sono stati posti a confronti diversi erbicidi e/o dosi per il diserbo nel mais. Calcolare le medie produttive ottenute con le diverse tesi sperimentali e riportarle su un grafico, includendo anche un'indicazione di variabilità. Verificare se la produzione è correlata con il ricoprimento (WeedCover) delle piante infestanti.
+7. Tre campioni casuali raccolti da un campo di erba medica al primo taglio hanno mostrato una produzione media di 8 t ha^−1^ di sostanza secca, con una deviazione standard pari a 0.7 t ha^−1^. Altri tre campioni indipendenti, al secondo taglio, hanno mostrato una produzione media di 5 t ha^−1^, con deviazione standard pari a 0.4 t ha^−1^. Calcolate la produttività totale e media dei due tagli, con i rispettivi errori standard.

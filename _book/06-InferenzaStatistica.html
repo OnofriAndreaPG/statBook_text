@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Stime ed incertezza – Metodologia sperimentale per le scienze agrarie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./05-ModelliStocastici.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3220129d1b0bfa0f6b9dc9ac11d00f8b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-InferenzaStatistica.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Stime ed incertezza</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Metodologia sperimentale per le scienze agrarie</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Premessa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introBiometria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ProgettoRicerca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-StatisticaDescrittiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-CausaEffetto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ModelliStocastici.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelli stocastici</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-InferenzaStatistica.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Stime ed incertezza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografia</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#ripetere-gli-esperimenti" id="toc-ripetere-gli-esperimenti" class="nav-link active" data-scroll-target="#ripetere-gli-esperimenti"><span class="header-section-number">6.1</span> Ripetere gli esperimenti</a></li>
+  <li><a href="#la-sampling-distribution-teorica" id="toc-la-sampling-distribution-teorica" class="nav-link" data-scroll-target="#la-sampling-distribution-teorica"><span class="header-section-number">6.2</span> La ‘sampling distribution’ teorica</a></li>
+  <li><a href="#lintervallo-di-confidenza-frequentista" id="toc-lintervallo-di-confidenza-frequentista" class="nav-link" data-scroll-target="#lintervallo-di-confidenza-frequentista"><span class="header-section-number">6.3</span> L’intervallo di confidenza frequentista</a></li>
+  <li><a href="#come-otteniamo-lerrore-standard" id="toc-come-otteniamo-lerrore-standard" class="nav-link" data-scroll-target="#come-otteniamo-lerrore-standard"><span class="header-section-number">6.4</span> Come otteniamo l’errore standard?</a></li>
+  <li><a href="#come-otteniamo-il-moltiplicatore-k" id="toc-come-otteniamo-il-moltiplicatore-k" class="nav-link" data-scroll-target="#come-otteniamo-il-moltiplicatore-k"><span class="header-section-number">6.5</span> Come otteniamo il moltiplicatore <span class="math inline">\(k\)</span>?</a></li>
+  <li><a href="#quali-sono-le-limitazione-del-ci" id="toc-quali-sono-le-limitazione-del-ci" class="nav-link" data-scroll-target="#quali-sono-le-limitazione-del-ci"><span class="header-section-number">6.6</span> Quali sono le limitazione del CI?</a></li>
+  <li><a href="#gli-intervalli-di-confidenza-in-pratica" id="toc-gli-intervalli-di-confidenza-in-pratica" class="nav-link" data-scroll-target="#gli-intervalli-di-confidenza-in-pratica"><span class="header-section-number">6.7</span> Gli intervalli di confidenza in pratica</a>
+  <ul class="collapse">
+  <li><a href="#esempio-6.1-ic-per-una-media-campionaria" id="toc-esempio-6.1-ic-per-una-media-campionaria" class="nav-link" data-scroll-target="#esempio-6.1-ic-per-una-media-campionaria"><span class="header-section-number">6.7.1</span> Esempio 6.1: IC per una media campionaria</a></li>
+  <li><a href="#example-6.2-cis-for-model-parameters" id="toc-example-6.2-cis-for-model-parameters" class="nav-link" data-scroll-target="#example-6.2-cis-for-model-parameters"><span class="header-section-number">6.7.2</span> Example 6.2: CIs for model parameters</a></li>
+  </ul></li>
+  <li><a href="#altri-approcci-per-il-calcolo-del-ci" id="toc-altri-approcci-per-il-calcolo-del-ci" class="nav-link" data-scroll-target="#altri-approcci-per-il-calcolo-del-ci"><span class="header-section-number">6.8</span> Altri approcci per il calcolo del CI</a></li>
+  <li><a href="#domande-ed-esercizi" id="toc-domande-ed-esercizi" class="nav-link" data-scroll-target="#domande-ed-esercizi"><span class="header-section-number">6.9</span> Domande ed esercizi</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Stime ed incertezza</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Death is a fact. All else is inference (W. Farr)</em></p>
+<p>Nei capitoli 3 e 4 abbiamo esaminato diversi metodi per descrivere il dataset in esame ed evidenziare le possibili relazioni causa-effetto tra le variabili osservate. Tuttavia, il singolo dataset prodotto in un esperimento è raramente interessante di per sè, in quanto il nostro obiettivo di ricercatori è raggiungere conclusioni generali applicabili all’intera popolazione di individui rappresentati dal nostro campione. Ad esempio, se avessimo campionato un certo numero di appezzamenti rappresentativi di un certo macro-ambiente e avessimo determinato la resa di una coltura, potremmo utilizzare i valori osservati per calcolare la media del campione. Ma la domanda di ricerca non è: “<em>Qual è la produzione degli appezzamenti in prova?</em>”, bensì “<em>Qual è la produzione della coltura nell’intero macro-ambiente?</em>”</p>
+<p>Anche se il campione è stato selezionato in modo da essere pienamente rappresentativo dell’intera popolazione, è chiaro che qualunque statistica descrittiva calcolata per il campione (ad esempio, media, deviazione standard, coefficiente di correlazione, rapporto F o parametri del modello) differisce in qualche modo dalla corrispondente statistica descrittiva calcolata per l’intera popolazione. Quindi, l’inferenza statistica non è altro che una tecnica per rispondere alla seguente domanda: “Cosa possiamo dire della popolazione dopo aver visto il campione?”. Il processo logico è riassunto in Figura <a href="#fig-figName61" class="quarto-xref"><span>6.1</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName61" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName61-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="_images/inferenceProcess_ita.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName61-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Il processo di inferenza statistica, per mezzo del quale, pur osservando solo un campione, purchè rappresentativo, possiamo dedurne le caratteristiche dell’intera popolazione
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Riprendiamo l’esempio 5.3, relativo ad un pozzo inquinato da un erbicida a concentrazione pari a 120 <span class="math inline">\(mg/L\)</span> (Capitolo 5), misurata tramite uno strumento che, unitamente a tutte le altre fonti ignote di errore, produce un coefficiente di variabilità del 10% (corrispondente ad una deviazione standard di 12 <span class="math inline">\(mg/L\)</span>). Abbiamo visto che, immaginando di fare le analisi in triplicato, i risultati di questo esperimento possono essere simulati con il modello della media, come lo abbiamo descritto nel capitolo precedente, cioè <span class="math inline">\(Y_O = Y_E + \varepsilon\)</span>, con <span class="math inline">\(\varepsilon \sim N(0, \sigma)\)</span>, <span class="math inline">\(Y_E = 120\)</span> e <span class="math inline">\(\sigma = 12\)</span>.</p>
+<p>Nell’esempio 5.3, la simulazione di Monte Carlo ha portato ai seguenti risultati: 105.5, 123.3 e 133.01 mg/L. Se adattiamo il “modello della media” a questo set di dati otteniamo un valore <span class="math inline">\(m = 120.62\)</span>, che differisce, anche se di poco, dal valore vero <span class="math inline">\(\mu = 120\)</span>, evidenziando l’attesa discrepanza tra la statistica campionaria e quella della popolazione (<span class="math inline">\(m \neq \mu\)</span>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 6.1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Riprendiamo l'esempio 5.3</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Y_E <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>epsilon <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">12</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Y_O <span class="ot">&lt;-</span> Y_E <span class="sc">+</span> epsilon</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting the ’model of the mean’ to the observed results</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y_O <span class="sc">~</span> <span class="dv">1</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(mod)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept) </span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">##    120.6192</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A questo punto rimettiamoci in una situazione reale: non sappiamo quale sia la concentrazione nel pozzo e cerchiamo di determinarla utilizzando i risultati dell’esperimento appena citato. In assenza di altre informazioni, è logico concludere che <span class="math inline">\(\mu = m\)</span>, cioè che la statistica della popolazione coincida con quella campionaria. Questo processo con il quale assegniamo alla popolazione il valore della statistica campionaria prende il nome di <strong>stima puntuale</strong>. È un processo legittimo, ma insufficiente, in quanto <span class="math inline">\(m \neq \mu\)</span>, il che non ci sorprende: non è ragionevole infatti pensare che un qualunque campione possa riflettere con esattezza le caratteristiche della popolazione che lo ha generato. La nostra stima dovrà quindi essere ben più prudenziale.</p>
+<p>L’approccio tradizionale consiste nel determinare un un intervallo di valori, che sia in grado di “catturare” la statistica della popolazione con elevata confidenza e una bassa probabilità di errore (<strong>stima per intervallo</strong>). Tale intervallo è chiamato <strong>Intervallo di confidenza</strong> (Confidence Interval: CI) ed è basato sulle teorie di Karl Pearson (1857-1936), di suo figlio Egon Pearson (1895-1980) e di Jerzy Neyman (1894-1981), nonché sul lavoro di Ronald Fisher. Il CI è uno dei fondamenti della cosiddetta inferenza frequentista, che non è l’unico tipo di inferenza disponibile e non è esente da alcune incongruenze concettuali <span class="citation" data-cites="morey_2016">Morey et al. (<a href="references.html#ref-morey_2016" role="doc-biblioref">2016</a>)</span>. Tuttavia, è molto comune e ampiamente utilizzata nella maggior parte degli articoli scientifici. Il termine “frequentista” deriva dal fatto che l’IC è costruito considerando la variabilità delle stime campionarie quando gli esperimenti vengono ripetuti e la frequenza con cui vengono ottenute i valori ‘sbagliati’.</p>
+<section id="ripetere-gli-esperimenti" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="ripetere-gli-esperimenti"><span class="header-section-number">6.1</span> Ripetere gli esperimenti</h2>
+<p>Il nostro esperimento è solo simulato e possiamo quindi ripeterlo ‘gratuitamente’ un numero anche molto elevato di volte, seguendo questa procedura:</p>
+<ol type="1">
+<li>Campioniamo tre individui da una distribuzione normale con media 120 e deviazione standard pari a 12</li>
+<li>Adattiamo ai risultati il modello della media, per ottenere una stima <span class="math inline">\(m\)</span></li>
+<li>Ripetiamo l’esperimento per 100’000 volte in modo da ottenere altrettante stime</li>
+<li>Calcoliamo la media delle medie e la deviazione standard delle medie</li>
+</ol>
+<p>Nel Code Box 6.2, il procedimento appena illustrato è eseguito tramite l’impiego della funzione <code>for()</code>, che permette di ripetere tutte le istruzioni tra parentesi graffe, mentre il contatore <span class="math inline">\(i\)</span> viene aggiornato ad ogni ciclo, da 1 a 100.000. Alla fine, il dataframe “result” contiene 100.000 stime ottenute da altrettanti esperimenti; questa popolazione di stime campionarie è chiamata <strong>distribuzione campionaria</strong> e mostra come le stime campionarie cambino nel corso di esperimenti (ancorchè ‘elettronici’) ripetuti quando la “verità vera” resta costante (<span class="math inline">\(\mu = 120\)</span> e <span class="math inline">\(\sigma = 12\)</span>). Alla fine possiamo utilizzare la statistica descrittiva per caratterizzare le proprietà di questa popolazione di stime.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 6.2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Monte Carlo simulation #1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>nrep <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">100000</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100000</span>){</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  sample <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(nrep, mean, sigma)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(sample <span class="sc">~</span> <span class="dv">1</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  result[i] <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Characterising the population of estimates</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(result)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 90.14123</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(result)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 149.0346</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>result[result <span class="sc">==</span> <span class="dv">120</span>]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="do">## numeric(0)</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 120.0341</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(result)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6.939063</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Notiamo che:</p>
+<ol type="1">
+<li>Ci sono anche valori molto alti/bassi (da 90.1 a 149.0), sebbene questi valori così discrepanti siano molto ‘rari’</li>
+<li>Non c’è alcun valore esattamente uguale a 120</li>
+<li>La media delle medie è praticamente coincidente con <span class="math inline">\(\mu\)</span>, la verità ‘vera’. Ciò conferma che la stima puntuale <span class="math inline">\(m\)</span> è uno stimatore non distorto di <span class="math inline">\(\mu\)</span>, perché tende a convergere su <span class="math inline">\(\mu\)</span> quando il numero di repliche tende a diventare molto elevato;</li>
+<li>La deviazione standard delle medie è pari a 6.94 e prende il nome di <strong>errore standard</strong> (SE).</li>
+</ol>
+<p>Quest’ultima statistica è di importanza fondamentale, in quanto caratterizza la replicabilità di un esperimento, ovvero la sua precisione. In particolare, si può dire che <strong>più è alto l’errore standard, più è incerta la stima e più è alta la sua variabilità in caso di esperimenti ripetuti</strong>.</p>
+</section>
+<section id="la-sampling-distribution-teorica" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="la-sampling-distribution-teorica"><span class="header-section-number">6.2</span> La ‘sampling distribution’ teorica</h2>
+<p>Building a sampling distribution empirica con una approccio Monte Carlo è sempre possibile, ma è spesso poco pratico e richiede molto tempo. E’molto più facile descrivere la sampling distribution con una funzione di densità formale. Se discretizziamo il vettore ‘result’ e riportiamo le frequenze su un grafico a barre (Fig. <a href="#fig-figName62" class="quarto-xref"><span>6.2</span></a> ), vediamo con chiarezza che la <em>sampling distribution</em> empirica somiglia molto ad una distribuzione normale, con media pari a 120 e deviazione standard pari a 6.94.</p>
+<p>Questa somiglianza può essere spiegato in base al teorema centrale del limite (o teorema del limite centrale), che teorizza che, qualunque sia la popolazione di partenza, molte statistiche campionarie, tra cui la media, calcolate su campioni casuali ed indipendenti, tendono a distribuirsi in modo approssimativamente normale, con una media pari alla corrispondente statistica della popolazione<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName62" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName62-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="06-InferenzaStatistica_files/figure-html/fig-figName62-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName62-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: Distribuzione empirica di 100’000 stime campionarie (n = 3), estratte da una distribuzione normale con media uguale a 120 e deviazione standard uguale a 12. La linea rossa mostra una distribuzione normale con media 120 e deviazione standard uguale a 6.94
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ammettendo quindi che la <em>sampling distribution</em> fosse normale, potremmo definire un intervallo basato su un multiplo dell’errore standard e quindi compreso tra <span class="math inline">\(\mu - k \times SE\)</span> e <span class="math inline">\(\mu + k \times SE\)</span>, in modo da comprendere al suo interno il 95% delle stime campionarie possibili (Fig. <a href="#fig-figName62b" class="quarto-xref"><span>6.3</span></a>). Inoltre, sempre assumendo cha la <em>sampling distribution</em> fosse normale, <span class="math inline">\(k\)</span> sarebbe pari al 97.5° percentile di una distribuzione gaussiana standardizzata (ovvero una distribuzione gaussiana con media uguale a 0 e deviazione standard pari a 1), che è prossimo a 2 (con R: <code>qnorm(0,975) = 1.960</code>). Sfortunatamente, nella maggior parte dei casi, la distribuzione campionaria è solo approssimativamente gaussiana, quindi <span class="math inline">\(k\)</span> deve essere determinato in modo diverso, come vedremo in seguito.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName62b" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName62b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="06-InferenzaStatistica_files/figure-html/fig-figName62b-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName62b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: Distribuzione normale con media uguale a 120 e deviazione standard uguale a 6.94 (n = 3); l’intervallo in rosso contiene il 95% delle stime campionarie ed è ottenuto aggiungendo/sottraendo a 120 un valore approssimativamente uguale al doppio dell’errore standard
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="lintervallo-di-confidenza-frequentista" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="lintervallo-di-confidenza-frequentista"><span class="header-section-number">6.3</span> L’intervallo di confidenza frequentista</h2>
+<p>Come abbiamo detto, l’intervallo menzionato in precedenza contiene il 95% delle stime campionarie e, di conseguenza, soddisfa la seguente espressione:</p>
+<p><span class="math display">\[P \left[ \mu - k \times SE  \leq m \leq \mu + k \times SE \right] = 0.95\]</span></p>
+<p>Con semplici passaggi algebrici (sottraiamo <span class="math inline">\(\mu\)</span> ed <span class="math inline">\(m\)</span> da tutti i termini, moltiplichiamo per <span class="math inline">\(-1\)</span> e riorganizziamo il tutto), possiamo ricavare la seguente espressione:</p>
+<p><span class="math display">\[P \left[ m - k \times SE \leq \mu \leq m + k \times SE \right] = 0.95\]</span></p>
+<p>che è di estrema importanza, in quanto esprime il concetto che, <strong>se facciamo un esperimento ed otteniamo una media pari ad <span class="math inline">\(m\)</span> e scegliamo accuratamente <span class="math inline">\(k\)</span>, possiamo costruire un intervallo di confidenza intorno alla nostra stima, pari a <span class="math inline">\(k\)</span> volte l’errore standard e tale da contenere la media vera <span class="math inline">\(\mu\)</span> con una probabilità del 95%</strong>. Questa espressione costituisce l’euristica più utilizzata per costruire l’<strong>intervallo di confidenza</strong>, anche se dobbiamo capire come ottenere SE e <span class="math inline">\(k\)</span>.</p>
+</section>
+<section id="come-otteniamo-lerrore-standard" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="come-otteniamo-lerrore-standard"><span class="header-section-number">6.4</span> Come otteniamo l’errore standard?</h2>
+<p>In alcuni casi, l’errore standard può essere ottenuto tramite semplici regole <span class="citation" data-cites="cochran_1950">(<a href="references.html#ref-cochran_1950" role="doc-biblioref">Cochran and Cox 1950</a>)</span>, a partire dalla deviazione standard della popolazione di partenza. Ad esempio, nel caso della media campionaria, l’errore standard (SEM: Standard Error of a Mean) può essere ottenuto con la legge di propagazione degli errori (vedi capitolo 3.3):</p>
+<p><span class="math display">\[\textrm{SEM}  = \frac{\sigma}{\sqrt n}\]</span></p>
+<p>Nell’esempio precedente, l’errore standard è <span class="math inline">\(12/\sqrt{3} = 6,928\)</span>, molto vicino alla deviazione standard della distribuzione campionaria empirica.</p>
+<p>Allo stesso modo, è possibile dimostrare che l’errore standard della differenza tra le medie di due campioni (SED: Standard Error of a Difference) indipendenti con numerosità, rispettivamente, pari a <span class="math inline">\(n_1\)</span> ed <span class="math inline">\(n_2\)</span>, estratti da due popolazioni con la stessa varianza e la stessa media è:</p>
+<p><span class="math display">\[\textrm{SED}  =  \sqrt{ \frac{\sigma^2}{n_1} + \frac{\sigma^2}{n_2}}\]</span></p>
+<p>A parte questi due semplici casi, calcolare manualmente l’errore standard è difficile, ma, fortunatamente, possiamo quasi sempre ricavarlo da R o dagli altri software statistici. In particolare, per i modelli ottenuti con la funzione <code>lm()</code> o con altre funzioni di <em>fitting</em> in R, gli errori standard per le stime dei parametri possono essere ricavati con la funzione <code>summary()</code>, passando l’oggetto che risulta dal <em>fitting</em> come argomento. Ad esempio, riconsideriamo i dati dell’esperimento varietale a randomizzazione completa con tre repliche e quattro genotipi di avena, denominati A, B, C e D (Esempio 4.3). Se adattiamo ai risultati un semplice modello ANOVA ad una via (<span class="math inline">\(Y_i = \mu + \alpha_j + \varepsilon_i\)</span>), le stime dei parametri con i relativi errori standard possono essere ottenute come mostrato nel riquadro sottostante.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 6.3</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Errori standard per le stime dei parametri</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"Oat1L"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>mod6<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype, <span class="at">data =</span> dataset)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod6<span class="fl">.1</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Call:</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">## lm(formula = Yield ~ Genotype, data = dataset)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals:</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="do">##      Min       1Q   Median       3Q      Max </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="do">## -0.17333 -0.08917  0.01833  0.07417  0.16333 </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Coefficients:</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">##             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)  4.58000    0.07566  60.531 6.17e-12 ***</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="do">## GenotypeB   -1.02667    0.10700  -9.595 1.16e-05 ***</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="do">## GenotypeC   -0.49667    0.10700  -4.642  0.00166 ** </span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="do">## GenotypeD    0.01667    0.10700   0.156  0.88008    </span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Residual standard error: 0.1311 on 8 degrees of freedom</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Multiple R-squared:  0.9412, Adjusted R-squared:  0.9192 </span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="do">## F-statistic: 42.71 on 3 and 8 DF,  p-value: 2.866e-05</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="come-otteniamo-il-moltiplicatore-k" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="come-otteniamo-il-moltiplicatore-k"><span class="header-section-number">6.5</span> Come otteniamo il moltiplicatore <span class="math inline">\(k\)</span>?</h2>
+<p>Per selezionare il moltiplicatore <span class="math inline">\(k\)</span>, dobbiamo considerare il <em>coverage</em> dell’intervallo di confidenza, ovvero la frequenza con cui esso “cattura” il valore reale della statistica della popolazione. Generalmente, maggiore è il valore di <span class="math inline">\(k\)</span>, maggiore è l’ampiezza dell’intervallo e maggiore è il <em>coverage</em>. Le informazioni di letteratura suggeriscono un <em>coverage</em> del 95%, corrispondente a una probabilità di errore del 5%; di conseguenza, dovremmo chiederci: quale valore di <span class="math inline">\(k\)</span> consenta di raggiungere tale confidenza?</p>
+<p>Abbiamo già visto che, se la <em>sampling distribution</em> fosse veramente gaussiana, <span class="math inline">\(k\)</span> sarebbe all’incirca uguale a 2. Per determinare il <em>coverage</em> con questo valore di <span class="math inline">\(k\)</span> possiamo utilizzare il metodo Monte Carlo; in relazione all’esempio iniziale, riguardante il pozzo inquinato con una sostanza erbicida, possiamo eseguire, ripetutamente, queste operazioni:</p>
+<ol type="1">
+<li>campioniamo tre individui da una popolazione gaussiana, con media pari a 120 e deviazione standard pari a 12;</li>
+<li>adattiamo a questi tre individui il modello della media per ottenere una stima della media dell’intero pozzo, insieme al suo errore standard;</li>
+<li>costruiamo un CI, utilizzando come moltiplicatore <span class="math inline">\(k = 2\)</span>. Se tale CI contiene il valore reale di 120 mg/L, l’esito è positivo e quindi assegniamo al risultato il valore 1 e lo immagazziniamo nel vettore ‘result’. Altrimenti assegniamo il valore 0 (funzione <code>ifelse()</code>);</li>
+<li>ripetiamo i passaggi da 1 a 3 almeno per 100.000 volte e contiamo il numero di successi.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 6.4</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Monte Carlo simulation - 2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Coverage of a confidence interval </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># depending on the multiplier k</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sampling 3 reps from a gaussian with mean=120 and sd=12</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>nrep <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># nrep &lt;- 20</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># k &lt;- qt(0.975, nrep - 1)</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">100000</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100000</span>){</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  sample.i <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(nrep, mean, sigma)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(sample.i <span class="sc">~</span> <span class="dv">1</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  se <span class="ot">&lt;-</span> <span class="fu">summary</span>(mod)<span class="sc">$</span>coef[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  limInf <span class="ot">&lt;-</span> m <span class="sc">-</span> k <span class="sc">*</span> se</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  limSup <span class="ot">&lt;-</span> m <span class="sc">+</span> k <span class="sc">*</span> se</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># did we capture the mean?</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  result[i] <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(limInf <span class="sc">&lt;</span> <span class="dv">120</span> <span class="sc">&amp;</span> limSup <span class="sc">&gt;</span> <span class="dv">120</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(result)<span class="sc">/</span><span class="dv">100000</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.81708</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Il box sovrastante mostra che, impostando <span class="math inline">\(k = 2\)</span> si ottiene un <em>coverage</em> molto basso (inferiore all’82%), corrispondente a una probabilità di errore di quasi il 19%, che è inaccettabile. Il problema è che la dimensione del campione è molto piccola e, pertanto, la distribuzione campionaria di <span class="math inline">\(m\)</span> non è ben approssimata con una PDF gaussiana. Se la stessa simulazione fosse eseguita con 20 repliche anziché con 3, il <em>coverage</em> aumenterebbe al 94% (provare per credere; basta cambiare la linea di codice <code>nrep &lt;- 3</code> con <code>nrep &lt;- 20</code>). In pratica, utilizzare <span class="math inline">\(k = 2\)</span> è ritenuto accettabile solo quando la dimensione del campione è superiore a 20-25 unità.</p>
+<p>Per piccoli campioni (e in generale), è possibile ottenere un <em>coverage</em> esatto del 95% utilizzando il 97.5° percentile della distribuzione t di Student. Per ottenere questo valore, si può utilizzare la funzione <code>qt()</code> in R, che richiede, come minimo, due argomenti: il primo è il percentile desiderato, mentre il secondo rappresenta il numero di gradi di libertà per l’errore standard. Nel nostro esempio abbiamo tre repliche, quindi il numero di DF è 3 - 1 = 2; il 97.5° percentile della distribuzione t di Student è quindi pari a <code>qt(0,975, 2)</code> = 4.303, che è molto più alto 2. In genere, il 97.5° percentile della distribuzione t di Student diminuisce all’aumentare del numero di gradi di libertà, tendendo ad 1.96 (cioè al 97.5° percentile della distribuzione normale), quando il numero di DF tende a <span class="math inline">\(\infty\)</span>. Se utilizziamo il codice sovrastante e sostituiamo alla linea <code>k &lt;- 2</code>, il comando <code>k &lt;- qt(0.975, nrep - 1)</code> possiamo confermare che il <em>coverage</em> diviene quasi esattamente del 95% (quasi, poiché il numero di simulazioni è molto alto, ma non infinito).</p>
+<p>Se necessario, possiamo anche costruire un intervallo di confidenza del 99%, che riduce il rischio di errore all’1%. Basta utilizzare il 99.5° percentile di una distribuzione t di Student. In generale, se <span class="math inline">\(\alpha\)</span> è il livello di confidenza desiderato, il percentile corrispondente è <span class="math inline">\(q_{\alpha} = 1 - (1 - \alpha/2)\)</span> (quindi <span class="math inline">\(q_{0.05} = 1-(1-0.95)/2=0.975\)</span> e <span class="math inline">\(q_{0.99} =1-(1-0,99)/2=0.995)\)</span>.</p>
+</section>
+<section id="quali-sono-le-limitazione-del-ci" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="quali-sono-le-limitazione-del-ci"><span class="header-section-number">6.6</span> Quali sono le limitazione del CI?</h2>
+<p>L’intervallo di confidenza frequentista è ampiamente utilizzato nella letteratura scientifica, mentre la stima puntuale è spesso considerata inaccettabile. Ad esempio, le linee guida per gli autori di Weed Research, una rivista internazionale di alto livello nel campo della scienza delle piante, affermano che “<em>tutti i valori stimati (ad esempio, parametri del modello, medie, differenze, ecc.) devono essere presentati insieme a un’appropriata misura di variabilità nel testo, nelle tabelle e nei grafici</em>”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Gli intervalli di confidenza sono molto spesso presentati nella forma più semplice “stima <span class="math inline">\(\pm\)</span> errore standard”, sebbene la copertura di tale intervallo sia piuttosto limitata.</p>
+<p>Nonostante l’ampia diffusione ed accettazione dell’intervallo di confidenza frequentista, è necessario essere consapevoli dei suoi limiti <span class="citation" data-cites="hastie_2009">(<a href="references.html#ref-hastie_2009" role="doc-biblioref">Hastie et al. 2009</a>)</span>. In particolare, l’intervallo di confidenza deve essere interpretato con riferimento a una distribuzione campionaria, ovvero alle ipotetiche ripetizioni dello stesso esperimento con campioni diversi, come mostrato nel Code Box 6.4. Al contrario, non è possibile interpretare l’intervallo di confidenza con riferimento a ogni singolo sforzo di campionamento, ovvero non possiamo affermare che lo specifico intervallo determinato per un singolo esperimento contenga il vero parametro della popolazione con una probabilità del 95%, perché ciò non è vero; in particolare, non bisogna dimenticare che il CI cambia ad ogni campionamento, come si vede nel Code Box 6.4 <span class="citation" data-cites="morey_2016">(vedi anche <a href="references.html#ref-morey_2016" role="doc-biblioref">Morey et al. 2016</a>)</span>.</p>
+</section>
+<section id="gli-intervalli-di-confidenza-in-pratica" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="gli-intervalli-di-confidenza-in-pratica"><span class="header-section-number">6.7</span> Gli intervalli di confidenza in pratica</h2>
+<section id="esempio-6.1-ic-per-una-media-campionaria" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="esempio-6.1-ic-per-una-media-campionaria"><span class="header-section-number">6.7.1</span> Esempio 6.1: IC per una media campionaria</h3>
+<p>Immaginiamo di aver condotto un esperimento misurativo per determinare la resa media dei girasoli in un macro-ambiente dell’Italia centrale. Abbiamo quindi selezionato venti campi casuali in questo macro-ambiente ed abbiamo determinato i valori di resa riportati nel riquadro sottostante; sulla base di questi risultati, qual è la resa media nell’intero macro-ambiente? In questo esempio, la media campionaria è <span class="math inline">\(m = 58,68\)</span> ed è una stima puntuale affidabile della resa media nell’intero macro-ambiente. Per calcolare il CI, dobbiamo determinare:</p>
+<ol type="1">
+<li>l’errore standard, che può essere facilmente calcolato utilizzando la semplice equazione riportata più sopra (<span class="math inline">\(\textrm{SEM}  = {\sigma}/{\sqrt n}\)</span>). La deviazione standard della popolazione <span class="math inline">\(\sigma\)</span> è ignota, ma possiamo sostituirla con la deviazione standard del campione, che è 3.47 (principio del ‘plug-in’);</li>
+<li>Il moltiplicatore <span class="math inline">\(k\)</span>, pari al 97.5° percentile della distribuzione t di Student (ovvero, 2.09).</li>
+</ol>
+<p>Di conseguenza, i due limiti dell’intervallo di confidenza sono rispettivamente 58.68 - 2.09 <span class="math inline">\(\times\)</span> 0.775 = 57.1 e 58,68 + 2.09 <span class="math inline">\(\times\)</span> 0.775 = 60.3. La conclusione è che, con un livello di confidenza del 95%, la resa media nel macro-ambiente rientra nell’intervallo tra 57.1 e 60.3.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 6.5</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 6.1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confidence interval for a sample mean</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Input the sample and calculate the mean</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">54.08</span>, <span class="fl">66.31</span>, <span class="fl">56.17</span>, <span class="fl">56.32</span>, <span class="fl">52.01</span>, <span class="fl">58.91</span>, <span class="fl">58.74</span>, <span class="fl">57.49</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fl">59.57</span>, <span class="fl">61.71</span>, <span class="fl">56.89</span>, <span class="fl">54.82</span>, <span class="fl">56.88</span>, <span class="fl">60.05</span>, <span class="fl">59.39</span>, <span class="fl">57.19</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fl">64.76</span>, <span class="fl">61.36</span>, <span class="fl">62.03</span>, <span class="fl">58.83</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(Y)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>m</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 58.6755</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the standard error</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sd</span>(Y)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>SEM <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(Y))</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>SEM</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.7754783</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine the multiplier</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="fu">length</span>(Y) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>k</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.093024</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the limits of the CI # Lower limit</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Y) <span class="sc">-</span> k <span class="sc">*</span> SEM</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 57.05241</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Higher limit </span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Y) <span class="sc">+</span> k <span class="sc">*</span> SEM</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 60.29859</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Più facilmente, possiamo pervenire allo stesso risultato stimando un modello della media, ed utilizzando la funzione <code>confint()</code>, come indicato nel riquadro sottostante.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 6.6</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 6.1 [continuation]</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Retrieving confidence intervals from model fit</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> <span class="dv">1</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(mod)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">##                2.5 %   97.5 %</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept) 57.05241 60.29859</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="example-6.2-cis-for-model-parameters" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="example-6.2-cis-for-model-parameters"><span class="header-section-number">6.7.2</span> Example 6.2: CIs for model parameters</h3>
+<p>Lo stesso approccio del riquadro sovrastante può essere utilizzato praticamente con ogni altro modello in R. Ad esempio, riconsiderando i dati ‘Oat1L’ dell’ Esempio 4.3 e stimando un modello ANOVA ad una via come nel riquadro 4.3, gli intervalli di confidenza per le stime dei parametri possono essere ottenuti come nel Riquadro 6.7.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 6.7</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 6.2</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># CIs for model parameters for the ’Oat1l’ data</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries and data library(statforbiology)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"Oat1L"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>mod6<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype, <span class="at">data =</span> dataset)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># CIs for model parameters </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(mod6<span class="fl">.1</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="do">##                  2.5 %     97.5 %</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)  4.4055191  4.7544809</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="do">## GenotypeB   -1.2734199 -0.7799134</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="do">## GenotypeC   -0.7434199 -0.2499134</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="do">## GenotypeD   -0.2300866  0.2634199</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="altri-approcci-per-il-calcolo-del-ci" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="altri-approcci-per-il-calcolo-del-ci"><span class="header-section-number">6.8</span> Altri approcci per il calcolo del CI</h2>
+<p>L’approccio proposto in questo capitolo si basa su due pre-requisiti fondamentali:</p>
+<ol type="1">
+<li>la distribuzione campionaria sia gaussiana (almeno approssimativamente), e</li>
+<li>sia possibile, in qualche modo, calcolare un errore standard affidabile.</li>
+</ol>
+<p>Nei casi in cui questi due pre-requisiti non siano soddisfatti, gli intervalli di confidenza possono essere determinati con altri approcci, come il metodo Monte Carlo (simile a quello utilizzato nel riquadro 6.2) o il metodo <em>bootstrap</em> <span class="citation" data-cites="chernick_2011">(<a href="references.html#ref-chernick_2011" role="doc-biblioref">Chernick 2011</a>)</span>. Inoltre, vale la pena menzionare l’“Intervallo Credibile” (<em>Credible Interval</em>), che è la controparte bayesiana dell’intervallo di confidenza frequentista <span class="citation" data-cites="kruschke_2011">(<a href="references.html#ref-kruschke_2011" role="doc-biblioref">Kruschke 2011</a>)</span>.</p>
+<p>Questi metodi fanno parte della cosiddetta <em>computer intensive statistic</em> e possono essere molto utili in alcune circostanze, ma non saranno illustrati in dettaglio perché sono molto avanzati ed esulano dallo scopo di questo libro introduttivo.</p>
+</section>
+<section id="domande-ed-esercizi" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="domande-ed-esercizi"><span class="header-section-number">6.9</span> Domande ed esercizi</h2>
+<ol type="1">
+<li>In un campo di frumento sono state campionate trenta aree di saggio di un metro quadrato ciascuna, sulle quali è stata determinata la produzione. La media delle trenta aree è stata di 6.2 t/ha, con una varianza pari a 0.9. Stimare la produzione dell’intero appezzamento.</li>
+<li>Siamo interessati a conoscere il contenuto medio di nitrati dei pozzi della media valle del Tevere. Per questo organizziamo un esperimento, durante il quale campioniamo 20 pozzi rappresentativi, riscontrando le concentrazioni riportate di seguito. Stimare la concentrazione media per l’intera valle del Tevere</li>
+</ol>
+<pre><code>38.3 38.6 38.1 39.9 36.3 41.6 37.0 39.8 39.1     
+35.0 38.1 37.4 38.3 34.8 40.4 39.3 37.0 38.7    
+38.2 38.4    </code></pre>
+<ol start="3" type="1">
+<li>E’stata impostata una prova sperimentale per confrontare due varietà di mais, con uno schema sperimentale a blocchi randomizzati con tre repliche. La prima varietà ha mostrato produzioni di 14, 12, 15 e 13 t/ha, mentre la seconda varietà ha mostrato produzioni pari a 12, 11, 10.5 e 13 t/ha. Stimare le produzioni medie delle due varietà, nell’ambiente di studio.</li>
+<li>Un campione di 400 insetti a cui è stato somministrato un certo insetticida mostra che 136 di essi sono sopravvissuti. Determinare un intervallo di confidenza con grado di fiducia del 95% per la proporzione della popolazione insensibile al trattamento.</li>
+<li>È stata studiata la risposta produttiva del sorgo alla concimazione azotata, con un esperimento i cui risultati sono riportati di seguito .Assumendo che la relazione sia lineare (retta), stimare la pendenza e l’intercetta della popolazione di riferimento, dalla quale è stato estratto il campione in studio. Utilizzare la funzione <code>lm(Yield ~ Dose)</code> ed estrarre gli errori standard con il metodo <code>summary()</code>.</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Dose</th>
+<th style="text-align: center;">Yield</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">2.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">3.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">4.31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">5.50</td>
+</tr>
+</tbody>
+</table>
+<ol start="6" type="1">
+<li>Utilizzando una simulazione Monte Carlo opportunamente pianificata, mostrare che la varianza del campione (uguale alla devianza divisa per il numero di individui meno uno) fornisce una stima più accurata della varianza della popolazione, rispetto allo scarto quadratico medio (devianza divisa per il numero di soggetti) che è invece uno stimatore distorto. Suggerimento: ricordare che uno stimatore accurato ha una distribuzione campionaria (<em>sampling distribution</em>) il cui valore atteso coincide con il valore da stimare.</li>
+</ol>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-chernick_2011" class="csl-entry" role="listitem">
+<span class="smallcaps">Chernick, MR</span> (2011) <em>An <span>Introduction</span> to <span>Bootstrap</span> <span>Methods</span> with <span>Applications</span> to <span>R</span></em>. Wiley, USA
+</div>
+<div id="ref-cochran_1950" class="csl-entry" role="listitem">
+<span class="smallcaps">Cochran, WG, GM Cox</span> (1950) <em>Experimental design</em>. John Wiley &amp; Sons, Inc., USA
+</div>
+<div id="ref-hastie_2009" class="csl-entry" role="listitem">
+<span class="smallcaps">Hastie, T, R Tibshirani, J Friedman</span> (2009) <em>The elements of statistical learning</em>. Springer Science + Business Media, California, USA
+</div>
+<div id="ref-kruschke_2011" class="csl-entry" role="listitem">
+<span class="smallcaps">Kruschke, JK</span> (2011) <em>Doing bayesian data analyses. <span>A</span> tutorial with <span>R</span> and <span>BUGS</span></em>. Academic Press, Burlington, MA (USA)
+</div>
+<div id="ref-morey_2016" class="csl-entry" role="listitem">
+<span class="smallcaps">Morey, RD, R Hoekstra, JN Rouder, MD Lee, E-J Wagenmakers</span> (2016) <a href="https://doi.org/10.3758/s13423-015-0947-8">The fallacy of placing confidence in confidence intervals</a>. <em>Psychonomic Bulletin &amp; Review</em> <strong>23</strong>, 103–123
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Il teorema centrale del limite vale per campioni di dimensione elevata, composti da almeno 20-25 unità<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Tradotto in italiano dalla guida per gli autori di Weed Research, vedi <a href="https://onlinelibrary.wiley.com/page/%20journal/13653180/homepage/forauthors.html">https://onlinelibrary.wiley.com/page/ journal/13653180/homepage/forauthors.html</a>(accesso in data 24 Aprile 2025))<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./05-ModelliStocastici.html" class="pagination-link" aria-label="Modelli stocastici">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelli stocastici</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="Bibliografia">
+        <span class="nav-page-text">Bibliografia</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

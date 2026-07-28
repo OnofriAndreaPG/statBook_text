@@ -86,61 +86,72 @@ Abbiamo condotto un esperimento misurativo, in cui abbiamo raccolto tre campioni
 
 Questo problema è piuttosto semplice e potrebbe essere meglio risolto utilizzando semplici statistiche descrittive (vedi Capitolo 3); tuttavia, è interessante vedere come lo stesso problema può essere posto in una logica di 'model fitting': non abbiamo alcun predittore e, pertanto, possiamo supporre che le osservazioni siano generate in base al modello della media: $Y_i = \mu + \varepsilon_i$, dove l'elemento stocastico ha media 0 e una deviazione standard $\sigma$.
 
-Assegnare un valore a tutti i parametri sconosciuti è banale, utilizzando i semplici calcoli mostrati nel Capitolo 3 (vale a dire, $\mu = 120$ e $\sigma = 4.58$). Tuttavia, possiamo ottenere gli stessi risultati utilizzando l'approccio di minimizzazione dei minimi quadrati, come mostrato nel riquadro seguente. Si noti che utilizziamo '1' come lato destro dell'equazione del modello, poiché non abbiamo alcun predittore.
+Assegnare un valore a tutti i parametri sconosciuti è banale, utilizzando i semplici calcoli mostrati nel Capitolo 3 (vale a dire, $\mu = 120$ e $\sigma = 4.58$). Tuttavia, possiamo ottenere gli stessi risultati utilizzando l'approccio di minimizzazione dei minimi quadrati, come mostrato nel riquadro seguente. Si noti che utilizziamo '1' come lato destro dell'equazione del modello, poiché non abbiamo alcun predittore..
+
+Il modello della media descrive una situazione in cui non abbiamo predittori e, pertanto, non vi sono nessi causa-effetto; di conseguenza, è il peggior modello possibile, il punto di riferimento rispetto al quale valutare ogni altro modello alternativo. Per queste sue caratteristiche, il modello della media è spesso definito come **modello nullo**.
 
 \vspace{12pt}
 
 ```{r}
+# Riquadro 4.1
+# Stima di un modello della 'media'
+#
 Y <- c(116, 119, 125)
 mod <- lm(Y ~ 1)
-```
 
-La stima di $\mu$ può essere ottenuta con la seguente funzione R:
-
-\vspace{12pt}
-
-```{r}
+# Stima dei parametri
 coef(mod)
-```
 
-Per quanto riguarda la componente stocastica, possiamo ottenere i residui, la loro devianza e la loro deviazione standard con le seguenti funzioni R:
+# Valori attesi
+fitted(mod)
 
-\vspace{12pt}
-
-```{r}
 # Residui
 residuals(mod)
 #
-# Devianza dei residui
+# Devianza dei residui (RSS)
 deviance(mod)
 #
-# Deviazione standard dei residui
+# Deviazione standard dei residui (RMSE)
 summary(mod)$sigma
 ```
 
-Il modello della media descrive una situazione in cui non abbiamo predittori e, pertanto, non vi sono nessi causa-effetto; di conseguenza, è il peggior modello possibile, il punto di riferimento rispetto al quale valutare ogni altro modello alternativo. Per queste sue caratteristiche, il modello della media è spesso definito come **modello nullo**.
 
 ## Esempio 4.2: un predittore quantitativo
 
 L'algoritmo dei minimi quadrati è facile da comprendere se consideriamo un esperimento in cui la resa del mais (la risposta, in t/ha) sia stata determinata in funzione del ricoprimento delle piante infestanti (il predittore, in %), determinato all'inizio del ciclo colturale. In una situazione del genere, potremmo ipotizzare un modello lineare (linea retta) del tipo: $Y_i = b_0 + b_1 \, X_i + \varepsilon_i$, che è solitamente noto come **modello di regressione lineare semplice**.
 
-I due parametri $b_0$ e $b_1$ rappresentano, rispettivamente, l'intercetta (livello di resa senza infestanti) e la pendenza (variazione della resa per ogni aumento unitario del ricoprimento). Per stimare questi due valori, possiamo usare la funzione 'lm()', che produce i risultati mostrati nella Figura \@ref(fig:figName41a).
+I due parametri $b_0$ e $b_1$ rappresentano, rispettivamente, l'intercetta (livello di resa senza infestanti) e la pendenza (variazione della resa per ogni aumento unitario del ricoprimento). Per stimare questi due valori, possiamo usare la funzione 'lm()', che produce i risultati mostrati nella Figura -@fig-figName41a.
 
 ```{r}
+# Riquadro 4.2
+#
 # Fitting a simple linear regression model
 
 # Entering the data
 library(statforbiology)
 dataset <- getAgroData("WeedCover")
+head(dataset)
 
 # Fitting the model
 mod <- lm(Yield ~ WeedCover, data = dataset)
 
 # Inspecting the estimates
 coef(mod)
+
+# Fitted values
+fitted(mod)
+
+# Residuals
+residuals(mod)
+
+# RSS
+deviance(mod)
+
+# RMSE
+summary(mod)$sigma
 ```
 
-```{r figName41a, echo=FALSE, message=FALSE, warning=FALSE, out.width = "85%", fig.cap = "Example 2: the least square estimate is represented by the straight line that passes as close as possible to the observed points.", fig.dim = c(4,4)}
+```{r fig-figName41a, echo=FALSE, message=FALSE, warning=FALSE, out.width = "85%", fig.cap = "Example 2: the least square estimate is represented by the straight line that passes as close as possible to the observed points.", fig.dim = c(3.5,3.5)}
 library(ggplot2)
 dframe <- data.frame(x = dataset$WeedCover, y = dataset$Yield,
                      yf = fitted(mod))
