@@ -80,7 +80,7 @@ X <- factor(X)
 
 Un modello completamente specificato può fornire una buona descrizione dei dati sperimentali, **postulando l'esistenza di un meccanismo causa-effetto ben definito**. Con la dovuta prudenza, questo modello può essere utilizzato per fare previsioni; ad esempio, se i dati sperimentali hanno suggerito che l'effetto della concimazione azotata sul frumento può essere rappresentata con una retta con equazione $Y_E = b_0 + b_1 \, X$, dove $b_0 = 65$ e $b_1 = 0.1$, allora si potrebbe concludere che una concimazione con 150 kg/ha di azoto dovrebbe, prevedibilmente, dare come risultato un livello di resa $Y_E = 80$ quintali per ettaro.
 
-## Esempio 4.1: il 'modello della media'
+### Esempio 4.1: il 'modello della media'
 
 Abbiamo condotto un esperimento misurativo, in cui abbiamo raccolto tre campioni di acqua da un pozzo, per misurare la concentrazione di una sostanza xenobiotica. I risultati sono 116, 119, 125 mg/L e vogliamo calcolare la media e la deviazione standard dei tre campioni.
 
@@ -116,7 +116,7 @@ summary(mod)$sigma
 ```
 
 
-## Esempio 4.2: un predittore quantitativo
+### Esempio 4.2: la regressione lineare semplice
 
 L'algoritmo dei minimi quadrati è facile da comprendere se consideriamo un esperimento in cui la resa del mais (la risposta, in t/ha) sia stata determinata in funzione del ricoprimento delle piante infestanti (il predittore, in %), determinato all'inizio del ciclo colturale. In una situazione del genere, potremmo ipotizzare un modello lineare (linea retta) del tipo: $Y_i = b_0 + b_1 \, X_i + \varepsilon_i$, che è solitamente noto come **modello di regressione lineare semplice**.
 
@@ -179,7 +179,11 @@ ggplot(dframe) +
 # text(6, 2, label = "RSS = 4.32", pos = 4)
 ```
 
-## Esempio 4.3: un predittore nominale
+### Esempio 4.3: il modello ANOVA ad una via
+
+I modelli contenenti predittori nominali sono costituiti da un sistema di equazioni che prevedono la risposta separata per ognuno dei livelli del predittore inclusi nell'esperimento. Con terminologia un po' approssimativa, ma chiara, questi modelli vengono spesso definiti 'modelli ANOVA', poiché l'interesse principale risiede tipicamente nel confrontare le medie dei gruppi di trattamento utilizzando il metodo ANOVA, che verrà descritto più avanti in questo capitolo.
+
+L'adattamento dei modelli ANOVA richiede la cosiddetta codifica **dummy**, che, tuttavia, viene gestita automaticamente all'interno del software statistico prescelto per l'analisi. In R, l'unica cosa di cui dobbiamo preoccuoparci è quella di trasformare i predittori numerici in *factors* (cioè variabili qualitative), altrimenti si rischia di adattare il modello sbagliato (un modello di regressione invece che un modello ANOVA). Tale trasformazione viene eseguita utilizzando la funzione `factor()` (Riquadro 4.3).
 
 Immaginiamo un esperimento sul campo per confrontare la resa di quattro genotipi di avena (denominati A, B, C e D), con un disegno completamente randomizzato con tre repliche. I risultati (in tonnellate per ettaro) sono mostrati nella Tabella [-@tbl-tabName4b1].
 
@@ -372,7 +376,7 @@ anova(mod)
 
 Rispetto a quanto esposto in precedenza, la tabella ottenuta con R contiene solo un valore che non abbiamo ancora spiegato, il cosidetto P-level, che si trova all'estrema destra (P = 2.866e-05, cioè $2.866 \times 10^{-5}$). Si tratta di un indicatore inferenziale che sarà illustrato nei Capitoli seguenti anche se possiamo anticipare che più il P-level è basso, più è forte l'evidenza scientifica contro l'ipotesi 'nulla' che il trattamento sperimentale (in questo caso il genotipo) non abbia avuto alcun effetto sulla variabile risposta (produzione della coltura). Ancora più in dettaglio, anticipiamo che, se il P-level è inferiore a 0.05 ed è accompagnato da uno o più asterischi, si può concludere che l'effetto del trattamento è *statisticamente significativo*.
 
-## Example 4.4: due predittori nominali
+### Example 4.4: due predittori nominali
 
 Consideriamo lo stesso esperimento dell'esempio precedente ed immaginiamo che sia stato disegnato a blocchi randomizzati (la prima osservazione di ogni genotipo è stata presa nel primo blocco, la seconda nel secondo blocco e così via). In questo caso, il nesso causa-effetto e, di conseguenza, il modello interpretativo sono diversi, perché la resa dipende da due fattori sperimentali, ovvero il genotipo e il blocco. L'equazione è:
 
