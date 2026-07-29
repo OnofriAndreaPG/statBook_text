@@ -523,24 +523,12 @@ kable(format(tab, nsmall = 1), caption = "Interazione cross-over tra fattori spe
 
 Se guardassimo solo le medie marginali, avremmo l'impressione sbagliata che il fattore A, da solo, non ha alcun effetto (le medie A1 e A2 sono uguali) e che il fattore B ha solo un piccolissimo effetto. La realtà è invece che entrambi i fattori hanno un grande effetto, ma la presenza dell'interazione lo nasconde completamente, impedendoci di raggiungere conclusioni attendibili guardando ai due fattori, uno separatamente dall'altro.
 
-FINO QUI............
 
 ### Example 4.5: un esperimento multi-ambiente
 
-Immaginiamo che l'esperimento presentato nell'Esempio 4.3 sia stato ripetuto in un'altra località, utilizzando sempre un disegno completamente randomizzato. I dati osservati sono riportati nella Tabella -@tbl-tabName4b4.
+Immaginiamo che l'esperimento presentato nell'Esempio 4.3 sia stato ripetuto in un'altra località, utilizzando sempre un disegno completamente randomizzato. I dati osservati sono riportati nel dataset 'Oat2L' nel package 'statforbiology'.
 
-```{r tbl-tabName4b4, echo=FALSE}
-dataset <- getAgroData("oat2L")
-dataset$Location <- factor(dataset$Location)
-dataset$Genotype <- factor(dataset$Genotype)
-
-knitr::kable(dataset, caption = "Risultati di un esperimento di campo a randomizzazione completa per il confronto di quattro genotipi di avena (A, B, C and D), ripetuto in due località.", format = "simple")
-```
-
-In questo esperimento abbiamo due fattori incrociati, ma, a differenza dell'esempio precedente, abbiamo tre repliche per ciascuna delle otto combinazioni tra i livelli di genotipo e località. In questo modo, oltre agli effetti di genotipo e località, possiamo anche valutare la cosiddetta **interazione** tra i due fattori sperimentali, che è un'informazione molto importante.
-
-
-Tornando al nostro esempio, è chiaro che le produzioni osservate sono determinate dall'effetto di:
+Per questo esperimento multi-ambiente, le produzioni osservate sono determinate dall'effetto di:
 
 1.  genotipo
 2.  località
@@ -558,25 +546,40 @@ Per stimare i parametri del modello, possiamo utilizzare R, considerando che il 
 Y ~ A + B + A:B
 ```
 
-che può essere abbreviato come:
+che può essere abbreviato con l'operatore '*', in questo modo:
 
 ```         
 Y ~ A * B
 ```
 
 ```{r}
+# Riquadro 4.11
+
+# Esempio 4.5
+# Un esperimento varietale multi-ambiente
+
+# Caricamento dei pacchetti e dei dati
+library(statforbiology)
+dataset <- getAgroData("Oat2L")
+head(dataset)
+
+# Adattamento di un modello ANOVA a due vie
 mod <- lm(Yield ~ Genotype * Location, data = dataset)
 
-# Stima dei parametri
+# Visualizzazione dei parametri stimati
 coef(mod)
 #
-# Sigma
+# RMSE
 summary(mod)$sigma
 ```
 
 L'analisi della varianza viene eseguita rimuovendo dal modello i tre termini uno alla volta, ma rispettando un criterio di marginalità, che tenga conto del fatto che l'interazione viene dopo che sono stati inseriti gli effetti principali che la costituiscono e, quindi, dovrebbe essere omessa per prima e non dovrebbe essere lasciata nel modello, quando uno degli effetti principali coinvolti viene rimosso. Lo schema è illustrato nel box seguente.
 
 ```{r}
+# Riquadro 4.12
+# Analisi della varianza
+
+# RSS
 RSS <- deviance(mod)
 #
 # rimozione dell'interazione
@@ -595,15 +598,20 @@ SSgen <- deviance(modred) - RSS - SSint
 SSgen
 ```
 
-Anche in questo esempio, abbiamo suddiviso la variabilità totale dei dati in quattro termini, tre dei quali sono correlati all'effetto causale, mentre il quarto è correlato a tutti gli altri effetti casuali. In pratica, i calcoli manuali non sono necessari, perchè possiamo utilizzare la funzione 'anova()' in R. Nella tabella sottostante, l'unico elemento di cui non abbiamo parlato finora è il numero di gradi di libertà per l'interazione, che è **uguale al prodotto del numero di DF per gli effetti principali**.
+Anche in questo esempio, abbiamo suddiviso la variabilità totale dei dati in quattro termini, tre dei quali sono correlati all'effetto causale, mentre il quarto è correlato a tutti gli altri effetti casuali. In pratica, i calcoli manuali non sono necessari, perchè possiamo utilizzare la funzione `anova()` in R. Nella tabella sottostante, l'unico elemento di cui non abbiamo parlato finora è il numero di gradi di libertà per l'interazione, che è **uguale al prodotto del numero di DF per gli effetti principali**.
 
 ```{r}
+# Riquadro 4.13
+# Analisi della varianza
+#
 anova(mod)
 ```
 
-Vediamo che tutti gli effetti in gioco (genotipo, località ed interazione) sono significativi ed hanno quindi un nesso causa-effetto rilevante sulla produzione della coltura. La presnza di un'interazione significativa mostra che, probabilmente, la valutazione dei genotipi performanti non è comune alle due località anche se questa affermazione richiede analisi successive che vedremo in seguito.
+Vediamo che tutti gli effetti in gioco (genotipo, località ed interazione) sono significativi ed hanno quindi un nesso causa-effetto rilevante sulla produzione della coltura. La presenza di un'interazione significativa mostra che, probabilmente, la graduatoria dei genotipi e quindi la raccomandazione vrietale non è comune alle due località.
 
 ## Dati non bilanciati
+
+FINO QUI
 
 Prima di concludere questo capitolo, è necessario sottolineare che esistono diversi metodi per calcolare la somma dei quadrati per gli effetti del modello, che non portano, necessariamente, agli stessi risultati. In particolare, questo aspetto va attentamente considerato quando i dati non sono 'bilanciati', ovvero quando il numero di repliche è diverso per diversi trattamenti. Il metodo di calcolo che abbiamo proposto in questo Capitolo è basato sulle seguenti operazioni:
 
@@ -613,7 +621,7 @@ Prima di concludere questo capitolo, è necessario sottolineare che esistono div
 
 Questo metodo di calcolo produce le cosiddette *somme dei quadrati marginali* e non è uguale al metodo utilizzato nella funzione `anova()` in R, che produce invece le *somma dei quadrati sequenziali*. Non ci siamo accorti della differenza perché i due metodi danno gli stessi risultati quando i dati sono 'bilanciati', ma quando i dati non lo sono, i due metodi divergono^[Le somme dei quadrati sequenziali consistono nel (1) partire dal modello nullo e determinare la devianza del residuo, (2) inserire gli effetti sequenzialmente nel modello, (3) per ogni effetto inserito, valutare il decremento della devianza del residuo, rispetto al modello immediatamente precedente nella sequenza]. Quando i dati sono sbilanciati, le devianze prodotte con il metodo sequenziale diventano dipendenti dall'ordine con cui abbiamo inserito gli effetti nel modello, il che non è accettabile. Per questo, le *somme dei quadrati marginali* sono preferibili e possono essere ottenute con la funzione `Anova()` (si noti la lettera maiuscola all'inizio) nel pacchetto `car`, come mostrato nel seguente esempio.
 
-## Esempio 4.6: un CRBD con un valore mancante
+### Esempio 4.6: un CRBD con un valore mancante
 
 Consideriamo un esperimento per valutare la selettività di un erbicida post-emergenza per il controllo delle infestanti nel mais, in funzione del momento dell'intervento (stadio di 2, 4, 6 e 8 foglie, più un controllo non trattato e diserbato manualmente). Il disegno sperimentale era a blocchi randomizzati, con un dato mancante rappresentato come 'NA'; i dati sono riportati nel dataset `Timings_77490` nel package `statforbiology`.
 
