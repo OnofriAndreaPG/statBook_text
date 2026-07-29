@@ -6,15 +6,15 @@ Nel capitolo precedente abbiamo visto come possiamo utilizzare semplici statisti
 
 Nel lavoro di ricerca, è fondamentale stabilire l'esistenza di nessi **causa-effetto** (relazione di causalità), tra una variabile, solitamente detta "predittore", in grado di indurre effetti su un'altra variabile, solitamente denominata "risposta". Ad esempio, è importante stabilire se una variazione del genotipo possa causare un cambiamento nella resa del frumento, oppure se una variazione nella tecnica di lavorazione possa causare un cambiamento nel tempo di emergenza del mais. Secondo John Stuart Mill (1806-1867), ogni relazione causa-effetto, per essere definita tale, dovrebbe soddisfare tre criteri fondamentali [@shadish_2002]:
 
-1.  La causa precede l'effetto;
-2.  La causa e l'effetto hanno evidenti relazioni;
-3.  Non ci sono spiegazioni alternative altrettanto valide per queste relazioni, oltre alla causalità.
+1.  La causa precede l'effetto (*causal priority*);
+2.  La causa e l'effetto variano congiuntamente;
+3.  Non ci sono spiegazioni alternative altrettanto valide per la variazione congiunta, oltre alla causalità.
 
-Da questi criteri si deduce come la correlazione, intesa come variazione congiunta, non rappresenti, di per se', un nesso causa-effetto [*correlation does not mean causation*; @zaniletti_2023], perchè valori di $r$ vicini a 1 o -1 possono essera facilmente osservati anche quando, per le due variabili in studio, non possiamo stabilire quale sia la causa e quale l'effetto (ad esempio: altezza e peso delle piante di una specie vegetale, per le quali non vi è *causal priority*), oppure quando vi sia una variabile esterna di confondimento, che funge da causa comune per le due variabili in studio [@aldrich_1995]. Al di là delle sottigliezze terminologiche, è evidente che la correlazione 'non causle' o addirittura la correlazione spuria sono particolarmente preoccupanti soprattutto per i dati che provengono da esperimenti osservazionali, con livelli di controllo che non sempre possono essere altissimi. Al contrario, gli esperimenti manipolativi controllati, replicati e randomizzati sono particolarmente adatti a stabilire relazioni causa-effetto, grazie alla assunzione *ceteris paribus*, per la quale si cerca di mantanere tutto costante, a parte il trattamento sperimentale. In questo modo, le discrepanze tra le unità osservate sottoposte a trattamenti diversi possono essere ragionevolmente attribuite all'effetto di tali trattamenti e non ad altre cause sistematiche, ma ignote.
+Da questi criteri si deduce come la correlazione, intesa proprio come variazione congiunta, non rappresenti, di per se', un nesso causa-effetto [*correlation does not mean causation*; @zaniletti_2023], poichè valori di $r$ vicini a 1 o -1 possono essere facilmente osservati anche quando, per le due variabili in studio, non possiamo stabilire alcun tipo di *causal priority* (ad esempio: altezza e peso delle piante di una specie vegetale), oppure quando vi sia una variabile esterna di confondimento, che funge da causa comune per le due variabili in studio [@aldrich_1995]. Al di là delle sottigliezze terminologiche, è evidente che la correlazione 'non causale' o addirittura la correlazione spuria, se confuse con un nesso causa-effetto, possono essere fonti di errori interpretativi particolarmente preoccupanti, soprattutto per i dati che provengono da esperimenti osservazionali, nei quali il controllo degli errori può non essere perfetto. Al contrario, gli esperimenti manipolativi controllati, replicati e randomizzati sono molto adatti a stabilire nessi causa-effetto, in quanto permettono di avvicinarsi il più possibile ad una condizione di *ceteris paribus*, nella quale le unità sperimentali sono identiche, a parte il trattamento sperimentale a cui sono state sottoposte, al quale è quindi ragionevole attribuire ogni differenza nella risposta osservata.
 
 ## Modelli statistici
 
-Per descrivere le relazioni causali, possiamo utilizzare i **modelli matematici**, cioè delle equazioni in cui le osservazioni sperimentali sono prodotte come risultato dell'effetto di uno o più predittori. L'impiego di questi utili strumenti si è sviluppate notevolmente a partire da Galileo, ed ha portato alla creazione di modelli di complessità variabile, dalle semplici equazioni empiriche [@ratkowky_1990] ai più complessi modelli meccanicistici multiscala [@gherman_2023], che sono anche in grado di descrivere sistemi complessi, come il sistema agrario [vedi @pasley_2023 o @gavassorita_2024].
+Per descrivere le relazioni causali, possiamo utilizzare i **modelli matematici**, cioè delle equazioni in cui le osservazioni sperimentali sono prodotte come risultato dell'effetto di uno o più predittori. L'impiego di questi utili strumenti si è sviluppate notevolmente a partire da Galileo, ed ha portato alla creazione di modelli di complessità variabile, dalle semplici equazioni empiriche [@ratkowky_1990] ai più complessi modelli meccanicistici multiscala [@gherman_2023], che sono anche in grado di descrivere sistemi complessi, come il sistema agrario [vedi @pasley_2023; @gavassorita_2024].
 
 In questo libro trattaremo alcuni semplici modelli empirici, frequentemente utilizzati per descrivere le relazioni causa-effetto negli esperimenti controllati, dove il numero dei predittori è ridotti al minimo livello possibile. I modelli che useremo sono definiti **modelli statistici**, a causa della presenza di una "componente stocastica", in grado di tenere conto anche di tutti gli effetti stocastici non allocati dallo sperimentatore, ma derivanti da possibili fonti di errore casuale, come quelle descritte nei capitoli 1 e 2.
 
@@ -151,7 +151,9 @@ deviance(mod)
 summary(mod)$sigma
 ```
 
-```{r fig-figName41a, echo=FALSE, message=FALSE, warning=FALSE, out.width = "85%", fig.cap = "Example 2: the least square estimate is represented by the straight line that passes as close as possible to the observed points.", fig.dim = c(3.5,3.5)}
+```{r fig-figName41a, echo=FALSE, message=FALSE, warning=FALSE, fig.cap = "Esempio 4.2: tra tutte le rette del piano, la stima dei 'minimi quadrati' è data dalla retta che passa più vicina possibile ai dati osservati"}
+#| fig-width: 4
+#| fig-height: 4
 library(ggplot2)
 dframe <- data.frame(x = dataset$WeedCover, y = dataset$Yield,
                      yf = fitted(mod))
@@ -226,30 +228,44 @@ $$Y_i = \mu_j + \varepsilon_i$$
 
 La selezione dei vincoli spetta all'utente, a seconda degli obiettivi dell'esperimento. **In R, il vincolo del trattamento è utilizzato di default**, sebbene gli altri vincoli possano essere facilmente ottenuti, utilizzando la codifica appropriata.
 
-La stima dei parametri del modello potrebbe essere facilmente eseguita a mano, ma noi utilizziamo la funzione `lm()` in R.
+La stima dei parametri del modello potrebbe essere facilmente eseguita a mano, ma noi utilizziamo la funzione `lm()` in R, comme illustrato nel riquadro sottostante. In questo riquadro, possiamo anche vedere come sia possibile modificare la parametrizzazione, impostando l'argomento 'contrasts' e passando un elenco di fattori associati alla parametrizzazione richiesta. Ad esempio, se utilizziamo `Treat = "contr.sum"`, otteniamo il vincolo sulla somma; di conseguenza, l'effetto dell'ultimo genotipo non è mostrato, perché è vincolato ad essere l'opposto della somma degli altri tre effetti. Invece, la rimozione dell'intercetta è possibile utilizzando `-1` sul lato destro dell'espressione, come mostrato di seguito.
 
-\vspace{12pt}
+Ovviamente, esistono diversi altri metodi per modificare la parametrizzazione, sia globalmente (per l'intera sessione R) sia a livello di singola analisi; potete trovare altre informazioni, ad esempio, in @faraway_2025.
+
 
 ```{r}
+# Riquadro 4.3
+#
+# Adattamento di un modello con un predittore nominale
+#(ANOVA ad una via)
+#
+# Caricamento dei pacchetti e dei dati
+library(statforbiology)
+dataset <- getAgroData("Oat1L")
+dataset$Genotype <- factor(dataset$Genotype)  # Linea opzionale
+#
+# Adattamento di un modello col vincolo sul trattamento (default)
 mod <- lm(Yield ~ Genotype, data = dataset)
-```
-
-I parametri stimati, i residui, la deviazione residua e la deviazione standard possono essere ottenuti con la solita codifica:
-
-\vspace{12pt}
-
-```{r}
+#
 # Stima dei parametri
 coef(mod)
 #
 # Residui
 residuals(mod)
 #
-# Devianza dei residui
+# Devianza dei residui (RSS)
 deviance(mod)
 #
 # Deviazione standard del residui (RMSE)
 summary(mod)$sigma
+
+# Adattamento dello stesso modello ma con vincolo sulla somma
+mod2 <- lm(Yield ~ Genotype, data = dataset,  contrasts = list(Genotype = "contr.sum")) 
+coef(mod2)
+#
+# Adattamento dello stesso modello, ma con vincolo sull'intercetta
+mod3 <- lm(Yield ~ Genotype - 1, data = dataset) 
+coef(mod3)
 ```
 
 Ora che il modello è completamente specificato, abbiamo tutti gli ingredienti per descrivere le 12 osservazioni, sommando $\mu + \alpha_j + \varepsilon_i$; ad esempio, per la prima osservazione, appartenente al primo genotipo, abbiamo:
@@ -258,35 +274,12 @@ $$y_1 = 4.5 = 4.533 + 0 - 0.033$$ mentre, per la quarta osservazione, appartenen
 
 $$y_4 = 3.9 = 4.533 - 0.7 + 0.067$$
 
-Per completezza, potrebbe essere utile mostrare che, in R, possiamo modificare la parametrizzazione, impostando l'argomento 'contrasts' e passando un elenco di fattori associati alla parametrizzazione richiesta. Ad esempio, se utilizziamo `Treat = "contr.sum"`, otteniamo il vincolo sulla somma; di conseguenza, l'effetto dell'ultimo genotipo non è mostrato, perché è vincolato ad eseere l'opposto della somma degli altri tre effetti.
 
-\vspace{12pt}
 
-```{r}
-mod2 <- lm(Yield ~ Genotype,
-           contrasts = list(Genotype = "contr.sum"),
-           data = dataset)
-coef(mod2)
-```
-
-Un'altra possibile parametrizzazione consiste nel rimuovere l'intercetta, che è possibile utilizzando `-1` sul lato destro dell'espressione, come mostrato di seguito.
-
-\vspace{12pt}
-
-```{r}
-mod3 <- lm(Yield ~ Genotype - 1, data = dataset)
-coef(mod3)
-```
-
-Esistono diversi altri metodi per modificare la parametrizzazione, sia globalmente (per l'intera sessione R) sia a livello di fattore; ulteriori informazioni sono disponibili, ad esempio, in @faraway_2025.
 
 ## L'analisi della varianza (ANOVA)
 
 In questo secondo esempio abbiamo descritto una relazione causa-effetto, tramite un modello contenente un predittore. L'RMSE ($\sigma$) è uguale a 0.131, ma questa non è una buona metrica per capire se la relazione causa-effetto è rilevante o meno. Una possibilità è quella di dividere l'RMSE per la media dei valori osservati, per ottenere il coefficiente di variabilità (RRMSE: Relative Root Mean Squared Error), che è 0.031 (o 3.1%), il che indica che l'errore residuo è piuttosto piccolo, rispetto al valore medio atteso.
-
-```{r eval=FALSE, include=FALSE}
-summary(mod)$sigma/mean(dataset$Yield)
-```
 
 Un altro indicatore per descrivere la bontà della relazione causa-effetto definita dal modello è il cosiddetto **coefficiente di determinazione (R^2^)**, ottenuto sottraendo da 1 il rapporto tra la devianza dei residui e la devianza totale delle osservazioni (che poi sarebbe la devianza dei residui del modello nullo). Nel nostro caso, il modello nullo è ottenuto trascurando l'effetto del genotipo e la devianza dei residui è quella indicata nel box sottostante:
 
@@ -299,13 +292,7 @@ Il coefficiente di determinazione è quindi:
 
 $$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{0.1374}{2.337867} = 0.94123$$
 
-cosa che può essere verificata utilizzando il codice R:
-
-```{r}
-summary(mod)$r.squared
-```
-
-Il coefficiente di determinazione varia da 0 ad 1, più è alto il valore tanto migliore è la bontà del modello.
+Il coefficiente di determinazione varia da 0 ad 1, più è alto il valore tanto migliore è la bontà del modello. Si tratta di un indicatore molto utilizzato, soprattutto con i modelli di regressione, in quanto fornisce un'indicazione immediata e chiara per valutare la bontà di adattamento del modello, anche se ha alcuni limiti d'impiego, soprattutto per le regressioni non-lineari, che discuteremo in un capitolo successivo. 
 
 Oltre a queste statistiche (RMSE, RRMSE e R^2^), vi è una tecnica famosissima per valutare l'entità dell'evidenza in favore dell'esistenza di una relazione causa effetto ben definita; questa tecnica si chiama **Analisi della Varianza (ANOVA)** ed è stata originariamente ideata da Ronald Fisher durante gli anni '30 del XX secolo; oggi è ancora molto utilizzata, seppure in una forma leggermente diversa da quella originale.
 
