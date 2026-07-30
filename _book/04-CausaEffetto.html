@@ -876,45 +876,47 @@ Table&nbsp;4.2: Interazione cross-over tra fattori sperimentali
 <p>L’analisi della varianza viene eseguita rimuovendo dal modello i tre termini uno alla volta, ma rispettando un criterio di marginalità, che tenga conto del fatto che l’interazione viene dopo che sono stati inseriti gli effetti principali che la costituiscono e, quindi, dovrebbe essere omessa per prima e non dovrebbe essere lasciata nel modello, quando uno degli effetti principali coinvolti viene rimosso. Lo schema è illustrato nel box seguente.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 4.12</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della varianza</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># RSS</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># rimozione dell'interazione</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>modred <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype <span class="sc">+</span> Location, <span class="at">data =</span> dataset)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>SSint <span class="ot">&lt;-</span> <span class="fu">deviance</span>(modred) <span class="sc">-</span> RSS</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>SSint</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5.147233</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># rimozione del genotipo E dell'interazione</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>modred <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Location, <span class="at">data =</span> dataset)</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>SSloc <span class="ot">&lt;-</span> <span class="fu">deviance</span>(modred) <span class="sc">-</span> RSS <span class="sc">-</span> SSint</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>SSloc</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.113233</span></span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co"># rimozione della località E dell'interazione</span></span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>modred <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype, <span class="at">data =</span> dataset)</span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>SSgen <span class="ot">&lt;-</span> <span class="fu">deviance</span>(modred) <span class="sc">-</span> RSS <span class="sc">-</span> SSint</span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>SSgen</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7.6614</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della varianza</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># RSS</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">deviance</span>(mod)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># rimozione dell'interazione</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>modred <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype <span class="sc">+</span> Location, <span class="at">data =</span> dataset)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>SSint <span class="ot">&lt;-</span> <span class="fu">deviance</span>(modred) <span class="sc">-</span> RSS</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>SSint</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5.147233</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co"># rimozione del genotipo E dell'interazione</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>modred <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Location, <span class="at">data =</span> dataset)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>SSloc <span class="ot">&lt;-</span> <span class="fu">deviance</span>(modred) <span class="sc">-</span> RSS <span class="sc">-</span> SSint</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>SSloc</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.113233</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co"># rimozione della località E dell'interazione</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>modred <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype, <span class="at">data =</span> dataset)</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>SSgen <span class="ot">&lt;-</span> <span class="fu">deviance</span>(modred) <span class="sc">-</span> RSS <span class="sc">-</span> SSint</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>SSgen</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7.6614</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Anche in questo esempio, abbiamo suddiviso la variabilità totale dei dati in quattro termini, tre dei quali sono correlati all’effetto causale, mentre il quarto è correlato a tutti gli altri effetti casuali. In pratica, i calcoli manuali non sono necessari, perchè possiamo utilizzare la funzione <code>anova()</code> in R. Nella tabella sottostante, l’unico elemento di cui non abbiamo parlato finora è il numero di gradi di libertà per l’interazione, che è <strong>uguale al prodotto del numero di DF per gli effetti principali</strong>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 4.13</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della varianza</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Yield</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="do">##                   Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype           3 2.1132  0.7044  3.3305  0.046228 *  </span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Location           1 7.6614  7.6614 36.2234 1.788e-05 ***</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype:Location  3 5.1472  1.7157  8.1121  0.001646 ** </span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals         16 3.3841  0.2115                      </span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della varianza</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Yield</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="do">##                   Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype           3 2.1132  0.7044  3.3305  0.046228 *  </span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Location           1 7.6614  7.6614 36.2234 1.788e-05 ***</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype:Location  3 5.1472  1.7157  8.1121  0.001646 ** </span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals         16 3.3841  0.2115                      </span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Vediamo che tutti gli effetti in gioco (genotipo, località ed interazione) sono significativi ed hanno quindi un nesso causa-effetto rilevante sulla produzione della coltura. La presenza di un’interazione significativa mostra che, probabilmente, la graduatoria dei genotipi e quindi la raccomandazione vrietale non è comune alle due località.</p>
 </section>

@@ -299,27 +299,35 @@ window.Quarto = {
 <section id="funzioni-di-probabilitàdensità" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="funzioni-di-probabilitàdensità"><span class="header-section-number">5.1</span> Funzioni di probabilità/densità</h2>
 <p>Contrariamente ai modelli causa-effetto, le funzioni di probabilità non servono a prevedere il risultato di un processo, ma solo ad elencare i possibili risultati ed assegnare ad ognuno di essi un livello di probabilità. Ciò è abbastanza semplice ed intuitivo quando si tratta di eventi ‘discreti’, cioè eventi che possono manifestarsi con una sola di una lista finita di possibili alternative. Ad esempio, pensiamo al sesso (M/F), alla mortalità (vivo/morto), alla germinabilità (germinato/non germinato); per questi fenomeni la probabilità viene calcolata come rapporto tra il numero degli eventi favorevoli e il numero totale di eventi possibili (probabilità ‘frequentista’). Ad esempio, se il nostro esperimento consistesse nell’estrarre una carta da un mazzo di carte francesi, potremmo calcolare la probabilità di estrarre un asso con il rapporto <span class="math inline">\(4/52 = 0.077\)</span>; oppure, se il nostro esperimento consistesse nell’effettuare due lanci di una moneta, potremmo calcolare la probabilità di ottenere due teste considerando che ci sono quattro eventi possibili (testa/testa, croce/testa, testa/croce e croce/croce) e quindi la probabilità di uno di questi è <span class="math inline">\(1/4 = 0.25\)</span>.</p>
-<p>Nel caso di una variabile quantitativa, come l’altezza, non ha molto senso chiedersi, ad esempio, qual è la probabilità di trovare un individuo esattamente alto 100 cm (e non 100.0000001, o 99.99999). Capiamo da soli che questa probabilità è infinitesima. Al contrario, potremmo pensare di calcolare la probabilità di ottenere un valore compreso in un intervallo, per esempio da 99 a 101 cm: se la popolazione è ampia, ma finita, basta usare la regola che conosciamo e contare il numero di soggetti nell’intervallo, dividendoli per il numero totale di soggetti nella popolazione. Il problema però sta nel fatto che si viene ad introdurre un elemento arbitrario, cioè l’ampiezza dell’intervallo prescelto per calcolare la probabilità. Possiamo tuttavia pensare di calcolare la <strong>densità di probabilità</strong>, vale a dire il rapporto tra la probabilità di un intervallo e la sua ampiezza (cioè la probabilità per unità di ampiezza dell’intervallo; per questo si parla di densità). Ora, se immaginiamo di restringere l’intervallo fino a farlo diventare infinitamente piccolo, anche la probabilità tende a diventare infinitesima con la stessa ‘velocità’, in modo che la densità di probabilità di un singolo valore di concentrazione tende ad un numero finito (ricordate il limite del rapporto di polinomi?), come mostrato in Figura @ref(fig:figName50b).</p>
+<p>Nel caso di una variabile quantitativa, come l’altezza, non ha molto senso chiedersi, ad esempio, qual è la probabilità di trovare un individuo esattamente alto 100 cm (e non 100.0000001, o 99.99999). Capiamo da soli che questa probabilità è infinitesima. Al contrario, potremmo pensare di calcolare la probabilità di ottenere un valore compreso in un intervallo, per esempio da 99 a 101 cm: se la popolazione è ampia, ma finita, basta usare la regola che conosciamo e contare il numero di soggetti nell’intervallo, dividendoli per il numero totale di soggetti nella popolazione. Il problema però sta nel fatto che si viene ad introdurre un elemento arbitrario, cioè l’ampiezza dell’intervallo prescelto per calcolare la probabilità. Possiamo tuttavia pensare di calcolare la <strong>densità di probabilità</strong>, vale a dire il rapporto tra la probabilità di un intervallo e la sua ampiezza (cioè la probabilità per unità di ampiezza dell’intervallo; per questo si parla di densità). Ora, se immaginiamo di restringere l’intervallo fino a farlo diventare infinitamente piccolo, anche la probabilità tende a diventare infinitesima con la stessa ‘velocità’, in modo che la densità di probabilità di un singolo valore di concentrazione tende ad un numero finito (ricordate il limite del rapporto di polinomi?), come mostrato in Figura <a href="#fig-figName50b" class="quarto-xref"><span>5.1</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="05-ModelliStocastici_files/figure-html/figName50b-1.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Densità di probabilità per una variabile continua discretizzata, su intervalli di ampiezza decrescente. Quando l’intervallo diviene piccolissimo, la funzione di densità tende a diventare un curva continua</figcaption>
+<div id="fig-figName50b" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName50b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-ModelliStocastici_files/figure-html/fig-figName50b-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName50b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Densità di probabilità per una variabile continua discretizzata, su intervalli di ampiezza decrescente. Quando l’intervallo diviene piccolissimo, la funzione di densità tende a diventare un curva continua
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>La funzione di densità (PDF) rappresentata nella Figura @ref(fig:figName50b) è la gaussiana ed è così comune in agricoltura e biologia che è solitamente nota come <strong>curva normale</strong>. L’equazione è:</p>
+<p>La funzione di densità (PDF) rappresentata nella Figura <a href="#fig-figName50b" class="quarto-xref"><span>5.1</span></a> è la gaussiana ed è così comune in agricoltura e biologia che è solitamente nota come <strong>curva normale</strong>. L’equazione è:</p>
 <p><span class="math display">\[P(Y) = \frac{1}{{\sigma \sqrt {2\pi } }}\exp \left[{\frac{\left( {Y - \mu } \right)^2 }{2\sigma ^2 }} \right]\]</span></p>
 <p>ove <span class="math inline">\(P(Y)\)</span> è la densità di probabilità di una certa misura <span class="math inline">\(Y\)</span>, mentre <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> sono rispettivamente la media e la deviazione standard della popolazione (per la dimostrazione si rimanda a testi specializzati). Le variabili casuali la cui densità può essere descritta con la curva di Gauss, prendono il nome di <em>variabili normali</em> o <em>normalmente distribuite</em>.</p>
-<p>Guardando la curva di Gauss possiamo notare che ha una forma ‘a campana’ che dipende da solo da <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> (figura @ref(fig:figName51)).</p>
+<p>Guardando la curva di Gauss possiamo notare che ha una forma ‘a campana’ che dipende da solo da <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> (Fig. <a href="#fig-figName51" class="quarto-xref"><span>5.2</span></a>).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="05-ModelliStocastici_files/figure-html/figName51-1.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Distribuzioni normali con diversa media e deviazione standard (rispettivamente 5 e 1 a sinistra, 6 e 3 a destra)</figcaption>
+<div id="fig-figName51" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName51-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-ModelliStocastici_files/figure-html/fig-figName51-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName51-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Distribuzioni normali con diversa media e deviazione standard (rispettivamente 5 e 1 a sinistra, 6 e 3 a destra)
+</figcaption>
 </figure>
 </div>
 </div>
@@ -332,18 +340,22 @@ window.Quarto = {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">12</span>, <span class="at">mean =</span> <span class="dv">11</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.2129653</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>La densità non è una probabilità reale e non è interessante di per sé (almeno, non in termini assoluti), ma la PDF ha il vantaggio di restituire la probabilità di un intervallo di eventi come Area Sotto la Curva (Area Under the Curve: AUC). Ad esempio, la Figura @ref(fig:figName52) evidenzia l’AUC tra 11 e 12, che rappresenta la probabilità di campionare una percella con una produzione in quell’intervallo, partendo da una popolazione di parcelle con media pari a 11 e deviazione standard pari a 1.5.</p>
+<p>La densità non è una probabilità reale e non è interessante di per sé (almeno, non in termini assoluti), ma la PDF ha il vantaggio di restituire la probabilità di un intervallo di eventi come Area Sotto la Curva (Area Under the Curve: AUC). Ad esempio, la Figura <a href="#fig-figName52" class="quarto-xref"><span>5.3</span></a> evidenzia l’AUC tra 11 e 12, che rappresenta la probabilità di campionare una percella con una produzione in quell’intervallo, partendo da una popolazione di parcelle con media pari a 11 e deviazione standard pari a 1.5.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="05-ModelliStocastici_files/figure-html/figName52-1.png" class="img-fluid figure-img" style="width:75.0%"></p>
-<figcaption>Area-Under-the-Curve per una PDF gaussiana, che descrive la probabilità di campionare una parcella che ha una produzione nell’intervallo tra 11 e 12, quando la media è 11 e la deviazione standard è 1.5</figcaption>
+<div id="fig-figName52" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName52-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-ModelliStocastici_files/figure-html/fig-figName52-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName52-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Area-Under-the-Curve per una PDF gaussiana, che descrive la probabilità di campionare una parcella che ha una produzione nell’intervallo tra 11 e 12, quando la media è 11 e la deviazione standard è 1.5
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Di conseguenza, l’AUC e, quindi, la probabilità, possono essere calcolate integrando la curva gaussiana su un intervallo; in relazione alla Figura @ref(fig:figName52), la probabilità tra 11 e 12 è 0.248 (vedere il riquadro 5.2). Più semplicemente, la funzione <code>pnorm()</code> restituisce l’AUC tra <span class="math inline">\(-\infty\)</span> e qualsiasi valore <span class="math inline">\(y\)</span> (<strong>Funzione di distribuzione cumulativa</strong>; vedere la Figura @ref(fig:figName52c)) e può essere utilizzata per evitare il calcolo di un integrale.</p>
+<p>Di conseguenza, l’AUC e, quindi, la probabilità, possono essere calcolate integrando la curva gaussiana su un intervallo; in relazione alla Figura <a href="#fig-figName52" class="quarto-xref"><span>5.3</span></a>, la probabilità tra 11 e 12 è 0.248 (vedere il riquadro 5.2). Più semplicemente, la funzione <code>pnorm()</code> restituisce l’AUC tra <span class="math inline">\(-\infty\)</span> e qualsiasi valore <span class="math inline">\(y\)</span> (<strong>Funzione di distribuzione cumulativa</strong>; vedere la Figura <a href="#fig-figName52c" class="quarto-xref"><span>5.4</span></a>) e può essere utilizzata per evitare il calcolo di un integrale.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Code box 5.2</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -359,10 +371,14 @@ window.Quarto = {
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="05-ModelliStocastici_files/figure-html/figName52c-1.png" class="img-fluid figure-img" style="width:75.0%"></p>
-<figcaption>Probabilità cumulativa gaussiana, considerando una distribuzione con media pari ad 11 e deviazione standard pari a 1.5</figcaption>
+<div id="fig-figName52c" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName52c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05-ModelliStocastici_files/figure-html/fig-figName52c-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName52c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: Probabilità cumulativa gaussiana, considerando una distribuzione con media pari ad 11 e deviazione standard pari a 1.5
+</figcaption>
 </figure>
 </div>
 </div>
@@ -376,9 +392,10 @@ window.Quarto = {
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 5.3</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Probability of sampling from the interval # from ’mu - sigma’ to ’mu + sigma’ </span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">120</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="dv">120</span>, <span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">120</span> <span class="sc">-</span> <span class="dv">2</span>, <span class="dv">120</span>, <span class="dv">2</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.6826895</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Probability of sampling from the interval # from ’mu - sigma’ to ’mu + sigma’ </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">120</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="dv">120</span>, <span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">120</span> <span class="sc">-</span> <span class="dv">2</span>, <span class="dv">120</span>, <span class="dv">2</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.6826895</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Ora arriviamo alla domanda più interessante: come utilizzare la curva gaussiana? Se la variabile che stiamo studiando è continua (ma, con un po’ di prudenza, potremmo includere anche conteggi e rapporti), potremmo supporre che l’elemento stocastico <span class="math inline">\(\varepsilon\)</span> sia distribuito in modo gaussiano, con media uguale a 0 e deviazione standard uguale a <span class="math inline">\(\sigma\)</span>:</p>
 <p><span class="math display">\[\varepsilon \sim \textrm{Norm}(0, \sigma)\]</span></p>
@@ -411,35 +428,36 @@ window.Quarto = {
 <p>La risposta alla seconda domanda è banale (<span class="math inline">\(Y_E = 120\)</span>), mentre per rispondere alle altre domande possiamo utilizzare le apposite funzioni di R. Per ogni distribuzione abbiamo a disposizione una funzione di densità (con prefisso ‘d’), una funzione di probabilità cumulata (con prefisso ‘p’) e una funzione inversa (prefisso ‘q’) che consente di calcolare i percentili. Nel caso della funzione gaussiana, abbiamo le funzioni <code>dnorm()</code>, <code>pnorm()</code> e <code>qnorm()</code>, che possiamo utilizzare per calcolare densità, probabilità e percentili, come indicato di seguito. Per la quarta domanda dobbiamo considerare che la funzione <code>pnorm()</code> fornisce la coda bassa della funzione, mentre dobbiamo individuare la coda alta (altezze maggiori della soglia data). Pertanto, abbiamo due possibili soluzioni, come indicato più sotto.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 5.4</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcolo delle probabilità per un esperimento misurativo</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 2</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">120</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.03324519</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 3</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">110</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.2023284</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 4</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">130</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>, <span class="at">lower.tail =</span> F)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.2023284</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">130</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.2023284</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 5</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">130</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">110</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.5953432</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 6</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.9</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 135.3786</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 7</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.025</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 96.48043</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 143.5196</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcolo delle probabilità per un esperimento misurativo</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 2</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="dv">120</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.03324519</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 3</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">110</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.2023284</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 4</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">130</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>, <span class="at">lower.tail =</span> F)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.2023284</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">130</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.2023284</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 5</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">130</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">110</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.5953432</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 6</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.9</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 135.3786</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Domanda 7</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.025</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 96.48043</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>, <span class="at">mean =</span> <span class="dv">120</span>, <span class="at">sd =</span> <span class="dv">12</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 143.5196</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="esempio-5.2-calcolo-della-probabilità-per-un-esperimento-di-degradazione" class="level3" data-number="5.2.2">
@@ -448,14 +466,15 @@ window.Quarto = {
 <p>Supponendo che la relazione causa-effetto sia affidabile, la concentrazione prevista a 20 giorni dal trattamento dovrebbe essere 4.22 ng g<sup>-1</sup> (Box 5.5). Tuttavia, il risultato osservato dipende dall’errore sperimentale, che è un evento casuale imprevedibile; se assumiamo che la funzione di probabilità per la concentrazione osservata sia gaussiana, con media di 4.22 e deviazione standard di 0.422 (ovvero 7.5 volte il 10%), la probabilità di ottenere una misura minore o uguale a 3 ng g<sup>-1</sup> è inferiore allo 0,2%, il che dimostra che si tratta di un evento alquanto improbabile.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 5.5</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Concentrazione attesa</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Ct <span class="ot">&lt;-</span> <span class="dv">75</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="fl">0.05</span> <span class="sc">*</span> <span class="dv">25</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>Ct</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4.21756</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilità di osservare una concentrazione &lt;= 3</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">3</span>, Ct, Ct <span class="sc">*</span> <span class="fl">0.1</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.001945398</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Concentrazione attesa</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>Ct <span class="ot">&lt;-</span> <span class="dv">75</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span>(<span class="sc">-</span><span class="fl">0.05</span> <span class="sc">*</span> <span class="dv">25</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Ct</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4.21756</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilità di osservare una concentrazione &lt;= 3</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">3</span>, Ct, Ct <span class="sc">*</span> <span class="fl">0.1</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.001945398</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -473,15 +492,16 @@ window.Quarto = {
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 5.6</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 5.3</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulazione di un esperimento misurativo</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>Y_E <span class="ot">&lt;-</span> <span class="dv">120</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>epsilon <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">12</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>Y_O <span class="ot">&lt;-</span> Y_E <span class="sc">+</span> epsilon</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Y_O</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 105.5152 123.3292 133.0133</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 5.3</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulazione di un esperimento misurativo</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>Y_E <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>epsilon <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">12</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Y_O <span class="ot">&lt;-</span> Y_E <span class="sc">+</span> epsilon</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>Y_O</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 105.5152 123.3292 133.0133</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>La generazione di numeri casuali con il computer viene fatta attraverso algoritmi che, a partire da un <em>seed</em> iniziale, forniscono sequenze che obbediscono a certe proprietà fondamentali (numeri pseudo-casuali). Il comando <code>set.seed(1234)</code> ci permette di partire da un <em>seed</em> predefinito, in modo che, chiunque ripeta la simulazione con lo stesso <em>seed</em>, possa ottenere gli stessi risultati ottenuti nel corso della scrittura di questo libro.</p>
 <p>Un’altra cosa da notare è che il nome della funzione che genera numeri casuali è formato dal nome della distribuzione (‘norm’) più il prefisso ‘r’; il primo argomento definisce il numero di valori che vogliamo ottenere (tre, tanti quante sono le repliche), mentre il secondo ed il terzo rappresentano, rispettivamente, la media e la deviazione standard della distribuzione.</p>

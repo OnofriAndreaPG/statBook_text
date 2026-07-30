@@ -13,9 +13,9 @@ Sebbene non abbiamo alcun modo di prevedere un risultato casuale (che altrimenti
 
 Contrariamente ai modelli causa-effetto, le funzioni di probabilità non servono a prevedere il risultato di un processo, ma solo ad elencare i possibili risultati ed assegnare ad ognuno di essi un livello di probabilità. Ciò è abbastanza semplice ed intuitivo quando si tratta di eventi 'discreti', cioè eventi che possono manifestarsi con una sola di una lista finita di possibili alternative. Ad esempio, pensiamo al sesso (M/F), alla mortalità (vivo/morto), alla germinabilità (germinato/non germinato); per questi fenomeni la probabilità viene calcolata come rapporto tra il numero degli eventi favorevoli e il numero totale di eventi possibili (probabilità 'frequentista'). Ad esempio, se il nostro esperimento consistesse nell'estrarre una carta da un mazzo di carte francesi, potremmo calcolare la probabilità di estrarre un asso con il rapporto $4/52 = 0.077$; oppure, se il nostro esperimento consistesse nell'effettuare due lanci di una moneta, potremmo calcolare la probabilità di ottenere due teste considerando che ci sono quattro eventi possibili (testa/testa, croce/testa, testa/croce e croce/croce) e quindi la probabilità di uno di questi è $1/4 = 0.25$.
 
-Nel caso di una variabile quantitativa, come l'altezza, non ha molto senso chiedersi, ad esempio, qual è la probabilità di trovare un individuo esattamente alto 100 cm (e non 100.0000001, o 99.99999). Capiamo da soli che questa probabilità è infinitesima. Al contrario, potremmo pensare di calcolare la probabilità di ottenere un valore compreso in un intervallo, per esempio da 99 a 101 cm: se la popolazione è ampia, ma finita, basta usare la regola che conosciamo e contare il numero di soggetti nell'intervallo, dividendoli per il numero totale di soggetti nella popolazione. Il problema però sta nel fatto che si viene ad introdurre un elemento arbitrario, cioè l'ampiezza dell'intervallo prescelto per calcolare la probabilità.  Possiamo tuttavia pensare di calcolare la **densità di probabilità**, vale a dire il rapporto tra la probabilità di un intervallo e la sua ampiezza (cioè la probabilità per unità di ampiezza dell'intervallo; per questo si parla di densità). Ora, se immaginiamo di restringere l’intervallo fino a farlo diventare infinitamente piccolo, anche la probabilità tende a diventare infinitesima con la stessa 'velocità', in modo che la densità di probabilità di un singolo valore di concentrazione tende ad un numero finito (ricordate il limite del rapporto di polinomi?), come mostrato in Figura \@ref(fig:figName50b).
+Nel caso di una variabile quantitativa, come l'altezza, non ha molto senso chiedersi, ad esempio, qual è la probabilità di trovare un individuo esattamente alto 100 cm (e non 100.0000001, o 99.99999). Capiamo da soli che questa probabilità è infinitesima. Al contrario, potremmo pensare di calcolare la probabilità di ottenere un valore compreso in un intervallo, per esempio da 99 a 101 cm: se la popolazione è ampia, ma finita, basta usare la regola che conosciamo e contare il numero di soggetti nell'intervallo, dividendoli per il numero totale di soggetti nella popolazione. Il problema però sta nel fatto che si viene ad introdurre un elemento arbitrario, cioè l'ampiezza dell'intervallo prescelto per calcolare la probabilità.  Possiamo tuttavia pensare di calcolare la **densità di probabilità**, vale a dire il rapporto tra la probabilità di un intervallo e la sua ampiezza (cioè la probabilità per unità di ampiezza dell'intervallo; per questo si parla di densità). Ora, se immaginiamo di restringere l’intervallo fino a farlo diventare infinitamente piccolo, anche la probabilità tende a diventare infinitesima con la stessa 'velocità', in modo che la densità di probabilità di un singolo valore di concentrazione tende ad un numero finito (ricordate il limite del rapporto di polinomi?), come mostrato in Figura -@fig-figName50b.
 
-```{r figName50b, echo=FALSE, fig.dim=c(6,6), message=FALSE, warning=FALSE, fig.cap="Densità di probabilità per una variabile continua discretizzata, su intervalli di ampiezza decrescente. Quando l'intervallo diviene piccolissimo, la funzione di densità tende a diventare un curva continua", fig.align='center', out.width='90%'}
+```{r fig-figName50b, echo=FALSE, fig.dim=c(6,6), message=FALSE, warning=FALSE, fig.cap="Densità di probabilità per una variabile continua discretizzata, su intervalli di ampiezza decrescente. Quando l'intervallo diviene piccolissimo, la funzione di densità tende a diventare un curva continua", fig.align='center', out.width='90%'}
 # Graph with ggplot #########################################
 library(ggplot2)
 library(gridExtra)
@@ -90,15 +90,15 @@ g1 + g2 + g3 + g4
 #        height = 7, scale = 0.95)
 ```
 
-La funzione di densità (PDF) rappresentata nella Figura \@ref(fig:figName50b) è la gaussiana ed è così comune in agricoltura e biologia che è solitamente nota come **curva normale**. L'equazione è:
+La funzione di densità (PDF) rappresentata nella Figura -@fig-figName50b è la gaussiana ed è così comune in agricoltura e biologia che è solitamente nota come **curva normale**. L'equazione è:
 
 $$P(Y) = \frac{1}{{\sigma \sqrt {2\pi } }}\exp \left[{\frac{\left( {Y - \mu } \right)^2 }{2\sigma ^2 }} \right]$$
 
 ove $P(Y)$ è la densità di probabilità di una certa misura $Y$, mentre $\mu$ e $\sigma$ sono rispettivamente la media e la deviazione standard della popolazione (per la dimostrazione si rimanda a testi specializzati). Le variabili casuali la cui densità può essere descritta con la curva di Gauss, prendono il nome di *variabili normali* o *normalmente distribuite*.
 
-Guardando la curva di Gauss possiamo notare che ha una forma 'a campana' che dipende da solo da $\mu$ e $\sigma$ (figura \@ref(fig:figName51)).
+Guardando la curva di Gauss possiamo notare che ha una forma 'a campana' che dipende da solo da $\mu$ e $\sigma$ (Fig. -@fig-figName51).
 
-```{r figName51, echo=FALSE, out.width = '90%', fig.cap = "Distribuzioni normali con diversa media e deviazione standard (rispettivamente 5 e 1 a sinistra, 6 e 3 a destra)", fig.align='center', fig.dim = c(6,3)}
+```{r fig-figName51, echo=FALSE, out.width = '90%', fig.cap = "Distribuzioni normali con diversa media e deviazione standard (rispettivamente 5 e 1 a sinistra, 6 e 3 a destra)", fig.align='center', fig.dim = c(6,3)}
 g1 <- ggplot() +
   geom_function(fun = function(x) dnorm(x, 5, 1), colour = "red") +
   scale_x_continuous(name = "Yield (t/ha)", limits = c(0, 10),
@@ -128,9 +128,9 @@ dnorm(12, mean = 11, sd = 1.5)
 ```
 \normalsize
 
-La densità non è una probabilità reale e non è interessante di per sé (almeno, non in termini assoluti), ma la PDF ha il vantaggio di restituire la probabilità di un intervallo di eventi come Area Sotto la Curva (Area Under the Curve: AUC). Ad esempio, la Figura \@ref(fig:figName52) evidenzia l'AUC tra 11 e 12, che rappresenta la probabilità di campionare una percella con una produzione in quell'intervallo, partendo da una popolazione di parcelle con media pari a 11 e deviazione standard pari a 1.5.
+La densità non è una probabilità reale e non è interessante di per sé (almeno, non in termini assoluti), ma la PDF ha il vantaggio di restituire la probabilità di un intervallo di eventi come Area Sotto la Curva (Area Under the Curve: AUC). Ad esempio, la Figura -@fig-figName52 evidenzia l'AUC tra 11 e 12, che rappresenta la probabilità di campionare una percella con una produzione in quell'intervallo, partendo da una popolazione di parcelle con media pari a 11 e deviazione standard pari a 1.5.
 
-```{r figName52, echo=FALSE, out.width = "75%", fig.cap = "Area-Under-the-Curve per una PDF gaussiana, che descrive la probabilità di campionare una parcella che ha una produzione nell'intervallo tra 11 e 12, quando la media è 11 e la deviazione standard è 1.5", fig.align='center'}
+```{r fig-figName52, echo=FALSE, out.width = "75%", fig.cap = "Area-Under-the-Curve per una PDF gaussiana, che descrive la probabilità di campionare una parcella che ha una produzione nell'intervallo tra 11 e 12, quando la media è 11 e la deviazione standard è 1.5", fig.align='center'}
 mean <- 11
 sigma <- 1.5
 
@@ -146,7 +146,7 @@ ggplot(data.frame(x = 0)) +
   theme_bw()
 ```
 
-Di conseguenza, l'AUC e, quindi, la probabilità, possono essere calcolate integrando la curva gaussiana su un intervallo; in relazione alla Figura \@ref(fig:figName52), la probabilità tra 11 e 12 è 0.248 (vedere il riquadro 5.2). Più semplicemente, la funzione `pnorm()` restituisce l'AUC tra $-\infty$ e qualsiasi valore $y$ (**Funzione di distribuzione cumulativa**; vedere la Figura \@ref(fig:figName52c)) e può essere utilizzata per evitare il calcolo di un integrale.
+Di conseguenza, l'AUC e, quindi, la probabilità, possono essere calcolate integrando la curva gaussiana su un intervallo; in relazione alla Figura -@fig-figName52, la probabilità tra 11 e 12 è 0.248 (vedere il riquadro 5.2). Più semplicemente, la funzione `pnorm()` restituisce l'AUC tra $-\infty$ e qualsiasi valore $y$ (**Funzione di distribuzione cumulativa**; vedere la Figura -@fig-figName52c) e può essere utilizzata per evitare il calcolo di un integrale.
 
 \small
 \vspace{12pt}
@@ -163,7 +163,7 @@ pnorm(12, mean = 11, sd = 1.5) - pnorm(11, mean = 11, sd = 1.5)
 ```
 \normalsize
 
-```{r figName52c, echo=FALSE, out.width = "75%", fig.cap = "Probabilità cumulativa gaussiana, considerando una distribuzione con media pari ad 11 e deviazione standard pari a 1.5", fig.align='center'}
+```{r fig-figName52c, echo=FALSE, out.width = "75%", fig.cap = "Probabilità cumulativa gaussiana, considerando una distribuzione con media pari ad 11 e deviazione standard pari a 1.5", fig.align='center'}
 ggplot() +
   geom_function(fun = function(x) pnorm(x, 11, 1.5)) +
   scale_x_continuous(name = "Yield (t/ha)", limits = c(7, 15),
@@ -182,6 +182,7 @@ Le più importanti proprietà di una curva Gaussiano sono le seguenti:
 
 ```{r}
 # Code box 5.3
+
 # Probability of sampling from the interval # from ’mu - sigma’ to ’mu + sigma’ 
 pnorm(120 + 2, 120, 2) - pnorm(120 - 2, 120, 2)
 ```
@@ -225,6 +226,7 @@ La risposta alla seconda domanda è banale ($Y_E = 120$), mentre per rispondere 
 
 ```{r}
 # Code box 5.4
+
 # Calcolo delle probabilità per un esperimento misurativo
 
 # Domanda 2
@@ -256,6 +258,7 @@ Supponendo che la relazione causa-effetto sia affidabile, la concentrazione prev
 
 ```{r}
 # Code box 5.5
+
 # Concentrazione attesa
 Ct <- 75 * 10^(-0.05 * 25)
 Ct
@@ -284,6 +287,7 @@ Prendiamo ancora il nostro pozzo inquinato e contenente 120 $mg/L$ di un erbicid
 
 ```{r echo=TRUE}
 # Code box 5.6
+
 # Example 5.3
 
 # Simulazione di un esperimento misurativo

@@ -15,6 +15,7 @@ book:
     - 04-CausaEffetto.qmd
     - 05-ModelliStocastici.qmd
     - 06-InferenzaStatistica.qmd
+    - 07-TestIpotesi.qmd
     - references.qmd
 
 bibliography: statBook.bib
