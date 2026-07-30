@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Decisioni ed incertezza – Metodologia sperimentale per le scienze agrarie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./06-InferenzaStatistica.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3220129d1b0bfa0f6b9dc9ac11d00f8b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-TestIpotesi.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Decisioni ed incertezza</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Metodologia sperimentale per le scienze agrarie</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Premessa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introBiometria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ProgettoRicerca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-StatisticaDescrittiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-CausaEffetto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ModelliStocastici.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelli stocastici</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-InferenzaStatistica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Stime ed incertezza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-TestIpotesi.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Decisioni ed incertezza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografia</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#esempio-7.1-confronto-tra-due-genotipi" id="toc-esempio-7.1-confronto-tra-due-genotipi" class="nav-link active" data-scroll-target="#esempio-7.1-confronto-tra-due-genotipi"><span class="header-section-number">7.1</span> Esempio 7.1: Confronto tra due genotipi</a>
+  <ul class="collapse">
+  <li><a href="#lipotesi-nulla" id="toc-lipotesi-nulla" class="nav-link" data-scroll-target="#lipotesi-nulla"><span class="header-section-number">7.1.1</span> L’ipotesi ‘nulla’</a></li>
+  <li><a href="#il-test-di-t-wald-test" id="toc-il-test-di-t-wald-test" class="nav-link" data-scroll-target="#il-test-di-t-wald-test"><span class="header-section-number">7.1.2</span> Il test di t (Wald test)</a></li>
+  <li><a href="#simulazione-monte-carlo" id="toc-simulazione-monte-carlo" class="nav-link" data-scroll-target="#simulazione-monte-carlo"><span class="header-section-number">7.1.3</span> Simulazione Monte Carlo</a></li>
+  <li><a href="#una-soluzione-formale" id="toc-una-soluzione-formale" class="nav-link" data-scroll-target="#una-soluzione-formale"><span class="header-section-number">7.1.4</span> Una soluzione formale</a></li>
+  <li><a href="#il-test-t-di-student-tradizionale" id="toc-il-test-t-di-student-tradizionale" class="nav-link" data-scroll-target="#il-test-t-di-student-tradizionale"><span class="header-section-number">7.1.5</span> Il test t di Student tradizionale</a></li>
+  </ul></li>
+  <li><a href="#esempio-7.2-misure-appaiate" id="toc-esempio-7.2-misure-appaiate" class="nav-link" data-scroll-target="#esempio-7.2-misure-appaiate"><span class="header-section-number">7.2</span> Esempio 7.2: Misure appaiate</a></li>
+  <li><a href="#esempio-7.3-saggiare-le-differenze-tra-parametri" id="toc-esempio-7.3-saggiare-le-differenze-tra-parametri" class="nav-link" data-scroll-target="#esempio-7.3-saggiare-le-differenze-tra-parametri"><span class="header-section-number">7.3</span> Esempio 7.3: saggiare le differenze tra parametri</a></li>
+  <li><a href="#esempio-7.4-il-test-f-nellanova" id="toc-esempio-7.4-il-test-f-nellanova" class="nav-link" data-scroll-target="#esempio-7.4-il-test-f-nellanova"><span class="header-section-number">7.4</span> Esempio 7.4: il test F nell’ANOVA</a></li>
+  <li><a href="#conclusioni" id="toc-conclusioni" class="nav-link" data-scroll-target="#conclusioni"><span class="header-section-number">7.5</span> Conclusioni</a></li>
+  <li><a href="#esercizi" id="toc-esercizi" class="nav-link" data-scroll-target="#esercizi"><span class="header-section-number">7.6</span> Esercizi</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Decisioni ed incertezza</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Dovrebbero ormai essere chiari i motivi per cui i risultati di un esperimento non corrispondono alla verità vera e si presentano in modo diverso ogni volta che lo ripetiamo. Nel capitolo precedente abbiamo visto come è possibile (e necessario) esplicitare la nostra incertezza in relazione alla verità vera, aggiungendo alle nostre stime campionarie il cosiddetto <strong>intervallo di confidenza</strong>, basato sulla <em>sampling distribution</em> della stima, cioè l’ipotetica popolazione di stime ottenute ripetendo molte volte l’esperimento. Un approccio affine può essere utilizzato per prendere decisioni in presenza di incertezza, con un procedimento che si chiama <strong>test d’ipotesi</strong> ed è basato sul cosiddetto <strong>P-level</strong>. Anche per questo argomento, vediamo alcuni semplici, ma realistici, esempi.</p>
+<section id="esempio-7.1-confronto-tra-due-genotipi" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="esempio-7.1-confronto-tra-due-genotipi"><span class="header-section-number">7.1</span> Esempio 7.1: Confronto tra due genotipi</h2>
+<p>Immaginiamo che un ricercatore abbia testato la produzione di due genotipi (A e P) in un disegno sperimentale a randomizzazione completa, con cinque repliche (dieci parcelle in totale). I risultati ottenuti (q/ha) sono i seguenti:</p>
+<p>Come al solito, l’analisi dei dati inizia con il calcolo delle più importanti statistiche descrittive per ogni campione, come abbiamo visto nel Capitolo 3. Trattandosi di una serie di misure quantitative, calcoliamo quindi media e deviazione standard, come indicato nel box sottostante.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 7.1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 7.1</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronto tra due genotipi</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei dati</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">68</span>, <span class="dv">69</span>, <span class="dv">71</span>, <span class="dv">78</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">81</span>, <span class="dv">84</span>, <span class="dv">88</span>, <span class="dv">94</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistiche descrittive per A</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">mean</span>(A)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="fu">sd</span>(A)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>n1 <span class="ot">&lt;-</span> <span class="fu">length</span>(A)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>m1; s1; n1</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 70.2</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4.868265</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistiche descrittive per P</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(P)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">sd</span>(P)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>n2 <span class="ot">&lt;-</span> <span class="fu">length</span>(P)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>m2; s2; n2</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 85.4</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5.727128</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Vediamo che la media per il genotipo P è più alta della media per il genotipo A, ma tali medie campionarie non sono sufficienti per i nostri obiettivi. Il passo successivo è postulare un modello descrittivo per rappresentare il meccanismo tramite cui le nostre osservazioni (e altre osservazioni future) potrebbero essere originate. Tale modello dovrebbe tenere conto dell’effetto di una variabile predittiva, ovvero il genotipo. Un modello ragionevole è:</p>
+<p><span class="math display">\[
+Y_i = \mu + \delta_j + \varepsilon_{i}
+\]</span></p>
+<p>dove <span class="math inline">\(Y_i\)</span> è la resa dell’i<sup>-esimo</sup> grafico (<span class="math inline">\(i\)</span> va da 1 a 10), <span class="math inline">\(\mu\)</span> è la resa prevista per il genotipo A, mentre <span class="math inline">\(\delta_j\)</span> è l’effetto del genotipo (con <span class="math inline">\(j\)</span> che va da 1 a 2) che è vincolato a essere 0 per il primo genotipo (<span class="math inline">\(\delta_1 = 0\)</span>) e, per il secondo genotipo, è uguale alla differenza di resa tra i due genotipi (<span class="math inline">\(\delta_2 = \mu_2 - \mu_1\)</span>). Di conseguenza, la resa prevista per P è <span class="math inline">\(\mu_2 = \mu_1 + \delta_2\)</span> e i residui <span class="math inline">\(\varepsilon_i\)</span> rappresentano tutte le altre fonti sconosciute di variabilità, che sono indipendenti e specifiche per ogni parcella. I residui sono assunti come gaussiani, con media uguale a 0 e deviazione standard uguale a <span class="math inline">\(\sigma\)</span>. La scelta di usare <span class="math inline">\(\delta_2\)</span> (differenze tra la seconda varietà è la prima) come parametro esplicito nel modello è puramente arbitraria: avremmo potuto anche includere <span class="math inline">\(\delta_1\)</span> (differenze tra la prima varietà e la seconda) che sarebbe stata uguale a <span class="math inline">\(\delta_2\)</span> in valore assoluto, ma con segno invertito e avrebbe reso <span class="math inline">\(\mu\)</span> uguale alla media del secondo genotipo, invece che del primo.</p>
+<p>La stima dei parametri del modello può essere eseguita utilizzando la funzione <code>lm()</code> in R, come mostrato nel Capitolo 4.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 7.2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 7.1 [segue]</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Adattamento di un modello ANOVA ad una via</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ai dati immessi nel Riquadro 7.1</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>yield <span class="ot">&lt;-</span> <span class="fu">c</span>(A, P)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>genotype <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"P"</span>), <span class="at">each =</span> <span class="dv">5</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(yield <span class="sc">~</span> genotype)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Call:</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="do">## lm(formula = yield ~ genotype)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals:</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="do">##    Min     1Q Median     3Q    Max </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  -5.40  -3.85  -1.30   2.15   8.60 </span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Coefficients:</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="do">##             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)   70.200      2.377  29.533 1.87e-09 ***</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="do">## genotypeP     15.200      3.362   4.522  0.00195 ** </span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Residual standard error: 5.315 on 8 degrees of freedom</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Multiple R-squared:  0.7188, Adjusted R-squared:  0.6836 </span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="do">## F-statistic: 20.45 on 1 and 8 DF,  p-value: 0.001945</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(mod)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="do">##                 2.5 %   97.5 %</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept) 64.718691 75.68131</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="do">## genotypeP    7.448258 22.95174</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>È importante notare che la deviazione standard residua (<span class="math inline">\(\sigma\)</span>), con una terminologia confusa, è indicata come ‘errore standard residuo’ (<span class="math inline">\(\sigma = 5,315\)</span>) nell’output R. È anche importante notare che, in base al nostro modello, la deviazione standard dei residui è unica e comune a tutte le osservazioni e, pertanto, stiamo assumendo che l’effetto genotipo influenzi il livello di resa e non la sua variabilità tra le repliche. Tale ipotesi è chiamata <strong>omoschedasticità</strong> (od <strong>omoscedasticità</strong>) e dovrà essere accuratamente controllata, come mostreremo in uno dei capitoli seguenti.</p>
+<p>Gli errori standard per tutte le stime puntuali sono già disponibili nell’output di R: la vera differenza tra i due genotipi, a livello di popolazione (<span class="math inline">\(\delta_2\)</span>) è ignota e incerta, ma sulla base dei dati in nostro possesso, confidiamo che sia compresa tra 7.45 e 22.95. Il fatto che l’intervallo di confidenza per <span class="math inline">\(\delta_2\)</span> non contenga 0 è una prova indiretta che l’effetto del genotipo è significativo.</p>
+<section id="lipotesi-nulla" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="lipotesi-nulla"><span class="header-section-number">7.1.1</span> L’ipotesi ‘nulla’</h3>
+<p>Dopo aver completato l’inferenza statistica, ci chiediamo se, a livello di popolazione, sia possibile concludere che il genotipo P è più produttivo del genotipo A, coerentemente con i risultati osservati nei due campioni. Non dimentichiamoci che i due campioni sono totalmente irrilevanti, perché vogliamo trarre conclusioni generali e non specifiche per il nostro esperimento. Dobbiamo quindi <strong>trovare un metodo per decidere se il genotipo P, in generale, è più produttivo del genotipo A</strong>, pur in presenza dell’incertezza legata all’errore sperimentale.</p>
+<p>Seguendo la logica Popperiana illustrata nel primo capitolo, è conveniente porre l’ipotesi scientifica di nostro interesse (<span class="math inline">\(H_0\)</span>) in modo che essa possa essere falsificata, cioè, ad esempio:</p>
+<p><span class="math display">\[H_0: \delta_2 = 0\]</span></p>
+<p>In altre parole, stiamo cercando di dimostrare che uno dei parametri stimati nel modello sia, in realtà, uguale a 0; questa ipotesi si chiama <strong>ipotesi nulla</strong> e, se riuscissimo a falsificarla, avremmo conseguito il nostro obiettivo, in totale coerenza con la logica Popperiana.</p>
+</section>
+<section id="il-test-di-t-wald-test" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="il-test-di-t-wald-test"><span class="header-section-number">7.1.2</span> Il test di t (Wald test)</h3>
+<p>In practica, stiamo cercando di dimostrare che un parametro del modello è uguale a 0, quando, in realtà, la nostra stima puntuale è diversa da 0. È intuitivamente chiaro che un certo grado di discrepanza tra la realtà e l’osservazione è accettabile come caratteristica intrinseca del processo di campionamento, ma è anche chiaro che maggiore è la discrepanza, minore è la probabilità che l’ipotesi “nulla” sia vera. In particolare, la nostra intuizione è che un parametro è significativamente diverso da zero quando il suo valore è molto più grande dell’incertezza con cui lo abbiamo stimato.</p>
+<p>Un statistica che risponde alla nostra esigenza è quella indicata di seguito:</p>
+<p><span class="math display">\[T = \frac{d_2}{SE_{d_2}} = \frac{15.2}{3.362} = 4.521727\]</span></p>
+<p>Se l’ipotesi nulla fosse vera, dovremmo osservare <span class="math inline">\(T = 0\)</span>, mentre abbiamo osservato <span class="math inline">\(T = 4.522\)</span>; quindi l’ipotesi nulla è falsa? Non è detto; è possible che, anche con l’ipotesi nulla vera, vi siano variazioni casuali legate al campionamento, che portino a valori di <span class="math inline">\(T \neq 0\)</span>, ma che dovrebbero comunque divenire via via meno probabili, man mano che ci si allontana dallo zero. In altre parole, analogamente a quanto abbiamo fatto nel Capitolo precedente, dovremmo chiederci: <strong>qual è la distribuzione campionaria per <span class="math inline">\(T\)</span> sotto l’ipotesi nulla?</strong></p>
+</section>
+<section id="simulazione-monte-carlo" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="simulazione-monte-carlo"><span class="header-section-number">7.1.3</span> Simulazione Monte Carlo</h3>
+<p>Per rispondere a questa domanda, supponiamo che l’ipotesi nulla sia vera. In questo caso, immaginiamo che le nostre dieci parcelle siano tutte estratte da una sola popolazione di parcelle con media e deviazione standard stimate (stima puntuale) come segue:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 7.3</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 7.1 [segue]</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Immaginiamo di avere un solo gruppo, senza distinsioni di genotipo</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcoliamo le statistiche descrittive</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(yield)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>devStAP <span class="ot">&lt;-</span> <span class="fu">sd</span>(<span class="fu">c</span>(A, P))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>mu; devStAP</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 77.8</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 9.44928</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Prendiamo quindi questa popolazione normale, con <span class="math inline">\(\mu = 77.8\)</span> e <span class="math inline">\(\sigma = 9.45\)</span>, ed utilizziamo un generatore di numeri casuali gaussiani per estrarre numerose (100’000) coppie di campioni, calcolando, per ogni coppia, il valore T, come abbiamo fatto con la nostra coppia iniziale. Il codice da utilizzare in R per le simulazioni è il seguente:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 7.4</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 7.1 [segue]</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Costruiamo una distribuzione campionaria per T</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># assumendo che l'ipotesi nulla è vera</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">34</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">100000</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100000</span>){</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  epsilon <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>, devStAP)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  Yo <span class="ot">&lt;-</span> mu <span class="sc">+</span> epsilon</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yo <span class="sc">~</span> genotype)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  d2 <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod)[<span class="dv">2</span>]</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  SE <span class="ot">&lt;-</span> <span class="fu">summary</span>(mod)<span class="sc">$</span>coefficients[[<span class="dv">2</span>,<span class="dv">2</span>]]</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  Ti <span class="ot">&lt;-</span> d2 <span class="sc">/</span> SE</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  result[i] <span class="ot">&lt;-</span> Ti</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result) </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 0.001230418</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(result)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="do">## -9.988315</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(result)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="do">## 9.993187</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Quali valori abbiamo ottenuto per <span class="math inline">\(T\)</span>? In media, i valori sono prossimi a 0, come previsto, considerando che abbiamo simulato i risultati di esperimenti in cui <span class="math inline">\(\delta_2\)</span> era assunto pari a 0. Tuttavia, notiamo anche valori piuttosto alti e bassi (vicini a 10 e -10), il che dimostra che le fluttuazioni del campionamento casuale possono anche portare a risultati molto “strani”. Per il nostro esperimento reale abbiamo ottenuto <span class="math inline">\(T = 4.522\)</span>, sebbene il segno positivo sia solo un artefatto, legato al modo in cui abbiamo formulato il nostro modello: avremmo potuto ottenere anche <span class="math inline">\(T = -4.522\)</span> se avessimo utilizzato <span class="math inline">\(\mu_2\)</span> come parametro esplicito, invece di <span class="math inline">\(\mu_1\)</span>.</p>
+<p><strong>Ronald Fisher ha proposto di rifiutare l’ipotesi nulla, in base alla probabilità di ottenere valori tanto ‘estremi’ o più ‘estremi’ di quello osservato, quando l’ipotesi nulla è vera</strong>. Osservando il vettore “result”, vediamo che la proporzione di valori inferiori a -4.521727 e superiori a 4.521727 è <span class="math inline">\(0.00095 + 0.00082 = 0.00177\)</span>. Questo è il cosiddetto <strong>P-Level</strong> o <strong>P-value</strong> (vedere il codice sottostante).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 7.5</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 7.1 [segue]</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcolo del P-value con una simulazione Monte Carlo</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>T_obs <span class="ot">&lt;-</span> <span class="fl">4.521727</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>upperTail <span class="ot">&lt;-</span> <span class="fu">length</span>(result[result <span class="sc">&gt;</span> T_obs]) <span class="sc">/</span> <span class="dv">100000</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>lowerTail <span class="ot">&lt;-</span> <span class="fu">length</span>(result[result <span class="sc">&lt;</span> <span class="sc">-</span> T_obs]) <span class="sc">/</span><span class="dv">100000</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>upperTail <span class="sc">+</span> lowerTail</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.00177</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ora proviamo a riassumere. Abbiamo visto che, quando l’ipotesi nulla è vero, la distribuzione campionaria di <span class="math inline">\(T\)</span> contiene una percentuale molto bassa di valori al di fuori dell’intervallo da -4.522 a 4.522. Pertanto, la nostra osservazione rientra in un intervallo molto improbabile, che ha scarsissima probabilità di verificarsi (P-value = 0.0017); dato che la <strong>soglia di rifiuto è P = 0.05</strong>, coerentemente, rigettiamo l’ipotesi nulla e lo facciamo perché, se l’ipotesi nulla fosse vera, avremmo ottenuto un risultato molto improbabile; in altre parole, l’evidenza scientifica contro l’ipotesi nulla è sufficientemente forte da permetterci di rigettarla.</p>
+</section>
+<section id="una-soluzione-formale" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="una-soluzione-formale"><span class="header-section-number">7.1.4</span> Una soluzione formale</h3>
+<p>Calcolare il P-value poco sopra ha richiesto di costruire una <em>sampling distribution</em> empirica con una serie di simulazioni Monte Carlo, piuttosto ‘costose’ in termini di tempo di calcolo. Allora è opportuno chiedersi: esiste una Funzione di Densità di Probabilità (PDF) formale che possiamo utilizzare al posto <em>sampling distribution</em> empirica? Se prendiamo il vettore ‘result’ e lo ‘discretizziamo’, riportandolo in un istogramma (Fig. <a href="#fig-figName71" class="quarto-xref"><span>7.1</span></a>) possiamo vedere che la distribuzione empirica non è pienamente sovrapponibile con una gaussiana standardizzata, ma può essere meglio descritta con un altro tipo di distribuzione, ovvero la ‘t di Student’, con otto gradi di libertà (cioè la somma dei gradi di libertà dei due campioni)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName71" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName71-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="07-TestIpotesi_files/figure-html/fig-figName71-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName71-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Empirical sampling distribution for the T statistic, compared to a standardised gaussian (blue line) and a Student’s t distribution with 8 degrees of freedom (red line). The observed T-values have been highlighted and the total probability (area-under-the-curve) of sampling outside the interval from -4.522 to 4.522 represents the P-value
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Di conseguenza, possiamo utilizzare la distribuzione t di Student per calcolare il <em>P-value</em>, come mostrato nel riquadro sottostante. Invece che sommare le probabilità di ottenere valori superiori a 4.522 e inferiori a -4.522, possiamo anche moltiplicare per due la probabilità di ottenere valori superiori al valore assoluto del T osservato, dato che la distribuzione di t di Student è simmetrica. Il livello di probabilità ottenuto formalmente (Riquadro 7.6) è simile a quello ottenuto empiricamente, ma, rispetto a quest’ultimo, è più preciso, in quanto con la simulazione di Monte Carlo non abbiamo potuto considerare, come avremmo dovuto, un numero infinito di repliche dell’esperimento.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 7.6</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 7.1 [segue}</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcolo del P-value con la distribuzione t di Student</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(T_obs, <span class="at">df=</span><span class="dv">8</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="co"># probability that T &gt; 4.522</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.0009727353</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(<span class="sc">-</span>T_obs, <span class="at">df=</span><span class="dv">8</span>) <span class="co"># probability that T &lt; -4.522</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.0009727353</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="fu">abs</span>(T_obs), <span class="at">df=</span><span class="dv">8</span>, <span class="at">lower.tail =</span> F) <span class="co"># P-value</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.001945471</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Per concludere questa sezione, dobbiamo precisare che <strong>l’impiego di una <em>sampling distribution</em> formale richiede che siano verificate due condizioni di base</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
+<ol type="1">
+<li>i residui sono campionati da una distribuzione normale (normalità);</li>
+<li>la deviazione standard è unica e non è influenzata dal trattamento sperimentale (omoschedasticità).</li>
+</ol>
+<p>Avrete infatti notato che queste due condizioni erano ‘incapsulate’ nella simulazione Monte Carlo che abbiamo eseguito in precedenza per ottenere la <em>sampling distribution</em> empirica di T. Se le due ipotesi non fossero rispettate, la distribuzione t di Student non rappresenterebbe esattamente la <em>sampling distribution</em> della statistica T e, di conseguenza, il P-level non sarebbe valido. Più avanti in questo libro vedremo come è possibile verificare che le due assunzioni di base siano effettivamente rispettate.</p>
+</section>
+<section id="il-test-t-di-student-tradizionale" class="level3" data-number="7.1.5">
+<h3 data-number="7.1.5" class="anchored" data-anchor-id="il-test-t-di-student-tradizionale"><span class="header-section-number">7.1.5</span> Il test t di Student tradizionale</h3>
+<p>Il test t che abbiamo appena mostrato è utilizzato come supporto alle procedure di <em>model fitting</em> (Wald test) e permette di verificare l’ipotesi che uno dei parametri stimati sia significativamente diverso da 0. Il test t di Student propriamente detto è invece una tecnica tradizionale di analisi dei dati (risale al 1908) per il confronto tra due medie campionarie, senza alcun legame col <em>model fitting</em>. Sebbene, al giorno d’oggi il test t di Student debba essere considerato un po’ obsoleto, è comunque opportuno conoscere come questa procedura possa essere eseguita in R, con la funzione <code>t.test()</code>. Il box sottostante mostra che i risultati che si ottengono sono identici a quelli ottenuti nella sezione precedente.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 7.7</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 7.1 [segue]</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Il test di t tradizionale con R</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(A, P, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  Two Sample t-test</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="do">## data:  A and P</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="do">## t = -4.5217, df = 8, p-value = 0.001945</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="do">## alternative hypothesis: true difference in means is not equal to 0</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 95 percent confidence interval:</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  -22.951742  -7.448258</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="do">## sample estimates:</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="do">## mean of x mean of y </span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="do">##      70.2      85.4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Anche il test di t di Student tradizionale richiede l’omoschedasticità dei residui, che viene specificata mediante l’argomento <code>var.equal = TRUE</code>. E’possibile estendere l’impiego della funzione <code>t.test()</code> alle situazioni in cui i due campioni hanno varianze diverse, modificando il codice con l’argomento <code>var.equal = FALSE</code>. In questo modo viene eseguito il test di t eteroschedastico, noto anche come test di Welch, che, grazie alla sua maggiore robustezza è spesso preferito al test t di Student tradizionale, tanto da essere considerato l’opzione predefinita in R.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 7.8</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 7.1 [segue]</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Test di t eteroschedastico (Welch test) con R</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(A, P, <span class="at">var.equal =</span> F)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  Welch Two Sample t-test</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="do">## data:  A and P</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="do">## t = -4.5217, df = 7.7977, p-value = 0.002076</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="do">## alternative hypothesis: true difference in means is not equal to 0</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 95 percent confidence interval:</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  -22.986884  -7.413116</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="do">## sample estimates:</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="do">## mean of x mean of y </span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="do">##      70.2      85.4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="esempio-7.2-misure-appaiate" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="esempio-7.2-misure-appaiate"><span class="header-section-number">7.2</span> Esempio 7.2: Misure appaiate</h2>
+<p>In alcuni casi, l’esperimento prevede due misure sullo stesso soggetto ed è finalizzato a verificare se esiste una differenza significativa tra la prima e la seconda misura. Ad esempio, immaginiamo di aver esaminato un campione di venti topi pesandoli all’inizio e alla fine di un certo programma alimentare, in modo da avere due misurazioni appaiate, per un totale di quaranta valori. Il test t di Student assume che le misure siano completamente indipendenti, cosa che non si verifica in questo caso, dove abbiamo quaranta dati ma solo venti soggetti.</p>
+<p>Quando le misure sono appaiate, dobbiamo necessariamente eseguire un test di t appaiato, impostando l’argomento <code>paired = TRUE</code>, come mostrato nel riquadro sottostante. Si noti che, anche se abbiamo 40 valori, il numero di gradi di libertà è 19, pari al numero di soggetti indipendenti meno uno.</p>
+</section>
+<section id="esempio-7.3-saggiare-le-differenze-tra-parametri" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="esempio-7.3-saggiare-le-differenze-tra-parametri"><span class="header-section-number">7.3</span> Esempio 7.3: saggiare le differenze tra parametri</h2>
+<p>Il test di Welch può essere generalizzato a qualunque situazione in cui abbiamo due stime indipendenti e vogliamo valutare se la loro differenza è significativa. Ad esempio, immaginiamo di aver stimato il tasso di crescita della barbabietola da zucchero con due diverse pratiche agronomiche e di aver ottenuto le stime <span class="math inline">\(\rho_1 = 0.22\)</span> con un errore standard di 0.013 e <span class="math inline">\(\rho_2 = 0.31\)</span> con un errore standard di 0.029. Il valore di T può essere ottenuto come:</p>
+<p><span class="math display">\[T = \frac{0.31 - 0.22}{\sqrt{0.031^2 + 0.029^2}} = -2.12\]</span></p>
+<p>Se la dimensione del campione è sufficientemente ampia e le due stime provengono da un ugual numero di soggetti, potremmo utilizzare un’approssimazione gaussiana per ottenere il P-value, come mostrato nel box sottostante.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code box 7.10</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 7.3</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># testing differences between model parameters</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>T_obs <span class="ot">&lt;-</span> (<span class="fl">0.22</span> <span class="sc">-</span> <span class="fl">0.31</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fl">0.031</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.029</span><span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="fu">abs</span>(T_obs), <span class="at">lower.tail =</span> F)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.033994</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="esempio-7.4-il-test-f-nellanova" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="esempio-7.4-il-test-f-nellanova"><span class="header-section-number">7.4</span> Esempio 7.4: il test F nell’ANOVA</h2>
+<p>Il rapporto F è una misura della forza di una relazione causale tra un insieme di predittori nominali/quantitativi e una risposta quantitativa (vedi Capitoli 3 e 4). Ogni volta che i dati osservati rappresentano un campione di una popolazione più ampia, il valore F osservato è solo una stima di un numero infinito di possibili valori F, che definiscono una distribuzione campionaria. Che forma ha questa distribuzione campionaria?</p>
+<p>Ad esempio, se riconsideriamo l’esperimento di confronto varietale nell’Esempio 4.3 (dati ‘oat1L’), il test F per il genotipo (Riquadro 4.7) mostra un valore di 42.71, con 3 gradi di libertà al numeratore e 8 gradi di libertà al denominatore.</p>
+<p>Per questo esperimento, l’ipotesi nulla corrisponderebbe a una situazione in cui, a livello di popolazione, è:</p>
+<p><span class="math display">\[H_0: \mu_1 = \mu_2 = \mu_3 = \mu_4\]</span></p>
+<p>Ciò equivale a dire che tutti gli effetti dei trattamenti sono uguali a 0:</p>
+<p><span class="math display">\[H_0: \alpha_1 = \alpha_2 = \alpha_3 = \alpha_4 = 0\]</span></p>
+<p>Il rapporto F osservato sembra contraddire l’ipotesi nulla, ma potrebbe trattarsi di un valore inaspettatamente alto capitato per caso, senza che vi sia una reale differenza tra i genotipi. Dobbiamo chiederci: qual è la distribuzione campionaria del rapporto F quando l’ipotesi nulla è vera?</p>
+<p>Anche in questo caso potremmo costruire una distribuzione campionaria empirica, utilizzando il metodo Monte Carlo, ma è più comodo impiegare una funzione di densità formale. Il matematico americano George Snedecor ha dimostrato che quando l’ipotesi nulla è vera ed i residui sono indipendenti, distribuiti normalmente ed omoschedastici, la distribuzione campionaria per il rapporto F può essere descritta con la cosiddetta distribuzione F di Fisher (o meglio, Fisher-Snedecor), che è definita solo per valori positivi, è asimmetrica (right-skewed) e dipende del numero di gradi di libertà al numeratore e al denominatore. Un esempio è mostrato in Figura <a href="#fig-figNameF" class="quarto-xref"><span>7.2</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figNameF" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figNameF-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="07-TestIpotesi_files/figure-html/fig-figNameF-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figNameF-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.2: Funzione di densità di Fisher-Snedecor, con 3 ed 8 gradi di libertà. Se consideriamo un ipotetico F osservato pari a 3, la probabilità totale nella coda destra (AUC: Area-Under-the-Curve) rappresenta il P-value, che, in questo caso, è pari a 0.095
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In R, il P-value si può calcolare con la funzione <code>pf()</code>, passando, nell’ordine, il valore osservato, i gradi di libertà del numeratore e del denominatore, oltre alla specifica relativa al fatto che vogliamo la coda destra della distribuzione (<code>pf(42.707, 3, 8, lower.tail = F) = 2.866138e-05</code>). Il P-value è inferiore a 0,05 e, di conseguenza, possiamo rifiutare l’ipotesi nulla: i genotipi non sono tutti uguali.</p>
+</section>
+<section id="conclusioni" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="conclusioni"><span class="header-section-number">7.5</span> Conclusioni</h2>
+<p>Concludiamo ribadendo che l’incertezza intrinseca nei dati sperimentali non consente di trarre conclusioni senza rischio di errore. Poiché il nostro obiettivo è quello di rifiutare l’ipotesi nulla, dobbiamo proteggerci dal rischio di un rifiuto erroneo, che ci porterebbe a concludere che il trattamento è ‘efficace’ quando in realtà ciò non è vero (falso positivo). La protezione dall’errore di falso positivo si mette in atto con la seguente procedura:</p>
+<ol type="1">
+<li>calcolare una statistica utile (statistica pivotale) per riassumere i risultati di un esperimento (come il valore T o il rapporto F);</li>
+<li>identificare una distribuzione campionaria per esprimere la variabilità della statistica oggetto di studio, quando l’ipotesi nulla è vera e si ripete l’esperimento con lo stesso disegno sperimentale, ma un diverso campione di soggetti. La distribuzione campionaria può essere una funzione di probabilità teorica od empirica, ottenuta con il metodo Monte Carlo;</li>
+<li>utilizzare la distribuzione campionaria selezionata per derivare la probabilità di eventi altrettanto estremi o più estremi di quello osservato nello specifico esperimento in studio;</li>
+<li>rigettare l’ipotesi nulla se la probabilità calcolata al punto 3 è inferiore a 0.05.</li>
+</ol>
+<p>Prima di concludere, vorremmo sottolineare tre questioni fondamentali, che dovremmo sempre tenere a mente:</p>
+<ol type="1">
+<li>Il P-value è considerato come la probabilità di rifiutare erroneamente l’ipotesi nulla (errore di I specie o di falso positivo). Tuttavia, tale probabilità va interpretata con riferimento alla distribuzione campionaria, non in relazione al singolo esperimento oggetto di studio. Insomma, quando riusciamo a rigettare l’ipotesi nulla, siamo in grado di concludere che: <em>se l’ipotesi nulla fosse vera e ripetessimo l’esperimento un numero infinito di volte, avremmo meno del 5% di probabilità di ottenere un valore T o F altrettanto elevato o più elevato (in valore assoluto) di quello da noi osservato</em>. Quindi avere una probabilità d’errore del 5% significa che, adottando una procedura formale di test d’ipotesi, su 100 esperimenti in cui l’ipotesi nulla è vera, solo in cinque di essi l’ipotesi nulla verrebbe rigettata errorneamente. Al contrario, non possiamo concludere che la nostra specifica conclusione di rigettare l’ipotesi nulla abbia <em>meno del 5% di probabilità di essere errata</em>, perchè non abbiamo nessun elemento per stabilire se l’ipotesi nulla è vera o falsa nel nostro caso.</li>
+<li>Il P-value è calcolato a partire da una certa sampling distribution teorica, individuata assumendo che i residui siano normali ed omoschedastici. Se queste assunzioni di base non sono soddisfatte, il P-value è invalido. In uno dei prossimi capitoli mostreremo come verificare che gli assunti di base siano rispettati.</li>
+<li>Oltre all’ipotesi nulla, Neyman e Pearson hanno proposto di adottare un’ipotesi alternativa che si considera vera quando l’ipotesi nulla viene rifiutata. Ad esempio (vedi Sezione 7.1), se l’ipotesi nulla è <span class="math inline">\(H_0: \delta_2 = 0\)</span>, l’alternativa è <span class="math inline">\(H_1: \delta_2 \neq 0\)</span>. Sono possibili anche ipotesi alternative più complesse, come <span class="math inline">\(H_1: \delta_2 &gt; 0\)</span> o <span class="math inline">\(H1: \delta_2 &lt; 0\)</span>, sebbene queste ipotesi alternative complesse possano essere adottate solo quando vi è una qualche conoscenza a priori che le giustifichi. Ciò è necessario in quanto un test d’ipotesi con un’ipotesi alternativa complessa (test ad una coda) è più potente di un test a due code. In ogni caso, dovremmo evitare il comune equivoco secondo cui rifiutare l’ipotesi nulla implichi che l’alternativa sia dimostrata o che l’alternativa sia vera con una probabilità <span class="math inline">\(P_{alt} = 1 - \textrm{P-value}\)</span> <span class="citation" data-cites="gigerenzer_2018">(<a href="references.html#ref-gigerenzer_2018" role="doc-biblioref">Gigerenzer 2018</a>)</span>.</li>
+<li>Quando prendiamo una decisione “statistica”, non corriamo solo il rischio di commettere un errore di falso positivo (errore di tipo I), ma corriamo anche il rischio di commettere un errore di falso negativo (errore di tipo II), se non rifiutiamo un’ipotesi falsa nulla. Questi due tipi di errore sono rappresentati nella Figura <a href="#fig-figName72" class="quarto-xref"><span>7.3</span></a>; essi sono strettamente collegati nel senso che maggiore è la protezione contro l’errore falso positivo, maggiore è il rischio di commettere un errore falso negativo. In generale, dovremmo sempre essere attenti a decidere quale dei due errori potrebbe essere più pericoloso per il nostro obiettivo specifico.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName72" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName72-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="_images/statisticalErrors.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName72-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.3: I due tipi di errori statistici
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="esercizi" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="esercizi"><span class="header-section-number">7.6</span> Esercizi</h2>
+<ol type="1">
+<li>La nostra miglior stima puntuale del parametro <span class="math inline">\(\gamma\)</span> di un modello statistico è <span class="math inline">\(g = -7.2\)</span>, con un errore standard pari a 2.8, con 16 gradi di libertà. E’possibile che, in realtà, sia <span class="math inline">\(\gamma = 0\)</span>? Qual è il P-level per l’ipotesi nulla? Devo accettarla o posso rifiutarla?</li>
+<li>La nostra miglior stima puntuale del parametro <span class="math inline">\(\delta\)</span> di un modello statistico è <span class="math inline">\(d = 13.5\)</span>, con un errore standard pari a 8.4, ma non è disponibile, per questo errore standard, una stima accurata dei gradi di libertà. E’possibile che, in realtà, sia <span class="math inline">\(\delta = 0\)</span>? Qual è il P-level per l’ipotesi nulla? Devo accettarla o posso rifiutarla?</li>
+<li>Uno sperimentatore ha impostato un esperimento per confrontare due tesi sperimentali (A, B). I risultati sono i seguenti (in t/ha) <code>A &lt;- c(9.3, 10.2, 9.7)</code> e <code>B &lt;- c(12.6, 12.3, 12.5)</code>. Stabilire se i risultati per le due tesi sperimentali possono essere considerati significativamente diversi, per un livello di probabilità di errore di I specie del 5%.</li>
+<li>Uno sperimentatore ha impostato un esperimento per confrontare se l’effetto di un fungicida è significativo, in un disegno sperimentale con tre ripetizioni. Con ognuna delle due opzioni di trattamento i livelli di infestazione (in percentuale) sono: <code>A &lt;- c(6.5, 7.1, 6.8)</code> e <code>NT &lt;- c(54.1, 48.2, 63.1)</code>. E’significativo l’effetto del trattamento fungicida, per un livello di probabilità del 5%? SUGGERIMENTO: prestare attenzione all’omogeneità delle varianze.</li>
+<li>Con un esperimento in laboratorio, abbiamo stimato che il tasso di degradazione di una sostanza xenobiotica in acqua è <span class="math inline">\(k_1 = -0.071 \pm 0.012\)</span> (7 gradi di libertà). Per una sostanza affine il tasso di degradazione è pari a <span class="math inline">\(k_2 = -0.153 \pm 0.024\)</span> (7 gradi di lbertà); possiamo concludere che il tasso di degradazione delle due sostanze, in realtà, non è significativamente diverso?</li>
+<li>In un ospedale, è stata misurata la concentrazione di colesterolo nel sangue di otto pazienti, prima e dopo un trattamento medico. Per ogni paziente, sono stati analizzati due campioni, ottenendo le seguenti concentrazioni (in ordine di paziente): <code>Prima &lt;- c(167.3, 186.7, 107.0, 214.5, 149.5, 171.5, 161.5, 243.6)</code> e <code>Dopo &lt;- c(166.7, 184.2, 104.9, 205.3, 148.5, 157.3, 149.4, 241.5)</code>. Si può concludere che il trattamento medico è stato efficace?</li>
+<li>Un veterinario ha organizzato un esperimento per valutare l’effetto di una dieta innovativa, sulla pressione arteriosa sistolica di cavalli da corsa. Le informazioni preliminari mostrano con chiarezza che questa dieta innovativa non può avere effetti negativi, ma, eventualmente, solo positivi. Il ricercatore ha selezionato a caso 16 animali, ne ha misurato la pressione arteriosa a riposo ed ha ripetuto la stessa misurazione dopo sei mesi di questa dieta. I risultati ottenuti sono i seguenti: I risultati ottenuti sono: <code>prima &lt;- c(113.5, 116.5, 118.1, 111.3, 116.8, 117.0, 114.8, 114.9, 114.8, 114.2, 115.0, 114.0, 114.4, 116.1, 117.9, 115.7)</code> e <code>dopo &lt;- c(110.9, 110.1, 110.3, 116.8, 112.2, 111.0, 111.1, 112.9, 110.6, 109.1, 113.1, 109.9, 111.9, 110.1, 114.2, 111.0)</code>. Stabilire se la dieta è efficace, con una probabilità di errore P &lt; 0.05. SUGGERIMENTO: ricordare che la l’effetto atteso della dieta, per le informazioni preliminari disponibili, può, eventualmente, essere solo quello di abbassare la pressione, mai quello di alzarla.</li>
+<li>I Q.I. di 16 studenti provenienti da un quartiere di una certa città sono risultati pari a: <code>QI1 &lt;- c(90.31, 112.63, 101.93, 121.47, 111.37, 100.37, 106.80, 101.57, 113.25, 120.76,  88.58, 107.53, 102.62, 104.26, 95.06, 104.88)</code>. Gli studenti provenienti da un altro quartiere della stessa città hanno invece mostrato i seguenti Q.I.: <code>QI2 &lt;- c(90.66, 101.41, 104.61,  91.77, 107.06,  89.51,  87.91, 92.31, 112.96,  90.33,  99.86,  88.99,  98.97,  97.92)</code>. Esiste una differenza significativa tra i Q.I. nei due quartieri della città?</li>
+<li>Viene estratto un campione di rondelle da una macchina in perfette condizioni di funzionamento. Lo spessore delle rondelle misurate è: <code>S1 &lt;- c(0.0451, 0.0511, 0.0478, 0.0477, 0.0458, 0.0509, 0.0446, 0.0516, 0.0458, 0.0490)</code>. Dopo alcuni giorni, per determinare se la macchina sia ancora a punto, viene estratto un altro campione di 10 rondelle, il cui spessore medio risulta: <code>S2 &lt;- c(0.0502, 0.0528, 0.0492, 0.0556, 0.0501, 0.0500, 0.0498, 0.0526, 0.0517, 0.0550)</code>. Verificare se la macchina sia ancora ben tarata, oppure necessiti di revisione.</li>
+<li>Le varianze di due campioni composti da 30 unità sono risultate pari, rispettivamente a 115.3 e 356.4; stabilire se il secondo campione ha una varianza significativamente più alta del primo. SUGGERIMENTO: considerare che il rapporto tra due varianze di campioni estratti dalla stessa popolazione gaussiana segue la distribuzione F di Fisher. Considerare anche che, in R, la funzione <code>pf(x, n1, n2, lower.tail = F)</code> restituisce la probabilità di ottenere valori pari o superiori ad <span class="math inline">\(x\)</span>, da una distribuzione <span class="math inline">\(F\)</span> di Fisher con <span class="math inline">\(n1\)</span> ed <span class="math inline">\(n2\)</span> gradi di libertà. Considerare anche che il rapporto di due varianze può solo essere positivo.</li>
+<li>Un agronomo ha organizzato un esperimento varietale, per confrontare tre varietà di frumento, cioè GUERCINO, ARNOVA e BOLOGNA. Per far questo ha individuato, in un campo uniforme dell’areale umbro, trenta parcelle da 18 m<sup>2</sup> e ne ha selezionate dieci a caso, da coltivare con GUERCINO, altre dieci a caso sono state coltivate con ARNOVA e le ultime dieci sono state coltivate con BOLOGNA. Al termine dell’esperimento, le produttività osservate erano le seguenti: <code>guercino &lt;- c(53.2, 59.1, 62.3, 48.6, 59.7, 60, 55.7, 55.8, 55.7, 54.4)</code>, <code>arnova &lt;- c(53.1, 51, 51.9, 55.3, 58.8, 54.6, 53, 51.4, 51.7, 64.7)</code> e <code>bologna &lt;- c(43.5, 41, 41.2, 44.8, 40.2, 37.2, 45.3, 38.9, 42.9, 39.3)</code>. Descrivere i tre campioni, utilizzando opportunamente un indicatore di tendenza centrale ed un indicatore di variabilità. Inferire le medie delle tre popolazioni (cioè quelle che hanno generato i tre campioni), utilizzando opportunamente un intervallo di incertezza. Per ognuna delle tre coppie (guercino vs arnova, guercino vs bologna, arnova vs bologna), valutare la differenza tra le medie e il suo errore standard. Valutare la significatività della differenza tra le medie delle tre popolazioni, esplicitando l’ipotesi nulla e calcolando il livello di probabilità di errore nel rifiuto dell’ipotesi nulla.</li>
+</ol>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-gigerenzer_2018" class="csl-entry" role="listitem">
+<span class="smallcaps">Gigerenzer, G</span> (2018) <a href="https://doi.org/10.1177/2515245918771329">Statistical <span>Rituals</span>: <span>The</span> <span>Replication</span> <span>Delusion</span> and <span>How</span> <span>We</span> <span>Got</span> <span>There</span></a>. <em>Advances in Methods and Practices in Psychological Science</em> <strong>1</strong>, 198–218
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>La distribuzione t di Student fu ideata dallo ‘studente’ William Sealy Gosset (1876 - 1937), che utilizzava questo pseudonimo nei suoi articoli scientifici mentre lavorava alla Guinness Brewery di Dublino. E’ simile a una distribuzione gaussiana standardizzata, ma con code più alte, cioè con una maggiore probabilità di ottenere outliers, sia positivi, che negativi. L’altezza delle code è inversamente proporzionale al parametro <span class="math inline">\(\nu\)</span> (il numero di DF), in modo che questa distribuzione tende ad una gaussiana quando <span class="math inline">\(\nu\)</span> tende ad infinito<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>In realtà le assunzioni di base sono più di due, ma le considereremo in maggior dettaglio nel Capitolo 8<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-InferenzaStatistica.html" class="pagination-link" aria-label="Stime ed incertezza">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Stime ed incertezza</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="Bibliografia">
+        <span class="nav-page-text">Bibliografia</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
