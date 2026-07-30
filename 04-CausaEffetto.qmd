@@ -330,6 +330,8 @@ RSS.full
 Successivamente, adattiamo il modello ridotto e ne determiniamo la ralativa RSS. La differenza tra queste due RSS costituisce la devianza (*Sum of Squares*, ossia SS) per l'effetto del genotipo (Riquadro 4.5).
 
 ```{r}
+# Riquadro 4.5
+
 # Esempio 4.3 [segue]
 
 # Adattamento del modello ridotto 
@@ -352,6 +354,7 @@ Come abbiamo visto nel Capitolo 3, non possiamo confrontare direttamente $SS_g$ 
 
 ```{r}
 # Riquadro 4.6
+
 # Esempio 4.3 [segue]
 
 # Varianza del genotipo
@@ -577,6 +580,7 @@ L'analisi della varianza viene eseguita rimuovendo dal modello i tre termini uno
 
 ```{r}
 # Riquadro 4.12
+
 # Analisi della varianza
 
 # RSS
@@ -602,6 +606,7 @@ Anche in questo esempio, abbiamo suddiviso la variabilità totale dei dati in qu
 
 ```{r}
 # Riquadro 4.13
+
 # Analisi della varianza
 #
 anova(mod)
@@ -611,41 +616,52 @@ Vediamo che tutti gli effetti in gioco (genotipo, località ed interazione) sono
 
 ## Dati non bilanciati
 
-FINO QUI
 
-Prima di concludere questo capitolo, è necessario sottolineare che esistono diversi metodi per calcolare la somma dei quadrati per gli effetti del modello, che non portano, necessariamente, agli stessi risultati. In particolare, questo aspetto va attentamente considerato quando i dati non sono 'bilanciati', ovvero quando il numero di repliche è diverso per diversi trattamenti. Il metodo di calcolo che abbiamo proposto in questo Capitolo è basato sulle seguenti operazioni:
+Prima di concludere questo capitolo, è necessario sottolineare che esistono diversi metodi per calcolare le devianze nell'ANOVA, che non portano, necessariamente, agli stessi risultati, quando i dati non sono 'bilanciati', ovvero quando il numero di repliche è diverso per diversi trattamenti. Il metodo di calcolo che abbiamo proposto in questo Capitolo è basato sulle seguenti operazioni:
 
 1.  fitting del modello completo;
 2.  rimozione dell'effetto in studio e fitting del modello ridotto;
 3.  calcolo della devianza dell'effetto rimosso per differenza tra le devianza del residuo del modello ridotto e quella del modello completo.
 
-Questo metodo di calcolo produce le cosiddette *somme dei quadrati marginali* e non è uguale al metodo utilizzato nella funzione `anova()` in R, che produce invece le *somma dei quadrati sequenziali*. Non ci siamo accorti della differenza perché i due metodi danno gli stessi risultati quando i dati sono 'bilanciati', ma quando i dati non lo sono, i due metodi divergono^[Le somme dei quadrati sequenziali consistono nel (1) partire dal modello nullo e determinare la devianza del residuo, (2) inserire gli effetti sequenzialmente nel modello, (3) per ogni effetto inserito, valutare il decremento della devianza del residuo, rispetto al modello immediatamente precedente nella sequenza]. Quando i dati sono sbilanciati, le devianze prodotte con il metodo sequenziale diventano dipendenti dall'ordine con cui abbiamo inserito gli effetti nel modello, il che non è accettabile. Per questo, le *somme dei quadrati marginali* sono preferibili e possono essere ottenute con la funzione `Anova()` (si noti la lettera maiuscola all'inizio) nel pacchetto `car`, come mostrato nel seguente esempio.
+Questo metodo di calcolo produce le cosiddette *somme dei quadrati marginali* e non è uguale al metodo utilizzato nella funzione `anova()` in R, che produce invece le *somma dei quadrati sequenziali*. Non ci siamo accorti della differenza perché i due metodi danno gli stessi risultati quando i dati sono 'bilanciati', come tutti quelli che abbiamo utilizzato finora. Quando i dati non sono bilnciati, i due metodi divergono^[Le somme dei quadrati sequenziali consistono nel (1) partire dal modello nullo e determinare la devianza del residuo, (2) inserire gli effetti sequenzialmente nel modello, (3) per ogni effetto inserito, valutare il decremento della devianza del residuo, rispetto al modello immediatamente precedente nella sequenza]. Il problema è che le devianze prodotte con il metodo sequenziale (e quindi con la funzione `anova()` in R) cambiano a seconda dell'ordine con cui abbiamo inserito gli effetti nel modello, il che non è accettabile. Per questo, le *somme dei quadrati marginali* sono preferibili e possono essere ottenute con la funzione `Anova()` (si noti la lettera maiuscola all'inizio) nel pacchetto `car`, come mostrato nel seguente esempio.
 
 ### Esempio 4.6: un CRBD con un valore mancante
 
 Consideriamo un esperimento per valutare la selettività di un erbicida post-emergenza per il controllo delle infestanti nel mais, in funzione del momento dell'intervento (stadio di 2, 4, 6 e 8 foglie, più un controllo non trattato e diserbato manualmente). Il disegno sperimentale era a blocchi randomizzati, con un dato mancante rappresentato come 'NA'; i dati sono riportati nel dataset `Timings_77490` nel package `statforbiology`.
 
+Se si parametrizza un modello ANOVA e si esegue l'analisi della varianza con la funzione `anova()`, i risultati cambiano a seconda dell'ordine in cui i due effetti ('Timing' e 'Block') sono stati inseriti nel modello. Poiché non abbiamo una logica oggettiva per decidere quale effetto debba essere inserito per primo, le conclusioni ottenute con la funzione `anova()` debbono essere considerate puramente arbitrarie, il che non è accettabile.
+
 ```{r}
+# Riquadro 4.14
+
+# Esempio 4.6 
+# Analisi della varianza su dati sbilanciati
+
+# Caricamento dei pacchetti
+library(statforbiology)
+library(car)  
+
+# Caricamento dei dati
 dataset <- getAgroData("Timings_77490")
 dataset$Block <- factor(dataset$Block)
 head(dataset)
-```
 
-Se si parametrizza un modello ANOVA e si produce una tabella riassuntiva utilizzando la funzione `anova()`, i risultati cambiano a seconda dell'ordine in cui i due effetti ('Timing' e 'Block') sono stati inseriti nel modello. Poiché non abbiamo una logica oggettiva per decidere quale effetto debba essere inserito per primo, le conclusioni ottenute con la funzione `anova()` debbono essere considerate puramente arbitrarie, cosa che non può essere considerata accettabile.
-
-```{r}
 # Adattamento di due modelli con diverso ordinamento degli effetti
 mod1 <- lm(Weight_30 ~ Timing + Block, data = dataset)
 mod2 <- lm(Weight_30 ~ Block + Timing, data = dataset)
 
-# Partizionamento della varianza
+# Analisi della varianza
 anova(mod1)
 anova(mod2)
 ```
 
-Se invece utilizziamo il metodo 'manuale', basato sulla rimozione dei due predittori, uno alla volta, notiamo che le somme dei quadrati degli effetti sono le stesse, indipendentemente dall'ordine con cui i due effetti sono stati rimossi dal modello completo. Questi risultati possono essere riprodotti utilizzando la funzione `Anova()` nel pacchetto `car` e impostando l'argomento `type = 2`. Ulteriori informazioni sui diversi tipi di somme di quadrati possono essere trovate in @langsrud_2003.
+Se invece utilizziamo il metodo 'manuale', basato sulla rimozione dei due predittori, uno alla volta, notiamo che le devianze sono le stesse, indipendentemente dall'ordine con cui i due effetti sono stati rimossi dal modello completo. Questi risultati possono essere riprodotti utilizzando la funzione `Anova()` nel pacchetto `car` e impostando l'argomento `type = 2`. Ulteriori informazioni sui diversi tipi di somme di quadrati possono essere trovate in @langsrud_2003.
 
 ```{r}
+# Riquadro 4.15
+
+# Esempio 4.6 [segue] 
+
 # Rimozione dei predittori uno alla volta (modello 1)
 RSS <- deviance(mod1)
 mod1.red <- lm(Weight_30 ~ Block,
@@ -684,7 +700,7 @@ Questo metodo consiste in:
 2.  impiego dell'analisi della varianza (ANOVA) per ottenere le varianze di tutti gli effetti causali in esame e la varianza del residuo;
 3.  calcolo del/dei rapporto/i tra la/e varianza/e di ogni effetto causale con la varianza del residuo (rapporto F). Più alto è il rapporto F, più forte è la relazione causa-effetto.
 
-Per l'analisi della varianza con R, sono disponibili due funzioni: `anova()` ed `Anova()` e quest'ultima si trova nel package `car`. Queste due funzioni forniscono gli stessi risultati con dati bilanciati, ma la seconda è decisamente consigliabile quando i dati non sono bilanciati.
+Per l'analisi della varianza con R, sono disponibili due funzioni: `anova()` ed `Anova()` e quest'ultima si trova nel package `car`. Queste due funzioni forniscono gli stessi risultati con dati bilanciati, ma la seconda è decisamente consigliabile nel caso in cui i dati non fossero bilanciati.
 
 ## Domande ed esercizi
 
