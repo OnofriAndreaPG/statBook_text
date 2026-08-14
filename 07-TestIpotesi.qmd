@@ -291,7 +291,7 @@ Se la dimensione del campione è sufficientemente ampia e le due stime provengon
 
 
 ```{r}
-# Code box 7.10
+# Riquadro 7.10
 
 # Example 7.3
 # testing differences between model parameters

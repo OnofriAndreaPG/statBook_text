@@ -16,11 +16,14 @@ book:
     - 05-ModelliStocastici.qmd
     - 06-InferenzaStatistica.qmd
     - 07-TestIpotesi.qmd
+    - 08-AssunzioniBase.qmd
+    - 09-ConfrontoMultiplo.qmd
     - references.qmd
 
 bibliography: statBook.bib
 csl: _weed-research.csl 
-
+lang: it
+  
 format:
   html:
     theme:

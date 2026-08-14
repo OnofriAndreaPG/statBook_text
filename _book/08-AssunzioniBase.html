@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Verifica dei modelli – Metodologia sperimentale per le scienze agrarie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./07-TestIpotesi.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3220129d1b0bfa0f6b9dc9ac11d00f8b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nessun risultato",
+    "search-matching-documents-text": "documenti trovati",
+    "search-copy-link-title": "Copiare il link nella ricerca",
+    "search-hide-matches-text": "Nascondere i risultati aggiuntivi",
+    "search-more-match-text": "ci sono altri risultati in questo documento",
+    "search-more-matches-text": "ulteriori risultati in questo documento",
+    "search-clear-button-title": "Pulire",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancellare",
+    "search-submit-button-title": "Inviare",
+    "search-label": "Ricerca"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Attiva/disattiva la barra laterale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-AssunzioniBase.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Verifica dei modelli</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Attiva/disattiva la barra laterale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Ricerca" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Metodologia sperimentale per le scienze agrarie</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Ricerca"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Premessa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introBiometria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ProgettoRicerca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-StatisticaDescrittiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-CausaEffetto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ModelliStocastici.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelli stocastici</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-InferenzaStatistica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Stime ed incertezza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-TestIpotesi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Decisioni ed incertezza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-AssunzioniBase.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Verifica dei modelli</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografia</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice</h2>
+   
+  <ul>
+  <li><a href="#deviazioni-rispetto-alle-assunzioni-di-base" id="toc-deviazioni-rispetto-alle-assunzioni-di-base" class="nav-link active" data-scroll-target="#deviazioni-rispetto-alle-assunzioni-di-base"><span class="header-section-number">8.1</span> Deviazioni rispetto alle assunzioni di base</a></li>
+  <li><a href="#scoprire-le-violazioni" id="toc-scoprire-le-violazioni" class="nav-link" data-scroll-target="#scoprire-le-violazioni"><span class="header-section-number">8.2</span> Scoprire le violazioni</a></li>
+  <li><a href="#analisi-grafica-dei-residui" id="toc-analisi-grafica-dei-residui" class="nav-link" data-scroll-target="#analisi-grafica-dei-residui"><span class="header-section-number">8.3</span> Analisi grafica dei residui</a>
+  <ul class="collapse">
+  <li><a href="#grafico-dei-valori-osservati-aumentato-con-le-previsioni-del-modello" id="toc-grafico-dei-valori-osservati-aumentato-con-le-previsioni-del-modello" class="nav-link" data-scroll-target="#grafico-dei-valori-osservati-aumentato-con-le-previsioni-del-modello"><span class="header-section-number">8.3.1</span> Grafico dei valori osservati, aumentato con le previsioni del modello</a></li>
+  <li><a href="#grafico-dei-residui-contro-i-valori-attesi" id="toc-grafico-dei-residui-contro-i-valori-attesi" class="nav-link" data-scroll-target="#grafico-dei-residui-contro-i-valori-attesi"><span class="header-section-number">8.3.2</span> Grafico dei residui contro i valori attesi</a></li>
+  <li><a href="#qq-plot" id="toc-qq-plot" class="nav-link" data-scroll-target="#qq-plot"><span class="header-section-number">8.3.3</span> QQ-plot</a></li>
+  </ul></li>
+  <li><a href="#metodi-formali-e-test-dipotesi" id="toc-metodi-formali-e-test-dipotesi" class="nav-link" data-scroll-target="#metodi-formali-e-test-dipotesi"><span class="header-section-number">8.4</span> Metodi formali e Test d’ipotesi</a>
+  <ul class="collapse">
+  <li><a href="#test-di-levene-per-lomogeneità-delle-varianze" id="toc-test-di-levene-per-lomogeneità-delle-varianze" class="nav-link" data-scroll-target="#test-di-levene-per-lomogeneità-delle-varianze"><span class="header-section-number">8.4.1</span> Test di Levene per l’omogeneità delle varianze</a></li>
+  <li><a href="#test-di-shapiro-wilk-per-la-normalità" id="toc-test-di-shapiro-wilk-per-la-normalità" class="nav-link" data-scroll-target="#test-di-shapiro-wilk-per-la-normalità"><span class="header-section-number">8.4.2</span> Test di Shapiro-Wilk per la normalità</a></li>
+  <li><a href="#altri-test" id="toc-altri-test" class="nav-link" data-scroll-target="#altri-test"><span class="header-section-number">8.4.3</span> Altri test</a></li>
+  </ul></li>
+  <li><a href="#esempio-8.1-analisi-dei-residui-per-il-dataset-mixture" id="toc-esempio-8.1-analisi-dei-residui-per-il-dataset-mixture" class="nav-link" data-scroll-target="#esempio-8.1-analisi-dei-residui-per-il-dataset-mixture"><span class="header-section-number">8.5</span> Esempio 8.1: Analisi dei residui per il dataset “mixture”</a></li>
+  <li><a href="#esempio-8.2-analisi-dei-residui-per-il-dataset-insects" id="toc-esempio-8.2-analisi-dei-residui-per-il-dataset-insects" class="nav-link" data-scroll-target="#esempio-8.2-analisi-dei-residui-per-il-dataset-insects"><span class="header-section-number">8.6</span> Esempio 8.2: Analisi dei residui per il dataset ‘insects’</a></li>
+  <li><a href="#misure-correttive" id="toc-misure-correttive" class="nav-link" data-scroll-target="#misure-correttive"><span class="header-section-number">8.7</span> Misure correttive</a>
+  <ul class="collapse">
+  <li><a href="#esempio-8.1-segue" id="toc-esempio-8.1-segue" class="nav-link" data-scroll-target="#esempio-8.1-segue"><span class="header-section-number">8.7.1</span> Esempio 8.1 (segue)</a></li>
+  <li><a href="#esempio-8.2-segue" id="toc-esempio-8.2-segue" class="nav-link" data-scroll-target="#esempio-8.2-segue"><span class="header-section-number">8.7.2</span> Esempio 8.2 (segue)</a></li>
+  </ul></li>
+  <li><a href="#altri-approcci-avanzati" id="toc-altri-approcci-avanzati" class="nav-link" data-scroll-target="#altri-approcci-avanzati"><span class="header-section-number">8.8</span> Altri approcci ‘avanzati’</a></li>
+  <li><a href="#esercizi" id="toc-esercizi" class="nav-link" data-scroll-target="#esercizi"><span class="header-section-number">8.9</span> Esercizi</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Verifica dei modelli</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Nei capitoli precedenti, abbiamo studiato i modelli come “strumenti” per descrivere le relazioni causa-effetto tra le variabili sperimentali e per trarre conclusioni testando ed eventualmente rigettando ipotesi scientifiche rilevanti. Tuttavia, abbiamo anche visto che i modelli statistici e le inferenze su di essi basate, assumono che siano verificate alcune condizioni fondamentali:</p>
+<ol type="1">
+<li>il modello fornisce una buona descrizione dei dati sperimentali (bontà di adattamento);</li>
+<li>i residui sono indipendenti l’uno dall’altro (indipendenza);</li>
+<li>i residui hanno una distribuzione gaussiana di probabilità (normalità);</li>
+<li>tutti i residui hanno la stessa varianza (omoschedasticità).</li>
+</ol>
+<p>Oltre alle ipotesi di cui sopra, i dati osservati devono rispettare anche un altro requisito essenziale: l’assenza di osservazioni anomale (<em>outliers</em>), che differiscono inspiegabilmente da tutte le altre e producono residui negativi o positivi enormi. Queste osservazioni possono essere molto influenti, producendo effetti negativi sull’affidabilità delle stime e dei test d’ipotesi.</p>
+<p>Purtroppo, bisogna riconoscere che i problemi relativi alle assunzioni di base sono tutt’altro che infrequenti, come vedremo in seguito.</p>
+<section id="deviazioni-rispetto-alle-assunzioni-di-base" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="deviazioni-rispetto-alle-assunzioni-di-base"><span class="header-section-number">8.1</span> Deviazioni rispetto alle assunzioni di base</h2>
+<p>La mancanza di ‘bontà d’adattamento’ (più semplicemente in inglese <em>lack of fit</em> o LOF) si verifica quando le previsioni del modello deviano sistematicamente rispetto a quanto osservato, ad esempio quando abbiamo utilizzato un modello modello di regressione lineare per descrivere una risposta curvilinea. In caso di <em>lack of fit</em>, dovremo concludere che i dati e il modello non si supportano a vicenda e, quindi, che il modello “non consente di rispondere alle domande scientifiche del ricercatore” <span class="citation" data-cites="kass_2016">(<a href="references.html#ref-kass_2016" role="doc-biblioref">Kass et al. 2016</a>)</span>.</p>
+<p>La mancanza d’indipendenza dei residui si verifica quando i residui contengono non solo errori casuali, ma anche una componente sistematica, che crea una sorta di ‘parentela’ (effetto ‘gruppo’) tra le osservazioni. Ad esempio, se il disegno è a blocchi randomizzati e l’effetto del blocco non è stato incluso nel modello, se immaginiamo che un blocco è più ‘fertile’ degli altri, i residui dello stesso blocco condivideranno questo effetto positivo e tenderanno ad essere più simili tra loro che non i residui appartenenti a blocchi diversi. Quindi i residui saranno ‘raggruppati’ (o meglio ‘raggruppabili’) e non realmente indipendenti (vedi anche Capitolo 12).</p>
+<p>In generale, la mancanza d’indipendenza può verificarsi per:</p>
+<ol type="1">
+<li>intrusioni sistematiche,</li>
+<li>presenza di fattori di raggruppamento non considerati nel modello,</li>
+<li>selezione errata del modello, o</li>
+<li>mancanza di randomizzazione adeguata (vedere anche Sezione 4.6 e Capitolo 12).</li>
+</ol>
+<p>La mancanza di indipendenza è considerata una delle assunzioni di base più pericolose da violare, poiché comporta un rischio elevato di errore di I specie <span class="citation" data-cites="frey_2024">(<a href="references.html#ref-frey_2024" role="doc-biblioref">Frey et al. 2024</a>)</span>, ovvero un rischio maggiore di rifiutare erroneamente un’ipotesi nulla vera (falso positivo).</p>
+<p>La normalità viene violata quando i residui del modello non “riflettono” la forma tipica di una distribuzione gaussiana, ovvero quando sono asimmetrici (la media non è uguale alla mediana) o quando le code sono troppo ‘alte’ (distribuzione platicurtica: troppi valori estremi) o troppo ‘basse’ (distribuzione leptocurtica: i valori sono troppo “concentrati” attorno alla media) (Fig. <a href="#fig-figName100prima" class="quarto-xref"><span>8.1</span></a>; vedi anche il Cap. 5). La non-normalità può anche anche essere dovuta alla presenza di <em>outliers</em> dovuti all’effetto di errori casuali di entità eccezionale (ad esempio, procedure difettose, scarso controllo o intrusioni di qualsiasi tipo). In questo caso, le stime delle medie e delle deviazioni standard sono inaffidabili e possono portare ad un’errata interpretazione dei risultati sperimentali <span class="citation" data-cites="cochran_1947">(<a href="references.html#ref-cochran_1947" role="doc-biblioref">Cochran 1947</a>)</span>.</p>
+<p>In assenza di <em>outliers</em>, la non normalità è invece considerata meno dannosa di altre deviazioni <span class="citation" data-cites="knief_2021">(<a href="references.html#ref-knief_2021" role="doc-biblioref">Knief e Forstmeier 2021</a>)</span>, in quanto non provoca forti distorsioni nella stima dei parametri od un incremento del rischio di errore di I specie. Tuttavia, è necessario essere cauti, poiché la non-normalità può essere associate ad altri tipi di deviazioni più pericolosi, come l’eteroschedasticità.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName100prima" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName100prima-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="08-AssunzioniBase_files/figure-html/fig-figName100prima-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName100prima-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.1: Distribuzioni non-normali dei residui: (a) asimmetria a destra (right-skewed): la mediana è inferiore alla media; asimmetria a sinistra (left-skewed): la mediana è superiore alla media; distribuzione platicurtica: le code sono troppo ‘alte’, con troppi valori estremi; distribuzione leptocurtica: le code sono troppo ‘basse’ e i residui sono troppo ‘concentrati’ vicino alla media
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>L’eteroschedasticità può verificarsi, ad esempio, quando i trattamenti sperimentali producono effetti moltiplicativi (ad esempio: 1.5 volte la produzione del primo trattamento in ordine alfabetico) e non additivi (ad esempio: +5 t/ha rispetto al primo trattamento in ordine alfabetico, come ipotizzato nel Cap. 4). Mentre l’effetto additivo si ripercuote sulla media, ma non sulla deviazione standard, l’effetto moltiplicativo si ripercuote su entrambe le statistiche, in modo tale che qesse diventino proporzionali tra loro (quando la media aumenta, aumenta proporzionalmente anche la deviazione standard)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Oltre agli effetti moltiplicativi, altre cause comuni di eteroschedasticità includono attacchi di parassiti e altre intrusioni, nonché un grado inferiore di controllo in alcune parti dell’esperimento di campo. È stato dimostrato che l’eteroschedasticità si traduce in una stima distorta della deviazione standard dei residui e porta a P-value non validi, così che il reale rischio d’errore di I specie può essere anche molto diverso da quello nominale <span class="citation" data-cites="glass_1972">(<a href="references.html#ref-glass_1972" role="doc-biblioref">Glass et al. 1972</a>)</span>.</p>
+</section>
+<section id="scoprire-le-violazioni" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="scoprire-le-violazioni"><span class="header-section-number">8.2</span> Scoprire le violazioni</h2>
+<p>Il rispetto di alcune assunzioni di base, come l’indipendenza dei residui e l’assenza di errori sistematici, è garantito dall’adozione di un disegno sperimentale a ‘regola d’arte’, cioè basato su repliche indipendenti e correttamente randomizzate. Inoltre, è necessario controllare che il modello statistico selezionato per l’analisi dei dati sia adeguato al disegno sperimentale ed includa anche gli eventuali fattori di raggruppamento, che siano stati eventualmente introdotti in fase di disegno sperimentale (i blocchi negli RCBD, le righe/colonne nei quadrati latini, le ‘main-plots’ negli split-plot, ecc.). L’inclusione di questi fattori di raggruppamento è raccomandata anche quando il loro effetto non risulti statisticamente significativo <span class="citation" data-cites="frey_2024">(<a href="references.html#ref-frey_2024" role="doc-biblioref">Frey et al. 2024</a>)</span>; nei capitoli successivi vedremo come gestire questa situazione, anche nel caso dei disegni a misure ripetute, a split-plot o a strip-plot.</p>
+<p>Se l’indipendenza dei residui è garantita già in fase di disegno sperimentale, l’assenza di <em>outliers</em>, la bontà di adattamento, l’omogeneità delle varianze e la normalità dei residui debbono essere oggetto di attente verifiche <em>a posteriori</em>, cioè dopo aver stimato il modello e calcolato i residui stessi, come indicato nel Cap. 4. La verifica deve essere particolarmente accurata in tre situazioni:</p>
+<ol type="1">
+<li>Quando la risposta è costituita da conteggi o proporzioni, che sono molto raramente normali e omoschedastici.</li>
+<li>Quando la risposta è quantitativa e le differenze tra le medie dei gruppi sono molto elevate (ad esempio, superiori a un ordine di grandezza) perché, per questi dati, le varianze sono raramente omogenee.</li>
+<li>Quando abbiamo adattato un modello di regressione, che potrebbe deviare sistematicamente dalle risposte osservate.</li>
+</ol>
+<p>Per queste verifiche, possiamo utilizzare sia metodi grafici che metodi formali, basati sul test d’ipotesi <span class="citation" data-cites="anscombe_1963">(<a href="references.html#ref-anscombe_1963" role="doc-biblioref">Anscombe e Tukey 1963</a>)</span>, come vedremo nei paragrafi seguenti.</p>
+</section>
+<section id="analisi-grafica-dei-residui" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="analisi-grafica-dei-residui"><span class="header-section-number">8.3</span> Analisi grafica dei residui</h2>
+<p>Rappresentare i residui in un grafico appropriato permette di evidenziare chiaramente la gran parte dei problemi e dovrebbe, pertanto, essere considerato come una pratica routinaria. Esistono diversi tipi di grafici, ma ne elenchiamo fondamentalmente tre, che possono essere facilmente prodotti con R o altri software statistici.</p>
+<section id="grafico-dei-valori-osservati-aumentato-con-le-previsioni-del-modello" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="grafico-dei-valori-osservati-aumentato-con-le-previsioni-del-modello"><span class="header-section-number">8.3.1</span> Grafico dei valori osservati, aumentato con le previsioni del modello</h3>
+<p>Per tutti i tipi di modelli di regressione, lo strumento più importante per verificare la bontà di adattamento è un grafico a dispersione che rappresenti la risposta osservata sulle ordinate e il predittore sulle ascisse, integrato con le previsioni del modello. In questo grafico, le previsioni dovrebbero ‘seguire’ fedelmente i dati osservati (Fig. <a href="#fig-figName100" class="quarto-xref"><span>8.2</span></a> A) senza mostrare alcun segno di deviazioni sistematiche, come quelle rappresentate nella Figura <a href="#fig-figName100" class="quarto-xref"><span>8.2</span></a> B, C e D.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName100" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="08-AssunzioniBase_files/figure-html/fig-figName100-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.2: Grafico a dispersione delle risposte osservate (simboli), integrati con le previsioni del modello (linee e curve). In A vediamo un modello con un buon adattamento, mentre B mostra un modello di regressione lineare che devia sensibilmente rispetto ad una risposta curvilinea. In C e D vediamo invece due modelli non lineari, non adeguati rispetto al comportamento della risposta, anch’essa curvilinea.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="grafico-dei-residui-contro-i-valori-attesi" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="grafico-dei-residui-contro-i-valori-attesi"><span class="header-section-number">8.3.2</span> Grafico dei residui contro i valori attesi</h3>
+<p>Il metodo grafico più utilizzato per l’analisi dei residui consiste nel plottare i residui stessi contro i valori attesi. Se non vi sono problemi, i punti nel grafico dovrebbero essere distribuiti in modo assolutamente casuale, come nel grafico in alto a sinistra in Figura <a href="#fig-figName101" class="quarto-xref"><span>8.3</span></a>. Le osservazioni aberranti (<em>outliers</em>) appaiono invece come punti isolati rispetto agli altri (Fig. <a href="#fig-figName101" class="quarto-xref"><span>8.3</span></a>, in alto a destra). L’eterogeneità delle varianze è invece indicata da residui che si allargano o si stringono procedendo verso i margini del grafico (Fig. <a href="#fig-figName101" class="quarto-xref"><span>8.3</span></a>, in basso a sinistra), facendo emergere una sorta di proporzionalità tra media e varianza. Infine, la mancanza di adattamento nei modelli di regressione può essere visibile attraverso la comparso di deviazioni sistematiche, come il raggruppamento di residui postivi e negativi in zone diverse del grafico, che possono indicare che il modello sovrastima le osservazioni quando sono, ad esempio, basse e le sottostima quando sono alte (Fig. <a href="#fig-figName101" class="quarto-xref"><span>8.3</span></a>, in basso a destra).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName101" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName101-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="08-AssunzioniBase_files/figure-html/fig-figName101-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName101-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.3: Grafico dei residui contro i valori attesi: una disposizione dei punti totalmente casuale supportata l’ipotesi che le assunzioni di base siano rispettate (in alto a sinistra). Gli <em>outliers</em> sono evidenziati come punti ‘isolati’ (in alto a destra), mentre una disposizione ad ‘imbuto’ rivela che le varianze sono direttamente o inversamente proporzionali alle medie (in basso a sinistra). La mancanza d’adattamento è invece rivelata da un qualunque evidente pattern nella disposizione dei punti, come, ad esempio, dei residui associati di ugual segno in una certa zona del grafico (in basso a destra).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="qq-plot" class="level3" data-number="8.3.3">
+<h3 data-number="8.3.3" class="anchored" data-anchor-id="qq-plot"><span class="header-section-number">8.3.3</span> QQ-plot</h3>
+<p>Per evidenziare problemi di non-normalità, possiamo utilizzare un QQ-plot (quantile-quantile plot), che è un grafico a dispersione con i residui <em>standardizzati</em> nelle ordinate e i rispettivi percentili di una distribuzione normale standardizzata nelle ascisse. Per semplicità, evitiamo ulteriori dettagli, che possono essere comunque reperiti nel blog che accompagna questo libro<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Queste due entità (i residui standardizzati e i corrispondenti percentili di una distribuzione normale standardizzata) dovrebbero essere largamente coincidenti, e quindi i punti nel grafico dovrebbero giacere lungo la bisettrice del primo e del terzo quadrante (Fig. <a href="#fig-figName105" class="quarto-xref"><span>8.4</span></a>, in alto a sinistra). Ogni deviazione rispetto a questo pattern, indica problemi di non-normalità dei residui, come evidenziato in tutti i pannelli della Figura <a href="#fig-figName105" class="quarto-xref"><span>8.4</span></a>, a parte quello in alto a sinistra.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName105" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName105-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="08-AssunzioniBase_files/figure-html/fig-figName105-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName105-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.4: QQ-plot per residui gaussiani (in alto a sinistra) e per residui che mostrano diversi tipi di violazioni dalla normalità (vedi anche Fig. 8.1).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="metodi-formali-e-test-dipotesi" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="metodi-formali-e-test-dipotesi"><span class="header-section-number">8.4</span> Metodi formali e Test d’ipotesi</h2>
+<p>La valutazioni illustrate in precedenza sono basate sulla semplice osservazione di uno o più grafici, ma sono considerate sufficientemente attendibili per la maggior parte delle situazioni. Tuttavia, esistono anche test statistici formali che consentono di saggiare l’ipotesi nulla di ‘assenza di deviazioni’, rifiutandola qualora il P-level fosse inferiore a 0.05.</p>
+<p>Rispetto alle procedure grafiche, il test d’ipotesi formale può dare una miglior sensazione di obiettività, anche se non è tutto oro quel che luccica. Infatti, questi test possono creare più problemi di quanti ne risolvano dato che, ad esempio, richiedono campioni di grandi dimensioni e fanno affidamento su assunzioni di base molto stringenti, tanto che, alla fine, l’affidabilità dei risultati è spesso discutibile <span class="citation" data-cites="kozak_2018">(<a href="references.html#ref-kozak_2018" role="doc-biblioref">Kozak e Piepho 2018</a>)</span>. Per questi motivi, il loro utilizzo è sconsigliato e dovrebbe essere riservato a supportare situazioni complesse in cui i metodi grafici non forniscono risposte sufficientemente chiare.</p>
+<p>Le procedure presentate in questo capitolo sono state selezionate perché ampiamente utilizzate e prontamente disponibili in R.</p>
+<section id="test-di-levene-per-lomogeneità-delle-varianze" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="test-di-levene-per-lomogeneità-delle-varianze"><span class="header-section-number">8.4.1</span> Test di Levene per l’omogeneità delle varianze</h3>
+<p>Secondo gli studi di <span class="citation" data-cites="conover_1981">Conover et al. (<a href="references.html#ref-conover_1981" role="doc-biblioref">1981</a>)</span>, il test di Levene è una delle procedure più affidabili per saggiare l’ipotesi di omoschedasticità nei modelli con predittori nominali; consiste nell’eseguire l’analisi della varianza di una ‘pseudo-risposta’, ottenuta sostituendo ciascun dato osservato con il valore assoluto della differenza rispetto al ‘centro’ del gruppo a cui appartiene (valore assoluto di dati ‘group-centered’).</p>
+<p>Inizialmente, Levene propose di utilizzare come centro di gruppo la media; l’idea di fondo è semplice: i dati ‘centrati’ per gruppo hanno, per definizione’ medie dei gruppi tutte pari a zero; se però si rimuovono i segni negativi, prendendo il valore assoluto dei dati ’centrati, le medie dei gruppi divegono diverse tra loro e diverse da zero e sono tanto più alte quanto più la varianza di gruppo è alta. Questo concetto sarà più semplice da comprendere utilizzando un esempio pratico. Consideriamo due gruppi sperimentali <code>A &lt;- c(19, 20, 21)</code> e <code>B &lt;- c(26, 30, 34)</code>, che hanno, rispettivamente, medie pari a 20 e 30, e varianze pari a 1 e 16. Sottraendo dalle osservazioni di ogni gruppo la media del gruppo stesso, otteniamo le pseudo-osservazioni <code>Ac &lt;- c(-1, 0, 1)</code> e <code>Bc &lt;- c(-4, 0, 4)</code>, dova entrambe le medie sono pari a zero, mentre le varianze restano inalterate. Se escludiamo i segno negativi, le medie dei due gruppi divengono pari, rispettivamente, a 2/3 e 8/3, mostrando come il gruppo con più alta varianza abbia prodotto pseudo-osservazioni con media più alta. Se la differenza tra le due medie delle pseudo-osservazioni è significativa, l’ipotesi nulla di omogeneità delle varianze può essere rigettata.</p>
+<p>Lavori successivi <span class="citation" data-cites="brown_1974">(<a href="references.html#ref-brown_1974" role="doc-biblioref">Brown e Forsythe 1974</a>)</span> hanno mostrato che è preferibile sostituire la media del gruppo con la sua mediana, per ottenere un test più robusto contro le possibili deviazioni dalla normalità. Questo test è noto come test di Brown-Forsythe, oppure come test di Levene robusto o, ancora più semplicemente, come test di Levene (anche se il test di Levene vero e proprio sarebbe l’altro, quello non-robusto). Entrambi i test (Levene e Brown-Forsythe) sono disponibili nella funzione <code>leveneTest()</code> del package <code>car</code>, ma il secondo è largamente preferito e considerato come la procedura di ‘default’.</p>
+<p>Un esempio di questo test è fornito nel Riquadro 8.1, che confronta due genotipi di mais in un disegno completamente randomizzato con 11 repliche. Il secondo genotipo (B) presenta una varianza maggiore e il test di Levene risulta significativo (il valore P è inferiore a 0.05 e l’ipotesi nulla di omoschedasticità viene rifiutata). I due test (Levene e Brown-Forsythe) producono risultati simili, il che suggerisce che i dati originali non si discostino significativamente dalla normalità.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 8.1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Test d'ipotesi sull'omogeneità delle varianze</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Test di Levene</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Immissione dati</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Genotype =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"B"</span>, <span class="st">"B"</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Yield =</span> <span class="fu">c</span>(<span class="fl">10.0</span>, <span class="fl">10.7</span>, <span class="fl">11.9</span>, <span class="fl">10.3</span>, <span class="fl">10.0</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                                <span class="fl">7.8</span>, <span class="fl">10.4</span>, <span class="fl">9.7</span>, <span class="fl">10.0</span>, <span class="fl">9.2</span>, <span class="fl">9.7</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                                <span class="fl">15.0</span>, <span class="fl">11.2</span>, <span class="fl">13.7</span>, <span class="fl">11.9</span>, <span class="fl">9.4</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                                <span class="fl">10.6</span>, <span class="fl">12.6</span>, <span class="fl">10.1</span>, <span class="fl">9.9</span>, <span class="fl">15.3</span>, <span class="fl">12.2</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dataset)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">##   Genotype Yield</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 1        A  10.0</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 2        A  10.7</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 3        A  11.9</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 4        A  10.3</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 5        A  10.0</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 6        A   7.8</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>dataset<span class="sc">$</span>Genotype <span class="ot">&lt;-</span> <span class="fu">factor</span>(dataset<span class="sc">$</span>Genotype)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Adattamento del modello</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Genotype, <span class="at">data =</span> dataset)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Centratura dei dati, per sottrazione delle media di ogni genotipo (Test di Levene)</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>GroupMeans <span class="ot">&lt;-</span> <span class="fu">tapply</span>(dataset<span class="sc">$</span>Yield, dataset<span class="sc">$</span>Genotype, mean)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>YieldC <span class="ot">&lt;-</span> dataset<span class="sc">$</span>Yield <span class="sc">-</span> <span class="fu">rep</span>(GroupMeans, <span class="at">each =</span> <span class="dv">11</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Ri-adattamento dello stesso modello sostituendo la produzione con la</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># pseudo-variabile in valore assoluto. Analisi della varianza</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>modlevene <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">abs</span>(YieldC) <span class="sc">~</span> dataset<span class="sc">$</span>Genotype)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(modlevene)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: abs(YieldC)</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="do">##                  Df  Sum Sq Mean Sq F value  Pr(&gt;F)  </span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="do">## dataset$Genotype  1  5.2129  5.2129  5.8944 0.02475 *</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals        20 17.6878  0.8844                  </span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Centratura dei dati, per sottrazione delle mediana di ogni genotipo </span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co"># (Test di Brown-Forsythe)</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>GroupMedians <span class="ot">&lt;-</span> <span class="fu">tapply</span>(dataset<span class="sc">$</span>Yield, dataset<span class="sc">$</span>Genotype, median)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>YieldC <span class="ot">&lt;-</span> dataset<span class="sc">$</span>Yield <span class="sc">-</span> <span class="fu">rep</span>(GroupMedians, <span class="at">each =</span> <span class="dv">11</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Ri-adattamento dello stesso modello sostituendo la produzione con la</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co"># pseudo-variabile in valore assoluto. Analisi della varianza</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>modlevene <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">abs</span>(YieldC) <span class="sc">~</span> dataset<span class="sc">$</span>Genotype)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(modlevene)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: abs(YieldC)</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="do">##                  Df  Sum Sq Mean Sq F value  Pr(&gt;F)  </span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="do">## dataset$Genotype  1  5.2041  5.2041  5.7245 0.02666 *</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals        20 18.1818  0.9091                  </span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Test (non-robusto) di Levene con R (centratura con le medie)</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(mod, <span class="at">center =</span> <span class="st">"mean"</span>)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="do">## Levene's Test for Homogeneity of Variance (center = "mean")</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="do">##       Df F value  Pr(&gt;F)  </span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="do">## group  1  5.8944 0.02475 *</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="do">##       20                  </span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Test (robusto) di Brown-Forsythe con R (centratura con le medie)</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="co"># In R si utilizza comunque il nome Test di Levene</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(mod)</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="do">## Levene's Test for Homogeneity of Variance (center = median)</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="do">##       Df F value  Pr(&gt;F)  </span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="do">## group  1  5.7245 0.02666 *</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="do">##       20                  </span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="test-di-shapiro-wilk-per-la-normalità" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="test-di-shapiro-wilk-per-la-normalità"><span class="header-section-number">8.4.2</span> Test di Shapiro-Wilk per la normalità</h3>
+<p>Il test di Shapiro-Wilk per la normalità fornisce la statistica W e un valore P per l’ipotesi nulla che i residui siano distribuiti normalmente. La procedura di test non è così semplice come quella del test di Levene e i calcoli manuali non sono altrettanto facili da eseguire. Tuttavia, possiamo utilizzare la funzione <code>shapiro.test()</code> in R, passando i residui del modello come argomento.</p>
+</section>
+<section id="altri-test" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="altri-test"><span class="header-section-number">8.4.3</span> Altri test</h3>
+<p>Vale la pena menzionare alcune tecniche numeriche per l’individuazione di valori anomali, come i metodi proposti da <span class="citation" data-cites="anscombe_1963">Anscombe e Tukey (<a href="references.html#ref-anscombe_1963" role="doc-biblioref">1963</a>)</span> e <span class="citation" data-cites="grubbs_1969">Grubbs (<a href="references.html#ref-grubbs_1969" role="doc-biblioref">1969</a>)</span>.</p>
+</section>
+</section>
+<section id="esempio-8.1-analisi-dei-residui-per-il-dataset-mixture" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="esempio-8.1-analisi-dei-residui-per-il-dataset-mixture"><span class="header-section-number">8.5</span> Esempio 8.1: Analisi dei residui per il dataset “mixture”</h2>
+<p>Abbiamo eseguito un esperimento in vaso, nel quale abbiamo utilizzato quattro trattamenti erbicidi:</p>
+<ol type="1">
+<li>Metribuzin</li>
+<li>Rimsulfuron</li>
+<li>Metribuzin + rimsulfuron</li>
+<li>Testimone non trattato</li>
+</ol>
+<p>Lo scopo dell’esperimento era quello di verificare se la miscela metribuzin e rimsulfuron è più efficace dei due componenti utilizzati separatamente.</p>
+<p>A questo fine, sono stati preparati sedici vasi uniformi e sono stati seminati con <em>Solanum nigrum</em>, un importante infestante di alcune colture primaverili estive, come mais e pomodoro. Quando le piante hanno raggiunto lo stadio di 4 foglie vere, sono state trattate con una delle tesi sopra elencate, secondo un disegno sperimentale completamente randomizzato con quattro repliche. Tre settimane dopo i trattamenti, le piante in ciascun vaso sono state raccolte e pesate; minore era il peso, maggiore era l’efficacia degli erbicidi <span class="citation" data-cites="onofri_1995">(<a href="references.html#ref-onofri_1995" role="doc-biblioref">Onofri et al. 1995</a>)</span>.</p>
+<p>Per questo esperimento, è possibile adattare un modello ANOVA ad una via (vedere nel Cap. 4), come mostrato nel riquadro 8.2.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 8.2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 8.1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check dei residui per il dataset `mixture'</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento e trasformazione dei dati</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>mixture <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"mixture"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>mixture<span class="sc">$</span>Treat <span class="ot">&lt;-</span> <span class="fu">factor</span>(mixture<span class="sc">$</span>Treat)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mixture)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="do">##             Treat Weight</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 Metribuzin__348  15.20</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 Metribuzin__348   4.38</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 Metribuzin__348  10.32</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 Metribuzin__348   6.80</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 5     Mixture_378   6.14</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 6     Mixture_378   1.95</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Adattamento del modello</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight <span class="sc">~</span> Treat, <span class="at">data =</span> mixture)</span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Dopo aver effettuato la stima dei parametri, i grafici dei residui possono essere ottenuti con la funzione <code>plot()</code>, passando l’oggetto risultante dal fitting come primo argomento. L’altro argomento ‘which’ specifica il tipo di grafico: ‘which = 1’ produce il grafico dei residui verso gli attesi, mentre ‘which = 2’ produce il QQ-plot. Il codice è mostrato nel Riquadro 8.3 ed il risultato è mostrato in Figura <a href="#fig-figName110a" class="quarto-xref"><span>8.5</span></a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 8.3</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 8.1 [segue]  </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphical analyses of residuals in R </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mod1, <span class="at">which =</span> <span class="dv">1</span>) </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mod1, <span class="at">which =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName110a" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName110a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="08-AssunzioniBase_files/figure-html/fig-figName110a-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName110a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.5: Analisi grafica dei residui per il dataset ‘mixture’
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Nessuno dei grafici suggerisce l’esistenza di particolari problematiche e, considerando anche che che non si tratta di un conteggio o una proporzione e che le differenze tra le medie sono piuttosto piccole (meno di un ordine di grandezza), possiamo concludere che non vi sono motivi per dubitare del rispetto delle assunzioni di base.</p>
+<p>Sebbene ciò non sia necessario, possiamo confermare la nostra conclusione eseguendo i test di Levene e Shapiro-Wilk. Nel codice sottostante possiamo notare come la funzione <code>leveneTest()</code> richieda come argomento l’oggetto risultante dal fitting lineare, mentre la funzione <code>shapiro.test()</code> richiede i residui del modello.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 8.4</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 8.1 [segue]</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Test di Levene (robusto) e Shapiro-Wilks</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(mod1)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Levene's Test for Homogeneity of Variance (center = median)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">##       Df F value Pr(&gt;F)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## group  3  1.0698 0.3984</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">##       12</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">residuals</span>(mod1))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  Shapiro-Wilk normality test</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="do">## data:  residuals(mod1)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="do">## W = 0.97615, p-value = 0.9257</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="esempio-8.2-analisi-dei-residui-per-il-dataset-insects" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="esempio-8.2-analisi-dei-residui-per-il-dataset-insects"><span class="header-section-number">8.6</span> Esempio 8.2: Analisi dei residui per il dataset ‘insects’</h2>
+<p>Proviamo ad analizzare il dataset ‘insects’, che si riferisce ad un esperimento nel quale quindici piante sono state trattate con tre insetticidi diversi in modo completamente randomizzato, scegliendo cinque piante a caso per insetticida. Tre settimane dopo il trattamento è stato rilevato il numero di insetti presenti su ciascuna pianta.</p>
+<p>Per testare l’effetto degli insetticidi, è stato adattato ai dati osservati un modello ANOVA ad una via, utilizzando la variabile ‘Insecticide’ come predittore nominale. In questo caso, il controllo delle deviazioni dagli assunti di base richiede grande attenzione, poiché la variabile di risposta è un conteggio e le statistiche descrittive, che si lasciano per esercizio, indicano che le deviazioni standard sono in qualche modo proporzionali alle medie. Le analisi grafiche dei residui in Figura <a href="#fig-figName110" class="quarto-xref"><span>8.6</span></a> mostrano chiari segni di eteroschedasticità (grafico a sinistra) e residui asimmetrici (grafico a destra). Queste deviazioni sono confermate dal test di Levene (P = 0.043) e dal test di Shapiro-Wilks (P = 0.048).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 8.5</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 8.2</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check dei residui per il dataset `insects'</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento e trasformazione dei dati</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>insects <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"insects"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>insects<span class="sc">$</span>Insecticide <span class="ot">&lt;-</span> <span class="fu">factor</span>(insects<span class="sc">$</span>Insecticide)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(insects)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="do">##   Insecticide Rep Count</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 1          T1   1   448</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 2          T1   2   906</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 3          T1   3   484</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 4          T1   4   477</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 5          T1   5   634</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 6          T2   1   211</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Adattamento del modello</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Count <span class="sc">~</span> Insecticide, <span class="at">data =</span> insects)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi grafica dei residui (non eseguita qui; Vedi Figura 8.6)</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod2, which = 1)</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod2, which = 2)</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Test di Levene (robusto)</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(mod2)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="do">## Levene's Test for Homogeneity of Variance (center = median)</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="do">##       Df F value Pr(&gt;F)</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="do">## group  2  1.0263 0.3878</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="do">##       12</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Test di Shapiro-Wilks</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">residuals</span>(mod2))</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="do">##  Shapiro-Wilk normality test</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="do">## data:  residuals(mod2)</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="do">## W = 0.87689, p-value = 0.04265</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName110" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName110-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="08-AssunzioniBase_files/figure-html/fig-figName110-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName110-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.6: Analisi grafica dei residui per il dataset ‘insects’
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="misure-correttive" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="misure-correttive"><span class="header-section-number">8.7</span> Misure correttive</h2>
+<p>Se le procedure diagnostiche hanno evidenziato deviazioni rispetto agli assunti di base, è necessario valutare se e come intraprendere azioni correttive. Ovviamente, la ‘terapia’ cambia al cambiare della ‘patologia’.</p>
+<p>In presenza di evidenti <em>outliers</em>, è necessario decidere se ignorarli, attribuire loro un peso inferiore durante la fase di analisi o addirittura rimuoverli dal dataset. Quest’ultima soluzione non è raccomandata e dovrebbe essere considerata solo dopo un’attenta valutazione, al fine di evitare la perdita di informazioni importanti e/o la riduzione indebita della variabilità dei dati, con un ingiustificato aumentando della potenza dei test statistici. In particolare, dobbiamo sempre accertarci qualsiasi <em>outlier</em> (i) non faccia parte della popolazione in esame (cioè sia veramente un <em>outlier</em>), (ii) sia causato unicamente da errori o interferenze casuali e (iii) non abbia alcuna relazione con gli effetti dei trattamenti sperimentali in esame. Inoltre, il processo di rimozione dovrebbe riguardare solo un numero molto limitato di osservazioni; in caso contrario, potrebbe essere più opportuno scartare l’intero esperimento e condurne uno nuovo.</p>
+<p>Abbiamo visto che il modello impiegato potrebbe non essere adatto a descrivere il dataset (mancanza di adattamento). Gli effetti potrebbero non essere additivi, ma moltiplicativi, oppure potrebbero essere non-lineari. Potrebbero essere presenti asintoti che il nostro modello non è in grado di descrivere, oppure la crescita/decrescita osservata potrebbero essere più lente/veloci di quanto la nostra funzione sia in grado di descrivere. Per tutti questi casi, ovviamente, la strategia più consigliabile è quella di utilizzare un diverso modello, capace di descrivere meglio le osservazioni sperimentali.</p>
+<p>Per la non-normalità e la eteroschedasticità, la misura correttiva tradizionale consiste nellò’impiego delle cosiddette trasformazioni stabilizzanti, cone le quali si trasformano i dati in modo da portarli su una metrica che soddisfi le assunzioni di base dei modelli lineari; successivamente si ripete l’analisi sui dati trasformati.</p>
+<p>Le trasformazioni possibili sono molte: ad esempio, i libri di testo più tradizionali <span class="citation" data-cites="snedecor_1991">(ad esempio <a href="references.html#ref-snedecor_1991" role="doc-biblioref">Snedecor e Cochran 1991</a>)</span> consigliano la trasformazione in radice quadrata per i conteggi, la trasformazione angolare <span class="citation" data-cites="ahrens_1990">(arcoseno della radice quadrata, vedi <a href="references.html#ref-ahrens_1990" role="doc-biblioref">Ahrens et al. 1990</a>)</span> per le percentuali e la trasformazione in logaritmo per i dati log-normali, dove le variance sono proporzionali alle medie.</p>
+<p>Per evitare di scegliere la trasformazione ‘al buio’, si può impiegare la procedura suggerita da <span class="citation" data-cites="box_1964">Box e Cox (<a href="references.html#ref-box_1964" role="doc-biblioref">1964</a>)</span>, che permette di confrontare direttamente trasformazioni alternative, selezionando la più adatta al dataset in studio. Gli autori citati in precedenza hanno proposto la seguente famiglia di trasformazioni:</p>
+<p><span class="math display">\[ W = \left\{ \begin{array}{ll}
+\frac{Y^\lambda - 1}{\lambda} &amp; \quad \textrm{if} \,\,\, \lambda \neq 0 \\
+\log(Y) &amp; \quad \textrm{if} \,\,\, \lambda = 0
+\end{array} \right.\]</span></p>
+<p>dove <span class="math inline">\(W\)</span> è la variabile trasformata, <span class="math inline">\(Y\)</span> è la variabile originale e <span class="math inline">\(\lambda\)</span> è il parametro che definisce la trasformazione <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Si può vedere che se <span class="math inline">\(\lambda\)</span> è uguale ad 1, la trasformazione consiste solo nella sottrazione di un valore costante, che non altera la metrica dei dati originali (cioè, è come se i dati non fossero trasformati affatto). Invece, se <span class="math inline">\(\lamda\)</span> è compreso tra 0 e 1, i valori alti vengono ‘compressi’ e ravvicinati, mentre quelli bassi sono ‘espansi’ ed allontanati, il che consente di correggere un’eventuale asimmetria a destra, rompendo inoltre la proporzionalità tra varianze e medie. D’altra parte, se <span class="math inline">\(\lambda\)</span> è maggiore di 1, avrà l’effetto opposto e correggerà i residui asimmetrici a sinistra con varianze inversamente proporzionali alle medie. Box e Cox hanno anche definito un metodo di massima verosimiglianza per selezionare il valore ottimale di <span class="math inline">\(\lambda\)</span> per il dataset in studio, che è implementato nella funzione <code>boxcox()</code> del pacchetto MASS.</p>
+<section id="esempio-8.1-segue" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="esempio-8.1-segue"><span class="header-section-number">8.7.1</span> Esempio 8.1 (segue)</h3>
+<p>Sebbene le analisi precedenti abbiano mostrato che il dataset “mixture” non violi significativamente le assunzioni di base per i modelli lineari, possiamo comunque valutare la necessità di una trasformazione, utilizzando la funzione <code>boxcox()</code> contenuta nel package <code>MASS</code> e passando l’oggetto risultante dal fitting come argomento (Riquadro 8.6). Questa funzione restituisce un grafico delle verosimiglianze associate a diversi valori di <span class="math inline">\(\lambda\)</span> (Fig. <a href="#fig-figName111a" class="quarto-xref"><span>8.7</span></a>); il valore ottimale sarebbe <span class="math inline">\(\lambda = 0.83\)</span>, ma vediamo che anche <span class="math inline">\(\lambda = 1\)</span> rientra nell’intervallo di confidenza di <span class="math inline">\(\lambda\)</span> ottimale e, di conseguenza, si conferma che, per questo dataset, non è necessaria alcuna trasformazione stabilizzante.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName111a" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName111a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="08-AssunzioniBase_files/figure-html/fig-figName111a-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName111a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.7: Scelta del valore ottimale di ‘lambda’ per la trasformazione di Box e Cox: caso in cui la trasformazione non è necessaria. La linea verticale al centro identifica il valore di ‘lambda’ ottimale, mentre le due linee laterali identificano i limiti dell’intervallo di confidenza
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="esempio-8.2-segue" class="level3" data-number="8.7.2">
+<h3 data-number="8.7.2" class="anchored" data-anchor-id="esempio-8.2-segue"><span class="header-section-number">8.7.2</span> Esempio 8.2 (segue)</h3>
+<p>Il metodo Box-Cox per il dataset “insects” restituisce il grafico in Figura <a href="#fig-figName111b" class="quarto-xref"><span>8.8</span></a>; il valore di massima verosimiglianza è <span class="math inline">\(\lambda = 0.14\)</span>, e l’intervallo di confidenza del 95% va da poco meno di zero a circa 0.5. Pertanto, per semplicità, selezioniamo <span class="math inline">\(\lambda = 0\)</span>, che corrisponde a una trasformazione logaritmica, motivata anche dal fatto che si tratta di una trasformazione molto nota e, quindi, facilmente comprensibile.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName111b" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName111b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="08-AssunzioniBase_files/figure-html/fig-figName111b-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName111b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.8: Scelta del valore ottimale di ‘lambda’ per la trasformazione di Box e Cox: caso in cui è consigliabile una trasformazione logaritmica
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Il processo di analisi dei dati continua quindi trasformando i dati osservati nel loro logaritmo,e ripetendo il processo di stima del modello e sottoponendo a nuova verifica i residui risultanti. E’ importante notare nel codice sottostante come la trasformazione dei dati venga eseguita all’interno del comando di adattamento del modello, il che è utile per motivi che saranno discussi nel prossimo capitolo.</p>
+<p>L’analisi grafica dei residui (che si lascia per esercizio) relativi ai dati trasformati non mostra più alcun sintomo di eteroschedasticità e, di conseguenza, il P-level calcolato sulla metrica logaritmica è totalmente affidabile. Procediamo quindi con l’analisi e richiediamo la tabella ANOVA, da cui si deduce che le differenze tra insetticidi sono significative (<span class="math inline">\(P = 1.49 \times 10^{-6}\)</span>. Se confrontiamo le tabelle ANOVA ottenute con e senza trasformazione, osserviamo che vi sono lievi differenze nel P-value e che, in questo caso specifico, l’analisi sui dati trasformati è leggermente più potente. Comunque, l’analisi sui dati non trasformati è sbagliata ed invalida, perché non rispetta le assunzioni di base dei modelli lineari.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 8.7</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Impiego di una transformazione stabilizzante</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>mod2t <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(Count) <span class="sc">~</span> Insecticide, <span class="at">data =</span> insects)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod2t)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: log(Count)</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">##             Df  Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Insecticide  2 15.8200  7.9100  50.122 1.493e-06 ***</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals   12  1.8938  0.1578                      </span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronto con l'ANOVA sui dati originali</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod2)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Count</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="do">##             Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Insecticide  2 714654  357327  18.161 0.0002345 ***</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals   12 236105   19675                      </span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Concludiamo con un’osservazione pratica: nel caso in cui risultasse che il valore di <span class="math inline">\(\lambda\)</span> ottimale è diverso sia da 1 che da 0, la trasformazione <span class="math inline">\(W = (Y^\lambda - 1)/\lambda\)</span> potrebbe essere semplificata in <span class="math inline">\(W = Y^\lambda\)</span>, in modo da ottenere una metrica più facile da interpretare. Infatti, con <span class="math inline">\(\lambda = 0.5\)</span> avremmo una semplice trasformazione nella radice quadrata, mentre con <span class="math inline">\(\lambda = -1\)</span> avremmo l’altrettanto semplice trasformazione nel reciproco. Il Riquadro 8.8 mostra un esempio dell’equivalenza della trasformazione di Box e Cox nella forma originale e in quella semplificata: possiamo infatti notare che il rapporto F e il P-level sono esattamente uguali.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 8.8</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalenza della trasformazione di Box-Cox nella sua forma originale e in quella semplificata</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mod<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">sqrt</span>(Count) <span class="sc">~</span> Insecticide, <span class="at">data =</span> insects)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>mod<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>((Count<span class="sc">^</span><span class="fl">0.5</span> <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">/</span><span class="fl">0.5</span> <span class="sc">~</span> Insecticide, <span class="at">data =</span> insects)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod<span class="fl">.1</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: sqrt(Count)</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="do">##             Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Insecticide  2 724.22  362.11  35.022 9.791e-06 ***</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals   12 124.08   10.34                      </span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod<span class="fl">.2</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: (Count^0.5 - 1)/0.5</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="do">##             Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Insecticide  2 2896.9 1448.44  35.022 9.791e-06 ***</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals   12  496.3   41.36                      </span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Un’altra osservazione di cui tener conto è che la famiglia di trasformazioni di Box-Cox non può essere applicata quando i dati sono negativi o uguali a zero. In questi casi, è possibile selezionare un valore costante, <span class="math inline">\(k\)</span>, da aggiungere alle osservazioni originali in modo che diventino strettamente positive. Ad esempio, se l’osservazione negativa più bassa è <span class="math inline">\(-0.9\)</span>, possiamo usare la trasformazione <span class="math inline">\(W = log(y + 1)\)</span>, che non produce errore in quanto non implica il calcolo del logaritmo di un numero negativo.</p>
+</section>
+</section>
+<section id="altri-approcci-avanzati" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="altri-approcci-avanzati"><span class="header-section-number">8.8</span> Altri approcci ‘avanzati’</h2>
+<p>L’uso di trasformazioni stabilizzanti è stato molto di moda fino agli anni ’80 del ’900, quando la potenza di calcolo era estremamente bassa e rendeva possibile solo l’impiego di procedure semplici, come quelle indicate in questo libro. Oggigiorno, la diffusione di computer potenti a costo relativamente basso ha permesso la diffusione di modelli in grado di gestire anche errori non-normali e dati eteroscedastici. Questi modelli appartengono alle classi dei cosiddetti Modelli Lineari Generalizzati (GLM) o dei modelli con fitting basato sui Minimi Quadrati Generalizzati (GLS); sono molto flessibili, ma sono anche abbastanza complessi e non possono essere trattati su un testo introduttivo <span class="citation" data-cites="venables_2002">(potete studiare, ad esempio, <a href="references.html#ref-venables_2002" role="doc-biblioref">Venables e Ripley 2002</a>)</span>.</p>
+<p>Inoltre, per completezza di informazione, menzioneremo il fatto che esistono anche metodi di analisi dei dati che non fanno assunzioni parametriche o che ne fanno molto poche e sono, pertanto, noti come metodi non-parametrici. I metodi non-parametrici sono, in generale, meno efficienti dei metodi parametrici applicati sui dati trasformati e quindi il loro impiego è utile per analizzare, ad esempio, i dati ‘ordinali’, che non si prestano proprio all’adozione dei metodi parametrici. Chi fosse interessato, potrà trovare informazioni su <span class="citation" data-cites="siegel_1988">Siegel e Castellan (<a href="references.html#ref-siegel_1988" role="doc-biblioref">1988</a>)</span>.</p>
+</section>
+<section id="esercizi" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="esercizi"><span class="header-section-number">8.9</span> Esercizi</h2>
+<ol type="1">
+<li>Considerare gli esercizi dal 5 al 7 nel capitolo 4. Per tutti questi esercizi, verificare che le ipotesi di base per i modelli lineari siano soddisfatte, utilizzando metodi grafici e test di ipotesi formali.</li>
+</ol>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ahrens_1990" class="csl-entry" role="listitem">
+<span class="smallcaps">Ahrens, WH, DJ Cox, G Budwar</span> (1990) Use of the arcsin and square root trasformation for subjectively determined percentage data. <em>Weed science</em> <strong>38</strong>, 452–458
+</div>
+<div id="ref-anscombe_1963" class="csl-entry" role="listitem">
+<span class="smallcaps">Anscombe, FJ, JW Tukey</span> (1963) The examination and analysis of residuals. <em>Technometrics</em> <strong>5</strong>, 141–160
+</div>
+<div id="ref-box_1964" class="csl-entry" role="listitem">
+<span class="smallcaps">Box, GEP, DR Cox</span> (1964) An Analysis of Transformations. <em>Journal of the Royal Statistical Society</em> <strong>B-26</strong>, 211–252
+</div>
+<div id="ref-brown_1974" class="csl-entry" role="listitem">
+<span class="smallcaps">Brown, MB, AB Forsythe</span> (1974) Robust <span>Tests</span> for the <span>Equality</span> of <span>Variances</span>. <em>Journal of the American Statistical Association</em> <strong>69</strong>, 364–367
+</div>
+<div id="ref-cochran_1947" class="csl-entry" role="listitem">
+<span class="smallcaps">Cochran, WG</span> (1947) <a href="https://doi.org/10.2307/3001535">Some <span>Consequences</span> <span>When</span> the <span>Assumptions</span> for the <span>Analysis</span> of <span>Variance</span> are not <span>Satisfied</span></a>. <em>Biometrics</em> <strong>3</strong>, 22
+</div>
+<div id="ref-conover_1981" class="csl-entry" role="listitem">
+<span class="smallcaps">Conover, WJ, ME Johnson, MM Johnson</span> (1981) A <span>Comparative</span> <span>Study</span> of <span>Tests</span> for <span>Homogeneity</span> of <span>Variances</span>, with <span>Applications</span> to the <span>Outer</span> <span>Continental</span> <span>Shelf</span> <span>Bidding</span> <span>Data</span>. <em>Technometrics</em> <strong>23</strong>, 351–361
+</div>
+<div id="ref-frey_2024" class="csl-entry" role="listitem">
+<span class="smallcaps">Frey, J, J Hartung, J Ogutu, H Piepho</span> (2024) <a href="https://doi.org/10.1002/agj2.21570">Analyze as randomized—<span>Why</span> dropping block effects in designed experiments is a bad idea</a>. <em>Agronomy Journal</em> <strong>116</strong>, 1371–1381
+</div>
+<div id="ref-glass_1972" class="csl-entry" role="listitem">
+<span class="smallcaps">Glass, GV, PD Peckham, JR Sanders</span> (1972) Consequences of <span>Failure</span> to <span>Meet</span> <span>Assumptions</span> <span>Underlying</span> the <span>Fixed</span> <span>Effects</span> <span>Analyses</span> of <span>Variance</span> and <span>Covariance</span>. <em>Review of Educational Research</em> <strong>42</strong>, 237–288
+</div>
+<div id="ref-grubbs_1969" class="csl-entry" role="listitem">
+<span class="smallcaps">Grubbs, FE</span> (1969) Procedures for <span>Detecting</span> <span>Outlying</span> <span>Observations</span> in <span>Samples</span>. <em>Technometrics</em> <strong>11</strong>, 1–21
+</div>
+<div id="ref-kass_2016" class="csl-entry" role="listitem">
+<span class="smallcaps">Kass, RE, BS Caffo, M Davidian, X-L Meng, B Yu, N Reid</span> (2016) <a href="https://doi.org/10.1371/journal.pcbi.1004961">Ten <span>Simple</span> <span>Rules</span> for <span>Effective</span> <span>Statistical</span> <span>Practice</span></a>. <em>PLOS Computational Biology</em> <strong>12</strong>, e1004961
+</div>
+<div id="ref-knief_2021" class="csl-entry" role="listitem">
+<span class="smallcaps">Knief, U, W Forstmeier</span> (2021) <a href="https://doi.org/10.3758/s13428-021-01587-5">Violating the normality assumption may be the lesser of two evils</a>. <em>Behavior Research Methods</em> <strong>53</strong>, 2576–2590
+</div>
+<div id="ref-kozak_2018" class="csl-entry" role="listitem">
+<span class="smallcaps">Kozak, M, H‐P Piepho</span> (2018) <a href="https://doi.org/10.1111/jac.12220">What’s normal anyway? <span>Residual</span> plots are more telling than significance tests when checking <span>&lt;</span>span style="font-variant:small-caps;"<span>&gt;</span><span>ANOVA</span><span>&lt;</span>/span<span>&gt;</span> assumptions</a>. <em>Journal of Agronomy and Crop Science</em> <strong>204</strong>, 86–98
+</div>
+<div id="ref-onofri_1995" class="csl-entry" role="listitem">
+<span class="smallcaps">Onofri, A, L Covarelli, F Tei</span> (1995) <em>Efficacy of rimsulfuron and metribuzin against <span>Solanum</span> nigrum <span>L</span>. at different growth stages in tomato.</em> ANPP, reprints
+</div>
+<div id="ref-siegel_1988" class="csl-entry" role="listitem">
+<span class="smallcaps">Siegel, S, NJ Castellan</span> (1988) <em>Nonparametric <span>Statistics</span> for the <span>Behavioral</span> <span>Sciences</span></em>. McGraw-Hill Inc., Books
+</div>
+<div id="ref-snedecor_1991" class="csl-entry" role="listitem">
+<span class="smallcaps">Snedecor, GW, WG Cochran</span> (1991) <em>Statistical methods</em>. IOWA State University Press, 8<span class="math inline">\(\,^{\circ}\)</span> Edition, USA
+</div>
+<div id="ref-venables_2002" class="csl-entry" role="listitem">
+<span class="smallcaps">Venables, WN, BD Ripley</span> (2002) <em>Modern applied statistics with <span>S</span></em>4th ed. Springer, New York
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>La legge di propagazione degli errori descritta al Cap. 3.3 mostra che se il primo trattamento A ha prodotto, ad esempio, 20 t/ha con una deviazione standard pari a 2 e se il trattamento B ha prodotto 5 t/ha in più, la media di B sarà 25 t/ha e la sua deviazione standard sarà uguale a <span class="math inline">\(\sqrt{1^2 \times2^2 + 5 \times 0}\)</span>. Mentre se l’effetto è moltiplicativo e pari a 2, la media di B sarà pari a 30 e la sua deviazione standard sarà pari a <span class="math inline">\(\sqrt{1.5^2 \, 2^2}\)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://www.statforbiology.com/2020/stat_general_percentiles/">Vai a questo link</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Nota: Considerate che il limite dell’espressione <span class="math inline">\((Y^\lambda -1)/\lambda\)</span> per <span class="math inline">\(\lambda \rightarrow 0\)</span> è proprio <span class="math inline">\(\log(Y)\)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiato!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiato!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./07-TestIpotesi.html" class="pagination-link" aria-label="Decisioni ed incertezza">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Decisioni ed incertezza</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="Bibliografia">
+        <span class="nav-page-text">Bibliografia</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

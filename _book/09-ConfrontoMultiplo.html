@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Combinazioni lineari/nonlineari dei parametri stimati – Metodologia sperimentale per le scienze agrarie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./08-AssunzioniBase.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3220129d1b0bfa0f6b9dc9ac11d00f8b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nessun risultato",
+    "search-matching-documents-text": "documenti trovati",
+    "search-copy-link-title": "Copiare il link nella ricerca",
+    "search-hide-matches-text": "Nascondere i risultati aggiuntivi",
+    "search-more-match-text": "ci sono altri risultati in questo documento",
+    "search-more-matches-text": "ulteriori risultati in questo documento",
+    "search-clear-button-title": "Pulire",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancellare",
+    "search-submit-button-title": "Inviare",
+    "search-label": "Ricerca"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Attiva/disattiva la barra laterale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-ConfrontoMultiplo.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Combinazioni lineari/nonlineari dei parametri stimati</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Attiva/disattiva la barra laterale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Ricerca" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Metodologia sperimentale per le scienze agrarie</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Ricerca"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Premessa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introBiometria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ProgettoRicerca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-StatisticaDescrittiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-CausaEffetto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ModelliStocastici.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelli stocastici</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-InferenzaStatistica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Stime ed incertezza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-TestIpotesi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Decisioni ed incertezza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-AssunzioniBase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Verifica dei modelli</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-ConfrontoMultiplo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Combinazioni lineari/nonlineari dei parametri stimati</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografia</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice</h2>
+   
+  <ul>
+  <li><a href="#esempio-9.1-determinare-leffetto-medio-degli-erbicidi" id="toc-esempio-9.1-determinare-leffetto-medio-degli-erbicidi" class="nav-link active" data-scroll-target="#esempio-9.1-determinare-leffetto-medio-degli-erbicidi"><span class="header-section-number">9.1</span> Esempio 9.1: Determinare l’effetto medio degli erbicidi</a></li>
+  <li><a href="#esempio-9.2-determinare-lefficiacia-erbicida-media" id="toc-esempio-9.2-determinare-lefficiacia-erbicida-media" class="nav-link" data-scroll-target="#esempio-9.2-determinare-lefficiacia-erbicida-media"><span class="header-section-number">9.2</span> Esempio 9.2: Determinare l’efficiacia erbicida media</a></li>
+  <li><a href="#combinazioni-di-interesse-generale" id="toc-combinazioni-di-interesse-generale" class="nav-link" data-scroll-target="#combinazioni-di-interesse-generale"><span class="header-section-number">9.3</span> Combinazioni di interesse generale</a></li>
+  <li><a href="#esempio-9.3-medie-marginali-attese" id="toc-esempio-9.3-medie-marginali-attese" class="nav-link" data-scroll-target="#esempio-9.3-medie-marginali-attese"><span class="header-section-number">9.4</span> Esempio 9.3: Medie marginali attese</a></li>
+  <li><a href="#example-9.4-contrasti-ortogonali-e-non" id="toc-example-9.4-contrasti-ortogonali-e-non" class="nav-link" data-scroll-target="#example-9.4-contrasti-ortogonali-e-non"><span class="header-section-number">9.5</span> Example 9.4: Contrasti ortogonali (e non)</a></li>
+  <li><a href="#esempio-9.5-i-confronti-multipli" id="toc-esempio-9.5-i-confronti-multipli" class="nav-link" data-scroll-target="#esempio-9.5-i-confronti-multipli"><span class="header-section-number">9.6</span> Esempio 9.5: I confronti multipli</a>
+  <ul class="collapse">
+  <li><a href="#display-a-lettere" id="toc-display-a-lettere" class="nav-link" data-scroll-target="#display-a-lettere"><span class="header-section-number">9.6.1</span> Display a lettere</a></li>
+  <li><a href="#correzione-per-la-molteplicità" id="toc-correzione-per-la-molteplicità" class="nav-link" data-scroll-target="#correzione-per-la-molteplicità"><span class="header-section-number">9.6.2</span> Correzione per la molteplicità</a></li>
+  <li><a href="#procedure-classiche-di-confronto-multiplo" id="toc-procedure-classiche-di-confronto-multiplo" class="nav-link" data-scroll-target="#procedure-classiche-di-confronto-multiplo"><span class="header-section-number">9.6.3</span> Procedure ‘classiche’ di confronto multiplo</a></li>
+  </ul></li>
+  <li><a href="#esempio-9.6-retro-trasformazione-per-il-dataset-insects" id="toc-esempio-9.6-retro-trasformazione-per-il-dataset-insects" class="nav-link" data-scroll-target="#esempio-9.6-retro-trasformazione-per-il-dataset-insects"><span class="header-section-number">9.7</span> Esempio 9.6: retro-trasformazione per il dataset ‘insects’</a></li>
+  <li><a href="#esempio-9.7-previsioni-e-previsioni-inverse" id="toc-esempio-9.7-previsioni-e-previsioni-inverse" class="nav-link" data-scroll-target="#esempio-9.7-previsioni-e-previsioni-inverse"><span class="header-section-number">9.8</span> Esempio 9.7: Previsioni e previsioni inverse</a></li>
+  <li><a href="#esercizi" id="toc-esercizi" class="nav-link" data-scroll-target="#esercizi"><span class="header-section-number">9.9</span> Esercizi</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Combinazioni lineari/nonlineari dei parametri stimati</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Dopo aver dimostrato che un modello fornisca una buona descrizione dei dati sperimentali e che non vi siano violazioni degli assunti di base, è possibile testare diverse ipotesi rilevanti che siano ‘traducibili’ in combinazioni lineari o non lineari dei parametri del modello, cioè delle funzioni che coinvolgono i parametri ed un insieme di coefficienti; per comprendere questo concetto e la sua importanza, iniziamo con un esempio.</p>
+<section id="esempio-9.1-determinare-leffetto-medio-degli-erbicidi" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="esempio-9.1-determinare-leffetto-medio-degli-erbicidi"><span class="header-section-number">9.1</span> Esempio 9.1: Determinare l’effetto medio degli erbicidi</h2>
+<p>Torniamo all’esperimento in cui abbiamo confrontato due erbicidi e la loro miscela con il testimone non trattato, in un disegno sperimentale completamente randomizzato con quattro repliche (Esempio 8.1). Nel capitolo precedente, abbiamo visto che non vi sono problemi con nessuna delle assunzioni di base per il <em>fitting</em> dei modelli lineari, mentre l’analisi della varianza ed il relativo test di F hanno mostrato come esistano differenze significative tra i trattamenti. Nel riquadro sottostante riportimo nuovamente il codice R per l’adattamento del modello.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.1</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Determinare l'effetto medio degli erbicidi nel dataset 'mixture'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei dati</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"mixture"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Adattamento di un modello ANOVA ad una via</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight <span class="sc">~</span> Treat, <span class="at">data=</span>dataset)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Call:</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">## lm(formula = Weight ~ Treat, data = dataset)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals:</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="do">##    Min     1Q Median     3Q    Max </span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="do">## -6.360 -2.469  0.380  2.567  6.025 </span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Coefficients:</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="do">##                     Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)            9.175      1.959   4.684 0.000529 ***</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="do">## TreatMixture_378      -4.047      2.770  -1.461 0.169679    </span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="do">## TreatRimsulfuron_30    7.685      2.770   2.774 0.016832 *  </span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="do">## TreatUnweeded         17.598      2.770   6.352 3.65e-05 ***</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Residual standard error: 3.918 on 12 degrees of freedom</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="do">## Multiple R-squared:  0.8554, Adjusted R-squared:  0.8193 </span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="do">## F-statistic: 23.66 on 3 and 12 DF,  p-value: 2.509e-05</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della Varianza</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(model)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Weight</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="do">##           Df  Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Treat      3 1089.53  363.18  23.663 2.509e-05 ***</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals 12  184.18   15.35                      </span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A questo punto, è rilevante chiedersi: “Il controllo delle piante infestanti è stato (in media) una pratica efficace?”. Questa domanda ‘biologica’ può essere tradotta in una combinazione lineare dei parametri stimati, cioè: <span class="math inline">\(\mu\)</span> = 9.175, <span class="math inline">\(\alpha_2\)</span> = -4,0475, <span class="math inline">\(\alpha_3\)</span> = 7.685 e <span class="math inline">\(\alpha_4\)</span> = 17.5975, dove <span class="math inline">\(\mu\)</span> è la media del primo erbicida (in ordine alfabetico), <span class="math inline">\(\alpha_2\)</span>, <span class="math inline">\(\alpha_3\)</span> e <span class="math inline">\(\alpha_4\)</span> sono, rispettivamente, le differenze tra le medie del secondo, del terzo e del quarto trattamento e la media del primo (vedi Capitolo 4). Con queste stime, possiamo calcolare la media dei vasi non trattati come <span class="math inline">\(\mu_u = \mu + \alpha_4\)</span>, e la media dei vasi trattati come <span class="math inline">\(\mu_t = [\mu + (\mu + \alpha_2) + (\mu + \alpha_3)]/3\)</span>, ovvero <span class="math inline">\(\mu_t = \mu + 1/3 \, \alpha_2 + 1/3 \, \alpha_3\)</span>. Di conseguenza, la differenza tra vasi trattati e non trattati è uguale alla seguente combinazione lineare: <span class="math inline">\(\delta_{tu} = \mu_t - \mu_{ut} = 1/3 \, \alpha_2 + 1/3 \, \alpha_3 - \alpha_4\)</span>. Il risultato di questa combinazione (<span class="math inline">\(\delta_{tu}\)</span>) risponde alla domanda precedente: se <span class="math inline">\(\delta_{tu} &lt; 0\)</span> possiamo concludere che il trattamento erbicida è stato, in media, efficace nel ridurre la biomassa di <em>Solanum nigrum</em>.</p>
+<p>La combinazione lineare sopra definita può essere espressa come somma dei prodotti di un insieme di parametri per un insieme di coefficienti:</p>
+<p><span class="math display">\[C = 0 \cdot \mu + \frac{1}{3} \cdot \alpha_2 + \frac{1}{3} \cdot \alpha_3 - 1 \cdot \alpha_4\]</span></p>
+<p>In questa espressione, la matrice dei coefficienti è:</p>
+<p><span class="math display">\[K = \left[0 \,\,\, 1/3 \,\,\, 1/3 \,\, -1 \right]\]</span></p>
+<p>Dall’espressione precedente otteniamo <span class="math inline">\(C = \delta_{tu} = -16.385\)</span>, e quindi deve essere accompagnata dal suo errore standard, che può essere ottenuto con la legge di propagazione degli errori, considerando le varianze e le covarianze dei parametri del modello. Omettiamo, per semplicità, i dettagli, che possono essere reperiti nel blog associato a questo libro<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>In R, ci sono molte funzioni per la stima delle combinazioni lineari dei parametri; in particolare, utilizzeremo la funzione <code>glht()</code>, contenuta nel package <code>multcomp</code>, che richiede l’oggetto risultante dal <em>fitting</em> e una matrice di coefficienti, come mostrato nel Riquadro 9.2. Gli intervalli di confidenza per la stima possono invece essere ottenuti con la funzione <code>confint()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.1 [segue]</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting di una combinazione lineare con la funzione 'glht()'</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Definizione della matrice dei coefficienti</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">byrow =</span> T)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(K) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"delta_tu"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>K</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="do">##          [,1]      [,2]      [,3] [,4]</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="do">## delta_tu    0 0.3333333 0.3333333   -1</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Stima della combinazione</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">glht</span>(model, <span class="at">linfct =</span> K)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(con)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="do">##   Simultaneous Tests for General Linear Hypotheses</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Fit: lm(formula = Weight ~ Treat, data = dataset)</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Linear Hypotheses:</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="do">##               Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="do">## delta_tu == 0  -16.385      2.262  -7.244 1.02e-05 ***</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="do">## (Adjusted p values reported -- single-step method)</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervallo di confidenza</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(con)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="do">##   Simultaneous Confidence Intervals</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="do">## Fit: lm(formula = Weight ~ Treat, data = dataset)</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Quantile = 2.1788</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="do">## 95% family-wise confidence level</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="do">##  </span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="do">## Linear Hypotheses:</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="do">##               Estimate lwr      upr     </span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="do">## delta_tu == 0 -16.3850 -21.3132 -11.4568</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>È importante notare che la stima <span class="math inline">\(\delta_{tu}\)</span> può essere divisa per il suo errore standard per ottenere un test t per l’ipotesi nulla che la stima osservata non sia significativamente diversa da zero (vedere Cap. 7.1). Il valore di P è molto basso, consentendo il rifiuto dell’ipotesi nulla. Pertanto, concludiamo che l’effetto medio dell’erbicida è statisticamente significativo.</p>
+</section>
+<section id="esempio-9.2-determinare-lefficiacia-erbicida-media" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="esempio-9.2-determinare-lefficiacia-erbicida-media"><span class="header-section-number">9.2</span> Esempio 9.2: Determinare l’efficiacia erbicida media</h2>
+<p>I concetti precedenti possono essere estesi a qualsiasi altra funzione dei parametri del modello, anche se non può essere ricondotta alla somma di prodotti tra coefficienti e parametri (come nell’Equazione precedente) oppure se è intrinsecamente non lineare (cioè contiene logaritmi o altre funzioni che non siano semplici somme o moltiplicazioni). L’unica differenza è che, con le combinazioni non lineari, gli errori standard non possono essere calcolati con il metodo di propagazione degli errori, ma debbono essere approssimati utilizzando il cosiddetto <strong>metodo delta</strong> <span class="citation" data-cites="weisberg_2005">(<a href="references.html#ref-weisberg_2005" role="doc-biblioref">Weisberg 2005</a>)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>In R, possiamo utilizzare la funzione <code>gnlht()</code> nel package <code>statforbiology</code>, che generalizza l’approccio della funzione <code>glht()</code> descritta in precedenzza. Come esempio, riconsideriamo il dataset ‘mixture’ ed utilizziamo i parametri del modello per calcolare la riduzione percentuale della crescita delle infestanti rispetto al controllo non trattato (efficacia erbicida; HE). Per il primo erbicida, è:</p>
+<p><span class="math display">\[\textrm{HE} = \frac{\mu_4 - \mu_1}{\mu_4} \times 100 = \frac{\mu_1 + \alpha_4 - \mu_1}{\mu_1 + \alpha_4} \times 100 = \frac{\alpha_4}{\mu_1 + \alpha_4} \times 100\]</span></p>
+<p>In questa espressione, i parametri <span class="math inline">\(\mu_1\)</span> e <span class="math inline">\(\alpha_4\)</span> sono al denominatore e, pertanto, questa combinazione è non lineare. Le espressioni per ottenere gli HE per tutti gli altri erbicidi possono essere ottenute con semplici calcoli algebrici, riportati nel Riquadro 9.3.</p>
+<p>Per utilizzare la funzione <code>gnlht()</code> bisogna codificare la lista delle funzioni da calcolare e passarla come argomento. Inoltre, il legame tra il nome dei parametri utilizzati in tali combinazioni e la posizione delle relative stime nel vettore che risulta dalla funzione <code>coef()</code> viene creato con l’argomento <code>parameterNames</code>. Le efficacie dei tre erbicidi sono rispettivamente del 65%, 80% e 37% e sono tutte significativamente diverse da 0 (Riquadro 9.3).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.3</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.2</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Determinazione dell'efficacia media degli erbicidi nel dataset 'mixture'</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti e dei dati</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"mixture"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Adattamento di un modello ANOVA ad una via</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight <span class="sc">~</span> Treat, <span class="at">data=</span>dataset)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Stima di combinazioni non lineari con 'gnlht()'</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>funList <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="sc">~</span> a4<span class="sc">/</span>(mu1 <span class="sc">+</span> a4) <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                <span class="sc">~</span> (a4 <span class="sc">-</span> a2)<span class="sc">/</span>(mu1 <span class="sc">+</span> a4) <span class="sc">*</span> <span class="dv">100</span>, </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                <span class="sc">~</span> (a4 <span class="sc">-</span> a3)<span class="sc">/</span>(mu1 <span class="sc">+</span> a4) <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">gnlht</span>(model, funList, <span class="at">parameterNames =</span> <span class="fu">c</span>(<span class="st">"mu1"</span>, <span class="st">"a2"</span>, <span class="st">"a3"</span>, <span class="st">"a4"</span>))</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="do">##                         Form Estimate       SE   t-value      p-value</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 1        a4/(mu1 + a4) * 100 65.72976 7.734313  8.498461 2.014359e-06</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 (a4 - a2)/(mu1 + a4) * 100 80.84788 7.449568 10.852694 1.469226e-07</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 (a4 - a3)/(mu1 + a4) * 100 37.02493 8.646543  4.282050 1.065143e-03</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="combinazioni-di-interesse-generale" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="combinazioni-di-interesse-generale"><span class="header-section-number">9.3</span> Combinazioni di interesse generale</h2>
+<p>Le funzioni lineari e non lineari dei parametri del modello sono molto utili per rispondere a specifiche domande di ricerca, anche se, la codifica ‘manuale’ della matrice dei coefficienti può rivelarsi un compito molto noioso, soprattutto quando le combinazioni da stimare sono molte. Fortunatamente, R ci ci mette a disposizione diverse matrici pre-definite per le combinazioni lineari o non lineari di maggior interesse generale, cioè:</p>
+<ol type="1">
+<li>Medie Marginali attese (EMMs)</li>
+<li>Contrasti ortogonali (e non)</li>
+<li>Confronti a coppie</li>
+<li>Retrotrasformazioni</li>
+<li>Previsioni e previsioni inverse</li>
+</ol>
+</section>
+<section id="esempio-9.3-medie-marginali-attese" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="esempio-9.3-medie-marginali-attese"><span class="header-section-number">9.4</span> Esempio 9.3: Medie marginali attese</h2>
+<p>Nelle situazioni in cui abbiamo uno o più predittori nominali, il nostro interesse principale, di solito, è quello di stimare le medie dei gruppi di trattamento (ad esempio, <span class="math inline">\(\mu_1\)</span>, <span class="math inline">\(\mu_2\)</span>, <span class="math inline">\(\mu_3\)</span>, <span class="math inline">\(\ldots{}\)</span> e <span class="math inline">\(\mu_n\)</span>, dove <span class="math inline">\(n\)</span> è il numero di livelli). Abbiamo già visto nel Capitolo 3 che le medie di gruppo possono essere ottenute con la funzione <code>tapply()</code> (Cap. 3), ma è ora necessario precisare che queste medie aritmetiche sono semplici statistiche descrittive di tendenza centrale, ma non sempre costituiscono uno stimatore adeguato delle medie delle popolazioni da cui i campioni sono estratti. In particolare, possiamo ottenere stime distorte in alcune circostanze, quando i dati sono sbilanciati (numero diverso di repliche per ciascun gruppo di trattamento). Le medie marginali attese (note come <strong>Least Squares Means</strong> o <strong>Expected Marginal Means</strong>, cioè EMM) rappresentano un’importante alternativa: sono uguali alle medie aritmetiche quando i dati sono bilanciati, mentre forniscono stimatori migliori delle medie della popolazione quando i dati sono sbilanciati. Per questo motivo, negli esperimenti di campo che abbiano finalità inferenziali, è sempre consigliabile calcolare le EMM al posto delle medie aritmetiche, cosa che può esser fatta utilizzando opportune combinazioni lineari dei parametri del modello; ad esempio, tornando all’esempio 9.1, dove i parametri stimati sono <span class="math inline">\(\mu = 9.175\)</span>, <span class="math inline">\(\alpha_2 = -4.0475\)</span>, <span class="math inline">\(\alpha_3 = 7.685\)</span> e <span class="math inline">\(\alpha_4 = 17.5975\)</span> ed hanno il significato biologico illustrato in precedenza (media del primo gruppo e differenze tra le medie degli altri gruppi rispetto al primo), le quattro EMM possono essere ottenuti dalle seguenti combinazioni lineari:</p>
+<p><span class="math display">\[\left\{ {\begin{array}{l}
+C_1 = \mu_1 = 1 \cdot \mu + 0 \cdot \alpha_2 + 0 \cdot\alpha_3 + 0 \cdot\alpha_4 = 9,18\\
+C_2 = \mu_2 = 1 \cdot \mu + 1 \cdot \alpha_2 + 0 \cdot\alpha_3 + 0 \cdot\alpha_4 = 5,13\\
+C_3 = \mu_3 = 1 \cdot \mu + 0 \cdot \alpha_2 + 1 \cdot\alpha_3 + 0 \cdot\alpha_4 = 16:86\\
+C_4 = \mu_4 = 1 \cdot \mu + 0 \cdot \alpha_2 + 0 \cdot\alpha_3 + 1 \cdot\alpha_4 = 26,77\\
+\end{array}} \right.\]</span></p>
+<p>La matrice dei coefficienti è:</p>
+<p><span class="math display">\[ K = \left[ {\begin{array}{llll}
+1 &amp; 0 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; 1
+\end{array}} \right]\]</span></p>
+<p>In linea di principio, per calcolare queste combinazioni si può utilizzare la funzione <code>glht()</code> nel package <code>multcomp</code>, come mostrato nel riquadro 9.4.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.4</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.3</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># EMM per il dataset 'mixture'</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei dati</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"mixture"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting di un modello ANOVA ad una via</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight <span class="sc">~</span> Treat, <span class="at">data=</span>dataset)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Stima delle EMM con la funzione 'glht()'</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Impostazione della matrice dei coefficienti</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">byrow =</span> T)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(K) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mu1"</span>, <span class="st">"mu2"</span>, <span class="st">"mu3"</span>, <span class="st">"mu4"</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>K</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="do">##     [,1] [,2] [,3] [,4]</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="do">## mu1    1    0    0    0</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="do">## mu2    1    1    0    0</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="do">## mu3    1    0    1    0</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="do">## mu4    1    0    0    1</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcolo delle combinazioni lineari</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">glht</span>(model, <span class="at">linfct =</span> K)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(con)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="do">##   Simultaneous Tests for General Linear Hypotheses</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Fit: lm(formula = Weight ~ Treat, data = dataset)</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Linear Hypotheses:</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="do">##          Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="do">## mu1 == 0    9.175      1.959   4.684  0.00219 ** </span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="do">## mu2 == 0    5.128      1.959   2.618  0.08150 .  </span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="do">## mu3 == 0   16.860      1.959   8.607  &lt; 0.001 ***</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="do">## mu4 == 0   26.773      1.959  13.668  &lt; 0.001 ***</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="do">## (Adjusted p values reported -- single-step method)</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalli di confidenza</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(con)</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="do">##   Simultaneous Confidence Intervals</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="do">## Fit: lm(formula = Weight ~ Treat, data = dataset)</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="do">## Quantile = 2.8942</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="do">## 95% family-wise confidence level</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="do">##  </span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="do">## Linear Hypotheses:</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="do">##          Estimate lwr     upr    </span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="do">## mu1 == 0  9.1750   3.5057 14.8443</span></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="do">## mu2 == 0  5.1275  -0.5418 10.7968</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="do">## mu3 == 0 16.8600  11.1907 22.5293</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="do">## mu4 == 0 26.7725  21.1032 32.4418</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Tuttavia, soprattutto quando il numero di medie è molto elevato, è molto più semplice utilizzare la funzione <code>emmeans()</code> nel pacchetto <code>emmeans</code> <span class="citation" data-cites="lenth_2016">(<a href="references.html#ref-lenth_2016" role="doc-biblioref">Lenth 2016</a>)</span>. Richiede due argomenti fondamentali: l’oggetto modello e il predittore per il quale si desidera calcolare le EMM (Riquadro 9.5).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.5</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.3 [segue]</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># EMM con la funzione 'emmeans()'</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans) <span class="co"># Carica il pacchetto</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>muj <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(model, <span class="sc">~</span>Treat)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>muj</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  Treat           emmean   SE df lower.CL upper.CL</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348   9.18 1.96 12     4.91     13.4</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378       5.13 1.96 12     0.86      9.4</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  Rimsulfuron_30   16.86 1.96 12    12.59     21.1</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  Unweeded         26.77 1.96 12    22.50     31.0</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Oltre a essere stime affidabili delle medie della popolazione, le EMM possono anche servire come punto di partenza per costruire ulteriori combinazioni lineari o non lineari, come indicato nel prossimo paragrafo.</p>
+</section>
+<section id="example-9.4-contrasti-ortogonali-e-non" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="example-9.4-contrasti-ortogonali-e-non"><span class="header-section-number">9.5</span> Example 9.4: Contrasti ortogonali (e non)</h2>
+<p>Nell’Esempio 9.1, abbiamo visto che una combinazione lineare dei parametri del modello può aiutare a rispondere ad una domanda ‘biologica’ rilevante, basata sulla differenza tra la media dei vasi non trattati e la media dei vasi trattati. Considerando sempre il dataset “mixture”, è possibile pianificare tre combinazioni che reppresentano differenze tra medie, cioè:</p>
+<ol type="1">
+<li>trattato vs.&nbsp;non trattato (in media)</li>
+<li>miscela vs.&nbsp;erbicidi singoli (in media)</li>
+<li>metribuzin vs.&nbsp;rimsulfuron</li>
+</ol>
+<p>Invece che combinare i parametri del modello come nell’Esempio 9.1, le tre combinazioni di cui sopra possono anche essere codificate come combinazioni tra le medie. Se consideriamo l’ordine con cui compaiono le quattro medie nel dataset <code>muj</code> (Riquadro 9.5), le tre combinazioni lineari possono essere scritte come:</p>
+<p><span class="math display">\[\left\{ {\begin{array}{l}
+C_1 = \frac{1}{3} \, \mu_1 + \frac{1}{3} \, \mu_2 + \frac{1}{3} \,\mu_3 - \mu_4\\
+C_2 = \frac{1}{2} \, \mu_1 - \mu_2 + \frac{1}{2} \,\mu_3 - 0 \cdot \mu_4\\
+C_3 = \mu_1 - 0 \cdot \mu_2  - \mu_3 - 0 \cdot \mu_4
+\end{array}} \right.\]</span></p>
+<p>Le tre combinazioni lineari C1, C2 e C3 hanno la tipica proprietà che, per ognuna, la somma dei coefficienti è zero e, per questo, sono chiamate <strong>contrasti</strong>. Ognuno di essi sottende una differenza tra medie o gruppi di medie e permette di utilizzare un test di t per saggiare l’ipotesi che questa differenza sia nulla.</p>
+<p>Inoltre, i tre contrasti sopra riportati hanno l’ulteriore caratteristica che i loro coefficienti sono reciprocamente non correlati e, pertanto, sono detti <strong>contrasti ortogonali</strong>. Normalmente, in un dataset esistono tanti contrasti ortogonali quante sono le medie meno una.</p>
+<p>Anni fa, l’ortogonalità era considerata una proprietà desiderabile, perché la somma delle devianze associate ad ogni contrasto è pari alla devianza del trattamento nell’analisi della varianza (vedere il Riquadro 9.7). Pertanto, l’applicazione dei contrasti ortogonali era considerata un metodo elegante per valutare in modo mirato la differenza tra le medie, evitando un numero eccessivo di test d’ipotesi e le conseguenti problematiche di molteplicità, che vedremo tra poco <span class="citation" data-cites="chew_1976">(<a href="references.html#ref-chew_1976" role="doc-biblioref">Chew 1976</a>)</span>. Oggigiorno, l’enfasi sull’ortogonalità è minore, ma può essere utile fornire un esempio di come i contrasti ortogonali possano essere calcolati con R, utilizzando la funzione <code>contrast()</code> nel package <code>emmeans</code>.</p>
+<p>I tre passaggi tipici sono:</p>
+<ol type="1">
+<li>preparare una lista con i coefficienti, assegnando un nome a ciascun contrasto (notate la differenza rispetto alla funzione <code>glht()</code>, che richiede una matrice di coefficienti, non una lista);</li>
+<li>utilizzare la funzione <code>contrast()</code> nel package <code>emmeans</code>, passando i seguenti argomenti: (i) l’oggetto risultante dalla chiamata alla funzione <code>emmeans()</code>; (ii) la lista dei contrasti <span class="math inline">\(K\)</span>, come argomento <code>method</code>; (iii) il tipo di aggiustamento (ne parleremo più avanti, per ora utilizzate il comando così come mostrato nel riquadro sottostante)</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.6</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.4</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Contrasti ortogonali con la funzione 'emmeans()'</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei dati</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"mixture"</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting di un modello ANOVA ad una via</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight <span class="sc">~</span> Treat, <span class="at">data=</span>dataset)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Creazione di un vettore di coefficienti per ogni contrasto</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>C1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>C2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>C3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Creazione di una lista (NON di una matrice)</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"U vs T"</span> <span class="ot">=</span> C1, </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>          <span class="st">"mix vs single"</span> <span class="ot">=</span> C2,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>          <span class="st">"met vs rim"</span> <span class="ot">=</span> C3)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Stima dei contrasti</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>muj <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(model, <span class="sc">~</span>Treat)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">contrast</span>(muj, <span class="at">method =</span> K, <span class="at">adjust=</span><span class="st">"none"</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>con</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast      estimate   SE df t.ratio p.value</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  U vs T          -16.39 2.26 12  -7.244 &lt;0.0001</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  mix vs single     7.89 2.40 12   3.289  0.0065</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  met vs rim       -7.68 2.77 12  -2.774  0.0168</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalli di confidenza</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(con)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast      estimate   SE df lower.CL upper.CL</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="do">##  U vs T          -16.39 2.26 12   -21.31   -11.46</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="do">##  mix vs single     7.89 2.40 12     2.66    13.12</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="do">##  met vs rim       -7.68 2.77 12   -13.72    -1.65</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>I contrasti ortogonali possono essere stimati anche con la funzione <code>aov()</code>. In questo caso, l’elenco dei contrasti deve essere trasformato in una matrice e associato al fattore sperimentale tramite la funzione <code>C()</code> (notare la lettera maiuscola; vedere il Riquadro 9.7). Utilizzando questa codifica, è possibile avere la conferma che, effittivamente, la devianza del trattamento è stata suddivisa in tre quote, una per ciascun contrasto, producendo significanze identiche a quelle mostrate nel Riquadro 9.6.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.7</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.4 [segue]</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Stima di contrasti ortogonali e scomposizione della devianza</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># del trattamento</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Creazione di un vettore di coefficienti per ogni contrasto </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># (come nel riquadro 9.6)</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>C1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>C2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>C3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Creazione di una lista (come nel Riquadro 9.6)</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"U vs T"</span> <span class="ot">=</span> C1, </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>          <span class="st">"mix vs single"</span> <span class="ot">=</span> C2,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>          <span class="st">"met vs rim"</span> <span class="ot">=</span> C3)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Trasformazione della lista in matrice</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>Kmat <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, K)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Assegnazione della lista al fattore sperimentale</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>dataset<span class="sc">$</span>Treat2 <span class="ot">&lt;-</span> <span class="fu">C</span>(<span class="fu">factor</span>(dataset<span class="sc">$</span>Treat), <span class="fu">t</span>(Kmat))</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting del modello con la funzione 'aov()'</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">aov</span>(Weight <span class="sc">~</span> Treat2, dataset)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod, <span class="at">split =</span> <span class="fu">list</span>(<span class="at">Treat2 =</span> <span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)))</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="do">##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="do">## Treat2        3 1089.5   363.2  23.663 2.51e-05 ***</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="do">##   Treat2: C1  1  805.4   805.4  52.476 1.02e-05 ***</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="do">##   Treat2: C2  1  166.0   166.0  10.816  0.00647 ** </span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="do">##   Treat2: C3  1  118.1   118.1   7.696  0.01683 *  </span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals    12  184.2    15.3                     </span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="esempio-9.5-i-confronti-multipli" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="esempio-9.5-i-confronti-multipli"><span class="header-section-number">9.6</span> Esempio 9.5: I confronti multipli</h2>
+<p>Non sempre è possibile disegnare esperimenti che producano risultati analizzabili con pochi contrasti ortogonali pre-stabiliti; per esempio, nel caso del dataset ‘mixture’ abbiamo potuto definire tre contrasti ortogonali, ma non abbiamo potuto includere tra questi i confronti ‘rimsulfuron vs miscela’ e ‘metribuzin vs miscela’, che sarebbero stati interessanti e coerenti con le finalità dell’esperimento.</p>
+<p>Molto spesso è utile confrontare tutte le possibili coppie di medie con una tecnica detto di <strong>confronto multiplo a coppie</strong> (<em>pairwise comparisons</em>). Più precisamente vi sono due tipi di approcci: ‘tutti contro tutti’ (confronti tipo “Tukey”) e ‘tutti contro uno’ (confronti tipo “Dunnett”)<span class="citation" data-cites="hsu_1996">(<a href="references.html#ref-hsu_1996" role="doc-biblioref">Hsu 1996</a>)</span>, che può essere il testimone, il migliore o il peggiore. Con il metodo di Tukey, il numero di contrasti è molto elevato, ed è pari a <span class="math inline">\(n \times (n - 1) / 2\)</span>, dove <span class="math inline">\(n\)</span> è il numero di medie da confrontare. Con il metodo di Dunnett, il numero di contrasti si riduce a <span class="math inline">\(n - 1\)</span>, e tale riduzione potrebbe essere importante per evitare le problematiche di molteplicità, di cui parleremo più avanti.</p>
+<p>Bisogna tener presente che l’adozione di confronti a coppie non è particolarmente elegante perché implica molti test non pianificati e privi di un obiettivo chiaro <span class="citation" data-cites="cousens_1988">(una sorta di “spray and pray”, come è stato definito da <a href="references.html#ref-cousens_1988" role="doc-biblioref">Cousens 1988</a>)</span>. Inoltre, secondo lo scienziato inglese John Tukey: <em>tutto ciò che sappiamo del mondo ci insegna che gli effetti di A e B sono sempre diversi, purchè noi consideriamo un numero di decimali sufficientemente elevato. Pertanto, chiedersi se A e B siano diversi è sciocco</em>. Ciononostante, i confronti a coppie possono essere molto utili, sono di moda da quasi un secolo e quindi vale la pena conoscerli e di sapere come si eseguano con R.</p>
+<p>Per il dataset “mixture”, ci sono quattro medie da confrontare e, quindi, un totale di sei confronti a coppie che possono essere definiti come segue:</p>
+<p><span class="math display">\[\left\{ {\begin{array}{*{20}{c}}
+C_1 = \mu_1 - \mu_2 = 1 \cdot \mu_1 - 1 \cdot \mu_2 + 0 \cdot \mu_3 + 0 \cdot \mu_4 \\
+C_2 = \mu_1 - \mu_3 = 1 \cdot \mu_1 - 0 \cdot \mu_2 - 1 \cdot \mu_3 + 0 \cdot \mu_4 \\
+C_3 = \mu_1 - \mu_4 = 1 \cdot \mu_1 - 0 \cdot \mu_2 + 0 \cdot \mu_3 - 1 \cdot \mu_4 \\
+C_4 = \mu_2 - \mu_3 = 0 \cdot \mu_1 + 1 \cdot \mu_2 - 1 \cdot \mu_3 + 0 \cdot \mu_4 \\
+C_5 = \mu_2 - \mu_4 = 0 \cdot \mu_1 + 1 \cdot \mu_2 + 0 \cdot \mu_3 - 1 \cdot \mu_4 \\
+C_6 = \mu_3 - \mu_4 = 0 \cdot \mu_1 + 0 \cdot \mu_2 + 1 \cdot \mu_3 - 1 \cdot \mu_4
+\end{array}} \right.\]</span></p>
+<p>La matrice dei coefficienti è:</p>
+<p><span class="math display">\[K = \left[ {\begin{array}{rrrr}
+1 &amp; - 1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; - 1 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; - 1\\
+0 &amp; 1 &amp; - 1 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; - 1\\
+0 &amp; 0 &amp; 1 &amp; - 1
+\end{array}} \right]\]</span></p>
+<p>Fortunatamente, la codifica manuale della matrice <span class="math inline">\(K\)</span> dei coefficienti non è necessaria, basta utilizzare la funzione <code>contrast()</code> (come nel Riquadro 9.6), assegnando all’argomento ‘method’ il valore ‘tukey’ o ‘dunnett’, a seconda del confronto prescelto. Se si utilizza l’argomento ‘dunnett’, di default, R confronta tutte le tesi con la prima in ordine alfabetico, che, in questo caso è metribuzin. In realtà, noi siamo più interessati al confronto con la miscela e quindi dobbiamo cambiare l’impostazione di default aggiungendo l’argomento ‘ref’ ed assegnandgli il valore ‘2’, che fa riferimento al fatto che la miscela è la seconda tesi in ordine alfabetico. Per ottenere gli intervalli di confidenza possiamo utilizzare la usuale funzione <code>confint()</code> (Riquadro 9.8)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.8</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.5</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronti multipli per il dataset 'mixture'</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei dati</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"mixture"</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting di un modello ANOVA ad una via</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Weight <span class="sc">~</span> Treat, <span class="at">data=</span>dataset)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Medie 'Least Squares'</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>muj <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(model, <span class="sc">~</span>Treat)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronti multipli a coppie (metodo Tukey)</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">contrast</span>(muj, <span class="at">adjust=</span><span class="st">"none"</span>, <span class="at">method=</span><span class="st">"tukey"</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast                         estimate   SE df t.ratio p.value</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Mixture_378        4.05 2.77 12   1.461  0.1697</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Rimsulfuron_30    -7.68 2.77 12  -2.774  0.0168</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Unweeded         -17.60 2.77 12  -6.352 &lt;0.0001</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378 - Rimsulfuron_30       -11.73 2.77 12  -4.235  0.0012</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378 - Unweeded             -21.64 2.77 12  -7.813 &lt;0.0001</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="do">##  Rimsulfuron_30 - Unweeded           -9.91 2.77 12  -3.578  0.0038</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="do">## Confronti multipli a coppie (metodo Dunnett)</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">contrast</span>(muj, <span class="at">adjust=</span><span class="st">"none"</span>, <span class="at">method=</span><span class="st">"dunnett"</span>, <span class="at">ref =</span> <span class="dv">2</span>)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>con</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast                      estimate   SE df t.ratio p.value</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Mixture_378     4.05 2.77 12   1.461  0.1697</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  Rimsulfuron_30 - Mixture_378     11.73 2.77 12   4.235  0.0012</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="do">##  Unweeded - Mixture_378           21.64 2.77 12   7.813 &lt;0.0001</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Intervalli di confidenza</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(con)</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast                      estimate   SE df lower.CL upper.CL</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Mixture_378     4.05 2.77 12    -1.99     10.1</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="do">##  Rimsulfuron_30 - Mixture_378     11.73 2.77 12     5.70     17.8</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="do">##  Unweeded - Mixture_378           21.64 2.77 12    15.61     27.7</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="display-a-lettere" class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="display-a-lettere"><span class="header-section-number">9.6.1</span> Display a lettere</h3>
+<p>I risultati di un confronto multiplo a coppie possono essere presentati anche con un display a lettere, nel quale le medie seguite da lettere diverse sono significativamente diverse per un livello di probabilità di errore minore di quello predefinito, che è di solito <span class="math inline">\(\alpha\)</span> = 0.05.</p>
+<p>Redigere un display a lettere manualmente è piuttosto facile, utilizzando la seguente procedura:</p>
+<ol type="1">
+<li>ordinare le medie in senso crescente/decrescente</li>
+<li>partire dalla prima media e aggiungere la lettera A a questa media a tutte quelle che non sono significativamente diverse</li>
+<li>passare alla seconda media e aggiungere la lettera B a questa media e a tutte quelle che non sono significativamente diverse</li>
+<li>procedere analogamente con tutte le medie successive, finche non vengono più individuate differenze significative.</li>
+</ol>
+<p>La procedura sopra descritta funziona bene solo con esperimenti bilanciati, mentre, più in generale, è preferibileutilizzare l’algoritmo <em>insert-and-absorb</em> <span class="citation" data-cites="piepho_2004">(<a href="references.html#ref-piepho_2004" role="doc-biblioref">Piepho 2004</a>)</span>, che è quello implementato nella funzione <code>cld()</code> del pacchetto ‘multcomp’ (Riquadro 8.9). Questa funzione richiede le EMM, così come calcolate dalla funzione <code>emmeans()</code>, la tipologia di correzione per la molteplicità (vedi la sezione successiva) e il display preferito; in genere si utilizzano le lettere maiuscole o minuscole, che non sono l’impostazione di default e debbono essere richieste utilizzando, rispettivamente l’argomento <em>Letters = ‘LETTERS’</em> o <em>Letters = “letters”</em> (prestare attenzione alle lettere minuscole e maiuscole)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 8.9</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Display a lettere</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(muj, <span class="at">adjust=</span><span class="st">"none"</span>, <span class="at">Letters=</span>LETTERS)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  Treat           emmean   SE df lower.CL upper.CL .group</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378       5.13 1.96 12     0.86      9.4  A    </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348   9.18 1.96 12     4.91     13.4  A    </span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  Rimsulfuron_30   16.86 1.96 12    12.59     21.1   B   </span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  Unweeded         26.77 1.96 12    22.50     31.0    C  </span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95 </span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="do">## significance level used: alpha = 0.05 </span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="do">## </span><span class="al">NOTE</span><span class="do">: If two or more means share the same grouping symbol,</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="do">##       then we cannot show them to be different.</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="do">##       But we also did not show them to be the same.</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Per concludere, non si può non menzionare il fatto che il <em>display</em> a lettere, pur essendo molto pratico e immediato da leggere, risponde solo a domande sulla significatività delle differenze, senza fornire indicazioni sulla direzione e l’entità di tali differenze. Per questo motivo, il suo impiego è spesso considerato una pratica poco elegante e quindi da scoraggiare.</p>
+</section>
+<section id="correzione-per-la-molteplicità" class="level3" data-number="9.6.2">
+<h3 data-number="9.6.2" class="anchored" data-anchor-id="correzione-per-la-molteplicità"><span class="header-section-number">9.6.2</span> Correzione per la molteplicità</h3>
+<p>Avrete notato che in questo Capitolo abbiamo menzionato spesso il problema della ‘molteplicità’ ed è arrivato il momento di spiegare di cosa si tratti. Quando si stimano combinazioni lineari/non-lineari di parametri o di medie, soprattutto quando il loro numero è molto alto, si finisce per fare un elevato numero di test d’ipotesi simultanei.</p>
+<p>Consideriamo uno di questi test ed immaginiamo che l’ipotesi nulla sia rifiutata con un P-value di 0.04, che rappresenterebbe il cosiddetto <strong>comparisonwise error rate</strong> (<span class="math inline">\(P_c\)</span>), cioè la probabilità di un falso positivo. Se ci fossero <span class="math inline">\(n\)</span> test simultanei e l’ipotesi nulla venisse rifiutata con un P-value di 0.04 in ognuno di essi, potremmo definire il cosiddetto <strong>familywise error rate</strong> (<span class="math inline">\(P_f\)</span>), cioè la probabilità di avere almeno un falso positivo nell’intera ‘famiglia’ di test. Possiamo intuire che il <em>familywise error rate</em> sia più elevato del <em>comparisonwise error rate</em>, specialmente quando <span class="math inline">\(n\)</span> è alto; in particolare, la relazione tra <span class="math inline">\(P_c\)</span> e <span class="math inline">\(P_f\)</span> è:</p>
+<p><span class="math display">\[P_f = 1 - (1 - P_c)^n\]</span></p>
+<p>ed è ottenuta considerando che la probabilità di un singolo rifiuto corretto è <span class="math inline">\(1 - P_c\)</span>, mentre, per <span class="math inline">\(n\)</span> test, la probabilità che tutti i rifiuti siano corretti è <span class="math inline">\((1 - P_c)^n\)</span> (probabilità congiunta di eventi indipendenti). Avere almeno un rifiuto errato è l’evento complementare, la cui probabilità può essere calcolate per sottrazione, da cui deriva la formula indicata poco fa.</p>
+<p>In pratica, se abbiamo <span class="math inline">\(n = 10\)</span> contrasti, e ciascuno viene rifiutato con <span class="math inline">\(P_c = 0.04\)</span>, la probabilità di commettere almeno un errore è <span class="math inline">\(1 - (1 - 0.04)^10 = 0.335\)</span> ed è molto alta. Questo è ciò che si intende con il termine <strong>problema della molteplicità</strong>: ogni volta che effettuiamo un gran numero di inferenze simultanee, la probabilità di commettere almeno un errore (cioè un rifiuto errato) è molto più alta rispetto al tasso di errore di ciascun singolo test. <strong>In generale, ignorare il problema della molteplicità, come nei Riquadri 9.8 e 9.9, non è considerata una pratica accettabile</strong>.</p>
+<p>Al contrario, da molto tempo vi è ampio consenso in letteratura sul fatto che si debba affrontare il problema della molteplicità prendendo decisioni statistiche basate sul <em>familywise error rate</em> anziché sul <em>comparisonwise error rate</em> <span class="citation" data-cites="chew_1976">(si veda, ad esempio, <a href="references.html#ref-chew_1976" role="doc-biblioref">Chew 1976</a>)</span>, cioè a dire, l’ipotesi nulla dovrebbe essere rifiutata quando <span class="math inline">\(P_f &lt; 0.05\)</span> e non quando <span class="math inline">\(P_c &lt; 0.05\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Più in dettaglio, la scelta del <em>familywise error rate</em> è necessaria quando <span class="citation" data-cites="onofri_2010">(<a href="references.html#ref-onofri_2010" role="doc-biblioref">Onofri et al. 2010</a>)</span>:</p>
+<ul>
+<li>abbiamo un numero relativamente elevato di test simultanei, tutti ugualmente importanti e in grado di condizionare l’esattezza delle nostre conclusioni generali, che tendono ad essere sbagliate anche se uno solo o pochi test sono sbagliati;</li>
+<li>dobbiamo confrontare tra loro genotipi o tecniche agricole e vogliamo evitare di escludere erroneamente uno di essi dal gruppo dei migliori. Infatti, quando il numero di trattamenti è elevato, la probabilità che almeno un trattamento venga erroneamente escluso dal lotto dei migliori può essere molto alta;</li>
+<li>in generale, vogliamo evitare i falsi positivi (cioè i rifiuti errati);</li>
+<li>vogliamo trarre conclusioni che si riferiscono all’intero insieme di contrasti simultanei. Ad esempio, abbiamo utilizzato un display a lettere e desideriamo affermare che <em>“i trattamenti seguiti da lettere diverse sono significativamente differenti (<span class="math inline">\(P &lt; 0.05\)</span>)”</em>. In questo caso, la conclusione si applica all’intero insieme di confronti e il <em>comparisonwise error rate</em> non è valido.</li>
+</ul>
+<p>Al contrario, potremmo scegliere il <em>comparisonwise error rate</em> quando:</p>
+<ul>
+<li>dobbiamo saggiare solo pochi confronti molto rilevanti (problemi a contrasto singolo);</li>
+<li>dobbiamo confrontare genotipi o tecniche agricole e vogliamo evitare di includere erroneamente uno di essi nel gruppo dei migliori;</li>
+<li>in generale, vogliamo evitare i falsi negativi (cioè le erronee accettazioni).</li>
+</ul>
+<p>Se decidiamo di utilizzare il <em>familywise error rate</em>, dobbiamo correggere il P-value osservato in base al numero di inferenze simultanee effettuate. Il metodo più naturale consiste nello sfruttare la relazione tra <span class="math inline">\(P_c\)</span> e <span class="math inline">\(P_f\)</span>, nota come correzione di Sidak. Nel Riquadro 9.10, applichiamo questa correzione tramite calcoli manuali, considerando che il numero di contrasti simultanei è sei. Utilizziamo anche R manipolando l’argomento <code>adjust</code> nella funzione <code>contrast()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.10</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.5 [segue]</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Correzione per la molteplicità con il metodo di Sidak</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Correzione manuale (sei test simultanei)</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">contrast</span>(muj, <span class="at">method =</span> <span class="st">"pairwise"</span>, <span class="at">adjust =</span> <span class="st">"none"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>Pc <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(con)[,<span class="dv">6</span>]</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>Pf <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> Pc)<span class="sc">^</span><span class="dv">6</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>Pf</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6.722991e-01 9.683462e-02 2.190543e-04 6.923077e-03 2.869757e-05</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [6] 2.255183e-02</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Con R</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="fu">contrast</span>(muj, <span class="at">method =</span> <span class="st">"pairwise"</span>, <span class="at">adjust =</span> <span class="st">"sidak"</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast                         estimate   SE df t.ratio p.value</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Mixture_378        4.05 2.77 12   1.461  0.6723</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Rimsulfuron_30    -7.68 2.77 12  -2.774  0.0968</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Unweeded         -17.60 2.77 12  -6.352  0.0002</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378 - Rimsulfuron_30       -11.73 2.77 12  -4.235  0.0069</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378 - Unweeded             -21.64 2.77 12  -7.813 &lt;0.0001</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="do">##  Rimsulfuron_30 - Unweeded           -9.91 2.77 12  -3.578  0.0226</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="do">## P value adjustment: sidak method for 6 tests</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Osserviamo che l’applicazione di questo tipo di correzione per la molteplicità rende il secondo confronto non più significativo. Una procedura alternativa, più diretta e molto più diffusa, è la cosiddetta correzione di Bonferroni, che si basa sulla seguente euristica (molto facile da calcolare, anche a mano):</p>
+<p><span class="math display">\[\alpha_E = \alpha_C \cdot k\]</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Riquadro 9.11</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.5 [segue]</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Correzione per la molteplicità con il metodo di Bonferroni</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>Pc <span class="sc">*</span> <span class="dv">6</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1.018071e+00 1.009900e-01 2.190743e-04 6.943132e-03 2.869792e-05</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [6] 2.276671e-02</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Con R</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">contrast</span>(muj, <span class="at">method =</span> <span class="st">"pairwise"</span>, <span class="at">adjust =</span> <span class="st">"bonferroni"</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast                         estimate   SE df t.ratio p.value</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Mixture_378        4.05 2.77 12   1.461  1.0000</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Rimsulfuron_30    -7.68 2.77 12  -2.774  0.1010</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Unweeded         -17.60 2.77 12  -6.352  0.0002</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378 - Rimsulfuron_30       -11.73 2.77 12  -4.235  0.0069</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378 - Unweeded             -21.64 2.77 12  -7.813 &lt;0.0001</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  Rimsulfuron_30 - Unweeded           -9.91 2.77 12  -3.578  0.0228</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="do">## P value adjustment: bonferroni method for 6 tests</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Sia il metodo di Sidak sia quello di Bonferroni sono piuttosto conservativi, nel senso che forniscono valori di <span class="math inline">\(P_f\)</span> sovrastimati poiché non tengono conto della correlazione tra i contrasti. Esistono altre procedure di correzione [ad esempio le procedure di Holm, Hochberg, Hommel; <span class="citation" data-cites="hsu_1996">Hsu (<a href="references.html#ref-hsu_1996" role="doc-biblioref">1996</a>)</span>], ma sono tutte più o meno conservative, quindi poco utilizzate. In tempi relativamente recenti, un gruppo di scienziati americani ha sviluppato un metodo per tenere conto della correlazione tra contrasti, che si basa sulla distribuzione t di Student multivariata <span class="citation" data-cites="bretz_2011">(<a href="references.html#ref-bretz_2011" role="doc-biblioref">Bretz et al. 2011</a>)</span> e fornisce il <em>familywise error rate</em> in modo corretto o approssimativamente corretto. Questo è il metodo che viene applicato di default nella funzione <code>contrast()</code>, senza la necessità di alcuna specificazione (Riquadro 9.12).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.12</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.5 [segue]</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Correzione per la molteplicità con il metodo di default</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># basato sulla distribuzione t multivariato</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">contrast</span>(muj, <span class="at">method=</span><span class="st">"pairwise"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast                         estimate   SE df t.ratio p.value</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Mixture_378        4.05 2.77 12   1.461  0.4885</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Rimsulfuron_30    -7.68 2.77 12  -2.774  0.0698</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Unweeded         -17.60 2.77 12  -6.352  0.0002</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378 - Rimsulfuron_30       -11.73 2.77 12  -4.235  0.0055</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mixture_378 - Unweeded             -21.64 2.77 12  -7.813 &lt;0.0001</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  Rimsulfuron_30 - Unweeded           -9.91 2.77 12  -3.578  0.0173</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="do">## P value adjustment: tukey method for comparing a family of 4 estimates</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="fu">contrast</span>(muj, <span class="at">method=</span><span class="st">"dunnett"</span>, <span class="at">ref =</span> <span class="dv">2</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast                      estimate   SE df t.ratio p.value</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  Metribuzin__348 - Mixture_378     4.05 2.77 12   1.461  0.3711</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  Rimsulfuron_30 - Mixture_378     11.73 2.77 12   4.235  0.0032</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  Unweeded - Mixture_378           21.64 2.77 12   7.813 &lt;0.0001</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="do">## P value adjustment: dunnettx method for 3 tests</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Prima di concludere questa parte, è necessario sottolineare che il problema della molteplicità non riguarda solo gli MCP, ma può rappresentare un problema per tutti gli esperimenti, ogni volta che si testano simultaneamente un numero elevato di ipotesi.</p>
+</section>
+<section id="procedure-classiche-di-confronto-multiplo" class="level3" data-number="9.6.3">
+<h3 data-number="9.6.3" class="anchored" data-anchor-id="procedure-classiche-di-confronto-multiplo"><span class="header-section-number">9.6.3</span> Procedure ‘classiche’ di confronto multiplo</h3>
+<p>In questo libro, i confronti a coppie sono inseriti nel contesto dei contrasti lineari, come, ad esempio, in Hsu (1996). In passato, i confronti multipli si basavano sulla determinazione di una differenza critica, in base alla quale due medie venivano considerate significativamente diverse quando la loro differenza superava la differenza critica. Nella letteratura scientifica si trovano molte procedure di questo tipo, tra le quali segnaliamo:</p>
+<ol type="1">
+<li>Minima Differenza Significativa (MDS o LSD)</li>
+<li><em>Honest Significant Difference</em> di Tukey (HSD)</li>
+<li>Test di Dunnett</li>
+<li>Test di Duncan</li>
+<li>Test di Newman-Keuls</li>
+<li>Test di confronto multiplo di Tukey</li>
+</ol>
+<p>Il primo metodo corrisponde esattamente a quello che abbiamo utilizzato all’inizio, per fare confronti multipli ‘tutti contro tutti’, senza correzione per la molteplicità. Il secondo e il terzo metodo, se i dati sono bilanciati, corrispondono rispettivamente ai test di confronto ‘tutti contro tutti’ e ‘uno contro tutti’, con correzione per la molteplicità basata sul t multivariato. La HSD di Tukey può anche essere ottenuta utilizzando congiuntamente la funzione <code>aov()</code> per la stima del modello e la funzione <code>TukeyHSD()</code> per il confronto multiplo (Riquadro 9.13).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.13</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.5 [segue]</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tukey HSD per un modello lineare adattato con la funzione 'aov()' </span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">aov</span>(Weight <span class="sc">~</span> Treat, <span class="at">data =</span> dataset)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(mod2)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   Tukey multiple comparisons of means</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="do">##     95% family-wise confidence level</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Fit: aov(formula = Weight ~ Treat, data = dataset)</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="do">## $Treat</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="do">##                                   diff        lwr       upr     p adj</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Mixture_378-Metribuzin__348    -4.0475 -12.271978  4.176978 0.4884620</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Rimsulfuron_30-Metribuzin__348  7.6850  -0.539478 15.909478 0.0698118</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Unweeded-Metribuzin__348       17.5975   9.373022 25.821978 0.0001854</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Rimsulfuron_30-Mixture_378     11.7325   3.508022 19.956978 0.0055015</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Unweeded-Mixture_378           21.6450  13.420522 29.869478 0.0000247</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Unweeded-Rimsulfuron_30         9.9125   1.688022 18.136978 0.0172572</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Tutti gli altri test ‘classici’ adottano un meccanismo di correzione della differenza critica che non è in grado di considerare né il <em>comparisonwise error rate</em> né il <em>familywise error rate</em>, collocandosi in una posizione intermedia, non sempre facile da individuare e, pertanto, il loro utilizzo dovrebbe essere scoraggiato <span class="citation" data-cites="hsu_1996">(<a href="references.html#ref-hsu_1996" role="doc-biblioref">Hsu 1996</a>)</span>.</p>
+<p>Come commento finale sulle procedure di confronto multiplo (MCP), è necessario considerare che questi metodi sono stati spesso abusati negli anni passati e i dibattiti con editori e revisori sono ancora oggi molto frequenti. In particolare, l’uso dei confronti a coppie è fortemente sconsigliato quando il trattamento sperimentale è rappresentato da una serie di dosi, tempi o altre variabili quantitative. Infatti, con queste variabili, le ‘dosi’ selezionate sono necessariamente campionate da un insieme più grande, ma l’interesse primario del ricercatore risiede comunque nel determinare l’andamento della risposta nell’intero intervallo di ‘dosi’ possibili; di conseguenza, l’adattamento di un modello di regressione, anziché l’esecuzione di confronti a coppie, risulta di solito molto più in linea con gli scopi originali del lavoro.</p>
+<p>Inoltre, quando si abbiano esperimenti fattoriali, è abbastanza opportuno cercare di evitare di effettuare tutti i confronti a coppie per i livelli combinati dei fattori sperimentali, perchè essi sono molto numerosi e quindi implicano una correzione per la molteplicità estremamente severa, con conseguente riduzione della potenza statistica ed incremento del rischio di errori di II specie. In questa situazione, è, di solito, preferibile confrontare le medie di un fattore all’interno dei livelli livelli dell’altro, o degli altri fattori (si veda l’Esempio 10.3 nel Capitolo 10).</p>
+</section>
+</section>
+<section id="esempio-9.6-retro-trasformazione-per-il-dataset-insects" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="esempio-9.6-retro-trasformazione-per-il-dataset-insects"><span class="header-section-number">9.7</span> Esempio 9.6: retro-trasformazione per il dataset ‘insects’</h2>
+<p>Se l’analisi dei dati avesse richiesto l’adozione di una trasformazione stabilizzante (Cap. 8), anche le medie marginali saranno espresse nella scala trasformata e potrebbero non essere significative per la presentazione e l’interpretazione dei risultati. In questo caso, la tecnica più consigliabile è quella di riconvertire i dati sulla scala originale, attraverso una retro-trasformazione; ad esempio, se i dati sono stati trasformati nella radice quadrata, le EMM possono essere retro-trasformate, elevandole al quadrato e tornando così all’unità di misura originale.</p>
+<p>Le retro-trasformazioni sono, a tutti gli effetti, combinazioni non-lineari dei parametri del modello e, quindi, possono essere eseguite con la funzione <code>gnlht()</code>, oppure, in modo più efficiente, con <code>emmeans()</code>, impostando l’argomento <code>type = "response"</code>.</p>
+<p>A titolo di esempio, continuiamo le analisi del datase ‘insect’ (Esempio 8.2), che contiene i rilievi sul numero di insetti presenti sulle foglie di tabacco trattato con uno di tre insetticidi. Nel capitolo precedente abbiamo visto che, per evitare problemi con le assunzioni di base per i modelli lineari, questo dataset necessitava di una trasformazione logaritmica (Riquadro 8.5 e Fig. <a href="08-AssunzioniBase.html#fig-figName110" class="quarto-xref"><span>8.6</span></a>). Di conseguenza, le EMM sono anch’esse su scala logaritmica (Riquadro 9.13); se la loro unità di misura non fosse facilmente comprensibile, potremmo optare per la retro-trasformazione mediante la funzione inversa del logaritmo, che, per la prima media, sarebbe <span class="math inline">\(\textrm{EMM} = e^{6.34} = 568.6\)</span>. Per ottenere le stime e gli errori standard, utilizziamo la funzione <code>emmeans()</code>, come mostrato nel Riquadro 9.14.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Riquadro  9.14</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.6</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Retro-trasformazione per il dataset 'insects'</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei dati</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">'insects'</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting sui dati trasformati</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>modt <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(Count) <span class="sc">~</span> Insecticide, <span class="at">data =</span> dataset)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Medie marginali </span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>treatMeans <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(modt, <span class="sc">~</span>Insecticide)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>treatMeans</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  Insecticide emmean    SE df lower.CL upper.CL</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  T1            6.34 0.178 12     5.96     6.73</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  T2            5.81 0.178 12     5.43     6.20</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  T3            3.95 0.178 12     3.56     4.34</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Results are given on the log (not the response) scale. </span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Retro-trasformazione</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>retroMeans <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(modt, <span class="sc">~</span>Insecticide, </span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>                      <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>retroMeans</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  Insecticide response     SE df lower.CL upper.CL</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  T1             568.6 101.00 12    386.1    837.3</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  T2             335.1  59.50 12    227.6    493.5</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  T3              51.9   9.22 12     35.2     76.4</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95 </span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Intervals are back-transformed from the log scale</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronto con le medie marginali calcolate sui dati originali</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(<span class="fu">lm</span>(Count <span class="sc">~</span> Insecticide, <span class="at">data =</span> dataset),</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>        <span class="sc">~</span>Insecticide)</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="do">##  Insecticide emmean   SE df lower.CL upper.CL</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="do">##  T1           589.8 62.7 12    453.1      726</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="do">##  T2           357.4 62.7 12    220.7      494</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="do">##  T3            56.6 62.7 12    -80.1      193</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Possiamo notare che le medie retro-trasformate sono diverse dalle medie sulla scala originale (Riquadro 9.14) e dovrebbero essere considerate come stimatori delle mediane sulla scala originale anziché delle medie<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, il che rappresenta un vantaggio. Infatti, poiché i dati nella scala originale erano asimmetrici (motivo per cui si è resa necessaria la trasformazione), le mediane rappresentano descrittori di tendenza centrale migliori rispetto alle medie.</p>
+<p>Prima di concludere questa sezione, è necessario menzionare che la tecnica mostrata nel Riquadro 9.14 è utilizzabile ogni volta che la trasformazione è stata eseguita all’interno della funzione di adattamento del modello (guardate la linea: <code>modt &lt;- lm(log(Count) ~ Insecticide, data = dataset)</code>), ed è riconosciuta dalla funzione <code>emmeans()</code>. Altrimenti, quando la trasformazione non è rilevabile automaticamente, o non è stata eseguita all’interno della funzione <code>lm()</code>, dobbiamo:</p>
+<ol type="1">
+<li>effettuare la trasformazione prima di adattare il modello</li>
+<li>adattare il modello alla variabile trasformata</li>
+<li>aggiornare la griglia di riferimento (<em>reference grid</em>) del modello e specificare quale tipo di trasformazione è stata effettuata (ad es., <code>tran = "inverse"</code>)</li>
+<li>passare la griglia aggiornata alla funzione <code>emmeans()</code> (Riquadro 9.15)</li>
+</ol>
+<p>Ad esempio, una trasformazione nel reciproco non viene automaticamente riconosciuta e, di conseguenza, la retrotrasformazione non viene effettuata.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.15</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># La trasformazione nel reciproco non è automaticamente riconosciuta</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>modt2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="dv">1</span><span class="sc">/</span>Count <span class="sc">~</span> Insecticide, <span class="at">data =</span> dataset)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(modt2, <span class="sc">~</span>Insecticide, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  Insecticide  emmean      SE df lower.CL upper.CL</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  T1          0.00182 0.00279 12 -0.00426  0.00789</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  T2          0.00317 0.00279 12 -0.00291  0.00924</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  T3          0.02120 0.00279 12  0.01513  0.02727</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Manipolare la griglia di riferimento</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>dataset<span class="sc">$</span>InvCount <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>dataset<span class="sc">$</span>Count</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>modt3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(InvCount <span class="sc">~</span> Insecticide, <span class="at">data =</span> dataset)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>updGrid <span class="ot">&lt;-</span> <span class="fu">update</span>(<span class="fu">ref_grid</span>(modt3), <span class="at">tran =</span> <span class="st">"inverse"</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(updGrid, <span class="sc">~</span>Insecticide, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  Insecticide response    SE df lower.CL upper.CL</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  T1             550.9 846.0 12    126.8      Inf</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  T2             315.8 278.0 12    108.2      Inf</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  T3              47.2   6.2 12     36.7       66</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95 </span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Intervals are back-transformed from the inverse scale</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Questo metodo si può utilizzare con numerose funzioni, come, ad esempio “identity”, “1/mu^2”, “inverse”, “reciprocal”, “log10”, “log2”, “asin.sqrt” e “asinh.sqrt”.</p>
+<p>Un approccio analogo può essere utilizzato se vogliamo effettuare la trasformazione di Box-Cox nella sua forma semplificata (<span class="math inline">\(W = Y^{\lambda}\)</span>), utilizzando un valore <span class="math inline">\(\lambda\)</span> diverso da quelli ‘semplici’ (cioè diverso da 1, 0, 0.5 o -1). Ad esempio, se vogliamo utilizzare <span class="math inline">\(\lambda = 0.25\)</span>, dobbiamo operare in modo simile a quello descritto in precedenza, ma utilizzando la funzione <code>make.tran()</code>, come evidenziato nel Riquadro 9.16.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.16</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Un'altra possibilità per retrotrasformare</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>dataset<span class="sc">$</span>lCount <span class="ot">&lt;-</span> dataset<span class="sc">$</span>Count<span class="sc">^</span><span class="fl">0.25</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>mod4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(lCount <span class="sc">~</span> Insecticide, <span class="at">data =</span> dataset)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>updGrid <span class="ot">&lt;-</span> <span class="fu">update</span>(<span class="fu">ref_grid</span>(mod4), </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">tran =</span> <span class="fu">make.tran</span>(<span class="st">"power"</span>, <span class="fl">0.25</span>))</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(updGrid, <span class="sc">~</span>Insecticide, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  Insecticide response   SE df lower.CL upper.CL</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  T1             573.5 78.7 12    420.3    765.3</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  T2             340.5 53.2 12    238.5    472.1</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  T3              53.1 13.2 12     29.6     88.3</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95 </span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Intervals are back-transformed from the mu^0.25 scale</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="esempio-9.7-previsioni-e-previsioni-inverse" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="esempio-9.7-previsioni-e-previsioni-inverse"><span class="header-section-number">9.8</span> Esempio 9.7: Previsioni e previsioni inverse</h2>
+<p>Per i modelli di regressione lineare o non lineare, lavorare con le medie è solitamente irrilevante, mentre può essere necessario utilizzare il modello per fare previsioni, ovvero per calcolare la risposta attesa con un certo valore della variabile indipendente oppure per calcolare quale valore di una variabile indipendente consente di ottenere la risposta voluta (previsione inversa). Anche le previsioni possono essere considerate combinazioni lineari o non lineari dei parametri del modello e possono essere calcolate con R, utilizzando una delle numerose funzioni disponibili, come <code>predict()</code>, <code>emmeans()</code>, <code>glht()</code> e <code>gnlht()</code>.</p>
+<p>A titolo di esempio, possiamo considerare i dati ‘Ammi94’, relativi a un esperimento per definire la relazione tra la densità di <em>Ammi majus</em> (un’importante infestante di diverse colture primaverili nell’Italia centrale) espressa come numero di piante per metro quadrato e la resa del girasole in tonnellate per ettaro. Le diverse densità delle infestanti sono state ottenute con semina manuale, mentre i dati di resa rappresentano la media di quattro repliche <span class="citation" data-cites="onofri_1994">(<a href="references.html#ref-onofri_1994" role="doc-biblioref">Onofri e Tei 1994</a>)</span>. Il dataset è disponibile nel pacchetto <code>statforbiology</code> ed è analizzato nel riquadro 9.17, dove viene adattato un semplice modello di regressione lineare, visualizzando poi le due stime (intercetta e pendenza, ovvero <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.17</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.7</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Previsioni e previsioni inverse dopo una regressione lineare</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Relazione Densità/Produzione per Ammi majus</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei dati</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"Ammi94"</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>dataset</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="do">##   Density  Yield</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 1       0 2.4866</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 2      16 2.1806</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 3      21 1.8456</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 4      36 1.8412</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 5      49 1.6486</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Regressione lineare semplice</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Density, <span class="at">data =</span> dataset)</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Call:</span></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a><span class="do">## lm(formula = Yield ~ Density, data = dataset)</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals:</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a><span class="do">##        1        2        3        4        5 </span></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  0.08403  0.04167 -0.21094  0.03182  0.05342 </span></span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Coefficients:</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a><span class="do">##              Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="do">## (Intercept)  2.402566   0.108697  22.103 0.000203 ***</span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="do">## Density     -0.016477   0.003667  -4.494 0.020567 *  </span></span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Residual standard error: 0.138 on 3 degrees of freedom</span></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a><span class="do">## Multiple R-squared:  0.8707, Adjusted R-squared:  0.8275 </span></span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a><span class="do">## F-statistic: 20.19 on 1 and 3 DF,  p-value: 0.02057</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>In un esperimento del genere, vi sono due interessi fondamentali:</p>
+<ol type="1">
+<li>Prevedere la resa con misurazioni precoci della densità delle infestanti (previsione);</li>
+<li>Determinare la densità delle infestanti che provoca un certo livello di perdita di resa (previsione inversa).</li>
+</ol>
+<p>Queste stime possono essere ottenute come combinazioni lineari o non lineari. Ad esempio, immaginiamo di voler determinare il livello di resa previsto con 10 piante di <em>Ammi majus</em> per metro quadrato. Ci sono tre possibilità:</p>
+<ol type="1">
+<li>Utilizzare la funzione <code>glht()</code> per adattare un contrasto <span class="math inline">\(C = 1 \times \beta_0 + 10 \times \beta_1\)</span>, dove i parametri <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> sono, rispettivamente, l’intercetta e la pendenza del modello lineare;</li>
+<li>Utilizzare la funzione <code>predict()</code> e passare un dataframe (non un vettore!) contenente il livello di densità per la previsione (argomento ‘newdata’);</li>
+<li>Utilizzare la funzione <code>emmeans()</code>, passando il livello di densità come dataframe all’argomento ‘at’.</li>
+</ol>
+<p>Tutte e tre le possibilità sono illustrate nel Riquadro 9.18; i risultati sono, ovviamente, del tutto equivalenti.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.18</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.7 [segue]</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tre metodi per le previsioni</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Uso di 'glht()'##################</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Definire la matrice della combinazione</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glht</span>(mod, <span class="at">linfct =</span> K))</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="do">##   Simultaneous Tests for General Linear Hypotheses</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Fit: lm(formula = Yield ~ Density, data = dataset)</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Linear Hypotheses:</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="do">##        Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 == 0  2.23779    0.08123   27.55 0.000105 ***</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="do">## (Adjusted p values reported -- single-step method)</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Uso di 'predict()' ################</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(mod, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">Density=</span> <span class="fu">c</span>(<span class="dv">10</span>)), <span class="at">se.fit =</span> T)</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="do">## $fit</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="do">##        1 </span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="do">## 2.237793 </span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="do">## $se.fit</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.08123191</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="do">## $df</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3</span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a><span class="do">## $residual.scale</span></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.1380352</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Uso di 'emmeans()' ####################</span></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(mod, <span class="sc">~</span>Density, <span class="at">at =</span> <span class="fu">data.frame</span>(<span class="at">Density=</span> <span class="fu">c</span>(<span class="dv">10</span>)))</span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a><span class="do">##  Density emmean     SE df lower.CL upper.CL</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a><span class="do">##       10   2.24 0.0812  3     1.98      2.5</span></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Immaginiamo ora di voler stimare il livello di densità delle malerbe che provoca una riduzione della resa del 10%. Considerando che la resa senza malerbe è di 2.403 tonnellate per ettaro (l’intercetta stimata più sopra), una riduzione della resa del 10% corrisponde ad una resa pari a <span class="math inline">\(2.403 - 0.1 \times 2.403 = 2.163\)</span>, cioè <span class="math inline">\((2,163 - \beta_0)/\beta_1\)</span>. Quest’ultima equazione è intrinsecamente non lineare; pertanto, per la stima, si deve utilizzare la funzione <code>gnlht()</code>, come mostrato nel Riquadro 9.19.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 9.19</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 9.7 [segue]</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Previsione inversa con gnlht()</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">gnlht</span>(mod, <span class="at">func =</span> <span class="fu">list</span>(<span class="sc">~</span>(<span class="fl">21.53</span> <span class="sc">-</span> b0)<span class="sc">/</span>b1), </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">parameterNames =</span> <span class="fu">c</span>(<span class="st">"b0"</span>, <span class="st">"b1"</span>))</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="do">##              Form  Estimate       SE  t-value   p-value</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 (21.53 - b0)/b1 -1160.835 263.7767 4.400825 0.0217523</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="esercizi" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="esercizi"><span class="header-section-number">9.9</span> Esercizi</h2>
+<ol type="1">
+<li>Considerare gli esercizi da 5 a 7 nel Capitolo 4. Per tutti questi esercizi, dopo essersi accertati se è necessaria una trasformazione per soddisfare le ipotesi di base per i modelli lineari, eseguire il test di confronto multiplo, adottando una correzione appropriata per la molteplicità.</li>
+</ol>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-bretz_2011" class="csl-entry" role="listitem">
+<span class="smallcaps">Bretz, F, T Hothorn, P Westfall</span> (2011) <em>Multiple comparisons using <span>R</span></em>. CRC Press, Boca Raton, FL.
+</div>
+<div id="ref-chew_1976" class="csl-entry" role="listitem">
+<span class="smallcaps">Chew, V</span> (1976) Comparing treatment means: a compendium. <em>Hortscience</em> <strong>11</strong>, 348–357
+</div>
+<div id="ref-cousens_1988" class="csl-entry" role="listitem">
+<span class="smallcaps">Cousens, R</span> (1988) Misinterpretetion of results in weed research through inappropriate use of statistics. <em>Weed Research</em> <strong>28</strong>, 281–289
+</div>
+<div id="ref-hsu_1996" class="csl-entry" role="listitem">
+<span class="smallcaps">Hsu, JC</span> (1996) <em>Multiple comparisons. <span>Theory</span> and methods</em>. Chapman &amp; Hall, London
+</div>
+<div id="ref-lenth_2016" class="csl-entry" role="listitem">
+<span class="smallcaps">Lenth, RV</span> (2016) <a href="https://doi.org/10.18637/jss.v069.i01">Least-<span>Squares</span> <span>Means</span>: <span>The</span> <em>R</em> <span>Package</span> <strong>lsmeans</strong></a>. <em>Journal of Statistical Software</em> <strong>69</strong>
+</div>
+<div id="ref-onofri_2010" class="csl-entry" role="listitem">
+<span class="smallcaps">Onofri, A, EA Carbonell, H-P Piepho, AM Mortimer, RD Cousens</span> (2010) Current statistical issues in <span>Weed</span> <span>Research</span>. <em>Weed Research</em> <strong>50</strong>, 5–24
+</div>
+<div id="ref-onofri_1994" class="csl-entry" role="listitem">
+<span class="smallcaps">Onofri, A, F Tei</span> (1994) Competitive ability and threshold levels for three broadleaf weed species in sunflower. <em>Weed Research</em> <strong>34</strong>, 471–479
+</div>
+<div id="ref-piepho_2004" class="csl-entry" role="listitem">
+<span class="smallcaps">Piepho, HP</span> (2004) An algorithm for a letter-based representation of all-pairwise comparisons. <em>Journal of Computational and Graphical statistics</em> <strong>13</strong>, 456–466
+</div>
+<div id="ref-weisberg_2005" class="csl-entry" role="listitem">
+<span class="smallcaps">Weisberg, S</span> (2005) <em>Applied linear regression</em>. 3rd ed. John Wiley &amp; Sons Inc., Books
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>vedi: <a href="https://www.statforbiology.com/2024/stat_general_errorpropagation/">https://www.statforbiology.com/2024/stat_general_errorpropagation/</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Chi fosse interessato al metodo delta può trovare informazioni nel blog associato, all’indirizzo <a href="https://www.statforbiology.com/2024/stat_general_thedeltamethod_edit/">https://www.statforbiology.com/2024/stat_general_thedeltamethod_edit/</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Con il termine <em>familywise error rate</em>, mi riferisco al tasso di errore globale di I specie per una specifica ‘collezione’famiglia’ di test d’ipotesi, che non coincide necessariamente con tutti i possibili test d’ipotesi dell’intero esperimento. Per riferirsi al <em>familywise error rate</em> per l’intero esperimento si dovrebbe invece usare il termine <em>experimentwise error rate</em>. In pratica, i due termini sono spesso usati in modo intercambiabile<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Se i dati sono normalmente distribuiti sulla scala trasformata, la media e la mediana coincidono. Quando retro-trasformiamo con una qualunque funzione monotona alteriamo la media, ma l’ordine delle osservazioni non cambia, e, di conseguenza, non cambia neanche il valore centrale (cioè la mediana)<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiato!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiato!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./08-AssunzioniBase.html" class="pagination-link" aria-label="Verifica dei modelli">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Verifica dei modelli</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="Bibliografia">
+        <span class="nav-page-text">Bibliografia</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

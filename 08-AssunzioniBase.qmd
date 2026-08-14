@@ -15,68 +15,75 @@ Nei capitoli precedenti, abbiamo studiato i modelli come "strumenti" per descriv
 3.  i residui hanno una distribuzione gaussiana di probabilità (normalità);
 4.  tutti i residui hanno la stessa varianza (omoschedasticità).
 
-Oltre alle ipotesi di cui sopra, i dati osservati devono rispettare anche un altro requisito essenziale: l'assenza di valori anomali (*outliers*), ovvero osservazioni che differiscono notevolmente da tutte le altre osservazioni nello stesso gruppo di trattamento. Questi valori anomali producono residui negativi o positivi enormi, che possono essere molto influenti, sia per il test d'ipotesi che per l'affidabilità delle stime.
+Oltre alle ipotesi di cui sopra, i dati osservati devono rispettare anche un altro requisito essenziale: l'assenza di osservazioni anomale (*outliers*), che differiscono inspiegabilmente da tutte le altre e producono residui negativi o positivi enormi. Queste osservazioni possono essere molto influenti, producendo effetti negativi sull'affidabilità delle stime e dei test d'ipotesi.
 
 Purtroppo, bisogna riconoscere che i problemi relativi alle assunzioni di base sono tutt'altro che infrequenti, come vedremo in seguito.
 
 ## Deviazioni rispetto alle assunzioni di base
 
-La mancanza di 'bontà d'adattamento' (più semplicemente: 'mancanza d'adattamento') può verificarsi quando le previsioni del modello sembrano deviare sistematicamente rispetto ai dati osservati, ad esempio quando una modello di regressione lineare viene adattato ad una risposta curvilinea. In caso di mancanza di adattamento, dovremo concludere che i dati e il modello non si supportano a vicenda e, quindi, che il modello "non consente al ricercatore di rispondere alle sue domande scientifiche" (Kass et al., 2016).
+La mancanza di 'bontà d'adattamento' (più semplicemente in inglese *lack of fit* o LOF) si verifica quando le previsioni del modello deviano sistematicamente rispetto a quanto osservato, ad esempio quando abbiamo utilizzato un modello modello di regressione lineare per descrivere una risposta curvilinea. In caso di *lack of fit*, dovremo concludere che i dati e il modello non si supportano a vicenda e, quindi, che il modello "non consente di rispondere alle domande scientifiche del ricercatore" [@kass_2016].
 
-La mancanza d'indipendenza dei residui del modello può verificarsi a causa di:
+La mancanza d'indipendenza dei residui si verifica quando i residui contengono non solo errori casuali, ma anche una componente sistematica, che crea una sorta di 'parentela' (effetto 'gruppo') tra le osservazioni. Ad esempio, se il disegno è a blocchi randomizzati e l'effetto del blocco non è stato incluso nel modello, se immaginiamo che un blocco è più 'fertile' degli altri, i residui dello stesso blocco condivideranno questo effetto positivo e tenderanno ad essere più simili tra loro che non i residui appartenenti a blocchi diversi. Quindi i residui saranno 'raggruppati' (o meglio 'raggruppabili') e non realmente indipendenti (vedi anche Capitolo 12).
+
+In generale, la mancanza d'indipendenza può verificarsi per:
 
 1.  intrusioni sistematiche,
 2.  presenza di fattori di raggruppamento non considerati nel modello,
-3.  mancanza di adattamento sistematica dovuta alla selezione errata del modello, o
+3.  selezione errata del modello, o
 4.  mancanza di randomizzazione adeguata (vedere anche Sezione 4.6 e Capitolo 12).
 
-La mancanza di indipendenza è considerata una delle assunzioni di base più pericolose da violare, poiché comporta un rischio elevato di errore di I specie (Frey et al., 2024), ovvero un rischio maggiore di rifiutare erroneamente un'ipotesi nulla vera (falso positivo).
+La mancanza di indipendenza è considerata una delle assunzioni di base più pericolose da violare, poiché comporta un rischio elevato di errore di I specie [@frey_2024], ovvero un rischio maggiore di rifiutare erroneamente un'ipotesi nulla vera (falso positivo).
 
-La normalità viene violata quando i residui del modello non "riflettono" la forma tipica di una distribuzione gaussiana, ovvero quando sono asimmetrici (distribuzione asimmetrica: la media non è uguale alla mediana) o quando le code sono troppo 'alte' (distribuzione platicurtica: troppi valori estremi) o troppo 'basse' (distribuzione leptocurtica: i valori sono troppo "concentrati" attorno alla media)(Fig. \@ref(fig:figName100prima)). In assenza di *outliers* (vedi più avanti), la non normalità è considerata meno dannosa di altre deviazioni (Knief e Forstmeier, 2021), in quanto non provoca forti distorsioni nella stima dei parametri od un incremento del rischio di errore di I specie. Tuttavia, si raccomanda sempre un atteggiamento cauto, poiché le deviazioni dalla normalità possono essere associate ad altri tipi di deviazioni più pericolose, come l'eteroschedasticità. Deviazioni dalla normalità possono verificarsi anche a causa della presenza di *outliers*, collegati ad errori casuali di entità eccezionale (ad esempio, procedure difettose, scarso controllo o intrusioni di qualsiasi tipo). Questi *outliers* modificano profondamente medie e deviazioni standard, portando ad un'errata interpretazione dei risultati sperimentali (Cochran, 1947).
+La normalità viene violata quando i residui del modello non "riflettono" la forma tipica di una distribuzione gaussiana, ovvero quando sono asimmetrici (la media non è uguale alla mediana) o quando le code sono troppo 'alte' (distribuzione platicurtica: troppi valori estremi) o troppo 'basse' (distribuzione leptocurtica: i valori sono troppo "concentrati" attorno alla media) (Fig. -@fig-figName100prima; vedi anche il Cap. 5). La non-normalità può anche anche essere dovuta alla presenza di *outliers* dovuti all'effetto di errori casuali di entità eccezionale (ad esempio, procedure difettose, scarso controllo o intrusioni di qualsiasi tipo). In questo caso, le stime delle medie e delle deviazioni standard sono inaffidabili e possono portare ad un'errata interpretazione dei risultati sperimentali [@cochran_1947].
 
-```{r figName100prima, out.width = "85%", echo=FALSE, fig.align='center', echo=FALSE, fig.cap = "Alcune distribuzioni non-normali dei residui."}
+In assenza di *outliers*, la non normalità è invece considerata meno dannosa di altre deviazioni [@knief_2021], in quanto non provoca forti distorsioni nella stima dei parametri od un incremento del rischio di errore di I specie. Tuttavia, è necessario essere cauti, poiché la non-normalità può essere associate ad altri tipi di deviazioni più pericolosi, come l'eteroschedasticità.
+
+```{r fig-figName100prima, echo=FALSE, fig.align='center', echo=FALSE, fig.cap = "Distribuzioni non-normali dei residui: (a) asimmetria a destra (right-skewed): la mediana è inferiore alla media; asimmetria a sinistra (left-skewed): la mediana è superiore alla media; distribuzione platicurtica: le code sono troppo 'alte', con troppi valori estremi; distribuzione leptocurtica: le code sono troppo 'basse' e i residui sono troppo 'concentrati' vicino alla media"}
+#| fig-width: 6
+#| fig-height: 6
+
 # Several distribution functions
 library(ggplot2)
 
 # Log-normal shifted distribution
 X <- 1:50; Y <- 1:50
 g1 <- ggplot(data.frame(x = X, y = Y, 
-                  graph = "Right-Skewed")) +
+                  graph = "Asimmetria a destra")) +
   geom_function(fun = function(x) dlnorm(x + 3, log(3), 0.45),
                 col = "red") +
   xlim(c(-6,6)) +
-  labs(x = "Residual", y = "Density") +
+  labs(x = "Residui", y = "Densità") +
   facet_wrap(~graph) +
     theme_bw()
 
 # Skew-normal distribution
 library(sn)
 g2 <- ggplot(data.frame(x = X, y = Y, 
-                  graph = "Left-Skewed")) +
+                  graph = "Asimmetria a sinistra")) +
   geom_function(fun = function(x) dsn(x-1.5, 0, 2, -4),
                 col = "red") +
   xlim(c(-6,6)) +
-  labs(x = "Residual", y = "Density") +
+  labs(x = "Residui", y = "Densità") +
   facet_wrap(~graph) +
     theme_bw()
 
 # Platicurtic distribution (Student's t)
 g3 <- ggplot(data.frame(x = X, y = Y, 
-                  graph = "Platykurtic")) +
+                  graph = "Distribuzione platicurtica")) +
   geom_function(fun = function(x) dt(x/3, 1),
                 col = "red") +
   xlim(c(-6,6)) +
-  labs(x = "Residual", y = "Density") +
+  labs(x = "Residui", y = "Densità") +
   facet_wrap(~graph) +
     theme_bw()
 
 # Leptocurtic distribution (uniform)
 g4 <- ggplot(data.frame(x = X, y = Y, 
-                  graph = "Leptokurtic")) +
+                  graph = "Distribuzione leptocurtica")) +
   geom_function(fun = function(x) dunif(x, -2,2),
                 col = "red") +
   xlim(c(-6,6)) +
-  labs(x = "Residual", y = "Density") +
+  labs(x = "Residui", y = "Densità") +
   facet_wrap(~graph) +
     theme_bw()
 
@@ -86,27 +93,33 @@ grid.arrange(g1, g2, g3, g4, nrow = 2)
 rm(list = ls())
 ```
 
-L'eteroschedasticità può verificarsi, ad esempio, quando i trattamenti sperimentali producono effetti sia sulla media che sulle deviazioni standard (ad esempio, effetti moltiplicativi) in modo tale che queste due statistiche diventino proporzionali tra loro (quando la media aumenta, aumenta proporzionalmente anche la deviazione standard). Altre cause comuni di eteroschedasticità includono attacchi di parassiti e altre intrusioni, nonché un grado inferiore di controllo in alcune parti dell'esperimento di campo. È stato dimostrato che l'eteroschedasticità si traduce in una stima distorta della deviazione standard dei residui e porta a P-value non validi, così che il reale rischio d'errore di I specie può essere anche molto diverso da quello nominale (Glass et al., 1972).
+L'eteroschedasticità può verificarsi, ad esempio, quando i trattamenti sperimentali producono effetti moltiplicativi (ad esempio: 1.5 volte la produzione del primo trattamento in ordine alfabetico) e non additivi (ad esempio: +5 t/ha rispetto al primo trattamento in ordine alfabetico, come ipotizzato nel Cap. 4). Mentre l'effetto additivo si ripercuote sulla media, ma non sulla deviazione standard, l'effetto moltiplicativo si ripercuote su entrambe le statistiche, in modo tale che qesse diventino proporzionali tra loro (quando la media aumenta, aumenta proporzionalmente anche la deviazione standard)^[La legge di propagazione degli errori descritta al Cap. 3.3 mostra che se il primo trattamento A ha prodotto, ad esempio, 20 t/ha con una deviazione standard pari a 2 e se il trattamento B ha prodotto 5 t/ha in più, la media di B sarà 25 t/ha e la sua deviazione standard sarà uguale a $\sqrt{1^2 \times2^2 + 5 \times 0}$. Mentre se l'effetto è moltiplicativo e pari a 2, la media di B sarà pari a 30 e la sua deviazione standard sarà pari a $\sqrt{1.5^2 \, 2^2}$].
+
+Oltre agli effetti moltiplicativi, altre cause comuni di eteroschedasticità includono attacchi di parassiti e altre intrusioni, nonché un grado inferiore di controllo in alcune parti dell'esperimento di campo. È stato dimostrato che l'eteroschedasticità si traduce in una stima distorta della deviazione standard dei residui e porta a P-value non validi, così che il reale rischio d'errore di I specie può essere anche molto diverso da quello nominale [@glass_1972].
 
 ## Scoprire le violazioni
 
-Il rispetto di alcune assunzioni di base, come l'indipendenza dei residui e l'assenza di errori sistematici, è garantito dall'adozione di un disegno sperimentale a 'regola d'arte', cioè basato su repliche indipendenti e correttamente randomizzate. Bisogna tenere presente che gli eventuali vincoli alla randomizzazione introdotti in fase di disegno sperimentale (blocchi randomizzati, quadrato latino, split-plot...) possono inficiare l'indipendenza dei residui; ad esempio, con i blocchi randomizzati, le osservazioni all'interno dello stesso blocco si assomigliano di più che non quelle in blocchi diversi, proprio perché condividono le condizioni ambientali caratteristiche di ciascun blocco. Insomma, si realizza un certo grado di 'parentela' tra le osservazioni, che non è compatibile con l'ipotesi di totale indipendenza. Vedremo nei capitoli successivi che queste situazioni vengono gestite includendo nel modello ANOVA anche il fattore di blocco o gli altri vincoli eventualmente imposti alla randomizzazione completa.
+Il rispetto di alcune assunzioni di base, come l'indipendenza dei residui e l'assenza di errori sistematici, è garantito dall'adozione di un disegno sperimentale a 'regola d'arte', cioè basato su repliche indipendenti e correttamente randomizzate. Inoltre, è necessario controllare che il modello statistico selezionato per l'analisi dei dati sia adeguato al disegno sperimentale ed includa anche gli eventuali fattori di raggruppamento, che siano stati eventualmente introdotti in fase di disegno sperimentale (i blocchi negli RCBD, le righe/colonne nei quadrati latini, le 'main-plots' negli split-plot, ecc.). L'inclusione di questi fattori di raggruppamento è raccomandata anche quando il loro effetto non risulti statisticamente significativo [@frey_2024]; nei capitoli successivi vedremo come gestire questa situazione, anche nel caso dei disegni a misure ripetute, a split-plot o a strip-plot.
 
-Per quanto riguarda le altre assunzioni di base, come la bontà di adattamento, l'omogeneità delle varianze e la normalità dei residui, la verifica può essere fatta solo *a posteriori*, cioè dopo aver effettuato la stima dei parametri ed aver individuato i residui stessi.
+Se l'indipendenza dei residui è garantita già in fase di disegno sperimentale, l'assenza di *outliers*, la bontà di adattamento, l'omogeneità delle varianze e la normalità dei residui debbono essere oggetto di attente verifiche *a posteriori*, cioè dopo aver stimato il modello e calcolato i residui stessi, come indicato nel Cap. 4. La verifica deve essere particolarmente accurata in tre situazioni:
 
-Oltre a quanto abbiamo finora dotto, dobbiamo anche tener presente che il dataset non dovrebbe contenere le cosiddette osservazioni aberranti od *outliers*. Si tratta di osservazioni molto diverse dalle altre, che spesso fanno sospettare che sia avvenuto qualche errore grossolano; la loro assenza non è postulata da alcun modello statistico, anche se esse, proprio perché molto diverse dalle altre, finiscono per inficiare la normalità dei residui e l'omogeneità delle varianze, oltre a stravolgere pericolosamente le nostre conclusioni. Pertanto, alla loro individuazione deve essere sempre dedicata la debita attenzione.
+1. Quando la risposta è costituita da conteggi o proporzioni, che sono molto raramente normali e omoschedastici. 
+2. Quando la risposta è quantitativa e le differenze tra le medie dei gruppi sono molto elevate (ad esempio, superiori a un ordine di grandezza) perché, per questi dati, le varianze sono raramente omogenee. 
+3. Quando abbiamo adattato un modello di regressione, che potrebbe deviare sistematicamente dalle risposte osservate.
 
-Per diagnosticare eventuali problemi con le assunzioni di base e/o con la presenza di outliers, possiamo utilizzare sia metodi grafici che metodi formali, basati sul test d'ipotesi. Vediamo ora alcune possibilità.
+Per queste verifiche, possiamo utilizzare sia metodi grafici che metodi formali, basati sul test d'ipotesi [@anscombe_1963], come vedremo nei paragrafi seguenti.
 
 ## Analisi grafica dei residui
 
-Dato che la gran parte delle assunzioni riguarda la struttura dei residui, l'ispezione grafica di questi ultimi è in grado di evidenziare chiaramente la gran parte dei problemi e dovrebbe, pertanto, essere considerata come una metodica da applicare in modo routinario. Esistono diversi tipi di grafici, ma ne elenchiamo fondamentalmente due: il grafico dei residui contro i valori attesi e il QQ-plot.
+Rappresentare i residui in un grafico appropriato permette di evidenziare chiaramente la gran parte dei problemi e dovrebbe, pertanto, essere considerato come una pratica routinaria. Esistono diversi tipi di grafici, ma ne elenchiamo fondamentalmente tre, che possono essere facilmente prodotti con R o altri software statistici.
 
 ### Grafico dei valori osservati, aumentato con le previsioni del modello
 
-Per tutti i tipi di modelli di regressione, lo strumento più importante per verificare la bontà di adattamento è un grafico a dispersione della risposta osservata rispetto al predittore, integQuest'ultima dovrebbe seguire fedelmente i dati osservati (Fig. \@ref(fig:figName100)A) senza mostrare alcun segno di deviazioni sistematiche, come illustrato nelle Figure \@ref(fig:figName100)B, C e D.
+Per tutti i tipi di modelli di regressione, lo strumento più importante per verificare la bontà di adattamento è un grafico a dispersione che rappresenti la risposta osservata sulle ordinate e il predittore sulle ascisse, integrato con le previsioni del modello. In questo grafico, le previsioni dovrebbero 'seguire' fedelmente i dati osservati (Fig. -@fig-figName100 A) senza mostrare alcun segno di deviazioni sistematiche, come quelle rappresentate nella Figura -@fig-figName100 B, C e D.
 
-```{r figName100, fig.dim = c(6,6), fig.align='center', echo=FALSE, fig.cap = "Grafico a dispersione delle risposte osservate (simboli), integrati con le previsioni del modello (linee e curve). Il panel in alto a sinistra mostra un modello con un buon adattamento, mentre gli altri grafici mostrano diversi tipi di violazioni."}
+```{r fig-figName100, fig.align='center', echo=FALSE, fig.cap = "Grafico a dispersione delle risposte osservate (simboli), integrati con le previsioni del modello (linee e curve). In A vediamo un modello con un buon adattamento, mentre B mostra un modello di regressione lineare che devia sensibilmente rispetto ad una risposta curvilinea. In C e D vediamo invece due modelli non lineari, non adeguati rispetto al comportamento della risposta, anch'essa curvilinea."}
+#| fig-width: 6
+#| fig-height: 6
 
 # Graph of responses against the predictors, augmented with model fit
 set.seed(123)
@@ -117,7 +130,7 @@ mod1 <- lm(Y1 ~ X1)
 g1 <- ggplot(data.frame(x = X1, y = Y1, graph = "A")) +
   geom_point(aes(x, y), col = "red") +
   geom_abline(aes(intercept = coef(mod1)[1], slope = coef(mod1)[2])) +
-  labs(x = "Predictor", y = "Response") +
+  labs(x = "Predittore", y = "Risposta") +
   facet_wrap(~graph) +
     theme_bw()
 
@@ -128,7 +141,7 @@ mod2 <- lm(Y2 ~ X2)
 g2 <- ggplot(data.frame(x = X2, y = Y2, graph = "B")) +
   geom_point(aes(x, y), col = "red") +
   geom_abline(aes(intercept = coef(mod2)[1], slope = coef(mod2)[2])) +
-  labs(x = "Predictor", y = "Response") +
+  labs(x = "Predittore", y = "Risposta") +
   facet_wrap(~graph) +
     theme_bw()
 
@@ -140,7 +153,7 @@ g3 <- ggplot(data.frame(x = X3, y = Y3, graph = "C")) +
   geom_point(aes(x, y), col = "red") +
   # geom_abline(aes(intercept = coef(mod)[1], slope = coef(mod)[2])) +
   geom_function(fun = function(x) coef(mod3)[1]*exp(-coef(mod3)[2]*x)) +
-  labs(x = "Predictor", y = "Response") +
+  labs(x = "Predittore", y = "Risposta") +
   facet_wrap(~graph) +
     theme_bw()
 
@@ -153,7 +166,7 @@ g4 <- ggplot(data.frame(x = X4, y = Y4, graph = "D")) +
   geom_function(fun = function(x) NLS.LL3(x, -coef(mod4)[1],
                                            coef(mod4)[2],
                                            coef(mod4)[3])) +
-  labs(x = "Predictor", y = "Response") +
+  labs(x = "Predittore", y = "Risposta") +
   facet_wrap(~graph) +
     theme_bw()
 
@@ -163,9 +176,11 @@ rm(list = ls())
 
 ### Grafico dei residui contro i valori attesi
 
-Il metodo grafico più utilizzato per l'analisi dei residui consiste nel plottare i residui stessi contro i valori attesi. Se non vi sono problemi, i punti nel grafico dovrebbero essere distribuiti in modo assolutamente casuale, come in Figura \@ref(fig:figName101), in alto a sinistra. Le osservazioni aberranti (*outliers*) appaiono invece come punti isolati rispetto agli altri (Fig. \@ref(fig:figName101); in alto a destra). L'eterogeneità delle varianze è invece indicata da residui che si allargano o si stringono procedendo verso i margini del grafico (Figura \@ref(fig:figName101), in basso a sinistra), facendo emergere una sorta di proporzionalità tra media e varianza. In ultimo, la mancanza di adattamento nei modelli di regressione è evidenziata da un qualche evidente *pattern*, come quando i residui sono tendenzialmente negativi per bassi valori attesi e positivi per alti valori, chiaro segnale di un modello deterministico che sovrastima le osservazioni quando sono basse e le sottostima quando sono alte (Fig. \@ref(fig:figName101); in basso a destra).
+Il metodo grafico più utilizzato per l'analisi dei residui consiste nel plottare i residui stessi contro i valori attesi. Se non vi sono problemi, i punti nel grafico dovrebbero essere distribuiti in modo assolutamente casuale, come nel grafico in alto a sinistra in Figura -@fig-figName101. Le osservazioni aberranti (*outliers*) appaiono invece come punti isolati rispetto agli altri (Fig. -@fig-figName101, in alto a destra). L'eterogeneità delle varianze è invece indicata da residui che si allargano o si stringono procedendo verso i margini del grafico (Fig. -@fig-figName101, in basso a sinistra), facendo emergere una sorta di proporzionalità tra media e varianza. Infine, la mancanza di adattamento nei modelli di regressione può essere visibile attraverso la comparso di deviazioni sistematiche, come il raggruppamento di residui postivi e negativi in zone diverse del grafico, che possono indicare che il modello sovrastima le osservazioni quando sono, ad esempio, basse e le sottostima quando sono alte (Fig. -@fig-figName101, in basso a destra).
 
-```{r figName101, echo = F, fig.align='center', fig.cap="Plot dei residui contro i valori attesi: una disposizione dei punti totalmente casuale supportata l'ipotesi che le assunzioni di base siano rispettate (in alto a sinistra). Gli *outliers* sono evidenziati come punti 'isolati' (in alto a destra), mentre una disposizione ad 'imbuto' rivela che le varianze sono direttamente o inversamente proporzionali alle medie (in basso a sinistra). La mancanza d'adattamento è invece rivelata da un qualkunque evidente pattern nella disposizione dei punti, come, ad esempio, dei residui associati di ugual segno in una certa zona del grafico (in basso a destra).", fig.dim = c(7,7)}
+```{r fig-figName101, echo = F, fig.align='center', fig.cap="Grafico dei residui contro i valori attesi: una disposizione dei punti totalmente casuale supportata l'ipotesi che le assunzioni di base siano rispettate (in alto a sinistra). Gli *outliers* sono evidenziati come punti 'isolati' (in alto a destra), mentre una disposizione ad 'imbuto' rivela che le varianze sono direttamente o inversamente proporzionali alle medie (in basso a sinistra). La mancanza d'adattamento è invece rivelata da un qualunque evidente pattern nella disposizione dei punti, come, ad esempio, dei residui associati di ugual segno in una certa zona del grafico (in basso a destra)."}
+#| fig-width: 6
+#| fig-height: 6
 
 rm(list = ls())
 # Figura su grafico residui vs attesi
@@ -175,22 +190,22 @@ library(gridExtra)
 # Random pattern
 set.seed(1234)
 dframe <- data.frame(x = 1:100, y = rnorm(100, 0, 2.5),
-                     graph = "Random Pattern")
+                     graph = "Distribuzione random")
 g1 <- ggplot(dframe) +
   geom_point(aes(x, y), col = "red") +
   geom_abline(aes(intercept = 0, slope = 0), lty = 2) +
-  labs(x = "Expected values", y = "Residuals") +
+  labs(x = "Valori attesi", y = "Residui") +
   facet_wrap(~graph) +
     theme_bw()
 
 # Outlier
 set.seed(122)
 dframe2 <- data.frame(x = c(1:100, 60), y = c(rnorm(100, 0,2.5), 16),
-                     graph = "Outlier")
+                     graph = "Presenza di un 'outlier'")
 g2 <- ggplot(dframe2) +
   geom_point(aes(x, y), col = "red") +
   geom_abline(aes(intercept = 0, slope = 0), lty = 2) +
-  labs(x = "Expected values", y = "Residuals") +
+  labs(x = "Valori attesi", y = "Residui") +
   facet_wrap(~graph) +
     theme_bw()
 
@@ -198,11 +213,11 @@ g2 <- ggplot(dframe2) +
 set.seed(424)
 dframe3 <- data.frame(x = 1:100, 
                       y = rnorm(100, 0, c(1:100)/20),
-                     graph = "Heteroscedasticity")
+                     graph = "Eteroschedasticità")
 g3 <- ggplot(dframe3) +
   geom_point(aes(x, y), col = "red") +
   geom_abline(aes(intercept = 0, slope = 0), lty = 2) +
-  labs(x = "Expected values", y = "Residuals") +
+  labs(x = "Valori attesi", y = "Residui") +
   facet_wrap(~graph) +
     theme_bw()
 
@@ -218,7 +233,7 @@ dframe4 <- data.frame(x = 1:100,
 g4 <- ggplot(dframe4) +
   geom_point(aes(x, y), col = "red") +
   geom_abline(aes(intercept = 0, slope = 0), lty = 2) +
-  labs(x = "Expected values", y = "Residuals") +
+  labs(x = "Valori attesi", y = "Residui") +
   facet_wrap(~graph) +
     theme_bw()
 
@@ -228,13 +243,10 @@ rm(list = ls())
 
 ### QQ-plot
 
-Per evidenziare problemi di non-normalità, risulta molto utile un QQ-plot (quantile-quantile plot), nel quale i residui *standardizzati* vengono 'plottati' contro i rispettivi percentili di una distribuzione normale standardizzata. Con residui normali, queste due entità (i residui standardizzati e i percentili corrispondenti di una distribuzione normale standardizzata) sono largamente coincidenti, in modo che i punti nel QQ-plot giacciono lungo la bisettrice del primo e del terzo quadrante (\@ref(fig:figName105) in alto a sinistra).
+Per evidenziare problemi di non-normalità, possiamo utilizzare un QQ-plot (quantile-quantile plot), che è un grafico a dispersione con i residui *standardizzati* nelle ordinate e i rispettivi percentili di una distribuzione normale standardizzata nelle ascisse. Per semplicità, evitiamo ulteriori dettagli, che possono essere comunque reperiti nel blog che accompagna questo libro^[[Vai a questo link](https://www.statforbiology.com/2020/stat_general_percentiles/)]. Queste due entità (i residui standardizzati e i corrispondenti percentili di una distribuzione normale standardizzata) dovrebbero essere largamente coincidenti, e quindi i punti nel grafico dovrebbero giacere lungo la bisettrice del primo e del terzo quadrante (Fig. -@fig-figName105, in alto a sinistra). Ogni deviazione rispetto a questo pattern, indica problemi di non-normalità dei residui, come evidenziato in tutti i pannelli della Figura -@fig-figName105, a parte quello in alto a sinistra.
 
-Le deviazioni più diffuse dalla normalità sono relative alla simmetria (skewness) e alla curtosi della popolazione da cui i residui sono campionati. In particolare, può capitare che i residui provengano da una popolazione con asimmetria positiva (right-skewed), come, ad esempio, una popolazione log-normale. In questo caso, la media è maggiore della mediana e i residui negativi sono più numerosi, ma più piccoli in valore assoluto di quelli positivi. Il QQ-plot si presenta come in figura \@ref(fig:figName105) in alto al centro. Al contrario, se i residui provengono da una popolazione con asimmetria negativa ('left-skewed'), caratterizzata, ad esempio, da una funzione di densità 'beta', la media è minore della mediana e, di conseguenza, i valori positivi sono più numerosi, ma più vicini allo zero di quelli negativi. In questa situazione, il QQ-plot presenta un andamento abbastanza tipico, come indicato in Figura \@ref(fig:figName105) in alto a destra.
 
-Per quanto riguarda la curtosi, è necessario osservare le code della distribuzione: se queste sono più alte di una distribuzione normale parliamo di distribuzione platicurtica, mentre se sono più basse parliamo di distribuzione leptocurtica. Ad esempio, se i residui provengono da una distribuzione t di Student con pochi gradi di libertà sono platicurtici ed il QQ-plot mostra l'andamento indicato in figura \@ref(fig:figName105) in basso a sinistra. Al contrario, se i residui provengono da una distribuzione uniforme sono tipicamente leptocurtici e presentano un QQ-plot come quello riportato in Figura \@ref(fig:figName105) in basso al centro.
-
-```{r figName105, echo=FALSE, fig.align='center', fig.cap="QQ-plot per residui gaussiani (in alto a sinistra) e per residui che mostrano diversi tipi di violazioni dalla normalità (vedi anche Fig. 8.1).", message=FALSE, warning=FALSE, fig.dim = c(7,7)}
+```{r fig-figName105, echo=FALSE, fig.align='center', fig.cap="QQ-plot per residui gaussiani (in alto a sinistra) e per residui che mostrano diversi tipi di violazioni dalla normalità (vedi anche Fig. 8.1).", message=FALSE, warning=FALSE, fig.dim = c(7,7)}
 # Gaussian residuals
 set.seed(4412)
 res <- scale(rnorm(100, 0, 2.5), center = T, scale=T)
@@ -313,19 +325,19 @@ grid.arrange(g1, g2, g3, g4, g5, nrow = 2)
 rm(list = ls())
 ```
 
-## Test d'ipotesi
+## Metodi formali e Test d'ipotesi
 
-La valutazioni illustrate in precedenza sono basate sulla semplice osservazione di uno o più grafici, ma sono considerate sufficientemente attendibili per la maggior parte delle situazioni. Tuttavia, esistono anche test statistici formali che consentono di saggiare l'ipotesi nulla di 'assenza di deviazioni', che può essere rifiutata qualora il P-level fosse inferiore a 0.05.
+La valutazioni illustrate in precedenza sono basate sulla semplice osservazione di uno o più grafici, ma sono considerate sufficientemente attendibili per la maggior parte delle situazioni. Tuttavia, esistono anche test statistici formali che consentono di saggiare l'ipotesi nulla di 'assenza di deviazioni', rifiutandola qualora il P-level fosse inferiore a 0.05.
 
-Rispetto alle procedure grafiche, il test d'ipotesi formale può dare una miglior sensazione di obiettività, anche se non è tutto oro quel che luccica. Infatti, questi test possono creare più problemi di quanti ne risolvano dato che, ad esempio, richiedono campioni di grandi dimensioni e fanno affidamento su assunzioni di base molto stringenti, tanto che, alla fine, l'affidabilità dei risultati è spesso discutibile (Kozak e Piepho 2018). Per questi motivi, il loro utilizzo è sconsigliato e dovrebbe essere riservato a supportare situazioni complesse in cui i metodi grafici non forniscono risposte sufficientemente chiare.
+Rispetto alle procedure grafiche, il test d'ipotesi formale può dare una miglior sensazione di obiettività, anche se non è tutto oro quel che luccica. Infatti, questi test possono creare più problemi di quanti ne risolvano dato che, ad esempio, richiedono campioni di grandi dimensioni e fanno affidamento su assunzioni di base molto stringenti, tanto che, alla fine, l'affidabilità dei risultati è spesso discutibile [@kozak_2018]. Per questi motivi, il loro utilizzo è sconsigliato e dovrebbe essere riservato a supportare situazioni complesse in cui i metodi grafici non forniscono risposte sufficientemente chiare.
 
-Le procedure presentate in questo capitolo sono state selezionate perché ampiamente utilizzate e facilmente disponibili in R.
+Le procedure presentate in questo capitolo sono state selezionate perché ampiamente utilizzate e prontamente disponibili in R.
 
 ### Test di Levene per l'omogeneità delle varianze
 
-Secondo gli studi di Conover et al. (1981), il test di Levene è una delle procedure più affidabili per saggiare l'ipotesi di omoschedasticità nei modelli con predittori nominali; consiste nel'eseguire l'analisi della varianza di una 'pseudo-risposta', ottenuta sostituendo ciascun dato osservato con il valore assoluto della sua differenza con il centro del gruppo a cui appartiene (dati 'group-centered').
+Secondo gli studi di @conover_1981, il test di Levene è una delle procedure più affidabili per saggiare l'ipotesi di omoschedasticità nei modelli con predittori nominali; consiste nell'eseguire l'analisi della varianza di una 'pseudo-risposta', ottenuta sostituendo ciascun dato osservato con il valore assoluto della differenza rispetto al 'centro' del gruppo a cui appartiene (valore assoluto di dati 'group-centered').
 
-Inizialmente, Levene propose di utilizzare come centro di gruppo la media; l'idea di fondo era che, sebbene le medie di gruppo di dati 'group-centered' siano pari a zero, prendendo i valori assoluto (cioè rimuovendo i segno negativi), queste medie diventano diverse da zero e sono tanto più alte quanto più la varianza di gruppo è alta. Questo concetto sarà più semplice da comprendere utilizzando un esempio pratico. Consideriamo due gruppi sperimentali `A <- c(19, 20, 21)` e `B <- c(26, 30, 34)`, che hanno, rispettivamente, medie pari a 20 e 30, e varianze pari a 1 e 16. Sottraendo dalle osservazioni di ogni gruppo la media del gruppo stesso, otteniamo le pseudo-osservazioni `Ac <- c(-1, 0, 1)` e `Bc <- c(-4, 0, 4)`, la cui media è zero, mentre le varianze restano inalterate. Se escludiamo i segno negativi, le medie dei due gruppi divengono pari, rispettivamente, a 2/3 e 8/3, mostrando come il gruppo con più alta varianza abbia prodotto pseudo-osservazioni con media più alta. Se la differenza tra le due medie delle pseudo-osservazioni è significativa, l'ipotesi nulla di omogeneità delle varianze può essere rigettata.
+Inizialmente, Levene propose di utilizzare come centro di gruppo la media; l'idea di fondo è semplice: i dati 'centrati' per gruppo hanno, per definizione' medie dei gruppi tutte pari a zero; se però si rimuovono i segni negativi, prendendo il valore assoluto dei dati 'centrati, le medie dei gruppi divegono diverse tra loro e diverse da zero e sono tanto più alte quanto più la varianza di gruppo è alta. Questo concetto sarà più semplice da comprendere utilizzando un esempio pratico. Consideriamo due gruppi sperimentali `A <- c(19, 20, 21)` e `B <- c(26, 30, 34)`, che hanno, rispettivamente, medie pari a 20 e 30, e varianze pari a 1 e 16. Sottraendo dalle osservazioni di ogni gruppo la media del gruppo stesso, otteniamo le pseudo-osservazioni `Ac <- c(-1, 0, 1)` e `Bc <- c(-4, 0, 4)`, dova entrambe le medie sono pari a zero, mentre le varianze restano inalterate. Se escludiamo i segno negativi, le medie dei due gruppi divengono pari, rispettivamente, a 2/3 e 8/3, mostrando come il gruppo con più alta varianza abbia prodotto pseudo-osservazioni con media più alta. Se la differenza tra le due medie delle pseudo-osservazioni è significativa, l'ipotesi nulla di omogeneità delle varianze può essere rigettata.
 
 ```{r eval=FALSE, include=FALSE}
 A <- c(19, 20, 21); B <- c(26, 30, 34)
@@ -334,17 +346,17 @@ var(A); var(B)
 mean(abs(A - mean(A)))
 ```
 
-Lavori successivi (Brown e Forsythe, 1974) hanno mostrato che è preferibile sostituire la media del gruppo con la sua mediana, per ottenere un test più robusto per dati non normali.
+Lavori successivi [@brown_1974] hanno mostrato che è preferibile sostituire la media del gruppo con la sua mediana, per ottenere un test più robusto contro le possibili deviazioni dalla normalità. Questo test è noto come test di Brown-Forsythe, oppure come test di Levene robusto o, ancora più semplicemente, come test di Levene (anche se il test di Levene vero e proprio sarebbe l'altro, quello non-robusto). Entrambi i test (Levene e Brown-Forsythe) sono disponibili nella funzione `leveneTest()` del package `car`, ma il secondo è largamente preferito e considerato come la procedura di 'default'.
 
-Sia il test di Levene che il test di Brown-Forsythe sono disponibili nella funzione `leveneTest()` del package `car`, ma il secondo è largamente preferito e considerato come la procedura di 'default'. Un esempio di questo test è fornito nel Riquadro 8.3, che confronta due genotipi di mais in un disegno completamente randomizzato con 11 repliche. Il secondo genotipo (B) presenta una varianza maggiore e il test di Levene risulta significativo (il valore P è inferiore a 0,05 e l'ipotesi nulla di omoschedasticità viene rifiutata). I due test (centrato sulle medie o centrato sulle mediane) producono risultati simili, il che potrebbe suggerire che i dati originali non si discostino significativamente dalla normalità.
+Un esempio di questo test è fornito nel Riquadro 8.1, che confronta due genotipi di mais in un disegno completamente randomizzato con 11 repliche. Il secondo genotipo (B) presenta una varianza maggiore e il test di Levene risulta significativo (il valore P è inferiore a 0.05 e l'ipotesi nulla di omoschedasticità viene rifiutata). I due test (Levene e Brown-Forsythe) producono risultati simili, il che suggerisce che i dati originali non si discostino significativamente dalla normalità.
 
 ```{r}
-# Code Box 8.1
-# Testing hypotheses about model residuals
-# Levene’s test for homoscedasticity
+# Riquadro 8.1
+# Test d'ipotesi sull'omogeneità delle varianze
+# Test di Levene
 library(car)
 
-# Entering the data
+# Immissione dati
 dataset <- data.frame(Genotype = c("A", "A", "A", "A", "A",
                                    "A", "A", "A", "A", "A",
                                    "A", "B", "B", "B", "B",
@@ -357,42 +369,43 @@ dataset <- data.frame(Genotype = c("A", "A", "A", "A", "A",
 head(dataset)
 dataset$Genotype <- factor(dataset$Genotype)
 
-# Fitting the model
+# Adattamento del modello
 mod <- lm(Yield ~ Genotype, data = dataset)
 
-# Centering the data by subtracting, for each genotype 
-# the group mean (Levene’s test)
+# Centratura dei dati, per sottrazione delle media di ogni genotipo (Test di Levene)
 GroupMeans <- tapply(dataset$Yield, dataset$Genotype, mean)
 YieldC <- dataset$Yield - rep(GroupMeans, each = 11)
 
-# Re-fitting the same model to the absolute values of 
-# centered data and run an ANOVA
+# Ri-adattamento dello stesso modello sostituendo la produzione con la
+# pseudo-variabile in valore assoluto. Analisi della varianza
 modlevene <- lm(abs(YieldC) ~ dataset$Genotype)
 anova(modlevene)
 
-# Centering the data by subtracting, for each genotype
-# the group median (Brown-Forsythe’s test)
+# Centratura dei dati, per sottrazione delle mediana di ogni genotipo 
+# (Test di Brown-Forsythe)
 GroupMedians <- tapply(dataset$Yield, dataset$Genotype, median)
 YieldC <- dataset$Yield - rep(GroupMedians, each = 11)
 
-# Re-fitting the same model to the absolute values of # centered data and run an ANOVA
+# Ri-adattamento dello stesso modello sostituendo la produzione con la
+# pseudo-variabile in valore assoluto. Analisi della varianza
 modlevene <- lm(abs(YieldC) ~ dataset$Genotype)
 anova(modlevene)
 
-# Non-robust Levene’s test with R (centering with means)
+# Test (non-robusto) di Levene con R (centratura con le medie)
 leveneTest(mod, center = "mean")
 
-# Levene’s test with R (centering with medians; default)
+# Test (robusto) di Brown-Forsythe con R (centratura con le medie)
+# In R si utilizza comunque il nome Test di Levene
 leveneTest(mod)
 ```
 
 ### Test di Shapiro-Wilk per la normalità
 
-Il test di Shapiro-Wilk per la normalità fornisce la statistica W e un valore P per l'ipotesi nulla che i residui siano distribuiti normalmente. La procedura di test non è così semplice come quella del test di Levene e i calcoli manuali non sono altrettanto facili da eseguire. Tuttavia, possiamo utilizzare la funzione `shapiro.test()` in R, passando i residui del modello come argomento (vedi l'esempio seguente).
+Il test di Shapiro-Wilk per la normalità fornisce la statistica W e un valore P per l'ipotesi nulla che i residui siano distribuiti normalmente. La procedura di test non è così semplice come quella del test di Levene e i calcoli manuali non sono altrettanto facili da eseguire. Tuttavia, possiamo utilizzare la funzione `shapiro.test()` in R, passando i residui del modello come argomento.
 
 ### Altri test
 
-Vale la pena menzionare alcune tecniche numeriche per l'individuazione di valori anomali, come i metodi proposti da Anscombe e Tukey (1963) e Grubbs (1969).
+Vale la pena menzionare alcune tecniche numeriche per l'individuazione di valori anomali, come i metodi proposti da @anscombe_1963 e @grubbs_1969.
 
 ## Esempio 8.1: Analisi dei residui per il dataset "mixture"
 
@@ -405,38 +418,46 @@ Abbiamo eseguito un esperimento in vaso, nel quale abbiamo utilizzato quattro tr
 
 Lo scopo dell'esperimento era quello di verificare se la miscela metribuzin e rimsulfuron è più efficace dei due componenti utilizzati separatamente.
 
-A questo fine, sono stati preparati sedici vasi uniformi e sono stati seminati con *Solanum nigrum*, un importante infestante di alcune colture primaverili estive, come mais e pomodoro. Quando le piante hanno raggiunto lo stadio di 4 foglie vere, sono state trattate con una delle tesi sopra elencate, secondo un disegno sperimentale completamente randomizzato con quattro repliche. Tre settimane dopo i trattamenti, le piante in ciascun vaso sono state raccolte e pesate; minore era il peso, maggiore era l'efficacia degli erbicidi (Onofri et al. 1995).
+A questo fine, sono stati preparati sedici vasi uniformi e sono stati seminati con *Solanum nigrum*, un importante infestante di alcune colture primaverili estive, come mais e pomodoro. Quando le piante hanno raggiunto lo stadio di 4 foglie vere, sono state trattate con una delle tesi sopra elencate, secondo un disegno sperimentale completamente randomizzato con quattro repliche. Tre settimane dopo i trattamenti, le piante in ciascun vaso sono state raccolte e pesate; minore era il peso, maggiore era l'efficacia degli erbicidi [@onofri_1995].
 
-Per questo esperimento, è possibile adattare un modello lineare con un predittore nominale (il trattamento erbicida) (vedere Eq. 4.6 nel Cap. 4), come mostrato nel riquadro sottostante.
+Per questo esperimento, è possibile adattare un modello ANOVA ad una via (vedere nel Cap. 4), come mostrato nel riquadro 8.2.
 
 ```{r}
-# Code box 8.2
-# Example 8.1
-# Checking the residuals for the `mixture' data
+# Riquadro 8.2
 
-# Loading the packages
+# Esempio 8.1
+# Check dei residui per il dataset `mixture'
+
+# Caricamento dei pacchetti
 library(statforbiology)
 library(car)
 
-# Loading and transforming the data
+# Caricamento e trasformazione dei dati
 mixture <- getAgroData("mixture")
 mixture$Treat <- factor(mixture$Treat)
 head(mixture)
 
-# Model fitting
+# Adattamento del modello
 mod1 <- lm(Weight ~ Treat, data = mixture)
 ```
 
-Dopo aver effettuato la stima dei parametri, i grafici dei residui possono essere ottenuti utilizzando la funzione `plot()` applicata al risultato del fitting lineare. L'argomento 'which' specifica il tipo di grafico: se utilizziamo: 'which = 1' otteniamo il grafico dei residui verso gli attesi, se invece utilizziamo 'which = 2' otteniamo il QQ-plot. I due comandi sono:
+Dopo aver effettuato la stima dei parametri, i grafici dei residui possono essere ottenuti con la funzione `plot()`, passando l'oggetto risultante dal fitting come primo argomento. L'altro argomento 'which' specifica il tipo di grafico: 'which = 1' produce il grafico dei residui verso gli attesi, mentre 'which = 2' produce il QQ-plot. Il codice è mostrato nel Riquadro 8.3 ed il risultato è mostrato in Figura -@fig-figName110a.
 
-```         
-plot(mod, which = 1)
-plot(mod, which = 2)
+```{r}
+#| eval: false
+#| include: true
+
+# Riquadro 8.3
+
+# Esempio 8.1 [segue]  
+
+# Graphical analyses of residuals in R 
+plot(mod1, which = 1) 
+plot(mod1, which = 2)
 ```
 
-e il risultato è mostrato nella figura \@ref(fig:figName110a).
 
-```{r figName110a, out.width='85%', fig.align='center', echo=FALSE, fig.cap="Analisi grafica dei residui per un modello ANOVA ad una via adattato al dataset 'mixture.csv'"}
+```{r fig-figName110a, out.width='85%', fig.align='center', echo=FALSE, fig.cap="Analisi grafica dei residui per il dataset 'mixture'"}
 par(mfrow = c(1,2))
 plot(mod1, which = c(1,2))
 ```
@@ -446,11 +467,12 @@ Nessuno dei grafici suggerisce l'esistenza di particolari problematiche e, consi
 Sebbene ciò non sia necessario, possiamo confermare la nostra conclusione eseguendo i test di Levene e Shapiro-Wilk. Nel codice sottostante possiamo notare come la funzione `leveneTest()` richieda come argomento l'oggetto risultante dal fitting lineare, mentre la funzione `shapiro.test()` richiede i residui del modello.
 
 ```{r}
-# Example 8.1 [continuation]
+# Riquadro 8.4
 
-# Levene's test and Shapiro-Wilk's test
+# Esempio 8.1 [segue]
+
+# Test di Levene (robusto) e Shapiro-Wilks
 leveneTest(mod1)
-
 shapiro.test(residuals(mod1))
 ```
 
@@ -458,36 +480,38 @@ shapiro.test(residuals(mod1))
 
 Proviamo ad analizzare il dataset 'insects', che si riferisce ad un esperimento nel quale quindici piante sono state trattate con tre insetticidi diversi in modo completamente randomizzato, scegliendo cinque piante a caso per insetticida. Tre settimane dopo il trattamento è stato rilevato il numero di insetti presenti su ciascuna pianta.
 
-Per testare l'effetto degli insetticidi, è stato adattato ai dati osservati un modello ANOVA ad una via, utilizzando la variabile "Insecticide" come predittore nominale. In questo caso, il controllo delle deviazioni dagli assunti di base richiede grande attenzione, poiché la variabile di risposta è un conteggio e le statistiche descrittive, che si lasciano per eercizio al lettore, indicano che le deviazioni standard sono in qualche modo proporzionali alle medie. Le analisi grafiche dei residui in Figura \@ref(fig:figName110) mostrano chiari segni di eteroschedasticità (grafico a sinistra) e residui asimmetrici a destra (grafico a destra). Queste deviazioni sono confermate dal test di Levene (valore P = 0,043) e dal test di Shapiro-Wilks (valore P = 0,048).
+Per testare l'effetto degli insetticidi, è stato adattato ai dati osservati un modello ANOVA ad una via, utilizzando la variabile 'Insecticide' come predittore nominale. In questo caso, il controllo delle deviazioni dagli assunti di base richiede grande attenzione, poiché la variabile di risposta è un conteggio e le statistiche descrittive, che si lasciano per esercizio, indicano che le deviazioni standard sono in qualche modo proporzionali alle medie. Le analisi grafiche dei residui in Figura -@fig-figName110 mostrano chiari segni di eteroschedasticità (grafico a sinistra) e residui asimmetrici (grafico a destra). Queste deviazioni sono confermate dal test di Levene (P = 0.043) e dal test di Shapiro-Wilks (P = 0.048).
 
 ```{r message=TRUE, warning=TRUE, paged.print=TRUE}
-# Example 8.2
-# checking the residuals for the `insects' data
+# Riquadro 8.5
 
-# Loading the packages
+# Esempio 8.2
+# Check dei residui per il dataset `insects'
+
+# Caricamento dei pacchetti
 library(statforbiology)
 library(car)
 
-# Loading and transforming the data
+# Caricamento e trasformazione dei dati
 insects <- getAgroData("insects")
 insects$Insecticide <- factor(insects$Insecticide)
 head(insects)
 
-# Fitting a model
+# Adattamento del modello
 mod2 <- lm(Count ~ Insecticide, data = insects)
 
-# Graphical analyses of residuals (not run, see Figure)
+# Analisi grafica dei residui (non eseguita qui; Vedi Figura 8.6)
 # plot(mod2, which = 1)
 # plot(mod2, which = 2)
 
-# Levene's test
+# Test di Levene (robusto)
 leveneTest(mod2)
 
-# Shapiro-Wilks' test
+# Test di Shapiro-Wilks
 shapiro.test(residuals(mod2))
 ```
 
-```{r figName110, out.width='85%', fig.align='center', echo=FALSE, fig.cap="Analisi grafica dei residui per il dataset 'insects.csv'"}
+```{r fig-figName110, out.width='85%', fig.align='center', echo=FALSE, fig.cap="Analisi grafica dei residui per il dataset 'insects'"}
 par(mfrow = c(1,2))
 plot(mod2, which = c(1,2))
 ```
@@ -496,52 +520,37 @@ plot(mod2, which = c(1,2))
 
 Se le procedure diagnostiche hanno evidenziato deviazioni rispetto agli assunti di base, è necessario valutare se e come intraprendere azioni correttive. Ovviamente, la 'terapia' cambia al cambiare della 'patologia'.
 
-### Correzione/Rimozione degli outliers
-
-In presenza di outliers, la 'terapia' più opportuna è, banalmente, quella di rimuoverli, ottenendo così un dataset 'sbilanciato' (diverso numero di repliche per trattamento). Oggigiorno, trattare un dataset sbilanciato non costituisce un problema, ovviamente se si utilizzano le metodiche di analisi opportune. Qualche anno fa, al contrario, si cercava di evitare lo sbilanciamento a tutti i costi, utilizzando tecniche di *imputing* per l'immissione di valori 'ragionevoli' in sostituzione di quelli mancanti/aberranti. Con le dovute eccezioni, le tecniche di *imputing* sembrano oggi abbastanza obsolete, almeno in questo contesto.
-
-Vorremmo porre l'attenzione sul fatto che i dati aberranti possono influenzare in modo molto marcato il risultato dell'analisi (sono dati 'influenziali'); pertanto, se è sbagliato correggerli arbitrariamente, senza aver prima accertato che siano effettivamente frutto di errore, può essere altrettanto sbagliato lasciarli nel dataset. Ovviamente, la rimozione non può che riguardare una larga minoranza dei dati sperimentali raccolti, altrimenti si dovrà necessariamente pensare di ripetere l'esperimento.
-
-### Correzione del modello
+In presenza di evidenti *outliers*, è necessario decidere se ignorarli, attribuire loro un peso inferiore durante la fase di analisi o addirittura rimuoverli dal dataset. Quest'ultima soluzione non è raccomandata e dovrebbe essere considerata solo dopo un'attenta valutazione, al fine di evitare la perdita di informazioni importanti e/o la riduzione indebita della variabilità dei dati, con un ingiustificato aumentando della potenza dei test statistici. In particolare, dobbiamo sempre accertarci qualsiasi *outlier* (i) non faccia parte della popolazione in esame (cioè sia veramente un *outlier*), (ii) sia causato unicamente da errori o interferenze casuali e (iii) non abbia alcuna relazione con gli effetti dei trattamenti sperimentali in esame. Inoltre, il processo di rimozione  dovrebbe riguardare solo un numero molto limitato di osservazioni; in caso contrario, potrebbe essere più opportuno scartare l'intero esperimento e condurne uno nuovo.
 
 Abbiamo visto che il modello impiegato potrebbe non essere adatto a descrivere il dataset (mancanza di adattamento). Gli effetti potrebbero non essere additivi, ma moltiplicativi, oppure potrebbero essere non-lineari. Potrebbero essere presenti asintoti che il nostro modello non è in grado di descrivere, oppure la crescita/decrescita osservata potrebbero essere più lente/veloci di quanto la nostra funzione sia in grado di descrivere. Per tutti questi casi, ovviamente, la strategia più consigliabile è quella di utilizzare un diverso modello, capace di descrivere meglio le osservazioni sperimentali.
 
-### Trasformazione del predittore
+Per la non-normalità e la eteroschedasticità, la misura correttiva tradizionale consiste nellò'impiego delle cosiddette trasformazioni stabilizzanti, cone le quali si trasformano i dati in modo da portarli su una metrica che soddisfi le assunzioni di base dei modelli lineari; successivamente si ripete l'analisi sui dati trasformati.
 
-Quando il predittore è quantitativo e la risposta sembra non essere lineare è possibile trasformare il predittore stesso in modo da linearizzare la risposta. Ad esempio, se la risposta mostra un andamento esponenziale, la trasformazione del predittore in logaritmo può portare al sensibile miglioramento del fitting con un'equazione lineare. Vedremo un esempio di questa tecnica in un capitolo successivo.
+Le trasformazioni possibili sono molte: ad esempio, i libri di testo più tradizionali [ad esempio @snedecor_1991] consigliano la trasformazione in radice quadrata per i conteggi, la trasformazione angolare [arcoseno della radice quadrata, vedi @ahrens_1990] per le percentuali e la trasformazione in logaritmo per i dati log-normali, dove le variance sono proporzionali alle medie.
 
-### Trasformazione della risposta
-
-Una strategia empirica, ma molto semplice, diffusa ed efficace, è quella di ricorrere alle trasformazioni correttive. Con questa tecnica, si trasformano i dati in modo da portarli su una metrica che soddisfi le assunzioni di base dei modelli lineari; successivamente si ripete l'elaborazione sui dati trasformati.
-
-Le trasformazioni possibili sono molte: ad esempio, i libri di testo più tradizionali (esempio: Snedecor e Cochran, 1991) consigliano la trasformazione in radice quadrata per i conteggi, la trasformazione angolare (arcoseno della radice quadrata) per le percentuali e la trasformazione in logaritmo per i dati log-normali, dove le variance sono proporzionali alle medie.
-
-Per evitare di scegliere la trasformazione 'al buio', si può impiegare la procedura suggerita da Box e Cox (1964), basata su una 'famiglia di trasformazioni', così definita:
+Per evitare di scegliere la trasformazione 'al buio', si può impiegare la procedura suggerita da @box_1964, che permette di confrontare direttamente trasformazioni alternative, selezionando la più adatta al dataset in studio. Gli autori citati in precedenza hanno proposto la seguente famiglia di trasformazioni:
 
 $$ W = \left\{ \begin{array}{ll}
 \frac{Y^\lambda - 1}{\lambda} & \quad \textrm{if} \,\,\, \lambda \neq 0 \\
 \log(Y) & \quad \textrm{if} \,\,\, \lambda = 0
 \end{array} \right.$$
 
-dove $W$ è la variabile trasformata, $Y$ è la variabile originale e $\lambda$ è il parametro che definisce la trasformazione [^08-assunzionibase-1]
+dove $W$ è la variabile trasformata, $Y$ è la variabile originale e $\lambda$ è il parametro che definisce la trasformazione ^[Nota: Considerate che il limite dell'espressione $(Y^\lambda -1)/\lambda$ per $\lambda \rightarrow 0$ è proprio $\log(Y)$]. Si può vedere che se $\lambda$ è uguale ad 1, la trasformazione consiste solo nella sottrazione di un valore costante, che non altera la metrica dei dati originali (cioè, è come se i dati non fossero trasformati affatto). Invece, se $\lamda$ è compreso tra 0 e 1, i valori alti vengono 'compressi' e ravvicinati, mentre quelli bassi sono 'espansi' ed allontanati, il che consente di correggere un'eventuale asimmetria a destra, rompendo inoltre la proporzionalità tra varianze e medie. D'altra parte, se $\lambda$ è maggiore di 1, avrà l'effetto opposto e correggerà i residui asimmetrici a sinistra con varianze inversamente proporzionali alle medie. Box e Cox hanno anche definito un metodo di massima verosimiglianza per selezionare il valore ottimale di $\lambda$ per il dataset in studio, che è implementato nella funzione `boxcox()` del pacchetto MASS.
 
-[^08-assunzionibase-1]: Nota: Considerate che il limite dell'espressione $(Y^\lambda -1)/\lambda$ per $\lambda \rightarrow 0$ è proprio $\log(Y)$
-
-Questa famiglia è molto flessibile, nel senso che cambiando il valore di $\lambda$ possiamo rimediare alla gran parte delle deviazioni rispetto alle assunzioni di base. Il valore ottimale (di massima verosimiglianza) per questo parametro può essere scelto con la funzione `boxcox()`, nel package `MASS`, come sarà mostrato negli esempi seguenti. Bisogna tener presente che, qualora il valore ottimale risultasse $\lambda = 1$, la trasformazione sarebbe completamente fittizia, in quanto, da ogni dato, verrebbe semplicemente sottratta un'unità, senza quindi alterare minimamente i risultati dell'analisi. **Di conseguenza, trovare che** $\lambda$ ottimale è uguale ad 1 viene considerato come evidenza del fatto che la trasformazione non è necessaria.
 
 ### Esempio 8.1 (segue)
 
-Sebbene le analisi precedenti abbiano mostrato che il dataset "mixture" non viola significativamente le assunzioni di base per i modelli lineari, possiamo comunque valutare la necessità di una trasformazione, utilizzando la funzione `boxcox()` contenuta nel package `MASS` e passando l'oggetto risultante dal fitting come argomento (Codice sottostante). Questa funzione restituisce un grafico delle verosimiglianze associate a diversi valori di $\lambda$ (Fig. \@ref(fig:figName111a)); il valore ottimale sarebbe $\lambda = 0.83$, ma vediamo che anche $\lambda = 1$ rientra nell'intervallo di confidenza di $\lambda$ ottimale e, di conseguenza, si conferma che non è necessaria alcuna trasformazione stabilizzante.
+Sebbene le analisi precedenti abbiano mostrato che il dataset "mixture" non violi significativamente le assunzioni di base per i modelli lineari, possiamo comunque valutare la necessità di una trasformazione, utilizzando la funzione `boxcox()` contenuta nel package `MASS` e passando l'oggetto risultante dal fitting come argomento (Riquadro 8.6). Questa funzione restituisce un grafico delle verosimiglianze associate a diversi valori di $\lambda$ (Fig. -@fig-figName111a); il valore ottimale sarebbe $\lambda = 0.83$, ma vediamo che anche $\lambda = 1$ rientra nell'intervallo di confidenza di $\lambda$ ottimale e, di conseguenza, si conferma che, per questo dataset, non è necessaria alcuna trasformazione stabilizzante.
 
-```{r figName111a, echo=FALSE, fig.align='center', fig.cap="Scelta del valore ottimale di 'lambda' per la trasformazione di Box e Cox: caso in cui la trasformazione non è necessaria", out.width='85%'}
+```{r fig-figName111a, echo=FALSE, fig.align='center', fig.cap="Scelta del valore ottimale di 'lambda' per la trasformazione di Box e Cox: caso in cui la trasformazione non è necessaria. La linea verticale al centro identifica il valore di 'lambda' ottimale, mentre le due linee laterali identificano i limiti dell'intervallo di confidenza", out.width='85%'}
 MASS::boxcox(mod1)
 ```
 
 ### Esempio 8.2 (segue)
 
-Il metodo Box-Cox per il dataset "insects" restituisce il grafico in Figura \@ref(fig:figName111b); il valore di massima verosimiglianza è $\lambda = 0.14$, e l'intervallo di confidenza del 95% va da poco meno di zero a circa 0.5. Pertanto, per semplicità, selezioniamo $\lambda = 0$, che corrisponde a una trasformazione logaritmica. Questa scelta è motivata dal fatto che si tratta di una trasformazione molto nota e, quindi, facilmente comprensibile.
+Il metodo Box-Cox per il dataset "insects" restituisce il grafico in Figura -@fig-figName111b; il valore di massima verosimiglianza è $\lambda = 0.14$, e l'intervallo di confidenza del 95% va da poco meno di zero a circa 0.5. Pertanto, per semplicità, selezioniamo $\lambda = 0$, che corrisponde a una trasformazione logaritmica, motivata anche dal fatto che si tratta di una trasformazione molto nota e, quindi, facilmente comprensibile.
 
-```{r figName111b, echo=FALSE, fig.align='center', fig.cap="Scelta del valore ottimale di 'lambda' per la trasformazione di Box e Cox: caso in cui è consigliabile una trasformazione logaritmica", out.width='85%'}
+```{r fig-figName111b, echo=FALSE, fig.align='center', fig.cap="Scelta del valore ottimale di 'lambda' per la trasformazione di Box e Cox: caso in cui è consigliabile una trasformazione logaritmica", out.width='85%'}
 MASS::boxcox(mod2)
 ```
 
@@ -558,58 +567,38 @@ L'analisi grafica dei residui (che si lascia per esercizio) relativi ai dati tra
 ```
 
 ```{r}
-# Adopting a stabilizing transformation
+# Riquadro 8.7
 
+# Impiego di una transformazione stabilizzante
 mod2t <- lm(log(Count) ~ Insecticide, data = insects)
 anova(mod2t)
 
-# Comparing with ANOVA on the untransformed data
+# Confronto con l'ANOVA sui dati originali
 anova(mod2)
 ```
 
-Concludiamo con un'osservazione pratica: nel caso in cui risultasse che il valore di $\lambda$ ottimale è diverso sia da 1 che da 0, la trasformazione $W = (Y^\lambda - 1)/\lambda$ potrebbe essere semplificata in $W = Y^\lambda$, in modo da ottenere una metrica più facile da interpretare. Infatti, con $\lambda = 0.5$ avremmo una semplice trasformazione nella radice quadrata, mentre con $\lambda = -1$ avremmo l'altrettanto semplice trasformazione nel reciproco. Il box seguente mostra un esempio dell'equivalenza della trasformazione di Box e Cox nella forma originale e in quella semplificata: possiamo infatti notare che il rapporto F e il P-level sono esattamente uguali.
+Concludiamo con un'osservazione pratica: nel caso in cui risultasse che il valore di $\lambda$ ottimale è diverso sia da 1 che da 0, la trasformazione $W = (Y^\lambda - 1)/\lambda$ potrebbe essere semplificata in $W = Y^\lambda$, in modo da ottenere una metrica più facile da interpretare. Infatti, con $\lambda = 0.5$ avremmo una semplice trasformazione nella radice quadrata, mentre con $\lambda = -1$ avremmo l'altrettanto semplice trasformazione nel reciproco. Il Riquadro 8.8 mostra un esempio dell'equivalenza della trasformazione di Box e Cox nella forma originale e in quella semplificata: possiamo infatti notare che il rapporto F e il P-level sono esattamente uguali.
 
 ```{r}
+# Riquadro 8.8
+
+# Equivalenza della trasformazione di Box-Cox nella sua forma originale e in quella semplificata
 mod.1 <- lm(sqrt(Count) ~ Insecticide, data = insects)
 mod.2 <- lm((Count^0.5 - 1)/0.5 ~ Insecticide, data = insects)
 anova(mod.1)
 anova(mod.2)
 ```
 
-Un'altra osservazione di cui tener conto è che la famiglia di trasformazioni di Box-Cox non funziona quando i dati sono negativi o uguali a zero. In questi casi, è possibile selezionare un valore costante, $k$, da aggiungere alle osservazioni originali in modo che diventino strettamente positive. Ad esempio, se l'osservazione negativa più bassa è $-0.9$, possiamo usare la trasformazione $W = log(y + 1)$, che non produce errore in quanto non implica il calcolo del logaritmo di un numero negativo.
+Un'altra osservazione di cui tener conto è che la famiglia di trasformazioni di Box-Cox non può essere applicata quando i dati sono negativi o uguali a zero. In questi casi, è possibile selezionare un valore costante, $k$, da aggiungere alle osservazioni originali in modo che diventino strettamente positive. Ad esempio, se l'osservazione negativa più bassa è $-0.9$, possiamo usare la trasformazione $W = log(y + 1)$, che non produce errore in quanto non implica il calcolo del logaritmo di un numero negativo.
 
-## Risultati contraddittori
-
-La valutazione degli assunti di base è un passo fondamentale nell'analisi dei dati sperimentali è non deve mai essere dimenticata. Tuttavia, l'esperienza insegna che, nella pratica, è molto facile incontrare situazioni dubbie, nelle quali i risultati ottenuti con le diverse tecniche diagnostiche appaiono contraddittori e difficili da interpretare. Come comportarsi in questi casi? A mio parere bisogna sempre ricordare che la 'verità vera' ci sfugge e, di conseguenza, tutte le valutazioni debbono essere sempre condotte con il massimo 'buon senso'.
-
-Un aspetto importante da considerare è la tipologia del dato: conteggi e proporzioni difficilmente sono normalmente distribuiti ed omoscedastici e, con questi dati, la prudenza non è mai troppa, quando si tratta di impiegare modelli lineari. Allo stesso modo, è necessaria una grande prudenza quando si analizzano variabili quantitative dove la differenza tra le diverse tesi è molto grande, orientativamente più di un ordine di grandezza. Con conteggi proporzioni e variabili quantitative con medie molto diverse tra loro, l'assunzione di omogeneità delle varianze è quasi sempre violata ed è quindi necessario essere molto prudenti prima di confermare il rispetto delle assunzioni di base.
 
 ## Altri approcci 'avanzati'
 
-L'uso di trasformazioni stabilizzanti è stato molto di moda fino agli anni '80 del '900, quando la potenza di calcolo era estremamente bassa e rendeva possibile solo l'impiego di procedure semplici, come quelle indicate in questo libro. Oggigiorno, la diffusione di computer potenti a costo relativamente basso ha permesso la diffusione di modelli in grado di gestire anche errori non-normali e dati eteroscedastici. Questi modelli appartengono alle classi dei cosiddetti Modelli Lineari Generalizzati (GLM) o dei modelli con fitting basato sui Minimi Quadrati Generalizzati (GLS); sono molto flessibili, ma sono anche abbastanza complessi e non possono essere trattati su un testo introduttivo (potete studiare, ad esempio, Venables e Ripley, 2002).
+L'uso di trasformazioni stabilizzanti è stato molto di moda fino agli anni '80 del '900, quando la potenza di calcolo era estremamente bassa e rendeva possibile solo l'impiego di procedure semplici, come quelle indicate in questo libro. Oggigiorno, la diffusione di computer potenti a costo relativamente basso ha permesso la diffusione di modelli in grado di gestire anche errori non-normali e dati eteroscedastici. Questi modelli appartengono alle classi dei cosiddetti Modelli Lineari Generalizzati (GLM) o dei modelli con fitting basato sui Minimi Quadrati Generalizzati (GLS); sono molto flessibili, ma sono anche abbastanza complessi e non possono essere trattati su un testo introduttivo [potete studiare, ad esempio, @venables_2002].
 
-Inoltre, per completezza di informazione, mensioneremo il fatto che esistono anche metodi di analisi dei dati che non fanno assunzioni parametriche o che ne fanno molto poche e sono, pertanto, noti come metodi non-parametrici. Non parleremo neanche di questi, rinviando chi fosse interessato alla lettura di testi specifici (esempio: Siegel e Castellan 1988).
+Inoltre, per completezza di informazione, menzioneremo il fatto che esistono anche metodi di analisi dei dati che non fanno assunzioni parametriche o che ne fanno molto poche e sono, pertanto, noti come metodi non-parametrici. I metodi non-parametrici sono, in generale, meno efficienti dei metodi parametrici applicati sui dati trasformati e quindi il loro impiego è utile per analizzare, ad esempio, i dati 'ordinali', che non si prestano proprio all'adozione dei metodi parametrici. Chi fosse interessato, potrà trovare informazioni su @siegel_1988.
 
-------------------------------------------------------------------------
 
-## Altre letture
-
-1.  Ahrens, W. H., D. J. Cox, and G. Budwar. 1990, Use of the arcsin and square root trasformation for subjectively determined percentage data. Weed science 452-458.
-2.  Anscombe, F. J. and J. W. Tukey. 1963, The examination and analysis of residuals. Technometrics 5: 141-160.
-3.  Box, G. E. P. and D. R. Cox. 1964, An analysis of transformations. Journal of the Royal Statistical Society, B-26, 211-243, discussion 244-252.
-4.  Brown MB, Forsythe AB (1974) Robust tests for the equality of variances. J Am Stat Assoc 69(346):364--367
-5.  Cochran WG (1947) Some consequences when the assumptions for the analysis of variance are not satisfied. Biometrics 3(1):22. <https://doi.org/10.2307/3001535>. <https://www.jstor.org/stable/3001535?origin=crossref>
-6.  Conover WJ, Johnson ME, Johnson MM (1981) A comparative study of tests for homogeneity of variances, with applications to the outer continental shelf bidding data. Technometrics 23(4):351--361
-7.  Frey J, Hartung J, Ogutu J, Piepho H (2024) Analyze as randomized---why dropping block effects in designed experiments is a bad idea. Agron J 116(3):1371--1381. <https://doi.org/10.1002/agj2>. 21570. <https://acsess.onlinelibrary.wiley.com/doi/10.1002/agj2.21570>
-8.  Glass G, Peckham P, Sanders J (1972) Consequences of failure to meet assumptions underlying the fixed effects analyses of variance and covariance. Rev Educ Res 42(3):237--288
-9.  Grubbs FE (1969) Procedures for detecting outlying observations in samples. Technometrics 11(1):1--21
-10. Kass RE, Caffo BS, Davidian M, Meng XL, Yu B, Reid N (2016) Ten simple rules for effective statistical practice. PLOS Comput Biol 12(6):e1004961. <https://doi.org/10.1371/journal.pcbi>. 1004961. <https://dx.plos.org/10.1371/journal.pcbi.1004961>
-11. Knief U, Forstmeier W (2021) Violating the normality assumption may be the lesser of two evils. Behav Res Methods 53(6):2576--2590. <https://doi.org/10.3758/s13428-021-01587-5>. <https://> link.springer.com/10.3758/s13428- 021- 01587- 5
-12. Kozak M, Piepho H (2018) What's normal anyway? Residual plots are more telling than significance tests when checking ANOVA assumptions. J Agron Crop Sci 204(1):86--98. <https://> doi.org/10.1111/jac.12220. <https://onlinelibrary.wiley.com/doi/10.1111/jac.12220>
-13. Onofri A, Covarelli L, Tei F (1995) Efficacy of rimsulfuron and metribuzin against Solanum nigrum L. at different growth stages in tomato. In: International Meeting on Weed Control. Proceedings 16th COLUMA Conference, Reims, ANPP, Reprints, pp 993--1000
-14. Siegel S, Castellan NJ (1988) Nonparametric Statistics for the Behavioral Sciences. McGraw-Hill, Columbus
-15. Snedecor GW, Cochran WG (1991) Statistical Methods, 8th edn. IOWA State University Press, Ames
-16. Venables WN, Ripley BD (2002) Modern Applied Statistics with S. Statistics and Computing, 4th edn. Springer, New York
 
 ## Esercizi
 
