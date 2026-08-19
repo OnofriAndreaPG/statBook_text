@@ -1,0 +1,592 @@
+# Ricomponiamo il 'puzzle'
+
+È giunto ormai il momento di riunire tutti gli strumenti presentati nei capitoli precedenti e sviluppare un piano di lavoro per eseguire analisi dei dati corrette, produrre risultati affidabili e giungere a conclusioni pienamente supportate dai dati a nostra disposizione. Il piano di lavoro proposto non deve essere preso troppo alla lettera: è solo uno dei possibili approcci all'analisi dei dati e deve essere inteso solo come punto di partenza per 'principianti'. Il piano di lavoro è il seguente:
+
+1. Caricare i dati ed eseguire le eventuali trasformazioni che si rendano necessarie (ad es. le trasformazioni delle variabili numeriche in 'factors' oppure le trasformazioni stabilizzanti).
+2. Descrivere i dati, utilizzando almeno un indicatore di tendenza centrale (media) e un indicatore di variabilità (deviazione standard) come indicato nel Capitolo 3. Se necessario, utilizzare grafici per scoprire le caratteristiche principali del dataset in studio, scoprire pattern e individuare valori anomali: lasciare che i dati parlino da soli e "ascoltare" ciò che hanno da dire. Questa fase preliminare è definita Analisi Esplorativa (*Exploratory Data Analysis*; EDA) ed è una parte fondamentale dell'analisi dei dati, prima dell'adattamento del modello, dell'inferenza e del test d'ipotesi.
+3. Specificare il modello descrittivo più opportuno a stimarne i parametri con R.
+4. Controllare il fitting per il rispetto delle assunzioni di base. Se necessario, trasformare i dati e ripetere il fitting.
+5. Calcolare gli errori standard e/o gli intervalli di confidenza e aggiungerli a tutte le stime puntuali. Verificare la significatività di tutti gli effetti tramite il test di F nell'ANOVA.
+6. Utilizzare combinazioni lineari o non lineari dei parametri o delle medie per testare eventuali altre ipotesi di interesse e rispondere ai nostri quesiti di ricerca.
+7. Presentare i risultati sotto forma di grafici e tabelle, cercando di evidenziare in modo conciso tutte le caratteristiche più interessanti del nostro set di dati.
+
+In questo capitolo mostreremo come questo piano di lavoro possa essere messo in pratica, lavorando su alcuni dataset reali, relativi ad esperimenti agronomici di pieno campo.
+
+## Esempio 10.1: confronto tra genotipi in un esperimento a blocchi randomizzati
+
+Consideriamo un esperimento di campo per confrontare otto genotipi di frumento, disegnato a blocchi randomizzati con tre repliche, nella collina Umbra durante la stagione di semina 2002 [Ciriciofolo, 2004; pubblicato in @belocchi_2003]. In questa analisi consideriamo la resa (in tonnellate per ettaro), che è disponibile nel dataset 'WinterWheat2002', nel *package* 'statforbiology'. La variabile 'Block' deve essere trasformata in un 'factor' prima dell'analisi, altrimenti, R stimerebbe erroneamente un modello di regressione lineare (mentre i blocchi sono classi nominali e non ordinate). Anche la variabile 'Genotype' può essere trasformata in un fattore, sebbene ciò sia facoltativo, poiché i genotipi sono rappresentati con il loro nome e non con una codifica numerica.
+
+L'EDA rivela che i genotipi, ad eccezione di Simeto, sono relativamente simili in termini di resa media. Allo stesso tempo, esistono alcune differenze in termini di deviazione standard, che potrebbero giustificare un attento controllo per possibili problemi di eteroschedasticità.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Riquadro 10.1
+
+# Esempio 10.1
+# Confronto tra genotipi, a blocchi randomizzati
+
+# Caricamento dei pacchetti
+library(statforbiology)
+library(MASS)
+library(car)
+library(emmeans)
+library(multcomp)
+
+# Caricamento del dataset e analisi preliminari
+dataset <- getAgroData("WinterWheat2002")
+head(dataset)
+dataset$Block <- factor(dataset$Block)
+dataset$Genotype <- factor(dataset$Genotype)
+
+with(dataset, data.frame(Mean = tapply(Yield, Genotype, mean),
+                         SD = tapply(Yield, Genotype, sd)))
+```
+
+La produzione di ogni unità sperimentale (parcella) è determinata da:
+
+1. genotipo;
+2. blocco;
+3. altri effetti puramente casuali (residuo).
+
+Quindi, possiamo stimare un modello con due predittori nominali, come mostrato nell'Esempio 4.3 del Capitolo 4. Le analisi grafiche dei residui non mostrano evidenze di non-normalità, ma mostrano alcuni lievi segni di eteroschedasticità (Figura -@fig-figName121, sinistra). Per valutare meglio questoi aspetto, possiamo eseguire il test di Levene, ma dobbiamo considerare che la funzione `leveneTest()`, così come l'abbiamo descritta al Capitolo 8, non può essere utilizzata con dati provenienti da esperimenti a blocchi randomizzati; in questo caso dobbiamo utilizzare come risposta non le produzioni osservate, bensì i residui del modello in valore assoluto [@bhandary_2013; vedi riquadro sottostante]. Il test di Levene non è significativo e il grafico di Box-Cox (non mostrato) conferma che non è necessaria alcuna trasformazione dei dati. Di conseguenza, concludiamo che non ci sono deviazioni significative dalle assunzioni di base e procediamo con l'analisi, esaminando la tabella ANOVA. Il controllo preliminare dei gradi di libertà conferma che il modello è stato specificato correttamente (vale a dire, i DF sono uguali, rispettivamente, al numero di blocchi meno uno e al numero di genotipi meno uno) e, in base al *P-value*, rigettiamo l'ipotesi nulla, concludendo che esistono differenze significative tra i genotipi.
+
+```{r}
+# Riquadro 10.2
+
+# Esempio 10.1 [segue]
+
+# Adattamento di un modello ANOVA a due vie
+mod <- lm(Yield ~ Block + Genotype, data = dataset)
+
+# Check dei residui (non eseguito in fase di compilazione)
+# par(mfrow=c(2,2))
+# plot(mod, which = 1)
+# plot(mod, which = 2)
+# boxcox(mod)
+
+# Test di Levene (modificato per blocchi randomizzati)
+leveneTest(abs(residuals(mod)) ~ Genotype, data = dataset)
+
+
+# Analisi della varianza
+anova(mod)
+```
+
+```{r fig-figName121, echo = F, out.width='90%', fig.align ='center', fig.cap="Analisi grafica dei residui per la prova di confronto varietale a blocchi randomizzati (Esempio 10.1)"}
+par(mfrow=c(1,2))
+plot(mod, which = 1)
+plot(mod, which = 2)
+```
+
+Le stime dei parametri del modello sono relativamente poco interessanti in questo caso, mentre i confronti a coppie possono essere utili per la raccomandazione varietale. Con otto genotipi e, quindi, $(8 \times 7)/2 = 28$ contrasti, è necessaria una correzione per la molteplicità. Oltre ai confronti a coppie con i relativi intervalli di confidenza, riportiamo una tabella delle medie in ordine decrescente di resa, con le lettere di significanza. La conclusione è che Simeto è risultato significativamente peggiore di tutti gli altri genotipi, ad eccezione di Duilio.
+
+```{r}
+# Riquadro 10.3
+
+# Esempio 10.1 [segue]
+
+# Confronti multipli
+meds <- emmeans(mod, ~Genotype)
+confint(contrast(meds, method = "pairwise"))
+
+# Display a lettere
+cld(meds, Letters = LETTERS, reverse = T)
+```
+
+
+## Esempio 10.2: confronto tra co-adiuvanti in un esperimento a quadrato latino
+
+Consideriamo un esperimento a quadrato latino con quattro repliche, finalizzato a confrontare tre possibili co-adiuvanti per l'erbicida rimsulfuron (Onofri, 1990; dati non pubblicati). I risultati di questo esperimento sono disponibili nel dataset 'adjuvantsLS', nel *package* `statforbiology`; la colonna 'Yield' rappresenta la risposta osservata, la colonna 'Adjuvant' il predittore nominale, mentre le colonne 'Row' and 'Column' rappresentano le righe e le colonne della griglia a quadrato latino e costituiscono i due fattori di raggruppamento da inserire nel modello. Le tre variabili indipendenti dovranno essere trasformate in fattori prima dell'analisi, sebbene ciò sia strettamente necessario solo per le righe e le colonne, che sono caratterizzate da codifica numerica. Invece di trasformare le tre variabili una alla volta (come nell'Esempio 10.1), possiamo utilizzare la funzione `transform()`, passandole il 'dataframe' come primo argomento e, successivamente, l'elenco delle trasformazioni da eseguire al suo interno (Riquadro 10.4).
+
+L'EDA si basa sull'analisi delle medie aritmetiche e delle deviazioni standard dei diversi trattamenti: la media ottenuta con il tensioattivo sembra essere più alta rispetto alle altre medie, mentre non si notano evidenti differenze tra i co-adiuvanti in termini di deviazioni standard.
+
+```{r include=FALSE}
+rm(list = ls())
+```
+
+
+```{r}
+# Riquadro 10.4
+
+# Esempio 10.2
+# Confronto tra co-adiuvanti in un quadrato latino
+
+# Caricamento dei pacchetti
+library(statforbiology)
+library(MASS)
+library(emmeans)
+library(multcomp)
+
+# Caricamento e trasformazione dei dati
+dataset <- getAgroData("adjuvantsLS")
+dataset <- transform(dataset, 
+                     Adjuvant = factor(Adjuvant),
+                     Row = factor(Row),
+                     Column = factor(Column))
+head(dataset[,c(2, 6, 7, 24)])
+
+
+# EDA
+with(dataset, data.frame(Mean = tapply(Yield, Adjuvant, mean),
+                         SD = tapply(Yield, Adjuvant, sd)))
+```
+
+In questo esempio, abbiamo un trattamento sperimentale e due effetti 'blocco' che debbono necessariamente essere inclusi nel modello [@jensen_2018], che, di conseguenza, è così definito:
+
+$$Y_{ijk} = \mu + \gamma_k + \beta_j + \alpha_i + \varepsilon_{ijk}$$
+
+dove $\mu$ è l'intercetta, $\gamma$ è l'effetto della k-esima riga, $\beta$ è l'effetto della j-esima colonna e $\alpha$ è l'effetto dell'i-esimo coadiuvante. L'elemento $\varepsilon_{ijk}$ rappresenta la componente random individuale, di ogni osservazione e si assume normalmente distribuita, con media 0 e deviazione standard $\sigma$.
+
+Dopo il 'fitting', estraiamo i residui e li sottoponiamo ad analisi grafica, che non rivela problemi di alcun tipo (Figura -@fig-figName122), mentre il grafico di Box-Cox conferma che non è necessaria alcuna trasformazione (non mostrato). Pertanto, possiamo procedere all'ANOVA per testare la significatività di tutti i fattori sperimentali.
+
+```{r}
+# Riquadro 10.5
+
+# Esempio 10.2 [segue]
+
+# Fitting del modello
+mod <- lm(Yield ~ Adjuvant + Row + Column, data = dataset)
+
+# Check dei residui (non eseguito in run-time)
+# plot(mod, which = 1)
+# plot(mod, which = 2)
+# boxcox(mod)
+
+# Analisi della varianza
+anova(mod)
+```
+
+
+```{r fig-figName122, echo = F, out.width='90%', fig.align ='center', fig.cap="Analisi grafica dei residui per la prova di confronto tra co-adiuvanti (Esempio 10.2)"}
+par(mfrow=c(1,2))
+plot(mod, which = 1)
+plot(mod, which = 2)
+```
+
+La differenza tra i co-adiuvanti è significativa (valore P = 0.0035) e la procedura di confronto multiplo rivela che il tensioattivo ha migliorato significativamente le prestazioni dell'erbicida, rispetto a quando è stato utilizzato da solo, mentre la resa con olio minerale non è stata significativamente inferiore a quella ottenuta col tensioattivo.
+
+```{r}
+# Riquadro 10.6
+
+# Esempio 10.2 [segue]
+
+# Confronti multipli
+avgs <- emmeans(mod, ~Adjuvant)
+confint(contrast(avgs, method = "pairwise"))
+cld(avgs, Letters = LETTERS, reversed = TRUE)
+```
+
+## Esempio 10.3: interazione tra genotipo e concimazione azotata
+
+Quindici genotipi di frumento sono stati confrontati a due diversi livelli di fertilizzazione azotata, utilizzando un disegno a blocchi randomizzati con tre repliche. L'esperimento mirava a valutare se la raccomandazione varietale dovesse essere costante ed indipendente dal livello di concimazione azotata. Il set di dati è stato generato tramite simulazione Monte Carlo, a partire dai risultati riportati in @stagnari_2013 ed è disponibile come 'NGenotypeFull' nel package `statforbiology`.
+
+In questo esperimento, la resa è determinata da quattro effetti:
+
+1. blocco
+2. genotipo
+3. livello di azoto
+4. interazione tra genotipo e livello di azoto
+
+Di conseguenza, il modello mostrato può essere codificato come nel Capitolo 4 (Esempio 4.4), aggiungendo l'effetto del blocco. Per stimare questo modello, possiamo caricare i dati e trasformare i predittori numerici in fattori. Per questa trasformazione, nel riquadro sottostante abbiamo utilizzato la funzione `lapply()` invece della funzione `transform()`, che avevamo utilizzato in un esempio precedente. Con `lapply()`, le variabili da trasformare vengono recuperate utilizzando gli indici di colonna, vengono trasformate utilizzando la funzione `factor()` (passata come secondo argomento) e riassegnate alle stesse posizioni che avevano in precedenza nel 'dataframe'.
+
+Per brevità, saltiamo l'EDA e passiamo direttamente alla stima dei parametri; l'analisi grafica dei residui produce i risultati mostrati nella Figura -@fig-figName133, dove non osserviamo deviazioni evidenti rispetto agli assunti di base per i modelli lineari; pertanto, procediamo con l'ANOVA.
+
+```{r}
+# Riquadro 10.7
+
+# Esempio 10.3
+# Interazione tra genotipo e concimazione azotata
+
+# Caricamento dei pacchetti
+library(statforbiology)
+library(MASS)
+library(car)
+library(emmeans)
+library(multcomp)
+
+# Caricamento e trasformazione dei dati
+dataset <- getAgroData("NGenotypeFull")
+dataset[,1:3] <- lapply(dataset[,1:3], factor)
+head(dataset)
+
+# Model fitting
+mod <- lm(Yield ~ Block + Genotype * N, data=dataset)
+
+# Model checking (not run)
+# plot(mod, which = 1)
+# plot(mod, which = 2)
+# boxcox(mod)
+
+# Variance partitioning
+anova(mod)
+```
+
+
+```{r fig-figName133, echo=FALSE, fig.align='center', fig.cap="Analisi grafiche dei residui per l'esperimento fattoriale di confronto tra genotipi a due dosi di azoto (Esempio 10.3).", out.width='90%'}
+# Code is not shown
+dataset <- statforbiology::getAgroData("NGenotypeFull")
+
+dataset <- transform(dataset, Block = factor(Block),
+                     Genotype = factor(Genotype),
+                     N = factor(N))
+mod <- lm(Yield ~ Block + Genotype * N, data=dataset)
+par(mfrow=c(1,2))
+plot(mod, which = 1)
+plot(mod, which = 2)
+```
+
+
+La lettura della tabella ANOVA per un esperimento a due vie richiede una certa attenzione ed è **fondamentale procedere dal basso verso l'alto**, considerando che un'interazione cross-over significativa potrebbe nascondere gli effetti dei fattori principali (vedere Capitolo 4). In generale, se l'interazione fosse significativa, dovremmo sempre riportare e commentare le medie delle combinazioni tra i livelli dei fattori sperimentali. D'altra parte, se l'interazione non fosse significativa, potremmo invece riassumere i risultati riportando e commentando solo le medie degli effetti principali.
+
+In questo esempio, l'interazione è significativa e la conclusione è che la raccomandazione varietale non può essere univoca, ma deve cambiare a seconda del livello di fertilizzazione azotata. Pertanto, è necessario riportare e commentare le medie dei genotipi per ciascun livello di azoto; abbiamo due possibilità:
+
+1. confrontare tutti i genotipi, anche se concimati in modo diverso;
+2. confrontando tra loro solo i genotipi concimati nello stesso modo.
+
+Il primo approccio è molto flessibile, ma implica un numero elevato di confronti $(10 x 9) / 2 = 45$); di conseguenza, implica anche un forte aggiustamento per la molteplicità, quindi una potenza ridotta e maggiori rischi di errori di II specie. Tale approccio è da raccomandare solo se strettamente necessario e, in questo caso, la codifica R per la funzione `emmeans()` deve utilizzare l'operatore `:` (ad esempio: `emmeans(mod, ~Genotype:N)`).
+
+Il secondo approccio implica invece un numero inferiore di confronti ($2 x [5 x 4)/2 = 20$] e, in questo esempio, appare più logico e sensato, da un punto di vista agronomico. Nel riquadro sottostante questo approccio viene implementato utilizzando l'operatore di 'condizionamento' (`|`).
+
+```{r}
+# Riquadro 10.7
+
+# Esempio 10.3 [segue]
+
+# Confronto multiplo entro concimazione
+GNmeans2 <- emmeans(mod, ~Genotype|N)
+cld(GNmeans2, Letters=LETTERS)
+```
+
+## Esempio 10.4: confronto tra incroci in un disegno fattoriale gerarchico
+
+L'esempio precedente era relativo ad un disegno fattoriale completamente incrociato, dato che i livelli delle lavorazioni erano gli stessi per ogni livello di diserbo. In alcuni casi possiamo trovare disegni innestati, dove i livelli di un fattore cambiano al cambiare dei livelli dell'altro fattore. Nell'esempio seguente abbiamo considerato tre linee pure impollinanti di mais (A1, A2 ed A3), che abbiamo incrociato con tre linee pure portaseme, diverse per ogni impollinante (B1, B2, B3 per A1, B4, B5, B6 per A2 e B7, B8, B9 per A3). Alla fine abbiamo nove ibridi in tre gruppi, a seconda della linea impollinante. L'esperimento è stato disegnato a blocchi randomizzati completi con quattro repliche (36 osservazioni in totale) e i risultati sono disponibili nel dataset 'crosses' nel *package* `statforbiology`.
+
+In questo esperimento, la produzione del mais dipende dal blocco e dall'effetto paterno, mentre l'effetto materno può essere solo determinato entro ogni linea impollinante. Si dice che l'effetto materno è innestato nell'effetto paterno, come mostrato in Figura -@fig-figNameA3113. Pertanto, il modello lineare risulta così definito:
+
+$$Y_{ijk} = \mu + \gamma_k + \alpha_i + \delta_{ij} + \varepsilon_{ijk}$$
+
+dove $\gamma_k$ è l'effetto del blocco $k$, $\alpha_i$ è l'effetto dell'impollinante $i$ e $\delta_{ij}$ è l'effetto del portaseme  $j$ entro ogni linea impollinante $i$. La componente random $\varepsilon$ viene assunta, come al solito, gaussiana e omoscedastica, con media 0 e deviazione standard uguale a $\sigma$.
+
+La differenza con un modello ANOVA completamente incrociato dovrebbe essere chiara: in quest'ultimo caso abbiamo due effetti, A, B e la loro interazione A:B, mentre in un modello innestato abbiamo solo l'effetto A e l'effetto B entro A, mentre l'effetto principale B manca, in quanto non esiste in pratica.
+
+
+```{r eval=FALSE, include=FALSE}
+#GENERAZIONE DATASET - Non visualizzata
+Male <- rep(c("A1", "A2", "A3"), each = 12)
+Female <- rep(c("B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9"), each = 4)
+Block <- rep(1:4, 9)
+mu <- 13
+alpha <- rep(c(-1, -2, 3), each = 12)
+beta <- rep(c(-2, -4, 6, 3, -2, -1, 4, 2, -6), each = 4)
+gamma <- rep(c(2, 3, 1, -6), 9)
+set.seed(456)
+epsilon <- rnorm(36, 0, 1.5)
+Yield <- mu + alpha + beta + gamma + epsilon
+Crosses <- data.frame(Male, Female, Block, Yield) 
+# write.csv(Crosses, file = "Crosses.csv", row.names = F)
+```
+
+
+
+```{r fig-figNameA3113, echo=F, out.width='70%', fig.align ='center', fig.cap="Struttura di un disegno sperimentale gerarchico"}
+plot(0, type = "n", axes = F, xlim = c(0,20), ylim = c(0,15), ylab = "", xlab = "")
+text(4, 10, label = "A1", cex = 2)
+text(10, 10, label = "A2", cex = 2)
+text(16, 10, label = "A3", cex = 2)
+arrows(4,8,4,4)
+arrows(4,8,2,4)
+arrows(4,8,6,4)
+
+arrows(10,8,10,4)
+arrows(10,8,8,4)
+arrows(10,8,12,4)
+
+arrows(16,8,16,4)
+arrows(16,8,14,4)
+arrows(16,8,18,4)
+
+text(4, 2, label = "B2", cex = 2)
+text(10, 2, label = "B5", cex = 2)
+text(16, 2, label = "B8", cex = 2)
+
+text(2, 2, label = "B1", cex = 2)
+text(8, 2, label = "B4", cex = 2)
+text(14, 2, label = "B7", cex = 2)
+
+text(6, 2, label = "B3", cex = 2)
+text(12, 2, label = "B6", cex = 2)
+text(18, 2, label = "B9", cex = 2)
+```
+
+
+In R, questo modello gerarchico può essere codificato utilizzando l'operatore di nesting `/`^[Per esempio: il codice `A/B` significa che B è 'innestato' entro A ed è uguale a `A + A:B`. Il comportamento dell'operatore di 'nesting' cambia leggermente con i predittori numerici nell'ANCOVA (vedi Cap. 11)], come mostrato nel riquadro sottostante. Le analisi grafiche dei residui consentono di escludere qualsiasi deviazione significativa rispetto agli assunti di base (i grafici non sono mostrati per motivi di spazio) e la tabella ANOVA mostra che tutti gli effetti sono significativi; pertanto, possiamo esaminare e confrontare le medie dei diversi ibridi, anche considerando che l'effetto paterno è relativamente poco importante, dato che le linee impollinanti sono incrociate con linee portaseme diverse. Il confronto multiplo ve lo lascio come esercizio.
+
+```{r}
+# Riquadro 10.8
+
+# Esempio 10.4
+# Confronto tra ibridi in un disegno 'innestato'
+
+# Caricamento dei pacchetti
+library(statforbiology)
+library(MASS)
+
+# Caricamento dati e trasformazioni
+dataset <- getAgroData("crosses")
+dataset[,1:3] <- lapply(dataset[,1:3], factor)
+head(dataset, 5)
+
+# Fitting del modello
+mod <- lm(Yield ~ Block + Male/Female, data = dataset)
+
+# Analisi dei residui (non mostrata)
+# plot(mod, which = 1)
+# plot(mod, which = 2)
+# boxcox(mod)
+
+# Analisi della varianza
+anova(mod)
+```
+
+
+## Esempio 10.5: un esperimento di germinazione ripetuto due volte 
+
+I risultati di un singolo esperimento, anche se molto precisi e significativi, costituiscono una prova scientifica abbastanza debole, se non sono confermati da altri esperimenti simili e indipendenti. Infatti, i risultati di un singolo esperimento possono essere influenzato da 'disturbi' di ogni tipo, errori di misurazione, eventi imprevisti o intrusioni, che possono anche non essere rilevati nel corso dell'esperimento stesso. Inoltre, un risultato significativo può essere valido solo nelle condizioni in cui è stato osservato, senza essere necessariamente riproducibile in altre condizioni (vedi Cap. 1).
+
+Pertanto, l'esecuzione di esperimenti confermativi è considerata un elemento chiave per il progresso scientifico in agricoltura e per capire la riproducibilità dei risultati [@white_2025]. La sperimentazione di pieno campo, in quanto tale, non può essere ripetatuta nelle stesse identiche condizioni e quindi dobbiamo eseguire prove indipendenti in siti diversi, anni diversi o con materiali diversi. E' quindi lecito attendersi un certo grado di variabilità tra una prova e l'altra, che richiede un'analisi finale aggregata per verificare l'ipotesi che i risultati delle diverse prove ripetute non differiscano significativamente tra di loro.
+
+Consideriamo un esperimento di germinazione per tre genotipi di colza [@pace_2012], organizzato in cella climatica, secondo uno schema a blocchi randomizzati con sei repliche. Le unità sperimentali sono piastre Petri da 50 semi ciascuna, disposte in tre blocchi, corrispondenti a diversi scaffali di una cella climatica, mantenuta a 20°C per l'intera durata dell'esperimento. Per confermare i risultati, l'esperimento è stato ripetuto indipendentemente in un altra cella climatica alla stessa temperatura; in entrambi gli esperimenti, dopo 15 giorni dall'inizio, è stato contato il numero di semi germinati in ogni capsula Petri, espresso in proporzione rispetto al numero totale di semi posti a germinare (Final Germinated Proportion; FGP).
+
+I risultati di questi due esperimenti sono disponibili nel dataset 'FGP_rape', contenuto nel package `statforbiology`, dove le variabili 'run' e 'shelf' identificano, rispettivamente, l'esperimento e gli scaffali in ogni esperimento. Dopo aver caricato i dati, è necessario trasformare i predittori numerici ('run' e 'shelf') in fattori (vedi il codice più sotto) ed eseguire, preliminarmente, le analisi separate per ogni esperimento, al fine di garantire che non vi siano *outliers* o violazioni degli assunti di base in nessuno di essi. Inoltre, è necessario assicurarsi che le varianze dei residui dei diversi esperimenti siano simili (omoschedasticità tra esperimenti).
+
+Per effettuare le analisi separate, è possibile semplificare il codice utilizzando la strategia *split-apply-combine* [@wickham_2011], basata sulle funzioni `by()` e `lapply()`^[Per la strategia *split-apply-combine*, il paccketto 'tidyverse' contiene alcune altre funzioni molto potenti]. La prima opera sui sottoinsiemi del dataset selezionato, suddivisi in base a una variabile di classificazione (in questo caso la variabile `run`) e produce una lista con i risultati della funzione `lm()` applicata a ciascun sottoinsieme. Su questa lista possiamo operare con la funzione `lapply()`, che permette di applicare le funzioni `leveneTest()` e `shapiro.test()` a ciascun elemento. Possiamo vedere che nessuno dei due test indica significative deviazioni rispetto agli assunti di base.
+
+Per verificare l'omoschedasticità tra esperimenti, si può utilizzare il test F max di Hartely (Hartley, 1950), che consiste nel calcolare il rapporto tra la varianza residua massima e minima tra quelle osservate, che, in questo caso però, sono solo due. La significatività del test può essere ottenuta grazie alla distribuzione `pmaxFratio()`, che è contenuta nel package `SuppDists` [@wheeler_2024]. In questo caso, il P-value non è sufficientemente basso per il rifiuto dell'ipotesi nulla, il che conferma l'omoschedasticità tra esperimenti (Riquadro 10.9).
+
+```{r include=FALSE}
+rm(list = ls())
+```
+
+
+```{r}
+# Riquadro 10.9
+
+# Esempio 10.5
+# Un esperimento di germinazione ripetuto due volte
+
+# Caricamento dei pacchetti
+library(statforbiology)
+library(car)
+library(SuppDists)
+library(MASS)
+library(emmeans)
+library(multcomp)
+
+# Caricamento e trasformazione dei dati
+dataset <- getAgroData("FGP_rape")
+dataset[,1:5] <- lapply(dataset[,1:5], factor)
+head(dataset)
+
+# Analisi separata delle due prove
+lmFits <- by(dataset, dataset$Run,  
+      function(df) lm(FGP ~ Genotype + Shelf, data = df) )
+
+# Controllo della omoschedasticità entro esperimento
+levTest <- by(dataset, dataset$Run,  
+      function(df) 
+        leveneTest(abs(residuals(lm(FGP ~ Genotype + Shelf, data = df))),
+                        df$Genotype))
+levTest
+lapply(lmFits, function(mods) shapiro.test(residuals(mods)))
+
+# Controllo dell'omoschedasticità tra esperimenti
+# by the Hartley Fmax test
+mses <- unlist(
+  lapply(lmFits, function(mods) summary(mods)$sigma^2))
+Fmax <- max(mses)/min(mses)
+pmaxFratio(Fmax, 15, 2, lower.tail = FALSE)
+
+# Analisi della varianza per i due esperimenti separati
+lapply(lmFits, function(mods) anova(mods))
+```
+
+
+L'EDA dimostra che non ci sono problemi con le assunzioni di base e che l'effetto del trattamento è stato significativo in entrambi gli esperimenti. Passando alle analisi del dataset aggregato, possiamo notare che esso è totalmente simile a quello derivante da un qualunque esperimento fattoriale a due vie, con l'unica differenza che l'effetto blocco non è incrociato, ma **'innestato' all'interno degli esperimenti**, poiché i ripiani sono diversi nelle diverse celle climatiche. Di conseguenza, il modello finale è:
+
+$$y_{ijk} = \mu + \gamma_{ik} + \alpha_i + \beta_j + \alpha\beta_{ij} + \varepsilon_{ijk}$$
+
+dove $y$ è la risposta per l'i-esimo esperimento, il j-esimo genotipo e il k-esimo scaffale, $\mu$ è l'intercetta, $\gamma_{ik}$ è l'effetto del k-esimo scaffale nell'i-esimo esperimento, $\alpha_i$ è l'effetto dell'i-esimo esperimento, $\beta_j$ è l'effetto del j-esimo genotipo, $\alpha\beta_{ij}$ è l'interazione 'genotipo per esperimento', mentre $\varepsilon_{ijk}$ è il residuo per ciascuna osservazione, che si presume distribuito normalmente e omoschedastico ($\epsilon_{ijk} \sim N(0, \sigma_{\varepsilon})$).
+
+```{r}
+# Riquadro 10.10
+
+# Esempio 10.5 [segue]
+
+# Analisi combinata: fitting del modello
+mod <- lm(FGP ~ Genotype * Run + Run:Shelf, data = dataset)
+
+# Controllo dei residui (non mostrato)
+# plot(mod, which = 1)
+# plot(mod, which = 2)
+# boxcox(mod)
+
+# Analisi della varianza combinata
+anova(mod)
+```
+
+
+L'analisi della tabella ANOVA per un insieme di esperimenti ripetuti fornisce un'idea della riproducibilità dei risultati. È possibile riscontrare le seguenti situazioni:
+
+1. L'interazione "esperimento per trattamento" è significativa. In questo caso, dovremmo concludere che gli effetti dei trattamenti e, probabilmente, la loro graduatoria, sono cambiati nei diversi esperimenti. Di conseguenza, l'aggregazione dei risultati non è possibile e **dovremmo visualizzare e confrontare solo le medie dei trattamenti all'interno di ciascun esperimento**.
+2. L'interazione non è significativa, ma l'effetto principale del trattamento lo è. Dovremmo quindi concludere che gli effetti dei trattamenti e degli esperimenti sono stati indipendenti e additivi; di conseguenza, le medie dei trattamenti sono cambiate nei diversi esperimenti, ma la loro graduatoria (e quindi il giudizio di merito) è risultato pienamente riproducibile. Spetta al ricercatore decidere se sia appropriato calcolare e visualizzare le medie generali dei trattamenti o mantenerle separate per i diversi esperimenti.
+3. Né l'interazione né gli effetti principali sono significativi. La conclusione è che i risultati sono pienamente riproducibili e possiamo riportare e commentare solo le medie generali dei trattamenti.
+
+Nel nostro esempio, osserviamo che è significativo solo l'effetto del genotipo, il che significa che i risultati sono stati pienamente riproducibili. Pertanto, calcoliamo le medie generali dei genotipi e le sottoponiamo a confronto multiplo.
+
+
+```{r eval=FALSE, include=TRUE}
+# Riquadro 10.11
+
+# Esempio 10.5 [segue]
+
+# Confronto multiplo per le medie generali dei genotipi
+
+cld(emmeans(mod, ~ Genotype), Letters = LETTERS)
+## Genotype  emmean     SE df  lower.CL upper.CL .group
+##  C         0.781 0.0098 20    0.760    0.801  A    
+##  A         0.871 0.0098 20    0.850    0.891   B   
+##  B         0.882 0.0098 20    0.862    0.903   B 
+```
+
+
+Prima di concludere, è necessario sottolineare che il metodo di analisi dei dati proposto per questo esempio è sempre appropriato, sebbene in alcuni casi, soprattutto quando il numero di esperimenti è molto elevato, potrebbe essere opportuno impiegare un altro metodo, di cui verrà fornito un esempio nel Capitolo 12.
+
+
+
+## Esercizi
+
+Per tutti gli esercizi che seguono, utilizzate il piano di lavoro proposto all'inizio di questo capitolo e cercate di giungere a conclusioni attendibili. Tutti i dataset sono disponibili nel package `statforbiology` e sono accessibili tramite la funzione `getAgroData()`. Il nome del dataset è specificato per ogni esercizio.
+
+1. È stato condotto un esperimento con un disegno completamente randomizzato per confrontare la resa di 5 genotipi di grano. I risultati (in bushel per acro) sono riportati nella tabella seguente: determinare il genotipo migliore e trarre conclusioni attendibili. L'esempio è tratto da Le Clerg (1962) e il dataset è disponibile come "LeClerg".
+
+::: {style="margin-left: 30px;"}
+```{r echo=FALSE}
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(statforbiology)
+fileName <- "/Users/andrea/OneDrive/Aruba/casaonofri/_datasets/BookExercises.xlsx"
+dataset <- getAgroData("LeClerg")
+dataset$Rep <- rep(1:3, each = 5)
+dataset <- tidyr::pivot_wider(dataset, names_from = Rep,
+                              values_from = Yield)
+knitr::kable(dataset, format = "simple")
+```
+:::
+
+2. Colture cellulari di pomodoro sono state allevate su tre tipi di substrato, ottenuti aggiungendo al testimone una certa quantità di glucosio, fruttosio o saccarosio. L'esperimento è stato condotto con un disegno completamente randomizzato con 5 repliche, osservando la crescita delle cellule su ogni unità sperimentale. Determinare quale substrato ha prodotto la crescita cellulare più elevata e commentare i risultati. Il dataset è mostrato nella tabella sottostante ed è disponibile come "sugarsMedia".
+
+::: {style="margin-left: 30px;"}
+```{r echo=FALSE}
+dataset <- getAgroData("sugarsMedia")
+dataset$Rep <- rep(1:5, times = 4)
+dataset <- tidyr::pivot_wider(dataset, names_from = Sugar,
+                              values_from = Growth)
+knitr::kable(dataset[,-1], format = "simple")
+```
+:::
+
+3. È stata valutata la durata di un impianto di riscaldamento (in ore prima del guasto), a seconda della temperatura di esercizio. L'esperimento è stato organizzato includendo quattro diverse temperature ed è stato disegnato con randomizzazione completa e 6 repliche. Considerare la temperatura come un fattore e determinare la temperatura di esercizio ottimale per massimizzare la durata dell'impianto. I risultati sono mostrati di seguito e sono disponibili come 'failureTimes'. *SUGGERIMENTO: in questo esercizio è necessaria una trasformazione stabilizzante, che non viene riconosciuta automaticamente dalla funzione `emmeans()`. Pertanto, la retro-trasformazione richiederà il processo descritto alla fine della Sezione 9.6.*
+
+::: {style="margin-left: 30px;"}
+```{r echo=FALSE}
+# table
+dataset <- getAgroData("failureTimes") # read_xlsx(fileName, sheet = "1.3")
+dataset$Rep <- rep(1:6, times = 4)
+datasetT <- tidyr::pivot_wider(dataset, names_from = Rep,
+                              values_from = Hours_to_failure)
+knitr::kable(datasetT, format = "simple")
+```
+:::
+
+4. Un entomologo ha contato il numero di uova deposte da un lepidottero su tre substrati diversi, in un esperimento a randomizzazione completa 15 repliche. Identificare il substrato con la più bassa ovideposizione. I risultati sono riportati di seguito e sono disponibili come 'lepidopteraEggs'. 
+
+::: {style="margin-left: 30px;"}
+```{r echo=FALSE}
+dataset <- getAgroData("lepidopteraEggs") # read_xlsx(fileName, sheet = "1.4")
+dataset$Rep <- rep(1:15, 3)
+datasetT <- tidyr::pivot_wider(dataset, names_from = Substrate,
+                              values_from = No_of_eggs)
+knitr::kable(datasetT, format = "simple")
+```
+:::
+
+5. È stato condotto un esperimento in un aranceto nel Sud Italia, comprendente 5 sistemi di irrigazione in 5 blocchi completi. Le rese osservate (in tonnellate per ettaro) sono riportate nella tabella sottostante e sono disponibili come 'orangeIrrigation'. Qual è il sistema di irrigazione che ha offerto le migliori prestazioni?
+
+::: {style="margin-left: 30px;"}
+```{r echo=FALSE}
+dataset <- getAgroData("orangeIrrigation")# read_xlsx(fileName, sheet = "2.1")
+datasetT <- tidyr::pivot_wider(dataset, names_from = Block,
+                              values_from = Yield)
+knitr::kable(datasetT, format = "simple")
+# mod <- lm(Pounds_plot ~ Block + Method, data = dataset)
+# sim <- simulate(mod)
+# sim <- sim[,1]/10
+# dataset$Yield <- sim
+# mod <- lm(Yield ~ Block + Method, data = dataset)
+# boxcox(mod)
+# dataset <- dataset[,-3]
+# write.csv(dataset, "orangeIrrigation.csv", row.names = F)
+```
+:::
+
+6. È stata condotta una prova di fertilizzazione, con cinque trattamenti e un disegno a blocchi randomizzati con cinque repliche. Per circostanze casuali impreviste, è venuto a mancare un dato per il trattamento "50N" nel secondo blocco. I dati osservati sono i contenuti percentuali di P~2~O~5~ nei campioni di foglie raccolte in ogni parcella e sono disponibili come 'missingVal'. Analizzando i dati rispondete alle seguenti domande. È conveniente fertilizzare? È conveniente arrivare a 100 kg/ha con fertilizzazione azotata? L'aggiunta di P~2~O~5~ è una pratica conveniente? *SUGGERIMENTO: considerare il valore mancante e assicurarsi che l'approccio utilizzato per l'ANOVA sia corretto*
+
+::: {style="margin-left: 30px;"}
+```{r echo=FALSE}
+dataset <- getAgroData("missingVal") #read_xlsx(fileName, sheet = "2.2", na = "NA")
+# write.csv(dataset, "missingVal.csv", row.names = F)
+datasetT <- tidyr::pivot_wider(dataset, names_from = Block,
+                              values_from = P2O5)
+knitr::kable(datasetT, format = "simple")
+# mod <- lm(P2O5 ~ factor(Block) + Fert, data = dataset)
+# boxcox(mod)
+# anova(mod)
+# car::Anova(mod)
+```
+:::
+
+7. È stato eseguito un esperimento a quadrato latino, per valutare l'effetto di quattro diversi fertilizzanti sulla resa della lattuga. I dati osservati sono disponibili come 'lettuceLS' e sono riportati nella tabella seguente. Qual è il fertilizzante migliore?
+
+::: {style="margin-left: 30px;"}
+```{r echo=FALSE}
+dataset <- getAgroData("lettuceLS") # read_xlsx(fileName, sheet = "2.3", na = "NA")
+# write.csv(dataset, "lettuceLS.csv", row.names = F)
+knitr::kable(dataset, format = "simple")
+```
+:::
+
+8. È stato eseguito un esperimento in vaso per valutare il momento migliore per l'applicazione di un erbicida (rimsulfuron) contro *Sorghum halepense* da rizoma. Sono state confrontate cinque epoche d'intervento (2-3, 4-5, 6-7 e 8-9 foglie, oltre ad un intervento doppio a 3-4 e 8-9 foglie) e il controllo non trattato. Per comprendere se l'applicazione sia efficace contro piante provenienti da rizomi di diverse dimensioni, è stato incluso nell'esperimento un secondo fattore sperimentale, ovvero la dimensione del rizoma (2, 4, 6 nodi). Il disegno sperimentale era un fattoriale a due vie, completamente incrociato, con trattamenti completamente randomizzati con quattro repliche. I risultati (peso delle piante tre settimane dopo l'applicazione dell'erbicida) sono tratti da (Onofri, 1994b} e sono disponibili come 'johnsongrass'. In quale momento l'erbicida è più efficace? Il doppio trattamento risulta più efficace dei trattamenti singoli? La raccomandazione per gli agricoltori può essere considerata univoca ed indipendente dalla dimensione del rizoma?
+
+::: {style="margin-left: 30px;"}
+| Sizes / Timings | 2-3   | 4-5   | 6-7   | 8-9   | 3-4/8-9 | Untreated|
+|:--------------|:-----:|:-----:|:-----:|:-----:|:-------:|:----:|
+| 2-nodes       | 34.03 | 0.10  | 30.91 | 33.21 | 2.89    | 41.63|
+|               | 22.31 | 6.08  | 35.34 | 43.44 | 19.06   | 22.96|
+|               | 21.70 | 3.73  | 24.23 | 44.06 | 0.10    | 52.14|
+|               | 14.90 | 9.15  | 28.27 | 35.34 | 0.68    | 59.81|
+| 4-nodes       | 42.19 | 14.86 | 52.34 | 39.06 | 8.62    | 68.15|
+|               | 51.06 | 36.03 | 43.17 | 61.59 | 0.05    | 42.75|
+|               | 43.77 | 21.85 | 57.28 | 48.89 | 0.10    | 57.77|
+|               | 31.74 | 8.71  | 29.71 | 49.14 | 9.65    | 44.85|
+| 6-nodes       | 20.84 | 11.37 | 55.00 | 41.77 | 9.80    | 43.20|
+|               | 26.12 | 2.24  | 28.46 | 37.38 | 0.10    | 40.68|
+|               | 35.24 | 14.17 | 21.81 | 39.55 | 1.42    | 34.11|
+|               | 13.32 | 23.93 | 60.72 | 48.37 | 6.83    | 32.21|
+:::
+
+```{r eval=FALSE, include=FALSE}
+dataset <- getAgroData("johnsongrass")
+dataset
+```
+
+**Note**

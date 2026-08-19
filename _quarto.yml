@@ -18,6 +18,7 @@ book:
     - 07-TestIpotesi.qmd
     - 08-AssunzioniBase.qmd
     - 09-ConfrontoMultiplo.qmd
+    - 10-MettereTuttoInsieme.qmd
     - references.qmd
 
 bibliography: statBook.bib

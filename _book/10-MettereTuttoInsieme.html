@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Ricomponiamo il ‘puzzle’ – Metodologia sperimentale per le scienze agrarie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./09-ConfrontoMultiplo.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3220129d1b0bfa0f6b9dc9ac11d00f8b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nessun risultato",
+    "search-matching-documents-text": "documenti trovati",
+    "search-copy-link-title": "Copiare il link nella ricerca",
+    "search-hide-matches-text": "Nascondere i risultati aggiuntivi",
+    "search-more-match-text": "ci sono altri risultati in questo documento",
+    "search-more-matches-text": "ulteriori risultati in questo documento",
+    "search-clear-button-title": "Pulire",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancellare",
+    "search-submit-button-title": "Inviare",
+    "search-label": "Ricerca"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Attiva/disattiva la barra laterale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-MettereTuttoInsieme.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Ricomponiamo il ‘puzzle’</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Attiva/disattiva la barra laterale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Ricerca" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Metodologia sperimentale per le scienze agrarie</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Ricerca"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Premessa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introBiometria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Scienza, dati ed esperimenti</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ProgettoRicerca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Il disegno degli esperimenti di campo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-StatisticaDescrittiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descrivere le osservazioni sperimentali</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-CausaEffetto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Le relazioni causa-effetto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ModelliStocastici.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelli stocastici</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-InferenzaStatistica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Stime ed incertezza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-TestIpotesi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Decisioni ed incertezza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-AssunzioniBase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Verifica dei modelli</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-ConfrontoMultiplo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Combinazioni lineari/nonlineari dei parametri stimati</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-MettereTuttoInsieme.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Ricomponiamo il ‘puzzle’</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografia</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice</h2>
+   
+  <ul>
+  <li><a href="#esempio-10.1-confronto-tra-genotipi-in-un-esperimento-a-blocchi-randomizzati" id="toc-esempio-10.1-confronto-tra-genotipi-in-un-esperimento-a-blocchi-randomizzati" class="nav-link active" data-scroll-target="#esempio-10.1-confronto-tra-genotipi-in-un-esperimento-a-blocchi-randomizzati"><span class="header-section-number">10.1</span> Esempio 10.1: confronto tra genotipi in un esperimento a blocchi randomizzati</a></li>
+  <li><a href="#esempio-10.2-confronto-tra-co-adiuvanti-in-un-esperimento-a-quadrato-latino" id="toc-esempio-10.2-confronto-tra-co-adiuvanti-in-un-esperimento-a-quadrato-latino" class="nav-link" data-scroll-target="#esempio-10.2-confronto-tra-co-adiuvanti-in-un-esperimento-a-quadrato-latino"><span class="header-section-number">10.2</span> Esempio 10.2: confronto tra co-adiuvanti in un esperimento a quadrato latino</a></li>
+  <li><a href="#esempio-10.3-interazione-tra-genotipo-e-concimazione-azotata" id="toc-esempio-10.3-interazione-tra-genotipo-e-concimazione-azotata" class="nav-link" data-scroll-target="#esempio-10.3-interazione-tra-genotipo-e-concimazione-azotata"><span class="header-section-number">10.3</span> Esempio 10.3: interazione tra genotipo e concimazione azotata</a></li>
+  <li><a href="#esempio-10.4-confronto-tra-incroci-in-un-disegno-fattoriale-gerarchico" id="toc-esempio-10.4-confronto-tra-incroci-in-un-disegno-fattoriale-gerarchico" class="nav-link" data-scroll-target="#esempio-10.4-confronto-tra-incroci-in-un-disegno-fattoriale-gerarchico"><span class="header-section-number">10.4</span> Esempio 10.4: confronto tra incroci in un disegno fattoriale gerarchico</a></li>
+  <li><a href="#esempio-10.5-un-esperimento-di-germinazione-ripetuto-due-volte" id="toc-esempio-10.5-un-esperimento-di-germinazione-ripetuto-due-volte" class="nav-link" data-scroll-target="#esempio-10.5-un-esperimento-di-germinazione-ripetuto-due-volte"><span class="header-section-number">10.5</span> Esempio 10.5: un esperimento di germinazione ripetuto due volte</a></li>
+  <li><a href="#esercizi" id="toc-esercizi" class="nav-link" data-scroll-target="#esercizi"><span class="header-section-number">10.6</span> Esercizi</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Ricomponiamo il ‘puzzle’</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>È giunto ormai il momento di riunire tutti gli strumenti presentati nei capitoli precedenti e sviluppare un piano di lavoro per eseguire analisi dei dati corrette, produrre risultati affidabili e giungere a conclusioni pienamente supportate dai dati a nostra disposizione. Il piano di lavoro proposto non deve essere preso troppo alla lettera: è solo uno dei possibili approcci all’analisi dei dati e deve essere inteso solo come punto di partenza per ‘principianti’. Il piano di lavoro è il seguente:</p>
+<ol type="1">
+<li>Caricare i dati ed eseguire le eventuali trasformazioni che si rendano necessarie (ad es. le trasformazioni delle variabili numeriche in ‘factors’ oppure le trasformazioni stabilizzanti).</li>
+<li>Descrivere i dati, utilizzando almeno un indicatore di tendenza centrale (media) e un indicatore di variabilità (deviazione standard) come indicato nel Capitolo 3. Se necessario, utilizzare grafici per scoprire le caratteristiche principali del dataset in studio, scoprire pattern e individuare valori anomali: lasciare che i dati parlino da soli e “ascoltare” ciò che hanno da dire. Questa fase preliminare è definita Analisi Esplorativa (<em>Exploratory Data Analysis</em>; EDA) ed è una parte fondamentale dell’analisi dei dati, prima dell’adattamento del modello, dell’inferenza e del test d’ipotesi.</li>
+<li>Specificare il modello descrittivo più opportuno a stimarne i parametri con R.</li>
+<li>Controllare il fitting per il rispetto delle assunzioni di base. Se necessario, trasformare i dati e ripetere il fitting.</li>
+<li>Calcolare gli errori standard e/o gli intervalli di confidenza e aggiungerli a tutte le stime puntuali. Verificare la significatività di tutti gli effetti tramite il test di F nell’ANOVA.</li>
+<li>Utilizzare combinazioni lineari o non lineari dei parametri o delle medie per testare eventuali altre ipotesi di interesse e rispondere ai nostri quesiti di ricerca.</li>
+<li>Presentare i risultati sotto forma di grafici e tabelle, cercando di evidenziare in modo conciso tutte le caratteristiche più interessanti del nostro set di dati.</li>
+</ol>
+<p>In questo capitolo mostreremo come questo piano di lavoro possa essere messo in pratica, lavorando su alcuni dataset reali, relativi ad esperimenti agronomici di pieno campo.</p>
+<section id="esempio-10.1-confronto-tra-genotipi-in-un-esperimento-a-blocchi-randomizzati" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="esempio-10.1-confronto-tra-genotipi-in-un-esperimento-a-blocchi-randomizzati"><span class="header-section-number">10.1</span> Esempio 10.1: confronto tra genotipi in un esperimento a blocchi randomizzati</h2>
+<p>Consideriamo un esperimento di campo per confrontare otto genotipi di frumento, disegnato a blocchi randomizzati con tre repliche, nella collina Umbra durante la stagione di semina 2002 [Ciriciofolo, 2004; pubblicato in <span class="citation" data-cites="belocchi_2003">Belocchi et al. (<a href="references.html#ref-belocchi_2003" role="doc-biblioref">2003</a>)</span>]. In questa analisi consideriamo la resa (in tonnellate per ettaro), che è disponibile nel dataset ‘WinterWheat2002’, nel <em>package</em> ‘statforbiology’. La variabile ‘Block’ deve essere trasformata in un ‘factor’ prima dell’analisi, altrimenti, R stimerebbe erroneamente un modello di regressione lineare (mentre i blocchi sono classi nominali e non ordinate). Anche la variabile ‘Genotype’ può essere trasformata in un fattore, sebbene ciò sia facoltativo, poiché i genotipi sono rappresentati con il loro nome e non con una codifica numerica.</p>
+<p>L’EDA rivela che i genotipi, ad eccezione di Simeto, sono relativamente simili in termini di resa media. Allo stesso tempo, esistono alcune differenze in termini di deviazione standard, che potrebbero giustificare un attento controllo per possibili problemi di eteroschedasticità.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.1</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronto tra genotipi, a blocchi randomizzati</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento del dataset e analisi preliminari</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"WinterWheat2002"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dataset)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="do">##   Plot Block Genotype Yield</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 1   57     A COLOSSEO  4.31</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 2   61     B COLOSSEO  4.73</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 3   11     C COLOSSEO  5.64</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 4   60     A    CRESO  3.99</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 5   10     B    CRESO  4.82</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 6   42     C    CRESO  4.17</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>dataset<span class="sc">$</span>Block <span class="ot">&lt;-</span> <span class="fu">factor</span>(dataset<span class="sc">$</span>Block)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>dataset<span class="sc">$</span>Genotype <span class="ot">&lt;-</span> <span class="fu">factor</span>(dataset<span class="sc">$</span>Genotype)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dataset, <span class="fu">data.frame</span>(<span class="at">Mean =</span> <span class="fu">tapply</span>(Yield, Genotype, mean),</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                         <span class="at">SD =</span> <span class="fu">tapply</span>(Yield, Genotype, sd)))</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="do">##              Mean        SD</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="do">## COLOSSEO 4.893333 0.6798774</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="do">## CRESO    4.326667 0.4366158</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="do">## DUILIO   4.240000 0.1400000</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="do">## GRAZIA   4.340000 0.3764306</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="do">## IRIDE    4.963333 0.1892969</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="do">## SANCARLO 4.503333 0.2250185</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="do">## SIMETO   3.340000 0.3915354</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="do">## SOLEX    4.790000 0.2645751</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>La produzione di ogni unità sperimentale (parcella) è determinata da:</p>
+<ol type="1">
+<li>genotipo;</li>
+<li>blocco;</li>
+<li>altri effetti puramente casuali (residuo).</li>
+</ol>
+<p>Quindi, possiamo stimare un modello con due predittori nominali, come mostrato nell’Esempio 4.3 del Capitolo 4. Le analisi grafiche dei residui non mostrano evidenze di non-normalità, ma mostrano alcuni lievi segni di eteroschedasticità (Figura <a href="#fig-figName121" class="quarto-xref"><span>10.1</span></a>, sinistra). Per valutare meglio questoi aspetto, possiamo eseguire il test di Levene, ma dobbiamo considerare che la funzione <code>leveneTest()</code>, così come l’abbiamo descritta al Capitolo 8, non può essere utilizzata con dati provenienti da esperimenti a blocchi randomizzati; in questo caso dobbiamo utilizzare come risposta non le produzioni osservate, bensì i residui del modello in valore assoluto [<span class="citation" data-cites="bhandary_2013">Bhandary e Dai (<a href="references.html#ref-bhandary_2013" role="doc-biblioref">2013</a>)</span>; vedi riquadro sottostante]. Il test di Levene non è significativo e il grafico di Box-Cox (non mostrato) conferma che non è necessaria alcuna trasformazione dei dati. Di conseguenza, concludiamo che non ci sono deviazioni significative dalle assunzioni di base e procediamo con l’analisi, esaminando la tabella ANOVA. Il controllo preliminare dei gradi di libertà conferma che il modello è stato specificato correttamente (vale a dire, i DF sono uguali, rispettivamente, al numero di blocchi meno uno e al numero di genotipi meno uno) e, in base al <em>P-value</em>, rigettiamo l’ipotesi nulla, concludendo che esistono differenze significative tra i genotipi.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.1 [segue]</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Adattamento di un modello ANOVA a due vie</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Block <span class="sc">+</span> Genotype, <span class="at">data =</span> dataset)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Check dei residui (non eseguito in fase di compilazione)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># par(mfrow=c(2,2))</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 1)</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 2)</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># boxcox(mod)</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Test di Levene (modificato per blocchi randomizzati)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(<span class="fu">abs</span>(<span class="fu">residuals</span>(mod)) <span class="sc">~</span> Genotype, <span class="at">data =</span> dataset)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Levene's Test for Homogeneity of Variance (center = median)</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="do">##       Df F value Pr(&gt;F)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="do">## group  7  0.7932 0.6037</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="do">##       16</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della varianza</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Yield</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="do">##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Block      2 0.7977 0.39883  3.8502 0.0465178 *  </span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype   7 5.6305 0.80436  7.7651 0.0006252 ***</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals 14 1.4502 0.10359                      </span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName121" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName121-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-MettereTuttoInsieme_files/figure-html/fig-figName121-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName121-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.1: Analisi grafica dei residui per la prova di confronto varietale a blocchi randomizzati (Esempio 10.1)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Le stime dei parametri del modello sono relativamente poco interessanti in questo caso, mentre i confronti a coppie possono essere utili per la raccomandazione varietale. Con otto genotipi e, quindi, <span class="math inline">\((8 \times 7)/2 = 28\)</span> contrasti, è necessaria una correzione per la molteplicità. Oltre ai confronti a coppie con i relativi intervalli di confidenza, riportiamo una tabella delle medie in ordine decrescente di resa, con le lettere di significanza. La conclusione è che Simeto è risultato significativamente peggiore di tutti gli altri genotipi, ad eccezione di Duilio.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.3</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.1 [segue]</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronti multipli</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>meds <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(mod, <span class="sc">~</span>Genotype)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">contrast</span>(meds, <span class="at">method =</span> <span class="st">"pairwise"</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast            estimate    SE df lower.CL upper.CL</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  COLOSSEO - CRESO      0.5667 0.263 14  -0.3606    1.494</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  COLOSSEO - DUILIO     0.6533 0.263 14  -0.2740    1.581</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  COLOSSEO - GRAZIA     0.5533 0.263 14  -0.3740    1.481</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  COLOSSEO - IRIDE     -0.0700 0.263 14  -0.9973    0.857</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  COLOSSEO - SANCARLO   0.3900 0.263 14  -0.5373    1.317</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  COLOSSEO - SIMETO     1.5533 0.263 14   0.6260    2.481</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  COLOSSEO - SOLEX      0.1033 0.263 14  -0.8240    1.031</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  CRESO - DUILIO        0.0867 0.263 14  -0.8406    1.014</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  CRESO - GRAZIA       -0.0133 0.263 14  -0.9406    0.914</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  CRESO - IRIDE        -0.6367 0.263 14  -1.5640    0.291</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  CRESO - SANCARLO     -0.1767 0.263 14  -1.1040    0.751</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  CRESO - SIMETO        0.9867 0.263 14   0.0594    1.914</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  CRESO - SOLEX        -0.4633 0.263 14  -1.3906    0.464</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  DUILIO - GRAZIA      -0.1000 0.263 14  -1.0273    0.827</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="do">##  DUILIO - IRIDE       -0.7233 0.263 14  -1.6506    0.204</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="do">##  DUILIO - SANCARLO    -0.2633 0.263 14  -1.1906    0.664</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="do">##  DUILIO - SIMETO       0.9000 0.263 14  -0.0273    1.827</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="do">##  DUILIO - SOLEX       -0.5500 0.263 14  -1.4773    0.377</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="do">##  GRAZIA - IRIDE       -0.6233 0.263 14  -1.5506    0.304</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="do">##  GRAZIA - SANCARLO    -0.1633 0.263 14  -1.0906    0.764</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="do">##  GRAZIA - SIMETO       1.0000 0.263 14   0.0727    1.927</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="do">##  GRAZIA - SOLEX       -0.4500 0.263 14  -1.3773    0.477</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  IRIDE - SANCARLO      0.4600 0.263 14  -0.4673    1.387</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  IRIDE - SIMETO        1.6233 0.263 14   0.6960    2.551</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  IRIDE - SOLEX         0.1733 0.263 14  -0.7540    1.101</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  SANCARLO - SIMETO     1.1633 0.263 14   0.2360    2.091</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="do">##  SANCARLO - SOLEX     -0.2867 0.263 14  -1.2140    0.641</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="do">##  SIMETO - SOLEX       -1.4500 0.263 14  -2.3773   -0.523</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Results are averaged over the levels of: Block </span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95 </span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Conf-level adjustment: tukey method for comparing a family of 8 estimates</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Display a lettere</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(meds, <span class="at">Letters =</span> LETTERS, <span class="at">reverse =</span> T)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="do">##  Genotype emmean    SE df lower.CL upper.CL .group</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="do">##  IRIDE      4.96 0.186 14     4.56     5.36  A    </span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="do">##  COLOSSEO   4.89 0.186 14     4.49     5.29  A    </span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="do">##  SOLEX      4.79 0.186 14     4.39     5.19  A    </span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="do">##  SANCARLO   4.50 0.186 14     4.10     4.90  A    </span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="do">##  GRAZIA     4.34 0.186 14     3.94     4.74  A    </span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="do">##  CRESO      4.33 0.186 14     3.93     4.73  A    </span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="do">##  DUILIO     4.24 0.186 14     3.84     4.64  AB   </span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="do">##  SIMETO     3.34 0.186 14     2.94     3.74   B   </span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="do">## Results are averaged over the levels of: Block </span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95 </span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="do">## P value adjustment: tukey method for comparing a family of 8 estimates </span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="do">## significance level used: alpha = 0.05 </span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="do">## </span><span class="al">NOTE</span><span class="do">: If two or more means share the same grouping symbol,</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="do">##       then we cannot show them to be different.</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="do">##       But we also did not show them to be the same.</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="esempio-10.2-confronto-tra-co-adiuvanti-in-un-esperimento-a-quadrato-latino" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="esempio-10.2-confronto-tra-co-adiuvanti-in-un-esperimento-a-quadrato-latino"><span class="header-section-number">10.2</span> Esempio 10.2: confronto tra co-adiuvanti in un esperimento a quadrato latino</h2>
+<p>Consideriamo un esperimento a quadrato latino con quattro repliche, finalizzato a confrontare tre possibili co-adiuvanti per l’erbicida rimsulfuron (Onofri, 1990; dati non pubblicati). I risultati di questo esperimento sono disponibili nel dataset ‘adjuvantsLS’, nel <em>package</em> <code>statforbiology</code>; la colonna ‘Yield’ rappresenta la risposta osservata, la colonna ‘Adjuvant’ il predittore nominale, mentre le colonne ‘Row’ and ‘Column’ rappresentano le righe e le colonne della griglia a quadrato latino e costituiscono i due fattori di raggruppamento da inserire nel modello. Le tre variabili indipendenti dovranno essere trasformate in fattori prima dell’analisi, sebbene ciò sia strettamente necessario solo per le righe e le colonne, che sono caratterizzate da codifica numerica. Invece di trasformare le tre variabili una alla volta (come nell’Esempio 10.1), possiamo utilizzare la funzione <code>transform()</code>, passandole il ‘dataframe’ come primo argomento e, successivamente, l’elenco delle trasformazioni da eseguire al suo interno (Riquadro 10.4).</p>
+<p>L’EDA si basa sull’analisi delle medie aritmetiche e delle deviazioni standard dei diversi trattamenti: la media ottenuta con il tensioattivo sembra essere più alta rispetto alle altre medie, mentre non si notano evidenti differenze tra i co-adiuvanti in termini di deviazioni standard.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.4</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronto tra co-adiuvanti in un quadrato latino</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento e trasformazione dei dati</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"adjuvantsLS"</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">transform</span>(dataset, </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Adjuvant =</span> <span class="fu">factor</span>(Adjuvant),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Row =</span> <span class="fu">factor</span>(Row),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Column =</span> <span class="fu">factor</span>(Column))</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dataset[,<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">24</span>)])</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="do">##           Adjuvant Column Row Yield</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 AmmoniumSulphate      1   3 58.23</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 AmmoniumSulphate      2   1 47.98</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 AmmoniumSulphate      3   4 92.39</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 AmmoniumSulphate      4   2 85.97</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 5       MineralOil      1   2 73.99</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="do">## 6       MineralOil      2   4 92.97</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># EDA</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dataset, <span class="fu">data.frame</span>(<span class="at">Mean =</span> <span class="fu">tapply</span>(Yield, Adjuvant, mean),</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>                         <span class="at">SD =</span> <span class="fu">tapply</span>(Yield, Adjuvant, sd)))</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="do">##                      Mean       SD</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="do">## AmmoniumSulphate  71.1425 21.40518</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="do">## MineralOil       101.1475 23.00979</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="do">## None              80.5525 30.51889</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Surfactant       115.4250 20.69268</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>In questo esempio, abbiamo un trattamento sperimentale e due effetti ‘blocco’ che debbono necessariamente essere inclusi nel modello <span class="citation" data-cites="jensen_2018">(<a href="references.html#ref-jensen_2018" role="doc-biblioref">Jensen et al. 2018</a>)</span>, che, di conseguenza, è così definito:</p>
+<p><span class="math display">\[Y_{ijk} = \mu + \gamma_k + \beta_j + \alpha_i + \varepsilon_{ijk}\]</span></p>
+<p>dove <span class="math inline">\(\mu\)</span> è l’intercetta, <span class="math inline">\(\gamma\)</span> è l’effetto della k-esima riga, <span class="math inline">\(\beta\)</span> è l’effetto della j-esima colonna e <span class="math inline">\(\alpha\)</span> è l’effetto dell’i-esimo coadiuvante. L’elemento <span class="math inline">\(\varepsilon_{ijk}\)</span> rappresenta la componente random individuale, di ogni osservazione e si assume normalmente distribuita, con media 0 e deviazione standard <span class="math inline">\(\sigma\)</span>.</p>
+<p>Dopo il ‘fitting’, estraiamo i residui e li sottoponiamo ad analisi grafica, che non rivela problemi di alcun tipo (Figura <a href="#fig-figName122" class="quarto-xref"><span>10.2</span></a>), mentre il grafico di Box-Cox conferma che non è necessaria alcuna trasformazione (non mostrato). Pertanto, possiamo procedere all’ANOVA per testare la significatività di tutti i fattori sperimentali.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.5</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.2 [segue]</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting del modello</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Adjuvant <span class="sc">+</span> Row <span class="sc">+</span> Column, <span class="at">data =</span> dataset)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Check dei residui (non eseguito in run-time)</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 1)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 2)</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># boxcox(mod)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della varianza</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Yield</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="do">##           Df Sum Sq Mean Sq F value   Pr(&gt;F)   </span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Adjuvant   3 4793.9 1597.96 14.9051 0.003458 **</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Row        3  375.8  125.28  1.1685 0.396678   </span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Column     3 6022.6 2007.53 18.7253 0.001893 **</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals  6  643.3  107.21                    </span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName122" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName122-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-MettereTuttoInsieme_files/figure-html/fig-figName122-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName122-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.2: Analisi grafica dei residui per la prova di confronto tra co-adiuvanti (Esempio 10.2)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La differenza tra i co-adiuvanti è significativa (valore P = 0.0035) e la procedura di confronto multiplo rivela che il tensioattivo ha migliorato significativamente le prestazioni dell’erbicida, rispetto a quando è stato utilizzato da solo, mentre la resa con olio minerale non è stata significativamente inferiore a quella ottenuta col tensioattivo.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.6</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.2 [segue]</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronti multipli</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>avgs <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(mod, <span class="sc">~</span>Adjuvant)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(<span class="fu">contrast</span>(avgs, <span class="at">method =</span> <span class="st">"pairwise"</span>))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  contrast                      estimate   SE df lower.CL upper.CL</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  AmmoniumSulphate - MineralOil   -30.00 7.32  6   -55.35    -4.66</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  AmmoniumSulphate - None          -9.41 7.32  6   -34.75    15.93</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  AmmoniumSulphate - Surfactant   -44.28 7.32  6   -69.63   -18.94</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  MineralOil - None                20.59 7.32  6    -4.75    45.94</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  MineralOil - Surfactant         -14.28 7.32  6   -39.62    11.07</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  None - Surfactant               -34.87 7.32  6   -60.22    -9.53</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Results are averaged over the levels of: Row, Column </span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95 </span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="do">## Conf-level adjustment: tukey method for comparing a family of 4 estimates</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(avgs, <span class="at">Letters =</span> LETTERS, <span class="at">reversed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  Adjuvant         emmean   SE df lower.CL upper.CL .group</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  Surfactant        115.4 5.18  6    102.8    128.1  A    </span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  MineralOil        101.1 5.18  6     88.5    113.8  AB   </span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="do">##  None               80.6 5.18  6     67.9     93.2   BC  </span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="do">##  AmmoniumSulphate   71.1 5.18  6     58.5     83.8    C  </span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="do">## Results are averaged over the levels of: Row, Column </span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95 </span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="do">## P value adjustment: tukey method for comparing a family of 4 estimates </span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="do">## significance level used: alpha = 0.05 </span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="do">## </span><span class="al">NOTE</span><span class="do">: If two or more means share the same grouping symbol,</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="do">##       then we cannot show them to be different.</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="do">##       But we also did not show them to be the same.</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="esempio-10.3-interazione-tra-genotipo-e-concimazione-azotata" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="esempio-10.3-interazione-tra-genotipo-e-concimazione-azotata"><span class="header-section-number">10.3</span> Esempio 10.3: interazione tra genotipo e concimazione azotata</h2>
+<p>Quindici genotipi di frumento sono stati confrontati a due diversi livelli di fertilizzazione azotata, utilizzando un disegno a blocchi randomizzati con tre repliche. L’esperimento mirava a valutare se la raccomandazione varietale dovesse essere costante ed indipendente dal livello di concimazione azotata. Il set di dati è stato generato tramite simulazione Monte Carlo, a partire dai risultati riportati in <span class="citation" data-cites="stagnari_2013">Stagnari et al. (<a href="references.html#ref-stagnari_2013" role="doc-biblioref">2013</a>)</span> ed è disponibile come ‘NGenotypeFull’ nel package <code>statforbiology</code>.</p>
+<p>In questo esperimento, la resa è determinata da quattro effetti:</p>
+<ol type="1">
+<li>blocco</li>
+<li>genotipo</li>
+<li>livello di azoto</li>
+<li>interazione tra genotipo e livello di azoto</li>
+</ol>
+<p>Di conseguenza, il modello mostrato può essere codificato come nel Capitolo 4 (Esempio 4.4), aggiungendo l’effetto del blocco. Per stimare questo modello, possiamo caricare i dati e trasformare i predittori numerici in fattori. Per questa trasformazione, nel riquadro sottostante abbiamo utilizzato la funzione <code>lapply()</code> invece della funzione <code>transform()</code>, che avevamo utilizzato in un esempio precedente. Con <code>lapply()</code>, le variabili da trasformare vengono recuperate utilizzando gli indici di colonna, vengono trasformate utilizzando la funzione <code>factor()</code> (passata come secondo argomento) e riassegnate alle stesse posizioni che avevano in precedenza nel ‘dataframe’.</p>
+<p>Per brevità, saltiamo l’EDA e passiamo direttamente alla stima dei parametri; l’analisi grafica dei residui produce i risultati mostrati nella Figura <a href="#fig-figName133" class="quarto-xref"><span>10.3</span></a>, dove non osserviamo deviazioni evidenti rispetto agli assunti di base per i modelli lineari; pertanto, procediamo con l’ANOVA.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.7</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.3</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Interazione tra genotipo e concimazione azotata</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento e trasformazione dei dati</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"NGenotypeFull"</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>dataset[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(dataset[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], factor)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dataset)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="do">##   Block Genotype N Yield</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 1     1        A 1 2.146</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 2     2        A 1 2.433</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 3     3        A 1 2.579</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 4     1        A 2 2.362</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 5     2        A 2 2.919</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 6     3        A 2 2.912</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Model fitting</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Block <span class="sc">+</span> Genotype <span class="sc">*</span> N, <span class="at">data=</span>dataset)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Model checking (not run)</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 1)</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 2)</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># boxcox(mod)</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Variance partitioning</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Yield</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="do">##            Df  Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="do">## Block       2  0.0944 0.04721  1.3310 0.2721536    </span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype   14 10.5408 0.75291 21.2297 &lt; 2.2e-16 ***</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="do">## N           1  1.6246 1.62463 45.8092 7.175e-09 ***</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype:N 14  1.6061 0.11472  3.2349 0.0008204 ***</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals  58  2.0570 0.03547                      </span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figName133" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figName133-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-MettereTuttoInsieme_files/figure-html/fig-figName133-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figName133-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.3: Analisi grafiche dei residui per l’esperimento fattoriale di confronto tra genotipi a due dosi di azoto (Esempio 10.3).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La lettura della tabella ANOVA per un esperimento a due vie richiede una certa attenzione ed è <strong>fondamentale procedere dal basso verso l’alto</strong>, considerando che un’interazione cross-over significativa potrebbe nascondere gli effetti dei fattori principali (vedere Capitolo 4). In generale, se l’interazione fosse significativa, dovremmo sempre riportare e commentare le medie delle combinazioni tra i livelli dei fattori sperimentali. D’altra parte, se l’interazione non fosse significativa, potremmo invece riassumere i risultati riportando e commentando solo le medie degli effetti principali.</p>
+<p>In questo esempio, l’interazione è significativa e la conclusione è che la raccomandazione varietale non può essere univoca, ma deve cambiare a seconda del livello di fertilizzazione azotata. Pertanto, è necessario riportare e commentare le medie dei genotipi per ciascun livello di azoto; abbiamo due possibilità:</p>
+<ol type="1">
+<li>confrontare tutti i genotipi, anche se concimati in modo diverso;</li>
+<li>confrontando tra loro solo i genotipi concimati nello stesso modo.</li>
+</ol>
+<p>Il primo approccio è molto flessibile, ma implica un numero elevato di confronti <span class="math inline">\((10 x 9) / 2 = 45\)</span>); di conseguenza, implica anche un forte aggiustamento per la molteplicità, quindi una potenza ridotta e maggiori rischi di errori di II specie. Tale approccio è da raccomandare solo se strettamente necessario e, in questo caso, la codifica R per la funzione <code>emmeans()</code> deve utilizzare l’operatore <code>:</code> (ad esempio: <code>emmeans(mod, ~Genotype:N)</code>).</p>
+<p>Il secondo approccio implica invece un numero inferiore di confronti (<span class="math inline">\(2 x [5 x 4)/2 = 20\)</span>] e, in questo esempio, appare più logico e sensato, da un punto di vista agronomico. Nel riquadro sottostante questo approccio viene implementato utilizzando l’operatore di ‘condizionamento’ (<code>|</code>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.7</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.3 [segue]</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronto multiplo entro concimazione</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>GNmeans2 <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(mod, <span class="sc">~</span>Genotype<span class="sc">|</span>N)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(GNmeans2, <span class="at">Letters=</span>LETTERS)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="do">## N = 1:</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  Genotype emmean    SE df lower.CL upper.CL .group  </span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  A          2.39 0.109 58     2.17     2.60  A      </span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  M          2.43 0.109 58     2.21     2.65  AB     </span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  C          2.53 0.109 58     2.32     2.75  ABC    </span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  G          2.61 0.109 58     2.39     2.83  ABCD   </span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  H          2.69 0.109 58     2.47     2.91  ABCD   </span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  I          2.77 0.109 58     2.55     2.99  ABCDE  </span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  B          2.92 0.109 58     2.70     3.13  ABCDEF </span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  D          2.96 0.109 58     2.74     3.17   BCDEF </span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  N          2.99 0.109 58     2.77     3.21    CDEFG</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  O          3.00 0.109 58     2.78     3.22    CDEFG</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  F          3.06 0.109 58     2.85     3.28    CDEFG</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  J          3.10 0.109 58     2.88     3.31     DEFG</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  E          3.26 0.109 58     3.04     3.47      EFG</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="do">##  K          3.40 0.109 58     3.18     3.61       FG</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="do">##  L          3.52 0.109 58     3.31     3.74        G</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="do">## N = 2:</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="do">##  Genotype emmean    SE df lower.CL upper.CL .group  </span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="do">##  C          2.19 0.109 58     1.97     2.41  A      </span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="do">##  I          2.63 0.109 58     2.41     2.85  AB     </span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="do">##  A          2.73 0.109 58     2.51     2.95  ABC    </span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  M          2.99 0.109 58     2.77     3.21   BCD   </span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  H          3.02 0.109 58     2.80     3.24   BCD   </span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  F          3.11 0.109 58     2.90     3.33   BCDE  </span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  G          3.13 0.109 58     2.91     3.34   BCDEF </span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="do">##  B          3.24 0.109 58     3.02     3.46    CDEF </span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="do">##  D          3.35 0.109 58     3.13     3.56     DEF </span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="do">##  O          3.35 0.109 58     3.13     3.57     DEF </span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="do">##  E          3.47 0.109 58     3.25     3.68     DEF </span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="do">##  L          3.53 0.109 58     3.32     3.75     DEF </span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="do">##  J          3.62 0.109 58     3.40     3.83      EF </span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="do">##  K          3.62 0.109 58     3.40     3.83      EF </span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="do">##  N          3.67 0.109 58     3.45     3.89       F </span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="do">## Results are averaged over the levels of: Block </span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="do">## Confidence level used: 0.95 </span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="do">## P value adjustment: tukey method for comparing a family of 15 estimates </span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="do">## significance level used: alpha = 0.05 </span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="do">## </span><span class="al">NOTE</span><span class="do">: If two or more means share the same grouping symbol,</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="do">##       then we cannot show them to be different.</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="do">##       But we also did not show them to be the same.</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="esempio-10.4-confronto-tra-incroci-in-un-disegno-fattoriale-gerarchico" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="esempio-10.4-confronto-tra-incroci-in-un-disegno-fattoriale-gerarchico"><span class="header-section-number">10.4</span> Esempio 10.4: confronto tra incroci in un disegno fattoriale gerarchico</h2>
+<p>L’esempio precedente era relativo ad un disegno fattoriale completamente incrociato, dato che i livelli delle lavorazioni erano gli stessi per ogni livello di diserbo. In alcuni casi possiamo trovare disegni innestati, dove i livelli di un fattore cambiano al cambiare dei livelli dell’altro fattore. Nell’esempio seguente abbiamo considerato tre linee pure impollinanti di mais (A1, A2 ed A3), che abbiamo incrociato con tre linee pure portaseme, diverse per ogni impollinante (B1, B2, B3 per A1, B4, B5, B6 per A2 e B7, B8, B9 per A3). Alla fine abbiamo nove ibridi in tre gruppi, a seconda della linea impollinante. L’esperimento è stato disegnato a blocchi randomizzati completi con quattro repliche (36 osservazioni in totale) e i risultati sono disponibili nel dataset ‘crosses’ nel <em>package</em> <code>statforbiology</code>.</p>
+<p>In questo esperimento, la produzione del mais dipende dal blocco e dall’effetto paterno, mentre l’effetto materno può essere solo determinato entro ogni linea impollinante. Si dice che l’effetto materno è innestato nell’effetto paterno, come mostrato in Figura <a href="#fig-figNameA3113" class="quarto-xref"><span>10.4</span></a>. Pertanto, il modello lineare risulta così definito:</p>
+<p><span class="math display">\[Y_{ijk} = \mu + \gamma_k + \alpha_i + \delta_{ij} + \varepsilon_{ijk}\]</span></p>
+<p>dove <span class="math inline">\(\gamma_k\)</span> è l’effetto del blocco <span class="math inline">\(k\)</span>, <span class="math inline">\(\alpha_i\)</span> è l’effetto dell’impollinante <span class="math inline">\(i\)</span> e <span class="math inline">\(\delta_{ij}\)</span> è l’effetto del portaseme <span class="math inline">\(j\)</span> entro ogni linea impollinante <span class="math inline">\(i\)</span>. La componente random <span class="math inline">\(\varepsilon\)</span> viene assunta, come al solito, gaussiana e omoscedastica, con media 0 e deviazione standard uguale a <span class="math inline">\(\sigma\)</span>.</p>
+<p>La differenza con un modello ANOVA completamente incrociato dovrebbe essere chiara: in quest’ultimo caso abbiamo due effetti, A, B e la loro interazione A:B, mentre in un modello innestato abbiamo solo l’effetto A e l’effetto B entro A, mentre l’effetto principale B manca, in quanto non esiste in pratica.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-figNameA3113" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figNameA3113-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="10-MettereTuttoInsieme_files/figure-html/fig-figNameA3113-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figNameA3113-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10.4: Struttura di un disegno sperimentale gerarchico
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In R, questo modello gerarchico può essere codificato utilizzando l’operatore di nesting <code>/</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, come mostrato nel riquadro sottostante. Le analisi grafiche dei residui consentono di escludere qualsiasi deviazione significativa rispetto agli assunti di base (i grafici non sono mostrati per motivi di spazio) e la tabella ANOVA mostra che tutti gli effetti sono significativi; pertanto, possiamo esaminare e confrontare le medie dei diversi ibridi, anche considerando che l’effetto paterno è relativamente poco importante, dato che le linee impollinanti sono incrociate con linee portaseme diverse. Il confronto multiplo ve lo lascio come esercizio.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.8</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.4</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronto tra ibridi in un disegno 'innestato'</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dati e trasformazioni</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"crosses"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>dataset[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(dataset[,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], factor)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dataset, <span class="dv">5</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="do">##   Male Female Block     Yield</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 1   A1     B1     1  9.984718</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 2   A1     B1     2 13.932663</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 3   A1     B1     3 12.201312</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 4   A1     B1     4  1.916661</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 5   A1     B2     1  8.928465</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting del modello</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(Yield <span class="sc">~</span> Block <span class="sc">+</span> Male<span class="sc">/</span>Female, <span class="at">data =</span> dataset)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi dei residui (non mostrata)</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 1)</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 2)</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co"># boxcox(mod)</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della varianza</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: Yield</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="do">##             Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Block        3 383.75 127.917  44.355 6.051e-10 ***</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="do">## Male         2 134.76  67.378  23.363 2.331e-06 ***</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Male:Female  6 575.16  95.860  33.239 1.742e-10 ***</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals   24  69.21   2.884                      </span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="esempio-10.5-un-esperimento-di-germinazione-ripetuto-due-volte" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="esempio-10.5-un-esperimento-di-germinazione-ripetuto-due-volte"><span class="header-section-number">10.5</span> Esempio 10.5: un esperimento di germinazione ripetuto due volte</h2>
+<p>I risultati di un singolo esperimento, anche se molto precisi e significativi, costituiscono una prova scientifica abbastanza debole, se non sono confermati da altri esperimenti simili e indipendenti. Infatti, i risultati di un singolo esperimento possono essere influenzato da ‘disturbi’ di ogni tipo, errori di misurazione, eventi imprevisti o intrusioni, che possono anche non essere rilevati nel corso dell’esperimento stesso. Inoltre, un risultato significativo può essere valido solo nelle condizioni in cui è stato osservato, senza essere necessariamente riproducibile in altre condizioni (vedi Cap. 1).</p>
+<p>Pertanto, l’esecuzione di esperimenti confermativi è considerata un elemento chiave per il progresso scientifico in agricoltura e per capire la riproducibilità dei risultati <span class="citation" data-cites="white_2025">(<a href="references.html#ref-white_2025" role="doc-biblioref">White et al. 2025</a>)</span>. La sperimentazione di pieno campo, in quanto tale, non può essere ripetatuta nelle stesse identiche condizioni e quindi dobbiamo eseguire prove indipendenti in siti diversi, anni diversi o con materiali diversi. E’ quindi lecito attendersi un certo grado di variabilità tra una prova e l’altra, che richiede un’analisi finale aggregata per verificare l’ipotesi che i risultati delle diverse prove ripetute non differiscano significativamente tra di loro.</p>
+<p>Consideriamo un esperimento di germinazione per tre genotipi di colza <span class="citation" data-cites="pace_2012">(<a href="references.html#ref-pace_2012" role="doc-biblioref">Pace et al. 2012</a>)</span>, organizzato in cella climatica, secondo uno schema a blocchi randomizzati con sei repliche. Le unità sperimentali sono piastre Petri da 50 semi ciascuna, disposte in tre blocchi, corrispondenti a diversi scaffali di una cella climatica, mantenuta a 20°C per l’intera durata dell’esperimento. Per confermare i risultati, l’esperimento è stato ripetuto indipendentemente in un altra cella climatica alla stessa temperatura; in entrambi gli esperimenti, dopo 15 giorni dall’inizio, è stato contato il numero di semi germinati in ogni capsula Petri, espresso in proporzione rispetto al numero totale di semi posti a germinare (Final Germinated Proportion; FGP).</p>
+<p>I risultati di questi due esperimenti sono disponibili nel dataset ‘FGP_rape’, contenuto nel package <code>statforbiology</code>, dove le variabili ‘run’ e ‘shelf’ identificano, rispettivamente, l’esperimento e gli scaffali in ogni esperimento. Dopo aver caricato i dati, è necessario trasformare i predittori numerici (‘run’ e ‘shelf’) in fattori (vedi il codice più sotto) ed eseguire, preliminarmente, le analisi separate per ogni esperimento, al fine di garantire che non vi siano <em>outliers</em> o violazioni degli assunti di base in nessuno di essi. Inoltre, è necessario assicurarsi che le varianze dei residui dei diversi esperimenti siano simili (omoschedasticità tra esperimenti).</p>
+<p>Per effettuare le analisi separate, è possibile semplificare il codice utilizzando la strategia <em>split-apply-combine</em> <span class="citation" data-cites="wickham_2011">(<a href="references.html#ref-wickham_2011" role="doc-biblioref">Wickham 2011</a>)</span>, basata sulle funzioni <code>by()</code> e <code>lapply()</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. La prima opera sui sottoinsiemi del dataset selezionato, suddivisi in base a una variabile di classificazione (in questo caso la variabile <code>run</code>) e produce una lista con i risultati della funzione <code>lm()</code> applicata a ciascun sottoinsieme. Su questa lista possiamo operare con la funzione <code>lapply()</code>, che permette di applicare le funzioni <code>leveneTest()</code> e <code>shapiro.test()</code> a ciascun elemento. Possiamo vedere che nessuno dei due test indica significative deviazioni rispetto agli assunti di base.</p>
+<p>Per verificare l’omoschedasticità tra esperimenti, si può utilizzare il test F max di Hartely (Hartley, 1950), che consiste nel calcolare il rapporto tra la varianza residua massima e minima tra quelle osservate, che, in questo caso però, sono solo due. La significatività del test può essere ottenuta grazie alla distribuzione <code>pmaxFratio()</code>, che è contenuta nel package <code>SuppDists</code> <span class="citation" data-cites="wheeler_2024">(<a href="references.html#ref-wheeler_2024" role="doc-biblioref">Wheeler 2024</a>)</span>. In questo caso, il P-value non è sufficientemente basso per il rifiuto dell’ipotesi nulla, il che conferma l’omoschedasticità tra esperimenti (Riquadro 10.9).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.9</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.5</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Un esperimento di germinazione ripetuto due volte</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento dei pacchetti</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(statforbiology)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SuppDists)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Caricamento e trasformazione dei dati</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">getAgroData</span>(<span class="st">"FGP_rape"</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>dataset[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(dataset[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>], factor)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dataset)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="do">##   Dish Run Shelf     Species Genotype  FGP</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    1   1     1 OilseedRape        A 0.81</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 2   13   1     1 OilseedRape        B 0.81</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 3   25   1     1 OilseedRape        C 0.74</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 4    2   1     2 OilseedRape        A 0.91</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 5   14   1     2 OilseedRape        B 0.92</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 6   26   1     2 OilseedRape        C 0.76</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi separata delle due prove</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>lmFits <span class="ot">&lt;-</span> <span class="fu">by</span>(dataset, dataset<span class="sc">$</span>Run,  </span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>      <span class="cf">function</span>(df) <span class="fu">lm</span>(FGP <span class="sc">~</span> Genotype <span class="sc">+</span> Shelf, <span class="at">data =</span> df) )</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Controllo della omoschedasticità entro esperimento</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>levTest <span class="ot">&lt;-</span> <span class="fu">by</span>(dataset, dataset<span class="sc">$</span>Run,  </span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>      <span class="cf">function</span>(df) </span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">leveneTest</span>(<span class="fu">abs</span>(<span class="fu">residuals</span>(<span class="fu">lm</span>(FGP <span class="sc">~</span> Genotype <span class="sc">+</span> Shelf, <span class="at">data =</span> df))),</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>                        df<span class="sc">$</span>Genotype))</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>levTest</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="do">## dataset$Run: 1</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Levene's Test for Homogeneity of Variance (center = median)</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="do">##       Df F value Pr(&gt;F)</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="do">## group  2  0.2779 0.7612</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="do">##       15               </span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="do">## ------------------------------------------------------------ </span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="do">## dataset$Run: 2</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="do">## Levene's Test for Homogeneity of Variance (center = median)</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="do">##       Df F value Pr(&gt;F)</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="do">## group  2  1.5841 0.2376</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="do">##       15</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(lmFits, <span class="cf">function</span>(mods) <span class="fu">shapiro.test</span>(<span class="fu">residuals</span>(mods)))</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="do">## $`1`</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="do">##  Shapiro-Wilk normality test</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="do">## data:  residuals(mods)</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="do">## W = 0.90201, p-value = 0.06229</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="do">## $`2`</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="do">##  Shapiro-Wilk normality test</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="do">## data:  residuals(mods)</span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="do">## W = 0.93221, p-value = 0.2124</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Controllo dell'omoschedasticità tra esperimenti</span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="co"># by the Hartley Fmax test</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>mses <span class="ot">&lt;-</span> <span class="fu">unlist</span>(</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(lmFits, <span class="cf">function</span>(mods) <span class="fu">summary</span>(mods)<span class="sc">$</span>sigma<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>Fmax <span class="ot">&lt;-</span> <span class="fu">max</span>(mses)<span class="sc">/</span><span class="fu">min</span>(mses)</span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="fu">pmaxFratio</span>(Fmax, <span class="dv">15</span>, <span class="dv">2</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.7404869</span></span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della varianza per i due esperimenti separati</span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(lmFits, <span class="cf">function</span>(mods) <span class="fu">anova</span>(mods))</span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a><span class="do">## $`1`</span></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: FGP</span></span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a><span class="do">##           Df   Sum Sq   Mean Sq F value   Pr(&gt;F)    </span></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype   2 0.033011 0.0165056 15.6864 0.000825 ***</span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a><span class="do">## Shelf      5 0.019911 0.0039822  3.7846 0.034871 *  </span></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals 10 0.010522 0.0010522                     </span></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a><span class="do">## $`2`</span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: FGP</span></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a><span class="do">##           Df   Sum Sq   Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype   2 0.042544 0.0212722 16.9876 0.0006081 ***</span></span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a><span class="do">## Shelf      5 0.001761 0.0003522  0.2813 0.9129498    </span></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals 10 0.012522 0.0012522                      </span></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>L’EDA dimostra che non ci sono problemi con le assunzioni di base e che l’effetto del trattamento è stato significativo in entrambi gli esperimenti. Passando alle analisi del dataset aggregato, possiamo notare che esso è totalmente simile a quello derivante da un qualunque esperimento fattoriale a due vie, con l’unica differenza che l’effetto blocco non è incrociato, ma <strong>‘innestato’ all’interno degli esperimenti</strong>, poiché i ripiani sono diversi nelle diverse celle climatiche. Di conseguenza, il modello finale è:</p>
+<p><span class="math display">\[y_{ijk} = \mu + \gamma_{ik} + \alpha_i + \beta_j + \alpha\beta_{ij} + \varepsilon_{ijk}\]</span></p>
+<p>dove <span class="math inline">\(y\)</span> è la risposta per l’i-esimo esperimento, il j-esimo genotipo e il k-esimo scaffale, <span class="math inline">\(\mu\)</span> è l’intercetta, <span class="math inline">\(\gamma_{ik}\)</span> è l’effetto del k-esimo scaffale nell’i-esimo esperimento, <span class="math inline">\(\alpha_i\)</span> è l’effetto dell’i-esimo esperimento, <span class="math inline">\(\beta_j\)</span> è l’effetto del j-esimo genotipo, <span class="math inline">\(\alpha\beta_{ij}\)</span> è l’interazione ‘genotipo per esperimento’, mentre <span class="math inline">\(\varepsilon_{ijk}\)</span> è il residuo per ciascuna osservazione, che si presume distribuito normalmente e omoschedastico (<span class="math inline">\(\epsilon_{ijk} \sim N(0, \sigma_{\varepsilon})\)</span>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.10</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.5 [segue]</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi combinata: fitting del modello</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(FGP <span class="sc">~</span> Genotype <span class="sc">*</span> Run <span class="sc">+</span> Run<span class="sc">:</span>Shelf, <span class="at">data =</span> dataset)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Controllo dei residui (non mostrato)</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 1)</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(mod, which = 2)</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># boxcox(mod)</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisi della varianza combinata</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Analysis of Variance Table</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Response: FGP</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="do">##              Df   Sum Sq  Mean Sq F value    Pr(&gt;F)    </span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype      2 0.074289 0.037144 32.2372 5.534e-07 ***</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Run           1 0.003025 0.003025  2.6254    0.1208    </span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype:Run  2 0.001267 0.000633  0.5497    0.5856    </span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Run:Shelf    10 0.021672 0.002167  1.8809    0.1100    </span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Residuals    20 0.023044 0.001152                      </span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="do">## ---</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>L’analisi della tabella ANOVA per un insieme di esperimenti ripetuti fornisce un’idea della riproducibilità dei risultati. È possibile riscontrare le seguenti situazioni:</p>
+<ol type="1">
+<li>L’interazione “esperimento per trattamento” è significativa. In questo caso, dovremmo concludere che gli effetti dei trattamenti e, probabilmente, la loro graduatoria, sono cambiati nei diversi esperimenti. Di conseguenza, l’aggregazione dei risultati non è possibile e <strong>dovremmo visualizzare e confrontare solo le medie dei trattamenti all’interno di ciascun esperimento</strong>.</li>
+<li>L’interazione non è significativa, ma l’effetto principale del trattamento lo è. Dovremmo quindi concludere che gli effetti dei trattamenti e degli esperimenti sono stati indipendenti e additivi; di conseguenza, le medie dei trattamenti sono cambiate nei diversi esperimenti, ma la loro graduatoria (e quindi il giudizio di merito) è risultato pienamente riproducibile. Spetta al ricercatore decidere se sia appropriato calcolare e visualizzare le medie generali dei trattamenti o mantenerle separate per i diversi esperimenti.</li>
+<li>Né l’interazione né gli effetti principali sono significativi. La conclusione è che i risultati sono pienamente riproducibili e possiamo riportare e commentare solo le medie generali dei trattamenti.</li>
+</ol>
+<p>Nel nostro esempio, osserviamo che è significativo solo l’effetto del genotipo, il che significa che i risultati sono stati pienamente riproducibili. Pertanto, calcoliamo le medie generali dei genotipi e le sottoponiamo a confronto multiplo.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riquadro 10.11</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Esempio 10.5 [segue]</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Confronto multiplo per le medie generali dei genotipi</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cld</span>(<span class="fu">emmeans</span>(mod, <span class="sc">~</span> Genotype), <span class="at">Letters =</span> LETTERS)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Genotype  emmean     SE df  lower.CL upper.CL .group</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  C         0.781 0.0098 20    0.760    0.801  A    </span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  A         0.871 0.0098 20    0.850    0.891   B   </span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  B         0.882 0.0098 20    0.862    0.903   B </span></span></code></pre></div><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Prima di concludere, è necessario sottolineare che il metodo di analisi dei dati proposto per questo esempio è sempre appropriato, sebbene in alcuni casi, soprattutto quando il numero di esperimenti è molto elevato, potrebbe essere opportuno impiegare un altro metodo, di cui verrà fornito un esempio nel Capitolo 12.</p>
+</section>
+<section id="esercizi" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="esercizi"><span class="header-section-number">10.6</span> Esercizi</h2>
+<p>Per tutti gli esercizi che seguono, utilizzate il piano di lavoro proposto all’inizio di questo capitolo e cercate di giungere a conclusioni attendibili. Tutti i dataset sono disponibili nel package <code>statforbiology</code> e sono accessibili tramite la funzione <code>getAgroData()</code>. Il nome del dataset è specificato per ogni esercizio.</p>
+<ol type="1">
+<li>È stato condotto un esperimento con un disegno completamente randomizzato per confrontare la resa di 5 genotipi di grano. I risultati (in bushel per acro) sono riportati nella tabella seguente: determinare il genotipo migliore e trarre conclusioni attendibili. L’esempio è tratto da Le Clerg (1962) e il dataset è disponibile come “LeClerg”.</li>
+</ol>
+<div style="margin-left: 30px;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variety</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">34.3</td>
+<td style="text-align: right;">37.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">20.2</td>
+<td style="text-align: right;">27.5</td>
+<td style="text-align: right;">25.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">29.2</td>
+<td style="text-align: right;">27.8</td>
+<td style="text-align: right;">30.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">12.8</td>
+<td style="text-align: right;">12.3</td>
+<td style="text-align: right;">14.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">21.7</td>
+<td style="text-align: right;">24.5</td>
+<td style="text-align: right;">23.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Colture cellulari di pomodoro sono state allevate su tre tipi di substrato, ottenuti aggiungendo al testimone una certa quantità di glucosio, fruttosio o saccarosio. L’esperimento è stato condotto con un disegno completamente randomizzato con 5 repliche, osservando la crescita delle cellule su ogni unità sperimentale. Determinare quale substrato ha prodotto la crescita cellulare più elevata e commentare i risultati. Il dataset è mostrato nella tabella sottostante ed è disponibile come “sugarsMedia”.</li>
+</ol>
+<div style="margin-left: 30px;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Control</th>
+<th style="text-align: right;">Glucose</th>
+<th style="text-align: right;">Fructose</th>
+<th style="text-align: right;">Sucrose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5.285</td>
+<td style="text-align: right;">4.020</td>
+<td style="text-align: right;">3.705</td>
+<td style="text-align: right;">4.776</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5.737</td>
+<td style="text-align: right;">3.648</td>
+<td style="text-align: right;">3.714</td>
+<td style="text-align: right;">3.771</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.320</td>
+<td style="text-align: right;">3.861</td>
+<td style="text-align: right;">3.110</td>
+<td style="text-align: right;">4.742</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.050</td>
+<td style="text-align: right;">4.098</td>
+<td style="text-align: right;">3.522</td>
+<td style="text-align: right;">4.246</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.705</td>
+<td style="text-align: right;">3.919</td>
+<td style="text-align: right;">3.957</td>
+<td style="text-align: right;">4.212</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>È stata valutata la durata di un impianto di riscaldamento (in ore prima del guasto), a seconda della temperatura di esercizio. L’esperimento è stato organizzato includendo quattro diverse temperature ed è stato disegnato con randomizzazione completa e 6 repliche. Considerare la temperatura come un fattore e determinare la temperatura di esercizio ottimale per massimizzare la durata dell’impianto. I risultati sono mostrati di seguito e sono disponibili come ‘failureTimes’. <em>SUGGERIMENTO: in questo esercizio è necessaria una trasformazione stabilizzante, che non viene riconosciuta automaticamente dalla funzione <code>emmeans()</code>. Pertanto, la retro-trasformazione richiederà il processo descritto alla fine della Sezione 9.6.</em></li>
+</ol>
+<div style="margin-left: 30px;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Temp</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">5</th>
+<th style="text-align: right;">6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1520</td>
+<td style="text-align: right;">1953</td>
+<td style="text-align: right;">2135</td>
+<td style="text-align: right;">2471</td>
+<td style="text-align: right;">4727</td>
+<td style="text-align: right;">6134</td>
+<td style="text-align: right;">6314</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1620</td>
+<td style="text-align: right;">1190</td>
+<td style="text-align: right;">1286</td>
+<td style="text-align: right;">1550</td>
+<td style="text-align: right;">2125</td>
+<td style="text-align: right;">2557</td>
+<td style="text-align: right;">2845</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1660</td>
+<td style="text-align: right;">651</td>
+<td style="text-align: right;">837</td>
+<td style="text-align: right;">848</td>
+<td style="text-align: right;">1038</td>
+<td style="text-align: right;">1361</td>
+<td style="text-align: right;">1543</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1708</td>
+<td style="text-align: right;">511</td>
+<td style="text-align: right;">651</td>
+<td style="text-align: right;">651</td>
+<td style="text-align: right;">652</td>
+<td style="text-align: right;">688</td>
+<td style="text-align: right;">729</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Un entomologo ha contato il numero di uova deposte da un lepidottero su tre substrati diversi, in un esperimento a randomizzazione completa 15 repliche. Identificare il substrato con la più bassa ovideposizione. I risultati sono riportati di seguito e sono disponibili come ‘lepidopteraEggs’.</li>
+</ol>
+<div style="margin-left: 30px;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Rep</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">456</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">72</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">411</td>
+<td style="text-align: right;">213</td>
+<td style="text-align: right;">99</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">594</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">280</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">664</td>
+<td style="text-align: right;">163</td>
+<td style="text-align: right;">89</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">379</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">444</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">436</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">294</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">431</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">476</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">382</td>
+<td style="text-align: right;">153</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">413</td>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">485</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">440</td>
+<td style="text-align: right;">126</td>
+<td style="text-align: right;">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li>È stato condotto un esperimento in un aranceto nel Sud Italia, comprendente 5 sistemi di irrigazione in 5 blocchi completi. Le rese osservate (in tonnellate per ettaro) sono riportate nella tabella sottostante e sono disponibili come ‘orangeIrrigation’. Qual è il sistema di irrigazione che ha offerto le migliori prestazioni?</li>
+</ol>
+<div style="margin-left: 30px;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Localised</td>
+<td style="text-align: right;">26.7</td>
+<td style="text-align: right;">27.9</td>
+<td style="text-align: right;">51.2</td>
+<td style="text-align: right;">29.0</td>
+<td style="text-align: right;">34.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surface</td>
+<td style="text-align: right;">46.4</td>
+<td style="text-align: right;">47.7</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">32.7</td>
+<td style="text-align: right;">21.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sprinkler</td>
+<td style="text-align: right;">38.5</td>
+<td style="text-align: right;">29.1</td>
+<td style="text-align: right;">33.6</td>
+<td style="text-align: right;">11.8</td>
+<td style="text-align: right;">27.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sprinker+localised</td>
+<td style="text-align: right;">41.3</td>
+<td style="text-align: right;">33.9</td>
+<td style="text-align: right;">31.3</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">12.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Submersion</td>
+<td style="text-align: right;">35.2</td>
+<td style="text-align: right;">46.9</td>
+<td style="text-align: right;">19.8</td>
+<td style="text-align: right;">27.9</td>
+<td style="text-align: right;">26.7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li>È stata condotta una prova di fertilizzazione, con cinque trattamenti e un disegno a blocchi randomizzati con cinque repliche. Per circostanze casuali impreviste, è venuto a mancare un dato per il trattamento “50N” nel secondo blocco. I dati osservati sono i contenuti percentuali di P<sub>2</sub>O<sub>5</sub> nei campioni di foglie raccolte in ogni parcella e sono disponibili come ‘missingVal’. Analizzando i dati rispondete alle seguenti domande. È conveniente fertilizzare? È conveniente arrivare a 100 kg/ha con fertilizzazione azotata? L’aggiunta di P<sub>2</sub>O<sub>5</sub> è una pratica conveniente? <em>SUGGERIMENTO: considerare il valore mancante e assicurarsi che l’approccio utilizzato per l’ANOVA sia corretto</em></li>
+</ol>
+<div style="margin-left: 30px;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Fert</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">100N</td>
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">7.4</td>
+<td style="text-align: right;">8.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">100N+75P</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: right;">9.3</td>
+<td style="text-align: right;">12.0</td>
+<td style="text-align: right;">10.6</td>
+<td style="text-align: right;">11.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">50N</td>
+<td style="text-align: right;">7.3</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">7.7</td>
+<td style="text-align: right;">7.7</td>
+<td style="text-align: right;">7.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50N+75P</td>
+<td style="text-align: right;">10.8</td>
+<td style="text-align: right;">9.2</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: right;">9.9</td>
+<td style="text-align: right;">9.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unfertilised</td>
+<td style="text-align: right;">5.6</td>
+<td style="text-align: right;">6.1</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">5.9</td>
+<td style="text-align: right;">7.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="7" type="1">
+<li>È stato eseguito un esperimento a quadrato latino, per valutare l’effetto di quattro diversi fertilizzanti sulla resa della lattuga. I dati osservati sono disponibili come ‘lettuceLS’ e sono riportati nella tabella seguente. Qual è il fertilizzante migliore?</li>
+</ol>
+<div style="margin-left: 30px;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Fertiliser</th>
+<th style="text-align: right;">Row</th>
+<th style="text-align: right;">Column</th>
+<th style="text-align: right;">Yield</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">155.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">128.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">105.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">182.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">185.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">163.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">178.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">238.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">173.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">170.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">198.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">213.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">185.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">198.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">191.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">231.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="8" type="1">
+<li>È stato eseguito un esperimento in vaso per valutare il momento migliore per l’applicazione di un erbicida (rimsulfuron) contro <em>Sorghum halepense</em> da rizoma. Sono state confrontate cinque epoche d’intervento (2-3, 4-5, 6-7 e 8-9 foglie, oltre ad un intervento doppio a 3-4 e 8-9 foglie) e il controllo non trattato. Per comprendere se l’applicazione sia efficace contro piante provenienti da rizomi di diverse dimensioni, è stato incluso nell’esperimento un secondo fattore sperimentale, ovvero la dimensione del rizoma (2, 4, 6 nodi). Il disegno sperimentale era un fattoriale a due vie, completamente incrociato, con trattamenti completamente randomizzati con quattro repliche. I risultati (peso delle piante tre settimane dopo l’applicazione dell’erbicida) sono tratti da (Onofri, 1994b} e sono disponibili come ‘johnsongrass’. In quale momento l’erbicida è più efficace? Il doppio trattamento risulta più efficace dei trattamenti singoli? La raccomandazione per gli agricoltori può essere considerata univoca ed indipendente dalla dimensione del rizoma?</li>
+</ol>
+<div style="margin-left: 30px;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sizes / Timings</th>
+<th style="text-align: center;">2-3</th>
+<th style="text-align: center;">4-5</th>
+<th style="text-align: center;">6-7</th>
+<th style="text-align: center;">8-9</th>
+<th style="text-align: center;">3-4/8-9</th>
+<th style="text-align: center;">Untreated</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2-nodes</td>
+<td style="text-align: center;">34.03</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">30.91</td>
+<td style="text-align: center;">33.21</td>
+<td style="text-align: center;">2.89</td>
+<td style="text-align: center;">41.63</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">22.31</td>
+<td style="text-align: center;">6.08</td>
+<td style="text-align: center;">35.34</td>
+<td style="text-align: center;">43.44</td>
+<td style="text-align: center;">19.06</td>
+<td style="text-align: center;">22.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">21.70</td>
+<td style="text-align: center;">3.73</td>
+<td style="text-align: center;">24.23</td>
+<td style="text-align: center;">44.06</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">52.14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">14.90</td>
+<td style="text-align: center;">9.15</td>
+<td style="text-align: center;">28.27</td>
+<td style="text-align: center;">35.34</td>
+<td style="text-align: center;">0.68</td>
+<td style="text-align: center;">59.81</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4-nodes</td>
+<td style="text-align: center;">42.19</td>
+<td style="text-align: center;">14.86</td>
+<td style="text-align: center;">52.34</td>
+<td style="text-align: center;">39.06</td>
+<td style="text-align: center;">8.62</td>
+<td style="text-align: center;">68.15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">51.06</td>
+<td style="text-align: center;">36.03</td>
+<td style="text-align: center;">43.17</td>
+<td style="text-align: center;">61.59</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">42.75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">43.77</td>
+<td style="text-align: center;">21.85</td>
+<td style="text-align: center;">57.28</td>
+<td style="text-align: center;">48.89</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">57.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">31.74</td>
+<td style="text-align: center;">8.71</td>
+<td style="text-align: center;">29.71</td>
+<td style="text-align: center;">49.14</td>
+<td style="text-align: center;">9.65</td>
+<td style="text-align: center;">44.85</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6-nodes</td>
+<td style="text-align: center;">20.84</td>
+<td style="text-align: center;">11.37</td>
+<td style="text-align: center;">55.00</td>
+<td style="text-align: center;">41.77</td>
+<td style="text-align: center;">9.80</td>
+<td style="text-align: center;">43.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">26.12</td>
+<td style="text-align: center;">2.24</td>
+<td style="text-align: center;">28.46</td>
+<td style="text-align: center;">37.38</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">40.68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">35.24</td>
+<td style="text-align: center;">14.17</td>
+<td style="text-align: center;">21.81</td>
+<td style="text-align: center;">39.55</td>
+<td style="text-align: center;">1.42</td>
+<td style="text-align: center;">34.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">13.32</td>
+<td style="text-align: center;">23.93</td>
+<td style="text-align: center;">60.72</td>
+<td style="text-align: center;">48.37</td>
+<td style="text-align: center;">6.83</td>
+<td style="text-align: center;">32.21</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Note</strong></p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-belocchi_2003" class="csl-entry" role="listitem">
+<span class="smallcaps">Belocchi, A, M Fornara, E Ciriciofolo, E Biancolatte, S Del Puglia, G Olimpieri, V Vecchiarelli, E Gosparini, C Piccioni, E Desiderio</span> (2003) Grano duro: <span>Risultati</span> 2002-03 della <span>Rete</span> <span>Nazionale</span>. <span>Lazio</span> e <span>Umbria</span>. <em>L’Informatore Agrario</em> <strong>19</strong>, 41–44
+</div>
+<div id="ref-bhandary_2013" class="csl-entry" role="listitem">
+<span class="smallcaps">Bhandary, M, H Dai</span> (2013) <a href="https://doi.org/10.1016/j.stamet.2012.08.002">An alternative test for the equality of variances for several populations in randomised complete block design</a>. <em>Statistical Methodology</em> <strong>11</strong>, 22–35
+</div>
+<div id="ref-jensen_2018" class="csl-entry" role="listitem">
+<span class="smallcaps">Jensen, SM, F Schaarschmidt, A Onofri, C Ritz</span> (2018) <a href="https://doi.org/10.1002/ps.4773">Experimental design matters for statistical analysis: how to handle blocking: <span>Experimental</span> design matters for statistical analysis</a>. <em>Pest Management Science</em> <strong>74</strong>, 523–534
+</div>
+<div id="ref-pace_2012" class="csl-entry" role="listitem">
+<span class="smallcaps">Pace, R, P Benincasa, ME Ghanem, M Quinet, S Lutts</span> (2012) <a href="https://doi.org/10.1017/S0014479711001189">Germination of untreated and primed seeds in rapeseed (brassica napus var oleifera del.) under salinity and low matric potential</a>. <em>Experimental Agriculture</em> <strong>48</strong>, 238–251
+</div>
+<div id="ref-stagnari_2013" class="csl-entry" role="listitem">
+<span class="smallcaps">Stagnari, F, A Onofri, P Codianni, M Pisante</span> (2013) Durum wheat varieties in <span>N</span>-deficient environments and organic farming: a comparison of yield, quality and stability performances. <em>Plant Breeding</em> <strong>132</strong>, 266–275
+</div>
+<div id="ref-wheeler_2024" class="csl-entry" role="listitem">
+<span class="smallcaps">Wheeler, B</span> (2024) <em><a href="https://CRAN.R-project.org/package=SuppDists">SuppDists: Supplementary Distributions</a></em>
+</div>
+<div id="ref-white_2025" class="csl-entry" role="listitem">
+<span class="smallcaps">White, JW, KJ Boote, BA Kimball, C Porter, M Salmeron, V Shelia, KR Thorp, G Hoogenboom</span> (2025) <a href="https://doi.org/10.1038/s44264-025-00067-z">From field to analysis: strengthening reproducibility and confirmation in research for sustainable agriculture</a>. <em>npj Sustainable Agriculture</em> <strong>3</strong>, 27
+</div>
+<div id="ref-wickham_2011" class="csl-entry" role="listitem">
+<span class="smallcaps">Wickham, H</span> (2011) <a href="https://doi.org/10.18637/jss.v040.i01">The <span>Split</span>-<span>Apply</span>-<span>Combine</span> <span>Strategy</span> for <span>Data</span> <span>Analysis</span></a>. <em>Journal of Statistical Software</em> <strong>40</strong>
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Per esempio: il codice <code>A/B</code> significa che B è ‘innestato’ entro A ed è uguale a <code>A + A:B</code>. Il comportamento dell’operatore di ‘nesting’ cambia leggermente con i predittori numerici nell’ANCOVA (vedi Cap. 11)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Per la strategia <em>split-apply-combine</em>, il paccketto ‘tidyverse’ contiene alcune altre funzioni molto potenti<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiato!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiato!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./09-ConfrontoMultiplo.html" class="pagination-link" aria-label="Combinazioni lineari/nonlineari dei parametri stimati">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Combinazioni lineari/nonlineari dei parametri stimati</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="Bibliografia">
+        <span class="nav-page-text">Bibliografia</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
